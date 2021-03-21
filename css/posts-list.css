@@ -1,0 +1,22 @@
+#posts__list {
+  width: 80%;
+  margin: 0 auto;
+}
+
+.posts__listWrapper {
+  margin: 15px 0 40px 20px;
+  border-left: 1px solid var(--info);
+}
+
+.posts__listLink {
+  padding: 0 15px;
+}
+
+.posts__listLink a {
+ color: var(--theme);
+ margin-left: 15px;
+}
+
+.posts__listLink a:hover {
+  color: var(--hover);
+}

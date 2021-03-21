@@ -1,0 +1,49 @@
+.post__section {
+  padding-bottom: 70px;
+  margin: 30px 0;
+  border-bottom: 1px solid var(--info);
+}
+
+.post__section *:not(a, .post__title, .post__time) {
+  color: var(--text) !important;
+}
+
+.post__section a:not(.post__title) {
+  color: var(--link) !important;
+  position: relative;
+}
+
+.post__section a:not(.post__title):before {
+  content: "";
+  width: 0;
+  height: 1px;
+  position: absolute;
+  bottom: -2px;
+  left: 0;
+  transition: all .5s ease-in-out;
+  background-color: var(--link);
+}
+
+.post__section a:not(.post__title):hover:before {
+  width: 100%;
+}
+
+.post__title {
+  color: var(--theme);
+}
+
+.post__title:hover {
+  color: var(--hover);
+}
+
+.post__time {
+  font-size: 14px;
+  color: var(--info);
+  margin-bottom: 20px;
+}
+
+.post__readMore {
+  float: right;
+  font-size: 14px;
+  margin-top: 25px;
+}
