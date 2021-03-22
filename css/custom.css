@@ -6,6 +6,14 @@ html {
   --link-hover: #3094b3 !important;
 }
 
+html,
+body {
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  padding: 0;
+}
+
 .button {
   background-color: var(--theme);
 }
@@ -67,7 +75,7 @@ blockquote p {
   background-size: unset;
 }
 
-@media screen and (max-width: 992px) {
+@media screen and (max-width: 991px) {
   /* Fix sidebar and content styles */
   .nav {
     padding: 1.2rem 0.4rem 1.2rem 1.2rem !important;

@@ -20,3 +20,13 @@
 .posts__listLink a:hover {
   color: var(--hover);
 }
+
+@media screen and (max-width: 991px) {
+  #posts__list {
+    width: 100%;
+  }
+
+  .posts__listWrapper {
+    margin: 15px 0 40px;
+  }
+}
