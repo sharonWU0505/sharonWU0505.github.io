@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Sharon&#39;s Blog</title>
+    <title>Sharon&#39;s Blog on Behind Walls</title>
     <link>/</link>
-    <description>Recent content on Sharon&#39;s Blog</description>
+    <description>Recent content in Sharon&#39;s Blog on Behind Walls</description>
     <generator>Hugo -- gohugo.io</generator><atom:link href="/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>如何以 Hugo 建立部落格？</title>
@@ -27,6 +27,49 @@
       <description>&lt;p&gt;以下內容大多翻譯自 React 文件：&lt;a href=&#34;https://zh-hant.reactjs.org/docs/typechecking-with-proptypes.html&#34;&gt;Typechecking With PropTypes&lt;/a&gt;&lt;/p&gt;
 &lt;p&gt;在寫 React component 時經常遇到需要確認 &lt;code&gt;props&lt;/code&gt; 是否符合型別和資料結構的情況，確保 component 能如預期運作。除了用 Flow 或 TypeScript 去檢查型別之外，React 本身也提供 &lt;code&gt;propTypes&lt;/code&gt; 屬性用以確認 component 拿到的 &lt;code&gt;props&lt;/code&gt;。在 function 和 class component 上都可以使用。&lt;/p&gt;
 &lt;p&gt;除了上述好處外，個人認為定義 &lt;code&gt;propTypes&lt;/code&gt; 也能讓 component 的 interface 更為清楚，使其他開發者一眼就知道該傳入的 &lt;code&gt;props&lt;/code&gt;，有類似文件的作用。&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>Install Golang and Set Go Workplace</title>
+      <link>/docs/2020/install-and-set-go/</link>
+      <pubDate>Thu, 16 Apr 2020 15:00:00 +0800</pubDate>
+      
+      <guid>/docs/2020/install-and-set-go/</guid>
+      <description>&lt;h3 id=&#34;golang&#34;&gt;Golang&lt;/h3&gt;
+&lt;blockquote&gt;
+&lt;p&gt;&lt;a href=&#34;https://golang.org/&#34;&gt;Go&lt;/a&gt; is an open source programming language that makes it easy to build simple, reliable, and efficient software.&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h3 id=&#34;install-go&#34;&gt;Install Go&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;For MacOS, using &lt;em&gt;Homebrew&lt;/em&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;pre&gt;&lt;code&gt;brew install go
+&lt;/code&gt;&lt;/pre&gt;&lt;h3 id=&#34;set-go-workplace&#34;&gt;Set Go Workplace&lt;/h3&gt;
+&lt;blockquote&gt;
+&lt;p&gt;A workspace is Go’s way to facilitate project management.&lt;/p&gt;
+&lt;/blockquote&gt;</description>
+    </item>
+    
+    <item>
+      <title>Introduction to NVM and NPM</title>
+      <link>/docs/2020/nvm-and-npm/</link>
+      <pubDate>Fri, 07 Feb 2020 11:00:00 +0800</pubDate>
+      
+      <guid>/docs/2020/nvm-and-npm/</guid>
+      <description>&lt;h3 id=&#34;what-is-npm-and-nvm&#34;&gt;What is npm and nvm?&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;npm (Node Package Manager)
+&lt;ul&gt;
+&lt;li&gt;JavaScipt 套件庫管理工具，可以藉由它下載各式各樣的套件&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;nvm (Node Version Manager)
+&lt;ul&gt;
+&lt;li&gt;各套件和專案用的 Node.js 版本不同，而版本間有不相容的問題，導致套件和專案無法順利運行，因此需要版本管理工具&lt;/li&gt;
+&lt;li&gt;從 nvm 下載/更換 Node.js 和 npm 版本&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;</description>
     </item>
     
     <item>

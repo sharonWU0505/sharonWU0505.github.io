@@ -9,15 +9,14 @@
 <link rel="mask-icon" href='/favicons/safari-pinned-tab.svg'  color="#004750">
 <link rel="shortcut icon" href='/favicons/favicon.ico'>
 <meta name="msapplication-config" content='/favicons/browserconfig.xml'>
-<title>如何以 Hugo 建立部落格？ | Behind Walls</title>
+<title>Install Golang and Set Go Workplace | Behind Walls</title>
 <link rel="stylesheet" href="/css/styles.691e1175b9b265f22727d90637a62963a8bc963d776a8fbeed95a74e87f589a5943592899c51a62f56754edc55745c52af817c925bdbb1947cec7af4897c6e73.css" integrity="sha512-aR4RdbmyZfInJ9kGN6YpY6i8lj13ao&#43;&#43;7ZWnTof1iaWUNZKJnFGmL1Z1TtxVdFxSr4F8klvbsZR87Hr0iXxucw=="><link rel="stylesheet" href="/css/custom.css"><link rel="stylesheet" href="/css/index-posts.css"><link rel="stylesheet" href="/css/posts-list.css">
 
 
 
 
-  <meta name="description" content="Hugo 是一個用 Go 寫成的靜態網站生成器（Static Site Generator）。號稱
- The world’s fastest framework for building websites.
- 不管是「網站打包」還是「從零建立網站」的速度都很快。其架構允許使用者以 Markdown 格式撰寫內容，再搭配 layout template 渲染出畫面，對於喜歡用 Markdown 簡潔撰寫文章的人來說很合適！
+  <meta name="description" content="Golang  Go is an open source programming language that makes it easy to build simple, reliable, and efficient software.
+ Install Go  For MacOS, using Homebrew  brew install go Set Go Workplace  A workspace is Go’s way to facilitate project management.
 ">
 
 </head>
@@ -99,7 +98,7 @@
   <section class="section aside_inner">
     <h2 class="section_title"><a  href="/docs/" class="group">Posts</a></h2>
       <section class="" id="docs-posts">
-        <h3 class="section_link active"><a id="docs-如何以-hugo-建立部落格" href="/docs/2021/build-a-blog-with-hugo/">如何以 Hugo 建立部落格？</a></h3><nav id="TableOfContents">
+        <h3 class="section_link"><a id="docs-如何以-hugo-建立部落格" href="/docs/2021/build-a-blog-with-hugo/">如何以 Hugo 建立部落格？</a></h3><nav id="TableOfContents">
   <ul>
     <li>
       <ul>
@@ -123,7 +122,7 @@
     </li>
   </ul>
 </nav>
-        <h3 class="section_link"><a id="docs-install-golang-and-set-go-workplace" href="/docs/2020/install-and-set-go/">Install Golang and Set Go Workplace</a></h3><nav id="TableOfContents">
+        <h3 class="section_link active"><a id="docs-install-golang-and-set-go-workplace" href="/docs/2020/install-and-set-go/">Install Golang and Set Go Workplace</a></h3><nav id="TableOfContents">
   <ul>
     <li>
       <ul>
@@ -162,64 +161,96 @@
 </aside>
 
   <main class="content">
-    <h1>如何以 Hugo 建立部落格？</h1><p><a href="https://gohugo.io/">Hugo</a> 是一個用 Go 寫成的靜態網站生成器（Static Site Generator）。號稱</p>
+    <h1>Install Golang and Set Go Workplace</h1><h3 id="golang">Golang</h3>
 <blockquote>
-<p>The world’s fastest framework for building websites.</p>
+<p><a href="https://golang.org/">Go</a> is an open source programming language that makes it easy to build simple, reliable, and efficient software.</p>
 </blockquote>
-<p>不管是「網站打包」還是「從零建立網站」的速度都很快。其架構允許使用者以 Markdown 格式撰寫內容，再搭配 layout template 渲染出畫面，對於喜歡用 Markdown 簡潔撰寫文章的人來說很合適！</p>
-<p>與類似的框架 <a href="https://wordpress.com/zh-tw/">Wordpress</a> 和 <a href="https://www.gatsbyjs.com/">Gatsby</a> 一樣，Hugo 也有豐富多元且開源的<a href="https://themes.gohugo.io/">主題 (theme)</a>，讓人方便快速地就建立起自己的網站。</p>
-<p>此網站就是以 Hugo 建立的，並使用 <a href="https://themes.gohugo.io/compose/">Compose Theme</a> 讓我們來看看是怎麼做的吧～</p>
-<h3 id="getting-started">Getting Started</h3>
-<blockquote>
-<p>Reference: <a href="https://gohugo.io/getting-started/quick-start/">Hugo - Quick Start</a>, <a href="https://themes.gohugo.io//theme/compose/docs/compose/install-theme/">Compose - Install Theme</a></p>
-</blockquote>
+<h3 id="install-go">Install Go</h3>
 <ul>
-<li>Step 1 - Install Hugo (for MacOS)</li>
+<li>For MacOS, using <em>Homebrew</em></li>
 </ul>
-<pre><code>brew install hugo
-</code></pre><ul>
-<li>Step 2 - New a Site</li>
+<pre><code>brew install go
+</code></pre><h3 id="set-go-workplace">Set Go Workplace</h3>
+<blockquote>
+<p>A workspace is Go’s way to facilitate project management.</p>
+</blockquote>
+<blockquote>
+<p>A workspace in nutshell, <strong>is a directory on your system where Go looks for source code files, manages dependency packages and build distribution binary files.</strong>
+You can have as many workspaces as you want, as long as you keep GOPATH environment variable pointed to current working workspace directory.</p>
+</blockquote>
+<blockquote>
+<p>Reference: <a href="https://medium.com/rungo/working-in-go-workspace-3b0576e0534a">Getting started with Go</a>)</p>
+</blockquote>
+<h4 id="default-workplace">Default Workplace</h4>
+<pre><code>$HOME/go
+</code></pre><h4 id="customize-your-go-workplace">Customize Your Go Workplace</h4>
+<h5 id="_permanently_"><em>Permanently</em></h5>
+<ul>
+<li>bash
+<ul>
+<li>open file: <code>open ~/.bash_profile</code></li>
+<li>edit file: add <code>export GOPATH=$HOME/&lt;customized-path&gt;/go</code> to the file</li>
+<li>reload: <code>source ~/.bash_profile</code></li>
 </ul>
-<pre><code>hugo new site my-blog
-</code></pre><ul>
-<li>Step 3 - Install a theme</li>
-</ul>
-<pre><code>cd my-blog
-git init
-git submodule add https://github.com/onweru/compose/ themes/compose
-cp -a themes/compose/exampleSite/* .
-</code></pre><ul>
-<li>Step 4 - Run Hugo Server</li>
-</ul>
-<pre><code>hugo server
-</code></pre><ul>
-<li>
-<p>Step 5 - Open <code>http://localhost:1313/</code> in browser and then you'll see a site with the Compose theme</p>
 </li>
-<li>
-<p>Step 6 - Add your content and customize the styles!</p>
+<li>zsh
+<ul>
+<li>open file: <code>open ~/.zshrc</code></li>
+<li>edit file: add <code>export GOPATH=$HOME/&lt;customized-path&gt;/go</code> to the file</li>
+<li>reload: <code>source ~/.zshrc</code></li>
+</ul>
+</li>
+<li>others
+<ul>
+<li>see <a href="https://github.com/golang/go/wiki/SettingGOPATH">SettingGOPATH</a></li>
+</ul>
 </li>
 </ul>
-<h3 id="directory-structure">Directory Structure</h3>
-<p>Hugo 有制式的檔案架構，若依照該架構放置內容，便能享有 Hugo 預設的功能，諸如：列表和單篇結構、多國語言、template 組合等等。以下介紹常見 Hugo 架構中各檔案夾的意義</p>
-<pre><code>my-blog
-├── archetypes
-├── assets         // scss and js to be processed by Hugo Pipes
-├── content        // 網站主要內容都維護在此
-├── layouts        // 網站頁面樣式，因為我們有使用主題，如果需要客製化覆蓋主題的樣式，可在此新增檔案
-├── static         // 放置網站圖片、CSS、JS 檔案
-├── theme          // 主題
-└── config.toml    // 設定檔
-</code></pre><h3 id="host-the-site">Host the Site</h3>
-<p>TBD</p>
-    <div class="pager pager_lean">
+<h5 id="_temporarily_"><em>Temporarily</em></h5>
+<ul>
+<li>For MacOS
+<ul>
+<li>see <a href="https://medium.com/@himanshuagarwal1395/setting-up-environment-variables-in-macos-sierra-f5978369b255">Setting up Environment Variables in MacOS Sierra</a></li>
+</ul>
+</li>
+</ul>
+<h3 id="sub-directories-under-a-go-workplace">Sub Directories under a Go Workplace</h3>
+<h4 id="src">src</h4>
+<ul>
+<li>Containing packages (also packages installed by <code>go get</code> command)</li>
+<li>Whenever working with a new Go project, a new directory for the project should be created under <code>$GOPATH/src</code>.</li>
+</ul>
+<h4 id="pkg">pkg</h4>
+<ul>
+<li>Containing Go package objects, which are compiled version of original package source code</li>
+<li>When a Go program hits <code>import</code> statement, Go looks for the followings in order.
+<ul>
+<li>pre-compiled package object</li>
+<li>corresponded packages in <code>$GOPATH/src</code></li>
+<li>corresponded packages in <code>$GOROOT/src</code></li>
+</ul>
+</li>
+</ul>
+<h4 id="bin">bin</h4>
+<ul>
+<li>Containing binary executable files for executing Go programs, which are created by <code>go install</code> commands</li>
+<li><code>$GOBIN</code> is an environment variable that Go uses to put binary files. By default, <code>$GOBIN</code> is <code>$GOPATH/bin</code> but you can change it, too.</li>
+</ul>
+    <div class="pager">
+  
+  <div class="pager_item prev">
+    
+    <a href="/docs/2020/react-props-types/" class="pager_link button" title="Validating React Component Props with props-types">
+      <span class="pager_label">Validating React Component Props with props-types</span>
+    </a>
+  </div>
   
 
   
   <div class="pager_item next">
     
-    <a href="/docs/2020/react-props-types/" class="pager_link button" title="Validating React Component Props with props-types">
-      <span class="pager_label">Validating React Component Props with props-types</span>
+    <a href="/docs/2020/nvm-and-npm/" class="pager_link button" title="Introduction to NVM and NPM">
+      <span class="pager_label">Introduction to NVM and NPM</span>
     </a>
   </div>
   

@@ -79,6 +79,14 @@ blockquote p {
   width: 100%;
 }
 
+.main a:not(.button) {
+ color: var(--theme);
+}
+
+.main a:not(.button):hover {
+  color: var(--hover);
+ }
+
 @media screen and (max-width: 991px) {
   /* Fix sidebar and content styles */
   .nav {
