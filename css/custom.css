@@ -70,7 +70,9 @@ blockquote p {
 }
 
 .highlight pre {
+  width: 100%;
   padding: 1rem 0;
+  overflow: scroll;
 }
 
 /* Adjust content grid */
