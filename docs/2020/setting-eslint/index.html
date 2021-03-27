@@ -9,18 +9,20 @@
 <link rel="mask-icon" href='/favicons/safari-pinned-tab.svg'  color="#004750">
 <link rel="shortcut icon" href='/favicons/favicon.ico'>
 <meta name="msapplication-config" content='/favicons/browserconfig.xml'>
-<title>自動化部署 Hugo 部落格到 GitHub Pages | Draw Closer</title>
-<meta name="keywords" content="Hugo,Blog,Github,Github Pages,Github Actions" />
-<meta name="description" content="接續以 Hugo 建立部落格，Hugo 在其文件中提到了多種 Hosting and Deployment 方式。若你選擇將 source code 放在 GitHub 上，那麼你可以直接考慮將部落格放在 GitHub Pages 上，並使用 GitHub Actions 自動化所有部署和更新的流程。" />
+<title>Setting ESLint to Enhance Frontend Development | Draw Closer</title>
+<meta name="keywords" content="eslint,prettier" />
+<meta name="description" content="Linting tools like ESLint allow developers to discover problems with their JavaScript code without executing it.
+讓我們來談談如何以 ESLint 改進前端開發流程，且如何挑選 ESLint。" />
 
 
-<meta property="og:url" content="/docs/2021/deploy-hugo-blog-to-github/" />
+<meta property="og:url" content="/docs/2020/setting-eslint/" />
 <meta property="og:type" content="website" />
 <meta property="og:site_name" content="Draw Closer" />
-<meta property="og:title" content="自動化部署 Hugo 部落格到 GitHub Pages | Draw Closer" />
+<meta property="og:title" content="Setting ESLint to Enhance Frontend Development | Draw Closer" />
 <meta
   property="og:description"
-  content="接續以 Hugo 建立部落格，Hugo 在其文件中提到了多種 Hosting and Deployment 方式。若你選擇將 source code 放在 GitHub 上，那麼你可以直接考慮將部落格放在 GitHub Pages 上，並使用 GitHub Actions 自動化所有部署和更新的流程。"
+  content="Linting tools like ESLint allow developers to discover problems with their JavaScript code without executing it.
+讓我們來談談如何以 ESLint 改進前端開發流程，且如何挑選 ESLint。"
 />
 <meta name="twitter:card" content="summary_large_image" />
 <meta property="og:image:height" content="630" />
@@ -32,7 +34,8 @@
 
 
 
-  <meta name="description" content="接續以 Hugo 建立部落格，Hugo 在其文件中提到了多種 Hosting and Deployment 方式。若你選擇將 source code 放在 GitHub 上，那麼你可以直接考慮將部落格放在 GitHub Pages 上，並使用 GitHub Actions 自動化所有部署和更新的流程。
+  <meta name="description" content="Linting tools like ESLint allow developers to discover problems with their JavaScript code without executing it.
+讓我們來談談如何以 ESLint 改進前端開發流程，且如何挑選 ESLint。
 ">
 
 </head>
@@ -108,7 +111,7 @@
     <li><a href="#進階方案">進階方案</a></li>
   </ul>
 </nav>
-        <h3 class="section_link active"><a id="docs-自動化部署-hugo-部落格到-github-pages" href="/docs/2021/deploy-hugo-blog-to-github/">自動化部署 Hugo 部落格到 GitHub Pages</a></h3><nav id="TableOfContents">
+        <h3 class="section_link"><a id="docs-自動化部署-hugo-部落格到-github-pages" href="/docs/2021/deploy-hugo-blog-to-github/">自動化部署 Hugo 部落格到 GitHub Pages</a></h3><nav id="TableOfContents">
   <ul>
     <li><a href="#step-1-create-a-project-on-github-for-the-blog">Step 1: Create a Project on GitHub for the Blog</a></li>
     <li><a href="#step-2-建立-github-pages">Step 2: 建立 GitHub Pages</a></li>
@@ -166,7 +169,7 @@
     <li><a href="#references">References</a></li>
   </ul>
 </nav>
-        <h3 class="section_link"><a id="docs-setting-eslint-to-enhance-frontend-development" href="/docs/2020/setting-eslint/">Setting ESLint to Enhance Frontend Development</a></h3><nav id="TableOfContents">
+        <h3 class="section_link active"><a id="docs-setting-eslint-to-enhance-frontend-development" href="/docs/2020/setting-eslint/">Setting ESLint to Enhance Frontend Development</a></h3><nav id="TableOfContents">
   <ul>
     <li><a href="#select-guides">Select Guides</a>
       <ul>
@@ -271,87 +274,195 @@
 </aside>
 
   <main class="content">
-    <h1>自動化部署 Hugo 部落格到 GitHub Pages</h1>
+    <h1>Setting ESLint to Enhance Frontend Development</h1>
     <div class="post__tags">
       
-       <span class="post__tag">Hugo</span>
+       <span class="post__tag">ESLint</span>
       
-       <span class="post__tag">GitHub Actions</span>
+       <span class="post__tag">Workflow</span>
       
-    </div><p>接續<a href="../build-a-blog-with-hugo">以 Hugo 建立部落格</a>，Hugo 在其文件中提到了多種 <a href="https://gohugo.io/hosting-and-deployment/">Hosting and Deployment</a> 方式。若你選擇將 source code 放在 GitHub 上，那麼你可以直接考慮將部落格放在 GitHub Pages 上，並使用 GitHub Actions 自動化所有部署和更新的流程。</p>
-<h2 id="step-1-create-a-project-on-github-for-the-blog">Step 1: Create a Project on GitHub for the Blog</h2>
-<p>在 GitHub 上建立部落格 repository，並將 source code 都推上去。</p>
-<p>不該推的東西請加到 <code>.gitignore</code> 中</p>
+    </div><p>Linting tools like <a href="https://eslint.org/">ESLint</a> allow developers to discover problems with their JavaScript code without executing it.</p>
+<p>讓我們來談談如何以 ESLint 改進前端開發流程，且如何挑選 ESLint。</p>
+<p>ESLint can</p>
 <ul>
-<li><code>resources</code></li>
-<li><code>.DS_Store</code></li>
+<li>To find code problems</li>
+<li>To find patterns that doesn’t adhere to style guides</li>
+<li>Integrate with editors and CI pipeline to auto-check</li>
 </ul>
-<h2 id="step-2-建立-github-pages">Step 2: 建立 GitHub Pages</h2>
-<p>如果你想建立 GitHub Pages，請按照<a href="https://pages.github.com/">說明</a>在帳號下建立一個名為 <code>your-username.github.io</code> 的 repository。</p>
-<h2 id="step-3-部署準備">Step 3: 部署準備</h2>
-<h4 id="create-github-token">Create GitHub token</h4>
-<p>在 <a href="https://github.com/settings/tokens">GitHub Tokens Page</a> 建立 <code>personal access token</code>，權限選擇 <code>repo</code> 和 <code>workflow</code>。建立完成後，請複製 token。</p>
-<h4 id="add-access-token-as-secrets">Add Access Token as Secrets</h4>
-<p>在部落格 repo 的 <code>Settings &gt; Secrets</code> 頁面上，建立一 <code>Repository secrets</code>。</p>
+<p>More ESlint can do</p>
 <ul>
-<li><code>Name</code>: 可取你想要的</li>
-<li><code>Value</code>: 貼上剛剛複製的 token</li>
+<li>Customize linting rules</li>
+<li>Fix many problems automatically</li>
 </ul>
-<h2 id="step-4-create-a-github-action">Step 4: Create A GitHub Action</h2>
+<p>What is the difference between linters and prettier?</p>
 <ul>
-<li>在部落格 repo 建立 <code>.github/workflows</code> 資料夾</li>
-<li>資料夾下新增 <code>main.yml</code>，貼上以下 action 設置</li>
+<li>See <a href="../setting-prettier">Setting Prettier to Format Codes</a></li>
 </ul>
-<pre><code>name: CI
-on: push
-jobs:
-  deploy:
-    runs-on: ubuntu-18.04
-    steps:
-      - name: Git checkout
-        uses: actions/checkout@v2
-
-      - name: Update theme
-        # (Optional) If you have the theme added as submodule, you can pull it and use the most updated version
-        run: git submodule update --init --recursive
-
-      - name: Setup hugo
-        uses: peaceiris/actions-hugo@v2
-        # or change to a version you prefer
-        with:
-          hugo-version: &quot;0.80.0&quot;
-
-      - name: Build
-        # remove --minify tag if you do not need it
-        # docs: https://gohugo.io/hugo-pipes/minification/
-        run: hugo --minify
-
-      # replace TOKEN and username to your own settings
-      - name: Deploy
-        uses: peaceiris/actions-gh-pages@v3
-        with:
-          personal_token: ${{ secrets.TOKEN }}
-          external_repository: &lt;username&gt;/&lt;username&gt;.github.io
-          publish_dir: ./public
-          # keep_files: true
-          user_name: &lt;username&gt;
-          user_email: &lt;username@email.com&gt;
-          publish_branch: main
-          # cname: example.com
-</code></pre><h2 id="step-5-push-to-github-remote">Step 5: Push to GitHub Remote</h2>
-<p>push 到 remote 後，你將會在 repo 的 <code>Actions</code> 頁面看到 action 的進度。等待 action 成功後，就可以在 <code>https://&lt;username&gt;.github.io/</code> 看到部落格囉！</p>
+<h2 id="select-guides">Select Guides</h2>
+<h4 id="must-have">Must have</h4>
+<ul>
+<li><a href="https://eslint.org/docs/rules/"><code>eslint:recommended</code></a></li>
+<li><a href="https://github.com/yannickcr/eslint-plugin-react"><code>plugin:react/recommended</code></a></li>
+</ul>
+<h4 id="more-rules-selected">More rules selected</h4>
+<ul>
+<li>Best practices
+<ul>
+<li>[error] default-case</li>
+<li>[error] default-case-last (for version &gt;= 7.0)</li>
+<li>[error] default-param-last (conflicts with Redux reducer)</li>
+<li>[warn] eqeqeq</li>
+<li>[warn] no-empty-function</li>
+<li>[warn] no-extra-bind</li>
+</ul>
+</li>
+<li>Stylistic issues
+<ul>
+<li>[warn] max-depth: 4</li>
+<li>[warn] max-len: 100</li>
+<li>[warn] no-multiple-empty-lines: max 2 lines</li>
+<li>[warn] no-trailing-spaces: ignore comments</li>
+</ul>
+</li>
+<li>React
+<ul>
+<li>[error] react/no-access-state-in-setstate</li>
+</ul>
+</li>
+<li>React Hook
+<ul>
+<li>[error] react-hooks/rules-of-hooks</li>
+<li>[warn] react-hooks/exhaustive-deps</li>
+</ul>
+</li>
+</ul>
 <hr>
-<h2 id="reference">Reference</h2>
+<h2 id="integrate-with-react-projects">Integrate with React Projects</h2>
+<p>Integrating ESLint with React project helps us to find problems and stick to coding guidelines.</p>
+<h4 id="installation">Installation</h4>
 <ul>
-<li><a href="https://docs.github.com/en/actions">GitHub Actions</a></li>
-<li><a href="https://ruddra.com/hugo-deploy-static-page-using-github-actions/">Hugo: Deploy Static Site using GitHub Actions</a></li>
+<li>If you used <a href="https://github.com/facebook/create-react-app">create-react-app</a> to start a project, ESLint is already provided. It's highly recommended to <a href="https://create-react-app.dev/docs/setting-up-your-editor/#extending-or-replacing-the-default-eslint-config">extend the default configuration</a>.
+<ul>
+<li>Install <code>eslint-plugin-react</code> and <code>eslint-plugin-react-hooks</code></li>
+<li>Add <code>.eslintrc</code> and customize <a href="https://gitlab.rayark.com/backend/phoenix/-/blob/master/admin-frontend/.eslintrc">settings</a></li>
+</ul>
+</li>
+</ul>
+<h4 id="customize-eslint-configuration-for-project-bootstrapped-by-create-react-app">Customize ESLint Configuration for Project Bootstrapped by Create-React-App</h4>
+<ul>
+<li>Step 1: extend ESlint
+<ul>
+<li>run <code>touch .env</code> at project root</li>
+<li>add <code>EXTEND_ESLINT=true</code> to .env</li>
+</ul>
+</li>
+<li>Step 2: install React related ESlint config
+<ul>
+<li>run <code>npm install eslint-plugin-react --save-dev</code></li>
+<li>run <code>npm install eslint-plugin-react-hooks --save-dev</code></li>
+</ul>
+</li>
+<li>Step 3: set <code>.eslintrc</code>
+<ul>
+<li>run <code>touch .eslintrc</code> at project root</li>
+<li>remove <code>&quot;eslintConfig&quot;</code> settings in <code>package.json</code></li>
+<li>add the following to the file</li>
+</ul>
+</li>
+</ul>
+<pre><code>{
+  &quot;env&quot;: {
+    &quot;browser&quot;: true,
+    &quot;commonjs&quot;: true,
+    &quot;es2020&quot;: true,
+    &quot;node&quot;: true
+  },
+  &quot;extends&quot;: [
+    // &quot;react-app&quot;,  // will cause cannot find eslint error
+    &quot;eslint:recommended&quot;,
+    &quot;plugin:react/recommended&quot;
+  ],
+  &quot;parserOptions&quot;: {
+    &quot;ecmaFeatures&quot;: {
+      &quot;jsx&quot;: true
+    },
+    &quot;ecmaVersion&quot;: 11,
+    &quot;sourceType&quot;: &quot;module&quot;
+  },
+  &quot;plugins&quot;: [
+    &quot;react&quot;,
+    &quot;react-hooks&quot;
+  ],
+  &quot;rules&quot;: {
+    &quot;default-case&quot;: &quot;error&quot;,
+    &quot;eqeqeq&quot;: &quot;warn&quot;,
+    &quot;no-unused-vars&quot;: [&quot;warn&quot; , {
+      &quot;vars&quot;: &quot;all&quot;,
+      &quot;args&quot;: &quot;after-used&quot;,
+      &quot;argsIgnorePattern&quot;: &quot;^_&quot;
+    }],
+    &quot;no-empty-function&quot;: &quot;warn&quot;,
+    &quot;no-extra-bind&quot;: &quot;warn&quot;,
+    &quot;max-depth&quot;: &quot;warn&quot;,
+    &quot;max-len&quot;: [
+      &quot;warn&quot;,
+      {
+        &quot;code&quot;: 100
+      }
+    ],
+    &quot;no-multiple-empty-lines&quot;: &quot;warn&quot;,
+    &quot;no-trailing-spaces&quot;: [
+      &quot;warn&quot;,
+      {
+        &quot;ignoreComments&quot;: true,
+        &quot;skipBlankLines&quot;: true
+      }
+    ],
+    &quot;react/no-access-state-in-setstate&quot;: &quot;error&quot;,
+    &quot;react-hooks/rules-of-hooks&quot;: &quot;error&quot;,
+    &quot;react-hooks/exhaustive-deps&quot;: &quot;warn&quot;
+  }
+}
+</code></pre><h4 id="備註">備註</h4>
+<ul>
+<li>We hide <code>react-app</code> in extends and set <code>eslint:recommended</code> by ourselves.</li>
+<li>If the settings do not work
+<ul>
+<li>delete <code>node_modules</code></li>
+<li>run <code>npm install</code> again</li>
+</ul>
+</li>
+<li>若沒有使用 React Hook，不必加上 Hook 相關的 lint</li>
+</ul>
+<hr>
+<h2 id="integrate-with-vscode">Integrate with VSCode</h2>
+<ul>
+<li>Install <a href="https://marketplace.visualstudio.com/items?itemName=dbaeumer.vscode-eslint">extension ESLint</a></li>
+<li>Add following lines to VSCode <code>settings.json</code></li>
+</ul>
+<pre><code>&quot;eslint.lintTask.enable&quot;: true,
+&quot;eslint.workingDirectories&quot;: &quot;./&quot;,  // based on your project structure
+</code></pre><hr>
+<h2 id="references">References</h2>
+<ul>
+<li>Popular style guides and ESlint config
+<ul>
+<li><a href="https://github.com/airbnb/javascript">Airbnb JavaScript Style Guide</a>（較嚴謹）
+<ul>
+<li><a href="https://github.com/airbnb/javascript/tree/master/packages/eslint-config-airbnb">eslint-config-airbnb</a></li>
+</ul>
+</li>
+<li><a href="https://google.github.io/styleguide/jsguide.html">Google JavaScript Style Guide</a></li>
+<li><a href="https://standardjs.com/readme-zhtw.html">Javascript Standard Style</a>（較寬鬆）</li>
+</ul>
+</li>
 </ul>
     <div class="pager">
   
   <div class="pager_item prev">
     
-    <a href="/docs/2021/ngrok-intro/" class="pager_link button" title="Introduction to Ngrok">
-      <span class="pager_label">Introduction to Ngrok</span>
+    <a href="/docs/2020/setting-prettier/" class="pager_link button" title="Setting Prettier to Format Codes">
+      <span class="pager_label">Setting Prettier to Format Codes</span>
     </a>
   </div>
   
@@ -359,8 +470,8 @@ jobs:
   
   <div class="pager_item next">
     
-    <a href="/docs/2021/build-a-blog-with-hugo/" class="pager_link button" title="以 Hugo 建立部落格">
-      <span class="pager_label">以 Hugo 建立部落格</span>
+    <a href="/docs/2020/react-props-types/" class="pager_link button" title="Validating React Component Props with props-types">
+      <span class="pager_label">Validating React Component Props with props-types</span>
     </a>
   </div>
   

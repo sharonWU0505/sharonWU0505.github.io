@@ -16,9 +16,9 @@ In this post, we&#39;ll talk about how to install Golang and set its workplace. 
 
 
 <meta property="og:url" content="/docs/2020/install-and-set-go/" />
-<meta property="og:type" content="blog" />
+<meta property="og:type" content="website" />
 <meta property="og:site_name" content="Draw Closer" />
-<meta property="og:title" content="Install Golang and Set Go Workplace| Draw Closer" />
+<meta property="og:title" content="Install Golang and Set Go Workplace | Draw Closer" />
 <meta
   property="og:description"
   content="Go or called GoLang is an open source programming language that makes it easy to build simple, reliable, and efficient software.
@@ -105,6 +105,12 @@ In this post, we&#39;ll talk about how to install Golang and set its workplace. 
   <section class="section aside_inner">
     <h2 class="section_title"><a  href="/docs/" class="group">Posts</a></h2>
       <section class="" id="docs-posts">
+        <h3 class="section_link"><a id="docs-introduction-to-ngrok" href="/docs/2021/ngrok-intro/">Introduction to Ngrok</a></h3><nav id="TableOfContents">
+  <ul>
+    <li><a href="#使用">使用</a></li>
+    <li><a href="#進階方案">進階方案</a></li>
+  </ul>
+</nav>
         <h3 class="section_link"><a id="docs-自動化部署-hugo-部落格到-github-pages" href="/docs/2021/deploy-hugo-blog-to-github/">自動化部署 Hugo 部落格到 GitHub Pages</a></h3><nav id="TableOfContents">
   <ul>
     <li><a href="#step-1-create-a-project-on-github-for-the-blog">Step 1: Create a Project on GitHub for the Blog</a></li>
@@ -120,7 +126,7 @@ In this post, we&#39;ll talk about how to install Golang and set its workplace. 
       </ul>
     </li>
     <li><a href="#step-4-create-a-github-action">Step 4: Create A GitHub Action</a></li>
-    <li><a href="#step-5-push-to-github">Step 5: Push to GitHub</a></li>
+    <li><a href="#step-5-push-to-github-remote">Step 5: Push to GitHub Remote</a></li>
     <li><a href="#reference">Reference</a></li>
   </ul>
 </nav>
@@ -133,6 +139,61 @@ In this post, we&#39;ll talk about how to install Golang and set its workplace. 
         <li><a href="#deploy">Deploy</a></li>
       </ul>
     </li>
+  </ul>
+</nav>
+        <h3 class="section_link"><a id="docs-what-is-webview" href="/docs/2021/what-is-webview/">What is WebView?</a></h3><nav id="TableOfContents">
+  <ul>
+    <li><a href="#concepts">Concepts</a></li>
+    <li><a href="#常見的-webview-應用">常見的 WebView 應用</a></li>
+    <li><a href="#why-use-webview">Why use WebView?</a></li>
+    <li><a href="#possible-problems">Possible problems</a></li>
+    <li><a href="#references">References</a></li>
+  </ul>
+</nav>
+        <h3 class="section_link"><a id="docs-setting-prettier-to-format-codes" href="/docs/2020/setting-prettier/">Setting Prettier to Format Codes</a></h3><nav id="TableOfContents">
+  <ul>
+    <li><a href="#prettier-vs-linters">Prettier vs. Linters</a></li>
+    <li><a href="#usage">Usage</a>
+      <ul>
+        <li><a href="#global-settings">Global Settings</a></li>
+        <li><a href="#integrate-with-vscode">Integrate with VSCode</a>
+          <ul>
+            <li><a href="#for-prettier">For Prettier</a></li>
+            <li><a href="#other-settings">Other Settings</a></li>
+          </ul>
+        </li>
+        <li><a href="#local-settings-by-projects">Local Settings by Projects</a></li>
+      </ul>
+    </li>
+    <li><a href="#configuration">Configuration</a></li>
+    <li><a href="#references">References</a></li>
+  </ul>
+</nav>
+        <h3 class="section_link"><a id="docs-setting-eslint-to-enhance-frontend-development" href="/docs/2020/setting-eslint/">Setting ESLint to Enhance Frontend Development</a></h3><nav id="TableOfContents">
+  <ul>
+    <li><a href="#select-guides">Select Guides</a>
+      <ul>
+        <li>
+          <ul>
+            <li><a href="#must-have">Must have</a></li>
+            <li><a href="#more-rules-selected">More rules selected</a></li>
+          </ul>
+        </li>
+      </ul>
+    </li>
+    <li><a href="#integrate-with-react-projects">Integrate with React Projects</a>
+      <ul>
+        <li>
+          <ul>
+            <li><a href="#installation">Installation</a></li>
+            <li><a href="#customize-eslint-configuration-for-project-bootstrapped-by-create-react-app">Customize ESLint Configuration for Project Bootstrapped by Create-React-App</a></li>
+            <li><a href="#備註">備註</a></li>
+          </ul>
+        </li>
+      </ul>
+    </li>
+    <li><a href="#integrate-with-vscode">Integrate with VSCode</a></li>
+    <li><a href="#references">References</a></li>
   </ul>
 </nav>
         <h3 class="section_link"><a id="docs-validating-react-component-props-with-props-types" href="/docs/2020/react-props-types/">Validating React Component Props with props-types</a></h3><nav id="TableOfContents">
@@ -167,6 +228,32 @@ In this post, we&#39;ll talk about how to install Golang and set its workplace. 
         <li><a href="#src">src</a></li>
         <li><a href="#pkg">pkg</a></li>
         <li><a href="#bin">bin</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+        <h3 class="section_link"><a id="docs-building-multi-languages-og-tags" href="/docs/2020/multi-lang-og-tags/">Building Multi-Languages OG Tags</a></h3><nav id="TableOfContents">
+  <ul>
+    <li><a href="#the-open-graph-protocol">The Open Graph Protocol</a></li>
+    <li><a href="#basic-metadata">Basic Metadata</a>
+      <ul>
+        <li>
+          <ul>
+            <li><a href="#required-meta-data">Required meta data</a></li>
+            <li><a href="#optional-meta-data">Optional meta data</a></li>
+            <li><a href="#example">Example</a></li>
+          </ul>
+        </li>
+      </ul>
+    </li>
+    <li><a href="#debug-tools">Debug Tools</a></li>
+    <li><a href="#limitations">Limitations</a>
+      <ul>
+        <li>
+          <ul>
+            <li><a href="#solution-to-build-multi-languages-og-tags">Solution to Build Multi-languages OG Tags</a></li>
+          </ul>
+        </li>
       </ul>
     </li>
   </ul>
@@ -279,8 +366,8 @@ You can have as many workspaces as you want, as long as you keep GOPATH environm
   
   <div class="pager_item next">
     
-    <a href="/docs/2020/nvm-and-npm/" class="pager_link button" title="Introduction to NVM and NPM">
-      <span class="pager_label">Introduction to NVM and NPM</span>
+    <a href="/docs/2020/multi-lang-og-tags/" class="pager_link button" title="Building Multi-Languages OG Tags">
+      <span class="pager_label">Building Multi-Languages OG Tags</span>
     </a>
   </div>
   

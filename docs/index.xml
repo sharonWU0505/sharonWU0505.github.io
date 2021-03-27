@@ -6,6 +6,16 @@
     <description>Recent content in Posts on Draw Closer</description>
     <generator>Hugo -- gohugo.io</generator><atom:link href="/docs/index.xml" rel="self" type="application/rss+xml" />
     <item>
+      <title>Introduction to Ngrok</title>
+      <link>/docs/2021/ngrok-intro/</link>
+      <pubDate>Sat, 27 Mar 2021 15:00:00 +0800</pubDate>
+      
+      <guid>/docs/2021/ngrok-intro/</guid>
+      <description>&lt;p&gt;開發時，經常會須要從另一台機器連接在 localhost 的網站，或是希望能有個 public URL 測試某些功能，例如：Facebook Open Graph 設置、Chatbot 連接、金流串接。這時就會想有沒有什麼比先部署到伺服器上再 debug 更方便的作法呢？&lt;/p&gt;
+&lt;p&gt;有的，你可用 &lt;a href=&#34;https://ngrok.com/&#34;&gt;Ngrok&lt;/a&gt;！&lt;/p&gt;</description>
+    </item>
+    
+    <item>
       <title>自動化部署 Hugo 部落格到 GitHub Pages</title>
       <link>/docs/2021/deploy-hugo-blog-to-github/</link>
       <pubDate>Sat, 27 Mar 2021 14:00:00 +0800</pubDate>
@@ -22,6 +32,36 @@
       <guid>/docs/2021/build-a-blog-with-hugo/</guid>
       <description>&lt;p&gt;&lt;a href=&#34;https://gohugo.io/&#34;&gt;Hugo&lt;/a&gt; 是一個用 Go 寫成的靜態網站生成器（Static Site Generator）。其架構允許以 Markdown 格式撰寫內容，再搭配 layout template 渲染出畫面，對於喜歡用 Markdown 簡潔撰寫文章的人來說很合適！&lt;/p&gt;
 &lt;p&gt;就讓我們來看看如何以 Hugo 建立部落格，並在每次更新後自動化部署到 GitHub Pages。&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>What is WebView?</title>
+      <link>/docs/2021/what-is-webview/</link>
+      <pubDate>Sun, 28 Feb 2021 15:00:00 +0800</pubDate>
+      
+      <guid>/docs/2021/what-is-webview/</guid>
+      <description>&lt;p&gt;本篇文章預計介紹什麼是 WebView，以及 Frontend 使用 WebView 時可能會遇到的問題。&lt;/p&gt;
+&lt;p&gt;A WebView is an &lt;strong&gt;embeddable browser&lt;/strong&gt; that a &lt;strong&gt;native application&lt;/strong&gt; can use to &lt;strong&gt;display web content&lt;/strong&gt;.&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>Setting Prettier to Format Codes</title>
+      <link>/docs/2020/setting-prettier/</link>
+      <pubDate>Sun, 01 Nov 2020 11:00:00 +0800</pubDate>
+      
+      <guid>/docs/2020/setting-prettier/</guid>
+      <description>&lt;p&gt;&lt;a href=&#34;https://prettier.io/&#34;&gt;Prettier&lt;/a&gt; is an opinionated &lt;strong&gt;code formatter&lt;/strong&gt; supporting several languages. The biggest reason for adopting Prettier is to stop all the on-going debates over styles. Therefore, applying Prettier to frontend development flow can save much time on formatting codes and align coding styles.&lt;/p&gt;
+&lt;p&gt;In my opinion, ESLint and Prettier are must tools for every frontend projects (not only personal, but also group ones).&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>Setting ESLint to Enhance Frontend Development</title>
+      <link>/docs/2020/setting-eslint/</link>
+      <pubDate>Thu, 29 Oct 2020 11:00:00 +0800</pubDate>
+      
+      <guid>/docs/2020/setting-eslint/</guid>
+      <description>&lt;p&gt;Linting tools like &lt;a href=&#34;https://eslint.org/&#34;&gt;ESLint&lt;/a&gt; allow developers to discover problems with their JavaScript code without executing it.&lt;/p&gt;
+&lt;p&gt;讓我們來談談如何以 ESLint 改進前端開發流程，且如何挑選 ESLint。&lt;/p&gt;</description>
     </item>
     
     <item>
@@ -42,6 +82,15 @@
       <guid>/docs/2020/install-and-set-go/</guid>
       <description>&lt;p&gt;&lt;strong&gt;&lt;a href=&#34;https://golang.org/&#34;&gt;Go&lt;/a&gt;&lt;/strong&gt; or called &lt;strong&gt;GoLang&lt;/strong&gt; is an open source programming language that makes it easy to build simple, reliable, and efficient software.&lt;/p&gt;
 &lt;p&gt;In this post, we&#39;ll talk about how to install Golang and set its workplace. Also, sub directories under the workplace are introduced.&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>Building Multi-Languages OG Tags</title>
+      <link>/docs/2020/multi-lang-og-tags/</link>
+      <pubDate>Wed, 08 Apr 2020 19:00:00 +0800</pubDate>
+      
+      <guid>/docs/2020/multi-lang-og-tags/</guid>
+      <description>&lt;p&gt;之前遇到 &lt;strong&gt;網頁各語言有各自 open graph 設定&lt;/strong&gt; 的需求，所以決定寫一篇文章介紹什麼是 open graph，以及紀錄 Single Page Application (SPA) 如何實現多國語言之 og tag 設置。&lt;/p&gt;</description>
     </item>
     
     <item>

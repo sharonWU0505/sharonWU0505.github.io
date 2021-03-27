@@ -31,12 +31,10 @@ h1 {
 
 h2 {
   font-size: 155%;
-  margin-top: 25px;
 }
 
 h3 {
   font-size: 130%;
-  margin-top: 20px;
 }
 
 h4 {
@@ -47,9 +45,21 @@ h5 {
   font-size: 100%;
 }
 
+h2, h3, h4, h5 {
+  margin: 20px 0 10px;
+}
+
+p > img {
+  max-width: 80%;
+}
+
 blockquote p {
   padding: 0;
   font-size: 1rem !important;
+}
+
+.highlight_wrap {
+  margin: 1rem auto 1.5rem;
 }
 
 .highlight pre {
@@ -71,7 +81,7 @@ blockquote p {
 }
 
 #docs-posts > h3 {
-  margin-top: 20px;
+  margin: 15px 0 0;
 }
 
 /* Adjust post next/prev button */
@@ -104,10 +114,6 @@ blockquote p {
  }
 
 @media screen and (max-width: 991px) {
-  body {
-    font-size: 16px;
-  }
-
   .wrap {
     max-width: 100%;
   }
@@ -146,7 +152,7 @@ blockquote p {
   }
 
   .main > .grid-auto {
-    grid-template-columns: unset;
+    grid-template-columns: none;
   }
 
   /* Adjust grid and aside */
@@ -156,5 +162,9 @@ blockquote p {
 
   .main > .grid-auto > .content {
     margin-top: -1rem;
+  }
+
+  p > img {
+    max-width: 100%;
   }
 }
