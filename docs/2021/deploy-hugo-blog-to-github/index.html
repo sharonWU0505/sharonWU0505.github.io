@@ -9,44 +9,18 @@
 <link rel="mask-icon" href='/favicons/safari-pinned-tab.svg'  color="#004750">
 <link rel="shortcut icon" href='/favicons/favicon.ico'>
 <meta name="msapplication-config" content='/favicons/browserconfig.xml'>
-<title>Introduction to NVM and NPM | Draw Closer</title>
-<meta name="keywords" content="nvm,npm,node.js" />
-<meta name="description" content="What is npm and nvm?
-
-npm (Node Package Manager)
-
-JavaScript 套件庫管理工具，可以藉由它下載各式各樣的套件
+<title>自動化部署 Hugo 部落格到 GitHub Pages | Draw Closer</title>
+<meta name="keywords" content="Hugo,Blog,Github,Github Pages,Github Actions" />
+<meta name="description" content="接續以 Hugo 建立部落格，Hugo 在其文件中提到了多種 Hosting and Deployment 方式。若你選擇將 source code 放在 GitHub 上，那麼你可以直接考慮將部落格放在 GitHub Pages 上，並使用 GitHub Actions 自動化所有部署和更新的流程。" />
 
 
-nvm (Node Version Manager)
-
-各套件和專案用的 Node.js 版本不同，而版本間有不相容的問題，導致套件和專案無法順利運行，因此需要版本管理工具
-從 nvm 下載/更換 Node.js 和 npm 版本
-
-
-" />
-
-
-<meta property="og:url" content="/docs/2020/nvm-and-npm/" />
+<meta property="og:url" content="/docs/2021/deploy-hugo-blog-to-github/" />
 <meta property="og:type" content="blog" />
 <meta property="og:site_name" content="Draw Closer" />
-<meta property="og:title" content="Introduction to NVM and NPM| Draw Closer" />
+<meta property="og:title" content="自動化部署 Hugo 部落格到 GitHub Pages| Draw Closer" />
 <meta
   property="og:description"
-  content="What is npm and nvm?
-
-npm (Node Package Manager)
-
-JavaScript 套件庫管理工具，可以藉由它下載各式各樣的套件
-
-
-nvm (Node Version Manager)
-
-各套件和專案用的 Node.js 版本不同，而版本間有不相容的問題，導致套件和專案無法順利運行，因此需要版本管理工具
-從 nvm 下載/更換 Node.js 和 npm 版本
-
-
-"
+  content="接續以 Hugo 建立部落格，Hugo 在其文件中提到了多種 Hosting and Deployment 方式。若你選擇將 source code 放在 GitHub 上，那麼你可以直接考慮將部落格放在 GitHub Pages 上，並使用 GitHub Actions 自動化所有部署和更新的流程。"
 />
 <meta name="twitter:card" content="summary_large_image" />
 <meta property="og:image:height" content="630" />
@@ -58,7 +32,8 @@ nvm (Node Version Manager)
 
 
 
-  <meta name="description" content="What is npm and nvm?  npm (Node Package Manager)  JavaScript 套件庫管理工具，可以藉由它下載各式各樣的套件   nvm (Node Version Manager)  各套件和專案用的 Node.js 版本不同，而版本間有不相容的問題，導致套件和專案無法順利運行，因此需要版本管理工具 從 nvm 下載/更換 Node.js 和 npm 版本   ">
+  <meta name="description" content="接續以 Hugo 建立部落格，Hugo 在其文件中提到了多種 Hosting and Deployment 方式。若你選擇將 source code 放在 GitHub 上，那麼你可以直接考慮將部落格放在 GitHub Pages 上，並使用 GitHub Actions 自動化所有部署和更新的流程。
+">
 
 </head>
   
@@ -127,7 +102,7 @@ nvm (Node Version Manager)
   <section class="section aside_inner">
     <h2 class="section_title"><a  href="/docs/" class="group">Posts</a></h2>
       <section class="" id="docs-posts">
-        <h3 class="section_link"><a id="docs-自動化部署-hugo-部落格到-github-pages" href="/docs/2021/deploy-hugo-blog-to-github/">自動化部署 Hugo 部落格到 GitHub Pages</a></h3><nav id="TableOfContents">
+        <h3 class="section_link active"><a id="docs-自動化部署-hugo-部落格到-github-pages" href="/docs/2021/deploy-hugo-blog-to-github/">自動化部署 Hugo 部落格到 GitHub Pages</a></h3><nav id="TableOfContents">
   <ul>
     <li><a href="#step-1-create-a-project-on-github-for-the-blog">Step 1: Create a Project on GitHub for the Blog</a></li>
     <li><a href="#step-2-建立-github-pages">Step 2: 建立 GitHub Pages</a></li>
@@ -193,7 +168,7 @@ nvm (Node Version Manager)
     </li>
   </ul>
 </nav>
-        <h3 class="section_link active"><a id="docs-introduction-to-nvm-and-npm" href="/docs/2020/nvm-and-npm/">Introduction to NVM and NPM</a></h3><nav id="TableOfContents">
+        <h3 class="section_link"><a id="docs-introduction-to-nvm-and-npm" href="/docs/2020/nvm-and-npm/">Introduction to NVM and NPM</a></h3><nav id="TableOfContents">
   <ul>
     <li>
       <ul>
@@ -209,88 +184,89 @@ nvm (Node Version Manager)
 </aside>
 
   <main class="content">
-    <h1>Introduction to NVM and NPM</h1>
+    <h1>自動化部署 Hugo 部落格到 GitHub Pages</h1>
     <div class="post__tags">
       
-       <span class="post__tag">npm</span>
+       <span class="post__tag">Hugo</span>
       
-    </div><h3 id="what-is-npm-and-nvm">What is npm and nvm?</h3>
+       <span class="post__tag">GitHub Actions</span>
+      
+    </div><p>接續<a href="../build-a-blog-with-hugo">以 Hugo 建立部落格</a>，Hugo 在其文件中提到了多種 <a href="https://gohugo.io/hosting-and-deployment/">Hosting and Deployment</a> 方式。若你選擇將 source code 放在 GitHub 上，那麼你可以直接考慮將部落格放在 GitHub Pages 上，並使用 GitHub Actions 自動化所有部署和更新的流程。</p>
+<h2 id="step-1-create-a-project-on-github-for-the-blog">Step 1: Create a Project on GitHub for the Blog</h2>
+<p>在 GitHub 上建立部落格 repository，並將 source code 都推上去。</p>
+<p>不該推的東西請加到 <code>.gitignore</code> 中</p>
 <ul>
-<li><strong>npm (Node Package Manager)</strong>
+<li><code>resources</code></li>
+<li><code>.DS_Store</code></li>
+</ul>
+<h2 id="step-2-建立-github-pages">Step 2: 建立 GitHub Pages</h2>
+<p>如果你想建立 GitHub Pages，請按照<a href="https://pages.github.com/">說明</a>在帳號下建立一個名為 <code>your-username.github.io</code> 的 repository。</p>
+<h2 id="step-3-部署準備">Step 3: 部署準備</h2>
+<h4 id="create-github-token">Create GitHub token</h4>
+<p>在 <a href="https://github.com/settings/tokens">GitHub Tokens Page</a> 建立 <code>personal access token</code>，權限選擇 <code>repo</code> 和 <code>workflow</code>。建立完成後，請複製 token。</p>
+<h4 id="add-access-token-as-secrets">Add Access Token as Secrets</h4>
+<p>在部落格 repo 的 <code>Settings &gt; Secrets</code> 頁面上，建立一 <code>Repository secrets</code>。</p>
 <ul>
-<li>JavaScript 套件庫管理工具，可以藉由它下載各式各樣的套件</li>
+<li><code>Name</code>: 可取你想要的</li>
+<li><code>Value</code>: 貼上剛剛複製的 token</li>
 </ul>
-</li>
-<li><strong>nvm (Node Version Manager)</strong>
+<h2 id="step-4-create-a-github-action">Step 4: Create A GitHub Action</h2>
 <ul>
-<li>各套件和專案用的 Node.js 版本不同，而版本間有不相容的問題，導致套件和專案無法順利運行，因此需要版本管理工具</li>
-<li>從 nvm 下載/更換 Node.js 和 npm 版本</li>
+<li>在部落格 repo 建立 <code>.github/workflows</code> 資料夾</li>
+<li>資料夾下新增 <code>main.yml</code>，貼上以下 action 設置</li>
 </ul>
-</li>
-</ul>
-<h3 id="install-nvm-for-macos">Install nvm (for MacOS)</h3>
+<pre><code>name: CI
+on: push
+jobs:
+  deploy:
+    runs-on: ubuntu-18.04
+    steps:
+      - name: Git checkout
+        uses: actions/checkout@v2
+
+      - name: Update theme
+        # (Optional) If you have the theme added as submodule, you can pull it and use the most updated version
+        run: git submodule update --init --recursive
+
+      - name: Setup hugo
+        uses: peaceiris/actions-hugo@v2
+        # or change to a version you prefer
+        with:
+          hugo-version: &quot;0.80.0&quot;
+
+      - name: Build
+        # remove --minify tag if you do not need it
+        # docs: https://gohugo.io/hugo-pipes/minification/
+        run: hugo --minify
+
+      # replace TOKEN and username to your own settings
+      - name: Deploy
+        uses: peaceiris/actions-gh-pages@v3
+        with:
+          personal_token: ${{ secrets.TOKEN }}
+          external_repository: &lt;username&gt;/&lt;username&gt;.github.io
+          publish_dir: ./public
+          # keep_files: true
+          user_name: &lt;username&gt;
+          user_email: &lt;username@email.com&gt;
+          publish_branch: main
+          # cname: example.com
+</code></pre><h2 id="step-5-push-to-github">Step 5: Push to GitHub</h2>
+<p>push 到 GitHub 後，你將會在 repo 的 <code>Actions</code> 頁面看到 action 的進度。等待 action 成功後，就可以在 <code>https://&lt;username&gt;.github.io/</code> 看到部落格囉！</p>
+<hr>
+<h2 id="reference">Reference</h2>
 <ul>
-<li>Install nvm using <em>Homebrew</em></li>
+<li><a href="https://docs.github.com/en/actions">GitHub Actions</a></li>
+<li><a href="https://ruddra.com/hugo-deploy-static-page-using-github-actions/">Hugo: Deploy Static Site using GitHub Actions</a></li>
 </ul>
-<pre><code>brew install nvm
-</code></pre><ul>
-<li>Add <code>nvm</code> command to shell</li>
-</ul>
-<pre><code>echo &quot;source $(brew --prefix nvm)/nvm.sh&quot; &gt;&gt; .bash_profile
-</code></pre><ul>
-<li>Reload the <em>bashprofile</em> file</li>
-</ul>
-<pre><code>. ~/.bash_profile
-</code></pre><p>or</p>
-<pre><code>source ~/.bash_profile
-</code></pre><ul>
-<li>If using <em>zsh</em>, need to add command to <em>zshrc</em>
-<ul>
-<li><code>open ~/.zshrc</code></li>
-<li>Add <code>source ~/.bash_profile</code> to file, which means load all commands under <em>bashprofile</em></li>
-</ul>
-</li>
-<li>Check if installation is successful</li>
-</ul>
-<pre><code>nvm --version
-&gt; Example output: 0.35.1
-</code></pre><p>or</p>
-<pre><code>command -v nvm
-&gt; output: nvm
-</code></pre><h3 id="install-nodejs-and-npm-by-nvm">Install Node.js and npm by nvm</h3>
-<ul>
-<li>Check available remote version</li>
-</ul>
-<pre><code>nvm ls-remote
-</code></pre><ul>
-<li>Install preferred version</li>
-</ul>
-<pre><code>nvm install &lt;version&gt;
-</code></pre><ul>
-<li>Use specific version</li>
-</ul>
-<pre><code>nvm use &lt;version&gt;
-&gt; Example output: Now using node v10.17.0 (npm v6.11.3)
-</code></pre><ul>
-<li>See available local versions</li>
-</ul>
-<pre><code>nvm list
-</code></pre>
-    <div class="pager">
-  
-  <div class="pager_item prev">
-    
-    <a href="/docs/2020/install-and-set-go/" class="pager_link button" title="Install Golang and Set Go Workplace">
-      <span class="pager_label">Install Golang and Set Go Workplace</span>
-    </a>
-  </div>
+    <div class="pager pager_lean">
   
 
   
   <div class="pager_item next">
     
-    <a href="/search/" class="pager_link button" title="Search">
-      <span class="pager_label">Search</span>
+    <a href="/docs/2021/build-a-blog-with-hugo/" class="pager_link button" title="以 Hugo 建立部落格">
+      <span class="pager_label">以 Hugo 建立部落格</span>
     </a>
   </div>
   

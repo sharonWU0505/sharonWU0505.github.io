@@ -1,0 +1,12 @@
+.post__tags {
+  margin-bottom: 20px;
+}
+
+.post__tag {
+  border-radius: 20px;
+  background-color: var(--inline-color);
+  font-size: 13px;
+  color: var(--accent);
+  padding: 4px 10px 3px;
+  margin: 3px;
+}

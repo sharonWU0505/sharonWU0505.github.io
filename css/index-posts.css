@@ -4,12 +4,7 @@
   border-bottom: 1px solid var(--info);
 }
 
-.post__section *:not(a, .post__title, .post__time) {
-  color: var(--text) !important;
-}
-
 .post__section a:not(.post__title) {
-  color: var(--link) !important;
   position: relative;
 }
 

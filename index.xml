@@ -1,21 +1,27 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Sharon&#39;s Blog on Behind Walls</title>
+    <title>Draw Closer</title>
     <link>/</link>
-    <description>Recent content in Sharon&#39;s Blog on Behind Walls</description>
+    <description>Recent content on Draw Closer</description>
     <generator>Hugo -- gohugo.io</generator><atom:link href="/index.xml" rel="self" type="application/rss+xml" />
     <item>
-      <title>如何以 Hugo 建立部落格？</title>
+      <title>自動化部署 Hugo 部落格到 GitHub Pages</title>
+      <link>/docs/2021/deploy-hugo-blog-to-github/</link>
+      <pubDate>Sat, 27 Mar 2021 14:00:00 +0800</pubDate>
+      
+      <guid>/docs/2021/deploy-hugo-blog-to-github/</guid>
+      <description>&lt;p&gt;接續&lt;a href=&#34;../build-a-blog-with-hugo&#34;&gt;以 Hugo 建立部落格&lt;/a&gt;，Hugo 在其文件中提到了多種 &lt;a href=&#34;https://gohugo.io/hosting-and-deployment/&#34;&gt;Hosting and Deployment&lt;/a&gt; 方式。若你選擇將 source code 放在 GitHub 上，那麼你可以直接考慮將部落格放在 GitHub Pages 上，並使用 GitHub Actions 自動化所有部署和更新的流程。&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>以 Hugo 建立部落格</title>
       <link>/docs/2021/build-a-blog-with-hugo/</link>
       <pubDate>Sat, 20 Mar 2021 18:00:00 +0800</pubDate>
       
       <guid>/docs/2021/build-a-blog-with-hugo/</guid>
-      <description>&lt;p&gt;&lt;a href=&#34;https://gohugo.io/&#34;&gt;Hugo&lt;/a&gt; 是一個用 Go 寫成的靜態網站生成器（Static Site Generator）。號稱&lt;/p&gt;
-&lt;blockquote&gt;
-&lt;p&gt;The world’s fastest framework for building websites.&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;p&gt;不管是「網站打包」還是「從零建立網站」的速度都很快。其架構允許使用者以 Markdown 格式撰寫內容，再搭配 layout template 渲染出畫面，對於喜歡用 Markdown 簡潔撰寫文章的人來說很合適！&lt;/p&gt;</description>
+      <description>&lt;p&gt;&lt;a href=&#34;https://gohugo.io/&#34;&gt;Hugo&lt;/a&gt; 是一個用 Go 寫成的靜態網站生成器（Static Site Generator）。其架構允許以 Markdown 格式撰寫內容，再搭配 layout template 渲染出畫面，對於喜歡用 Markdown 簡潔撰寫文章的人來說很合適！&lt;/p&gt;
+&lt;p&gt;就讓我們來看看如何以 Hugo 建立部落格，並在每次更新後自動化部署到 GitHub Pages。&lt;/p&gt;</description>
     </item>
     
     <item>
@@ -24,9 +30,8 @@
       <pubDate>Mon, 22 Jun 2020 19:00:00 +0800</pubDate>
       
       <guid>/docs/2020/react-props-types/</guid>
-      <description>&lt;p&gt;以下內容大多翻譯自 React 文件：&lt;a href=&#34;https://zh-hant.reactjs.org/docs/typechecking-with-proptypes.html&#34;&gt;Typechecking With PropTypes&lt;/a&gt;&lt;/p&gt;
-&lt;p&gt;在寫 React component 時經常遇到需要確認 &lt;code&gt;props&lt;/code&gt; 是否符合型別和資料結構的情況，確保 component 能如預期運作。除了用 Flow 或 TypeScript 去檢查型別之外，React 本身也提供 &lt;code&gt;propTypes&lt;/code&gt; 屬性用以確認 component 拿到的 &lt;code&gt;props&lt;/code&gt;。在 function 和 class component 上都可以使用。&lt;/p&gt;
-&lt;p&gt;除了上述好處外，個人認為定義 &lt;code&gt;propTypes&lt;/code&gt; 也能讓 component 的 interface 更為清楚，使其他開發者一眼就知道該傳入的 &lt;code&gt;props&lt;/code&gt;，有類似文件的作用。&lt;/p&gt;</description>
+      <description>&lt;p&gt;在寫 React component 時會須要確認 &lt;code&gt;props&lt;/code&gt; 是否符合型別和資料結構，以確保 component 能如預期運作。除了用 &lt;a href=&#34;https://flow.org/&#34;&gt;Flow&lt;/a&gt; 或 &lt;a href=&#34;https://www.typescriptlang.org/&#34;&gt;TypeScript&lt;/a&gt; 去檢查型別之外，React 本身也提供 &lt;code&gt;propTypes&lt;/code&gt; 屬性用以檢查拿到的 &lt;code&gt;props&lt;/code&gt;。在 function 和 class component 上都可以使用。&lt;/p&gt;
+&lt;p&gt;不只上述好處，個人認為定義 &lt;code&gt;propTypes&lt;/code&gt; 也能讓 component 的 interface 更為清楚，使其他開發者一眼就知道該傳入的 &lt;code&gt;props&lt;/code&gt;，有類似文件的作用。&lt;/p&gt;</description>
     </item>
     
     <item>
@@ -35,19 +40,8 @@
       <pubDate>Thu, 16 Apr 2020 15:00:00 +0800</pubDate>
       
       <guid>/docs/2020/install-and-set-go/</guid>
-      <description>&lt;h3 id=&#34;golang&#34;&gt;Golang&lt;/h3&gt;
-&lt;blockquote&gt;
-&lt;p&gt;&lt;a href=&#34;https://golang.org/&#34;&gt;Go&lt;/a&gt; is an open source programming language that makes it easy to build simple, reliable, and efficient software.&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;h3 id=&#34;install-go&#34;&gt;Install Go&lt;/h3&gt;
-&lt;ul&gt;
-&lt;li&gt;For MacOS, using &lt;em&gt;Homebrew&lt;/em&gt;&lt;/li&gt;
-&lt;/ul&gt;
-&lt;pre&gt;&lt;code&gt;brew install go
-&lt;/code&gt;&lt;/pre&gt;&lt;h3 id=&#34;set-go-workplace&#34;&gt;Set Go Workplace&lt;/h3&gt;
-&lt;blockquote&gt;
-&lt;p&gt;A workspace is Go’s way to facilitate project management.&lt;/p&gt;
-&lt;/blockquote&gt;</description>
+      <description>&lt;p&gt;&lt;strong&gt;&lt;a href=&#34;https://golang.org/&#34;&gt;Go&lt;/a&gt;&lt;/strong&gt; or called &lt;strong&gt;GoLang&lt;/strong&gt; is an open source programming language that makes it easy to build simple, reliable, and efficient software.&lt;/p&gt;
+&lt;p&gt;In this post, we&#39;ll talk about how to install Golang and set its workplace. Also, sub directories under the workplace are introduced.&lt;/p&gt;</description>
     </item>
     
     <item>
@@ -58,12 +52,12 @@
       <guid>/docs/2020/nvm-and-npm/</guid>
       <description>&lt;h3 id=&#34;what-is-npm-and-nvm&#34;&gt;What is npm and nvm?&lt;/h3&gt;
 &lt;ul&gt;
-&lt;li&gt;npm (Node Package Manager)
+&lt;li&gt;&lt;strong&gt;npm (Node Package Manager)&lt;/strong&gt;
 &lt;ul&gt;
-&lt;li&gt;JavaScipt 套件庫管理工具，可以藉由它下載各式各樣的套件&lt;/li&gt;
+&lt;li&gt;JavaScript 套件庫管理工具，可以藉由它下載各式各樣的套件&lt;/li&gt;
 &lt;/ul&gt;
 &lt;/li&gt;
-&lt;li&gt;nvm (Node Version Manager)
+&lt;li&gt;&lt;strong&gt;nvm (Node Version Manager)&lt;/strong&gt;
 &lt;ul&gt;
 &lt;li&gt;各套件和專案用的 Node.js 版本不同，而版本間有不相容的問題，導致套件和專案無法順利運行，因此需要版本管理工具&lt;/li&gt;
 &lt;li&gt;從 nvm 下載/更換 Node.js 和 npm 版本&lt;/li&gt;
