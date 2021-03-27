@@ -70,7 +70,10 @@ blockquote p {
 }
 
 .highlight pre {
+  width: 100%;
+  max-width: 100%;
   padding: 1rem 0;
+  overflow-x: auto;
 }
 
 /* Adjust content grid */
@@ -151,6 +154,7 @@ blockquote p {
     padding: 0 1rem;
   }
 
+  .highlight_wrap,
   .highlight {
     display: block;
   }
