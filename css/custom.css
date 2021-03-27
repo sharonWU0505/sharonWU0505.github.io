@@ -152,7 +152,7 @@ blockquote p {
   }
 
   .main > .grid-auto {
-    grid-template-columns: none;
+    display: block;
   }
 
   /* Adjust grid and aside */
