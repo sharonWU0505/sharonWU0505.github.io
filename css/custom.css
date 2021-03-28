@@ -74,6 +74,7 @@ blockquote p {
 .main > .grid-auto > .aside {
   padding: 0;
   margin-top: 0.5rem;
+  top: 0;
 }
 
 .main > .grid-auto > .aside h2 {
@@ -112,6 +113,7 @@ blockquote p {
 @media screen and (max-width: 991px) {
   .wrap {
     max-width: 100%;
+    padding-top: 5rem;
   }
 
   /* Fix sidebar and content styles */
@@ -142,7 +144,6 @@ blockquote p {
 
   /* Adjust content grid */
   .content {
-    margin-top: -3rem;
     width: 100%;
     max-width: 100%;
   }
@@ -154,10 +155,6 @@ blockquote p {
   /* Adjust grid and aside */
   .main > .grid-auto > .aside {
     display: none;
-  }
-
-  .main > .grid-auto > .content {
-    margin-top: -1rem;
   }
 
   p > img {
