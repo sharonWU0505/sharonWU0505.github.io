@@ -148,15 +148,6 @@ blockquote p {
     max-width: 100%;
   }
 
-  .main > .grid-auto {
-    grid-template-columns: none;
-  }
-
-  /* Adjust grid and aside */
-  .main > .grid-auto > .aside {
-    display: none;
-  }
-
   p > img {
     max-width: 100%;
   }
