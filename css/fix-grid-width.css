@@ -1,0 +1,8 @@
+.grid-auto,
+.highlight_wrap,
+.highlight,
+.highlight pre {
+  width: 100%;
+  max-width: 100%;
+  overflow: auto;
+}

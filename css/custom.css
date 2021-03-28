@@ -58,14 +58,6 @@ blockquote p {
   font-size: 1rem !important;
 }
 
-.highlight_wrap,
-.highlight,
-.highlight pre {
-  width: 100%;
-  max-width: 100%;
-  overflow: auto;
-}
-
 .highlight_wrap {
   margin: 1rem auto 1.5rem;
 }
@@ -107,10 +99,6 @@ blockquote p {
   width: 15px;
   height: 12px;
   background-size: unset;
-}
-
-.grid-auto {
-  width: 100%;
 }
 
 .main a:not(.button) {
