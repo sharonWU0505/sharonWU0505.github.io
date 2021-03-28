@@ -7,11 +7,12 @@
   overflow: auto;
 }
 
-.main > .grid-auto {
-  grid-template-columns: none;
-}
-
 @media screen and (max-width: 991px) {
+  .main > .grid-auto {
+    grid-template-columns: none;
+    display: block;
+  }
+
   /* Adjust grid and aside */
   .main > .grid-auto > .aside {
     display: none;
