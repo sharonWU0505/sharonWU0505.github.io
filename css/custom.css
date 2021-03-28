@@ -58,6 +58,14 @@ blockquote p {
   font-size: 1rem !important;
 }
 
+.highlight_wrap,
+.highlight,
+.highlight pre {
+  width: 100%;
+  max-width: 100%;
+  overflow: auto;
+}
+
 .highlight_wrap {
   margin: 1rem auto 1.5rem;
 }
@@ -141,7 +149,7 @@ blockquote p {
   }
 
   .nav-item:not(:last-child, :first-child) {
-    padding: 0 1rem;
+    margin: 0 1rem;
   }
 
   /* Adjust content grid */
