@@ -123,6 +123,7 @@ blockquote p {
 
   .nav_body {
     width: 260px;
+    height: 100%;
   }
 
   html[data-mode="dark"] .nav.show .nav_body {
