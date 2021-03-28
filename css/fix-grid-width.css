@@ -8,9 +8,12 @@
 }
 
 @media screen and (max-width: 991px) {
-  .main > .grid-auto {
-    grid-template-columns: none;
+  .grid-auto,
+  .highlight_wrap,
+  .highlight,
+  .highlight pre {
     display: block;
+    grid-template-columns: none;
   }
 
   /* Adjust grid and aside */
