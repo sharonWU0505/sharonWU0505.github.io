@@ -108,12 +108,34 @@ blockquote p {
 
 .main a:not(.button):hover {
   color: var(--hover);
- }
+}
+
+.nav_brand > span {
+  font-size: 155%;
+  position: relative;
+  font-style: italic;
+}
+
+.nav_brand > span:before {
+  content: "";
+  width: 102%;
+  height: 10px;
+  background-color: var(--theme);
+  position: absolute;
+  bottom: -3px;
+  right: -15px;
+  transform: skew(-15deg);
+  opacity: .7;
+}
 
 @media screen and (max-width: 991px) {
   .wrap {
     max-width: 100%;
     padding-top: 5rem;
+  }
+
+  footer > .wrap {
+    padding-top: 0;
   }
 
   /* Fix sidebar and content styles */
@@ -126,21 +148,26 @@ blockquote p {
     height: 100%;
   }
 
+  .nav-item {
+    display: block;
+    margin: 0 1rem;
+  }
+
+  .nav-item:last-child {
+    margin: 1rem 0 0.5rem;
+  }
+
   html[data-mode="dark"] .nav.show .nav_body {
     background: var(--accent);
   }
 
   .nav_repo {
     justify-content: flex-start;
-    margin: 0.5rem 0 0 5px;
+    margin: 0.5rem 1.5rem 0;
   }
 
   .nav_repo img {
     margin: 0;
-  }
-
-  .nav-item:not(:last-child, :first-child) {
-    margin: 0 1rem;
   }
 
   /* Adjust content grid */
