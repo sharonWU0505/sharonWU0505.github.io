@@ -9,21 +9,19 @@
 <link rel="mask-icon" href='/favicons/safari-pinned-tab.svg'  color="#004750">
 <link rel="shortcut icon" href='/favicons/favicon.ico'>
 <meta name="msapplication-config" content='/favicons/browserconfig.xml'>
-<title>Setting Prettier to Format Codes | Draw Closer - A Blog by Sharon Wu</title>
+<title>Introduction to Cookie | Draw Closer - A Blog by Sharon Wu</title>
 <link rel="canonical" href="https://sharonwu0505.github.io/"/>
-<meta name="keywords" content="eslint,prettier" />
-<meta name="description" content="Prettier is an opinionated code formatter supporting several languages. The biggest reason for adopting Prettier is to stop all the on-going debates over styles. Therefore, applying Prettier to frontend development flow can save much time on formatting codes and align coding styles.
-In my opinion, ESLint and Prettier are must tools for every frontend projects (not only personal, but also group ones)." />
+<meta name="keywords" content="http,https,cookie,browser" />
+<meta name="description" content="認識 cookie 的筆記。" />
 
 
 <meta property="og:url" content="https://sharonwu0505.github.io/" />
 <meta property="og:type" content="website" />
 <meta property="og:site_name" content="Draw Closer" />
-<meta property="og:title" content="Setting Prettier to Format Codes | Draw Closer" />
+<meta property="og:title" content="Introduction to Cookie | Draw Closer" />
 <meta
   property="og:description"
-  content="Prettier is an opinionated code formatter supporting several languages. The biggest reason for adopting Prettier is to stop all the on-going debates over styles. Therefore, applying Prettier to frontend development flow can save much time on formatting codes and align coding styles.
-In my opinion, ESLint and Prettier are must tools for every frontend projects (not only personal, but also group ones)."
+  content="認識 cookie 的筆記。"
 />
 <meta name="twitter:card" content="summary_large_image" />
 <meta property="og:image:height" content="630" />
@@ -35,8 +33,7 @@ In my opinion, ESLint and Prettier are must tools for every frontend projects (n
 
 
 
-  <meta name="description" content="Prettier is an opinionated code formatter supporting several languages. The biggest reason for adopting Prettier is to stop all the on-going debates over styles. Therefore, applying Prettier to frontend development flow can save much time on formatting codes and align coding styles.
-In my opinion, ESLint and Prettier are must tools for every frontend projects (not only personal, but also group ones).
+  <meta name="description" content="認識 cookie 的筆記。
 ">
 
 
@@ -188,7 +185,7 @@ In my opinion, ESLint and Prettier are must tools for every frontend projects (n
     <li><a href="#references">References</a></li>
   </ul>
 </nav>
-        <h3 class="section_link active"><a id="docs-setting-prettier-to-format-codes" href="/docs/2020/setting-prettier/">Setting Prettier to Format Codes</a></h3><nav id="TableOfContents">
+        <h3 class="section_link"><a id="docs-setting-prettier-to-format-codes" href="/docs/2020/setting-prettier/">Setting Prettier to Format Codes</a></h3><nav id="TableOfContents">
   <ul>
     <li><a href="#prettier-vs-linters">Prettier vs. Linters</a></li>
     <li><a href="#usage">Usage</a>
@@ -296,7 +293,7 @@ In my opinion, ESLint and Prettier are must tools for every frontend projects (n
     </li>
   </ul>
 </nav>
-        <h3 class="section_link"><a id="docs-introduction-to-cookie" href="/docs/2020/cookie/">Introduction to Cookie</a></h3><nav id="TableOfContents">
+        <h3 class="section_link active"><a id="docs-introduction-to-cookie" href="/docs/2020/cookie/">Introduction to Cookie</a></h3><nav id="TableOfContents">
   <ul>
     <li><a href="#cookie">Cookie</a>
       <ul>
@@ -329,91 +326,78 @@ In my opinion, ESLint and Prettier are must tools for every frontend projects (n
 </aside>
 
   <main class="content">
-    <h1>Setting Prettier to Format Codes</h1>
+    <h1>Introduction to Cookie</h1>
     <div class="post__tags">
       
-       <span class="post__tag">Prettier</span>
+       <span class="post__tag">HTTP</span>
       
-       <span class="post__tag">Workflow</span>
-      
-    </div><p><a href="https://prettier.io/">Prettier</a> is an opinionated <strong>code formatter</strong> supporting several languages. The biggest reason for adopting Prettier is to stop all the on-going debates over styles. Therefore, applying Prettier to frontend development flow can save much time on formatting codes and align coding styles.</p>
-<p>In my opinion, ESLint and Prettier are must tools for every frontend projects (not only personal, but also group ones).</p>
-<h2 id="prettier-vs-linters">Prettier vs. Linters</h2>
-<p>Linters have two categories of rules:</p>
+    </div><p>認識 cookie 的筆記。</p>
+<h2 id="cookie">Cookie</h2>
+<blockquote>
+<p>An HTTP cookie (web cookie, browser cookie) is a small piece of data that <strong>a server sends to the user's web browser</strong>. The browser may store it and send it back with the next request to the same server.
+It is one of the methods available for <strong>remembering stateful information</strong> for the stateless HTTP protocol.</p>
+</blockquote>
+<h4 id="purposes">Purposes</h4>
 <ul>
-<li>Formatting rules: eg: <code>max-len</code>, <code>no-mixed-spaces-and-tabs</code>, <code>keyword-spacing</code>, <code>comma-style</code>, …</li>
-<li>Code-quality rules: eg: <code>no-unused-vars</code>, <code>no-extra-bind</code>, <code>no-implicit-globals</code>, <code>prefer-promise-reject-errors</code>, …</li>
+<li>Session management: logins, shopping carts, game scores, etc.</li>
+<li>Personalization: User preferences, themes, etc.</li>
+<li>Tracking: recording and analyzing user behavior</li>
 </ul>
-<p>Prettier covers all needs of formatting codes, but it does nothing with checking code qualities.
-In other words, <strong>use Prettier for formatting and linters for catching bugs!</strong></p>
-<h2 id="usage">Usage</h2>
-<h3 id="global-settings">Global Settings</h3>
+<h4 id="limitations-and-alternatives">Limitations and Alternatives</h4>
 <ul>
-<li>Install: <code>npm install -g prettier@2.2.1</code>
+<li>Cookies are sent with every request, so they can worsen performance (especially for mobile data connections).</li>
+<li>Modern APIs for client storage are the <strong>Web storage API (localStorage and sessionStorage)</strong> and <strong>IndexedDB</strong>.</li>
+</ul>
+<hr>
+<h2 id="creating-cookies">Creating Cookies</h2>
 <ul>
-<li>should lock the version, because default rules differ by releases</li>
-<li>check the version: <code>npm list -g prettier</code></li>
+<li>Each cookie is a <code>key=value</code> pair.</li>
+<li>When receiving an HTTP request, a server can send a <code>Set-Cookie</code> header with the response.</li>
 </ul>
-</li>
-<li>Create a <code>.prettierrc</code> file
-<ul>
-<li><code>cd</code> (to root path)</li>
-<li><code>touch .prettierrc</code></li>
-</ul>
-</li>
-<li>Add rules to <code>~/.prettierrc</code>
-<ul>
-<li>open the file: <code>open ~/.prettierrc</code></li>
-<li>add following lines and save it</li>
-</ul>
-</li>
-</ul>
-<pre><code>{
-  &quot;printWidth&quot;: 100,
-  &quot;tabWidth&quot;: 2,
-  &quot;semi&quot;: true,
-  &quot;trailingComma&quot;: &quot;es5&quot;,
-  &quot;jsxBracketSameLine&quot;: true
-}
+<pre><code>HTTP/2.0 200 OK
+Content-type: text/html
+Set-Cookie: &lt;cookie-name&gt;=&lt;cookie-value&gt;;&lt;cookie-name&gt;=&lt;cookie-value&gt;
 </code></pre><ul>
-<li>(optional) Create a <code>.prettierignore</code> file</li>
-<li>Format certain files: <code>prettier --write ${file-path-or-pattern}</code></li>
+<li>The cookie is usually stored by the browser, and then the cookie is sent with requests made to the same server inside a <code>Cookie</code> HTTP header.</li>
 </ul>
-<h3 id="integrate-with-vscode">Integrate with VSCode</h3>
+<pre><code>GET /sample_page.html HTTP/2.0
+Host: www.example.org
+Cookie: &lt;cookie-name&gt;=&lt;cookie-value&gt;;&lt;cookie-name&gt;=&lt;cookie-value&gt;
+</code></pre><hr>
+<h2 id="cookie-keys">Cookie Keys</h2>
 <ul>
-<li>Install <a href="https://marketplace.visualstudio.com/items?itemName=esbenp.prettier-vscode">Prettier - Code formatter</a> plugin (is using <code>prettier@2.2.1</code>)</li>
-<li>Open <code>settings.json</code>, add following lines and save it</li>
-<li>Format current file: <code>cmd+shift+p</code> &gt; <code>Format Document</code></li>
+<li><code>Secure</code></li>
+<li><code>HttpOnly</code></li>
+<li><code>SameSite</code>
+<ul>
+<li><code>SameSite=None</code>
+<ul>
+<li>The browser will send cookies with both cross-site requests and same-site requests.</li>
 </ul>
-<h4 id="for-prettier">For Prettier</h4>
-<pre><code>&quot;editor.defaultFormatter&quot;: &quot;esbenp.prettier-vscode&quot;,
-&quot;editor.formatOnSave&quot;: true,  // default
-</code></pre><h4 id="other-settings">Other Settings</h4>
-<pre><code>&quot;editor.rulers&quot;: [
-  100
-],
-&quot;editor.tabSize&quot;: 2,                                     // optional
-&quot;editor.renderWhitespace&quot;: &quot;boundary&quot;,                   // recommended
-&quot;javascript.updateImportsOnFileMove.enabled&quot;: &quot;always&quot;,  // recommended
-</code></pre><h3 id="local-settings-by-projects">Local Settings by Projects</h3>
-<p>If a project has its own Prettier config file, the configuration will be applied.
-Prettier searches recursively up the file path, it will fallback to global settings if local configuration is not found.</p>
-<h2 id="configuration">Configuration</h2>
+</li>
+<li><code>SameSite=Strict</code>
 <ul>
-<li>See <a href="https://prettier.io/docs/en/options.html">options</a></li>
+<li>The browser will only send cookies for same-site requests (requests originating from the site that set the cookie).</li>
 </ul>
-<h2 id="references">References</h2>
+</li>
+<li><code>SameSite=Lax</code>
 <ul>
-<li><a href="https://prettier.io/">https://prettier.io/</a></li>
-<li><a href="https://marketplace.visualstudio.com/items?itemName=esbenp.prettier-vscode">https://marketplace.visualstudio.com/items?itemName=esbenp.prettier-vscode</a></li>
-<li><a href="https://hackmd.io/@chupai/HkNT0IMhr">https://hackmd.io/@chupai/HkNT0IMhr</a></li>
+<li>Same-site cookies are withheld on cross-site subrequests, such as calls to load images or frames, but will be sent when a user navigates to the URL from an external site; for example, by following a link.</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h2 id="samesite-cookie-changes">SameSite Cookie Changes</h2>
+<ul>
+<li><strong>Chrome 80</strong> released in February 2020 adopted new policy for <a href="https://ianhung0529.medium.com/chrome-80-%E5%BE%8C%E9%87%9D%E5%B0%8D%E7%AC%AC%E4%B8%89%E6%96%B9-cookie-%E7%9A%84%E8%A6%8F%E5%89%87%E8%AA%BF%E6%95%B4-default-samesite-lax-aaba0bc785a3"><code>SameSite</code></a> to prevent Cross Site Request Forgery (CSRF).</li>
 </ul>
     <div class="pager">
   
   <div class="pager_item prev">
     
-    <a href="/docs/2021/what-is-webview/" class="pager_link button" title="What is WebView?">
-      <span class="pager_label">What is WebView?</span>
+    <a href="/docs/2020/multi-lang-og-tags/" class="pager_link button" title="Building Multi-Languages OG Tags">
+      <span class="pager_label">Building Multi-Languages OG Tags</span>
     </a>
   </div>
   
@@ -421,8 +405,8 @@ Prettier searches recursively up the file path, it will fallback to global setti
   
   <div class="pager_item next">
     
-    <a href="/docs/2020/setting-eslint/" class="pager_link button" title="Setting ESLint to Enhance Frontend Development">
-      <span class="pager_label">Setting ESLint to Enhance Frontend Development</span>
+    <a href="/docs/2020/nvm-and-npm/" class="pager_link button" title="Introduction to NVM and NPM">
+      <span class="pager_label">Introduction to NVM and NPM</span>
     </a>
   </div>
   
