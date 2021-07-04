@@ -2,131 +2,131 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Posts on Draw Closer - A Blog by Sharon Wu</title>
-    <link>/docs/</link>
+    <link>https://sharonwu0505.github.io/docs/</link>
     <description>Recent content in Posts on Draw Closer - A Blog by Sharon Wu</description>
-    <generator>Hugo -- gohugo.io</generator><atom:link href="/docs/index.xml" rel="self" type="application/rss+xml" />
+    <generator>Hugo -- gohugo.io</generator><atom:link href="https://sharonwu0505.github.io/docs/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>JavaScript Questions</title>
-      <link>/docs/2021/js-questions/</link>
+      <link>https://sharonwu0505.github.io/docs/2021/js-questions/</link>
       <pubDate>Sat, 17 Apr 2021 17:00:00 +0800</pubDate>
       
-      <guid>/docs/2021/js-questions/</guid>
+      <guid>https://sharonwu0505.github.io/docs/2021/js-questions/</guid>
       <description>&lt;p&gt;受到 &lt;a href=&#34;https://medium.com/starbugs/%E9%9D%A2%E8%A9%A6-%E5%89%8D%E7%AB%AF%E5%B7%A5%E7%A8%8B%E5%B8%AB%E4%B8%80%E5%AE%9A%E8%A6%81%E6%9C%83%E7%9A%84-js-%E8%A7%80%E5%BF%B5%E9%A1%8C-%E4%B8%AD%E8%8B%B1%E5%B0%8D%E7%85%A7%E4%B9%8B%E4%B8%8A%E7%AF%87-3b0a3feda14f&#34;&gt;前端工程師一定要會的 JS 觀念題&lt;/a&gt; 的啟發，也想來整理 JavaScript 的常見問題，期望自己未來能用更口語但又不失精確，且搭配範例的方式解釋出這些概念。&lt;/p&gt;
 &lt;p&gt;先列出幾個常見問題，之後再慢慢補上自己的理解。&lt;/p&gt;</description>
     </item>
     
     <item>
       <title>Same-Site and Same-Origin</title>
-      <link>/docs/2021/same-site-and-same-origin/</link>
+      <link>https://sharonwu0505.github.io/docs/2021/same-site-and-same-origin/</link>
       <pubDate>Mon, 05 Apr 2021 14:00:00 +0800</pubDate>
       
-      <guid>/docs/2021/same-site-and-same-origin/</guid>
+      <guid>https://sharonwu0505.github.io/docs/2021/same-site-and-same-origin/</guid>
       <description>&lt;p&gt;之前總以為 same-site 的網站一定也是 same-origin，後來才發現並非如此，是兩個不同的定義。此篇將介紹 same-site 和 same-origin 的定義，讓往後與後端 RD 討論 cookie &lt;code&gt;SameSite&lt;/code&gt; 和 &lt;code&gt;Access-Control-Allow-Origin&lt;/code&gt; header 設定時能更順利。&lt;/p&gt;</description>
     </item>
     
     <item>
       <title>Introduction to Ngrok</title>
-      <link>/docs/2021/ngrok-intro/</link>
+      <link>https://sharonwu0505.github.io/docs/2021/ngrok-intro/</link>
       <pubDate>Sat, 27 Mar 2021 15:00:00 +0800</pubDate>
       
-      <guid>/docs/2021/ngrok-intro/</guid>
+      <guid>https://sharonwu0505.github.io/docs/2021/ngrok-intro/</guid>
       <description>&lt;p&gt;開發時，經常會須要從另一台機器連接在 localhost 的網站，或是希望能有個 public URL 測試某些功能，例如：Facebook Open Graph 設置、Chatbot 連接、金流串接。這時就會想有沒有什麼比先部署到伺服器上再 debug 更方便的作法呢？&lt;/p&gt;
 &lt;p&gt;有的，你可用 &lt;a href=&#34;https://ngrok.com/&#34;&gt;Ngrok&lt;/a&gt;！&lt;/p&gt;</description>
     </item>
     
     <item>
       <title>自動化部署 Hugo 部落格到 GitHub Pages</title>
-      <link>/docs/2021/deploy-hugo-blog-to-github/</link>
+      <link>https://sharonwu0505.github.io/docs/2021/deploy-hugo-blog-to-github/</link>
       <pubDate>Sat, 27 Mar 2021 14:00:00 +0800</pubDate>
       
-      <guid>/docs/2021/deploy-hugo-blog-to-github/</guid>
+      <guid>https://sharonwu0505.github.io/docs/2021/deploy-hugo-blog-to-github/</guid>
       <description>&lt;p&gt;接續&lt;a href=&#34;../build-a-blog-with-hugo&#34;&gt;以 Hugo 建立部落格&lt;/a&gt;，Hugo 在其文件中提到了多種 &lt;a href=&#34;https://gohugo.io/hosting-and-deployment/&#34;&gt;Hosting and Deployment&lt;/a&gt; 方式。若你選擇將 source code 放在 GitHub 上，那麼你可以直接考慮將部落格放在 GitHub Pages 上，並使用 GitHub Actions 自動化所有部署和更新的流程。&lt;/p&gt;</description>
     </item>
     
     <item>
       <title>以 Hugo 建立部落格</title>
-      <link>/docs/2021/build-a-blog-with-hugo/</link>
+      <link>https://sharonwu0505.github.io/docs/2021/build-a-blog-with-hugo/</link>
       <pubDate>Sat, 20 Mar 2021 18:00:00 +0800</pubDate>
       
-      <guid>/docs/2021/build-a-blog-with-hugo/</guid>
+      <guid>https://sharonwu0505.github.io/docs/2021/build-a-blog-with-hugo/</guid>
       <description>&lt;p&gt;&lt;a href=&#34;https://gohugo.io/&#34;&gt;Hugo&lt;/a&gt; 是一個用 Go 寫成的靜態網站生成器（Static Site Generator）。其架構允許以 Markdown 格式撰寫內容，再搭配 layout template 渲染出畫面，對於喜歡用 Markdown 簡潔撰寫文章的人來說很合適！&lt;/p&gt;
 &lt;p&gt;就讓我們來看看如何以 Hugo 建立部落格，並在每次更新後自動化部署到 GitHub Pages。&lt;/p&gt;</description>
     </item>
     
     <item>
       <title>What is WebView?</title>
-      <link>/docs/2021/what-is-webview/</link>
+      <link>https://sharonwu0505.github.io/docs/2021/what-is-webview/</link>
       <pubDate>Sun, 28 Feb 2021 15:00:00 +0800</pubDate>
       
-      <guid>/docs/2021/what-is-webview/</guid>
+      <guid>https://sharonwu0505.github.io/docs/2021/what-is-webview/</guid>
       <description>&lt;p&gt;本篇文章預計介紹什麼是 WebView，以及 Frontend 使用 WebView 時可能會遇到的問題。&lt;/p&gt;
 &lt;p&gt;A WebView is an &lt;strong&gt;embeddable browser&lt;/strong&gt; that a &lt;strong&gt;native application&lt;/strong&gt; can use to &lt;strong&gt;display web content&lt;/strong&gt;.&lt;/p&gt;</description>
     </item>
     
     <item>
       <title>Setting Prettier to Format Codes</title>
-      <link>/docs/2020/setting-prettier/</link>
+      <link>https://sharonwu0505.github.io/docs/2020/setting-prettier/</link>
       <pubDate>Sun, 01 Nov 2020 11:00:00 +0800</pubDate>
       
-      <guid>/docs/2020/setting-prettier/</guid>
+      <guid>https://sharonwu0505.github.io/docs/2020/setting-prettier/</guid>
       <description>&lt;p&gt;&lt;a href=&#34;https://prettier.io/&#34;&gt;Prettier&lt;/a&gt; is an opinionated &lt;strong&gt;code formatter&lt;/strong&gt; supporting several languages. The biggest reason for adopting Prettier is to stop all the on-going debates over styles. Therefore, applying Prettier to frontend development flow can save much time on formatting codes and align coding styles.&lt;/p&gt;
 &lt;p&gt;In my opinion, ESLint and Prettier are must tools for every frontend projects (not only personal, but also group ones).&lt;/p&gt;</description>
     </item>
     
     <item>
       <title>Setting ESLint to Enhance Frontend Development</title>
-      <link>/docs/2020/setting-eslint/</link>
+      <link>https://sharonwu0505.github.io/docs/2020/setting-eslint/</link>
       <pubDate>Thu, 29 Oct 2020 11:00:00 +0800</pubDate>
       
-      <guid>/docs/2020/setting-eslint/</guid>
+      <guid>https://sharonwu0505.github.io/docs/2020/setting-eslint/</guid>
       <description>&lt;p&gt;Linting tools like &lt;a href=&#34;https://eslint.org/&#34;&gt;ESLint&lt;/a&gt; allow developers to discover problems with their JavaScript code without executing it.&lt;/p&gt;
 &lt;p&gt;讓我們來談談如何以 ESLint 改進前端開發流程，且如何挑選 ESLint。&lt;/p&gt;</description>
     </item>
     
     <item>
       <title>Validating React Component Props with props-types</title>
-      <link>/docs/2020/react-props-types/</link>
+      <link>https://sharonwu0505.github.io/docs/2020/react-props-types/</link>
       <pubDate>Mon, 22 Jun 2020 19:00:00 +0800</pubDate>
       
-      <guid>/docs/2020/react-props-types/</guid>
+      <guid>https://sharonwu0505.github.io/docs/2020/react-props-types/</guid>
       <description>&lt;p&gt;在寫 React component 時會須要確認 &lt;code&gt;props&lt;/code&gt; 是否符合型別和資料結構，以確保 component 能如預期運作。除了用 &lt;a href=&#34;https://flow.org/&#34;&gt;Flow&lt;/a&gt; 或 &lt;a href=&#34;https://www.typescriptlang.org/&#34;&gt;TypeScript&lt;/a&gt; 去檢查型別之外，React 本身也提供 &lt;code&gt;propTypes&lt;/code&gt; 屬性用以檢查拿到的 &lt;code&gt;props&lt;/code&gt;。在 function 和 class component 上都可以使用。&lt;/p&gt;
 &lt;p&gt;不只上述好處，個人認為定義 &lt;code&gt;propTypes&lt;/code&gt; 也能讓 component 的 interface 更為清楚，使其他開發者一眼就知道該傳入的 &lt;code&gt;props&lt;/code&gt;，有類似文件的作用。&lt;/p&gt;</description>
     </item>
     
     <item>
       <title>Install Golang and Set Go Workplace</title>
-      <link>/docs/2020/install-and-set-go/</link>
+      <link>https://sharonwu0505.github.io/docs/2020/install-and-set-go/</link>
       <pubDate>Thu, 16 Apr 2020 15:00:00 +0800</pubDate>
       
-      <guid>/docs/2020/install-and-set-go/</guid>
+      <guid>https://sharonwu0505.github.io/docs/2020/install-and-set-go/</guid>
       <description>&lt;p&gt;&lt;strong&gt;&lt;a href=&#34;https://golang.org/&#34;&gt;Go&lt;/a&gt;&lt;/strong&gt; or called &lt;strong&gt;GoLang&lt;/strong&gt; is an open source programming language that makes it easy to build simple, reliable, and efficient software.&lt;/p&gt;
 &lt;p&gt;In this post, we&#39;ll talk about how to install Golang and set its workplace. Also, sub directories under the workplace are introduced.&lt;/p&gt;</description>
     </item>
     
     <item>
       <title>Building Multi-Languages OG Tags</title>
-      <link>/docs/2020/multi-lang-og-tags/</link>
+      <link>https://sharonwu0505.github.io/docs/2020/multi-lang-og-tags/</link>
       <pubDate>Wed, 08 Apr 2020 19:00:00 +0800</pubDate>
       
-      <guid>/docs/2020/multi-lang-og-tags/</guid>
+      <guid>https://sharonwu0505.github.io/docs/2020/multi-lang-og-tags/</guid>
       <description>&lt;p&gt;之前遇到 &lt;strong&gt;網頁各語言有各自 open graph 設定&lt;/strong&gt; 的需求，所以決定寫一篇文章介紹什麼是 open graph，以及紀錄 Single Page Application (SPA) 如何實現多國語言之 og tag 設置。&lt;/p&gt;</description>
     </item>
     
     <item>
       <title>Introduction to Cookie</title>
-      <link>/docs/2020/cookie/</link>
+      <link>https://sharonwu0505.github.io/docs/2020/cookie/</link>
       <pubDate>Mon, 17 Feb 2020 09:00:00 +0800</pubDate>
       
-      <guid>/docs/2020/cookie/</guid>
+      <guid>https://sharonwu0505.github.io/docs/2020/cookie/</guid>
       <description>&lt;p&gt;認識 cookie 的筆記。&lt;/p&gt;</description>
     </item>
     
     <item>
       <title>Introduction to NVM and NPM</title>
-      <link>/docs/2020/nvm-and-npm/</link>
+      <link>https://sharonwu0505.github.io/docs/2020/nvm-and-npm/</link>
       <pubDate>Fri, 07 Feb 2020 11:00:00 +0800</pubDate>
       
-      <guid>/docs/2020/nvm-and-npm/</guid>
+      <guid>https://sharonwu0505.github.io/docs/2020/nvm-and-npm/</guid>
       <description>&lt;h3 id=&#34;what-is-npm-and-nvm&#34;&gt;What is npm and nvm?&lt;/h3&gt;
 &lt;ul&gt;
 &lt;li&gt;&lt;strong&gt;npm (Node Package Manager)&lt;/strong&gt;

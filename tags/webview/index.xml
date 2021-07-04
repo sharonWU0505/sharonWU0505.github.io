@@ -2,16 +2,16 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>WebView on Draw Closer - A Blog by Sharon Wu</title>
-    <link>/tags/webview/</link>
+    <link>https://sharonwu0505.github.io/tags/webview/</link>
     <description>Recent content in WebView on Draw Closer - A Blog by Sharon Wu</description>
     <generator>Hugo -- gohugo.io</generator>
-    <lastBuildDate>Sun, 28 Feb 2021 15:00:00 +0800</lastBuildDate><atom:link href="/tags/webview/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sun, 28 Feb 2021 15:00:00 +0800</lastBuildDate><atom:link href="https://sharonwu0505.github.io/tags/webview/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>What is WebView?</title>
-      <link>/docs/2021/what-is-webview/</link>
+      <link>https://sharonwu0505.github.io/docs/2021/what-is-webview/</link>
       <pubDate>Sun, 28 Feb 2021 15:00:00 +0800</pubDate>
       
-      <guid>/docs/2021/what-is-webview/</guid>
+      <guid>https://sharonwu0505.github.io/docs/2021/what-is-webview/</guid>
       <description>&lt;p&gt;本篇文章預計介紹什麼是 WebView，以及 Frontend 使用 WebView 時可能會遇到的問題。&lt;/p&gt;
 &lt;p&gt;A WebView is an &lt;strong&gt;embeddable browser&lt;/strong&gt; that a &lt;strong&gt;native application&lt;/strong&gt; can use to &lt;strong&gt;display web content&lt;/strong&gt;.&lt;/p&gt;</description>
     </item>

@@ -2,16 +2,16 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>npm on Draw Closer - A Blog by Sharon Wu</title>
-    <link>/tags/npm/</link>
+    <link>https://sharonwu0505.github.io/tags/npm/</link>
     <description>Recent content in npm on Draw Closer - A Blog by Sharon Wu</description>
     <generator>Hugo -- gohugo.io</generator>
-    <lastBuildDate>Fri, 07 Feb 2020 11:00:00 +0800</lastBuildDate><atom:link href="/tags/npm/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Fri, 07 Feb 2020 11:00:00 +0800</lastBuildDate><atom:link href="https://sharonwu0505.github.io/tags/npm/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Introduction to NVM and NPM</title>
-      <link>/docs/2020/nvm-and-npm/</link>
+      <link>https://sharonwu0505.github.io/docs/2020/nvm-and-npm/</link>
       <pubDate>Fri, 07 Feb 2020 11:00:00 +0800</pubDate>
       
-      <guid>/docs/2020/nvm-and-npm/</guid>
+      <guid>https://sharonwu0505.github.io/docs/2020/nvm-and-npm/</guid>
       <description>&lt;h3 id=&#34;what-is-npm-and-nvm&#34;&gt;What is npm and nvm?&lt;/h3&gt;
 &lt;ul&gt;
 &lt;li&gt;&lt;strong&gt;npm (Node Package Manager)&lt;/strong&gt;
