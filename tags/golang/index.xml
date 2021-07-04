@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Golang on Draw Closer - A Blog by Sharon Wu</title>
+    <link>/tags/golang/</link>
+    <description>Recent content in Golang on Draw Closer - A Blog by Sharon Wu</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <lastBuildDate>Thu, 16 Apr 2020 15:00:00 +0800</lastBuildDate><atom:link href="/tags/golang/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Install Golang and Set Go Workplace</title>
+      <link>/docs/2020/install-and-set-go/</link>
+      <pubDate>Thu, 16 Apr 2020 15:00:00 +0800</pubDate>
+      
+      <guid>/docs/2020/install-and-set-go/</guid>
+      <description>&lt;p&gt;&lt;strong&gt;&lt;a href=&#34;https://golang.org/&#34;&gt;Go&lt;/a&gt;&lt;/strong&gt; or called &lt;strong&gt;GoLang&lt;/strong&gt; is an open source programming language that makes it easy to build simple, reliable, and efficient software.&lt;/p&gt;
+&lt;p&gt;In this post, we&#39;ll talk about how to install Golang and set its workplace. Also, sub directories under the workplace are introduced.&lt;/p&gt;</description>
+    </item>
+    
+  </channel>
+</rss>

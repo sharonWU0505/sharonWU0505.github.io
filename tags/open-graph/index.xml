@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Open Graph on Draw Closer - A Blog by Sharon Wu</title>
+    <link>/tags/open-graph/</link>
+    <description>Recent content in Open Graph on Draw Closer - A Blog by Sharon Wu</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <lastBuildDate>Wed, 08 Apr 2020 19:00:00 +0800</lastBuildDate><atom:link href="/tags/open-graph/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Building Multi-Languages OG Tags</title>
+      <link>/docs/2020/multi-lang-og-tags/</link>
+      <pubDate>Wed, 08 Apr 2020 19:00:00 +0800</pubDate>
+      
+      <guid>/docs/2020/multi-lang-og-tags/</guid>
+      <description>&lt;p&gt;之前遇到 &lt;strong&gt;網頁各語言有各自 open graph 設定&lt;/strong&gt; 的需求，所以決定寫一篇文章介紹什麼是 open graph，以及紀錄 Single Page Application (SPA) 如何實現多國語言之 og tag 設置。&lt;/p&gt;</description>
+    </item>
+    
+  </channel>
+</rss>

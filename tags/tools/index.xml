@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Tools on Draw Closer - A Blog by Sharon Wu</title>
+    <link>/tags/tools/</link>
+    <description>Recent content in Tools on Draw Closer - A Blog by Sharon Wu</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <lastBuildDate>Sat, 27 Mar 2021 15:00:00 +0800</lastBuildDate><atom:link href="/tags/tools/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Introduction to Ngrok</title>
+      <link>/docs/2021/ngrok-intro/</link>
+      <pubDate>Sat, 27 Mar 2021 15:00:00 +0800</pubDate>
+      
+      <guid>/docs/2021/ngrok-intro/</guid>
+      <description>&lt;p&gt;開發時，經常會須要從另一台機器連接在 localhost 的網站，或是希望能有個 public URL 測試某些功能，例如：Facebook Open Graph 設置、Chatbot 連接、金流串接。這時就會想有沒有什麼比先部署到伺服器上再 debug 更方便的作法呢？&lt;/p&gt;
+&lt;p&gt;有的，你可用 &lt;a href=&#34;https://ngrok.com/&#34;&gt;Ngrok&lt;/a&gt;！&lt;/p&gt;</description>
+    </item>
+    
+  </channel>
+</rss>

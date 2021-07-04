@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>React on Draw Closer - A Blog by Sharon Wu</title>
+    <link>/tags/react/</link>
+    <description>Recent content in React on Draw Closer - A Blog by Sharon Wu</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <lastBuildDate>Mon, 22 Jun 2020 19:00:00 +0800</lastBuildDate><atom:link href="/tags/react/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Validating React Component Props with props-types</title>
+      <link>/docs/2020/react-props-types/</link>
+      <pubDate>Mon, 22 Jun 2020 19:00:00 +0800</pubDate>
+      
+      <guid>/docs/2020/react-props-types/</guid>
+      <description>&lt;p&gt;在寫 React component 時會須要確認 &lt;code&gt;props&lt;/code&gt; 是否符合型別和資料結構，以確保 component 能如預期運作。除了用 &lt;a href=&#34;https://flow.org/&#34;&gt;Flow&lt;/a&gt; 或 &lt;a href=&#34;https://www.typescriptlang.org/&#34;&gt;TypeScript&lt;/a&gt; 去檢查型別之外，React 本身也提供 &lt;code&gt;propTypes&lt;/code&gt; 屬性用以檢查拿到的 &lt;code&gt;props&lt;/code&gt;。在 function 和 class component 上都可以使用。&lt;/p&gt;
+&lt;p&gt;不只上述好處，個人認為定義 &lt;code&gt;propTypes&lt;/code&gt; 也能讓 component 的 interface 更為清楚，使其他開發者一眼就知道該傳入的 &lt;code&gt;props&lt;/code&gt;，有類似文件的作用。&lt;/p&gt;</description>
+    </item>
+    
+  </channel>
+</rss>

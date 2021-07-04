@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>HTTP on Draw Closer - A Blog by Sharon Wu</title>
+    <link>/tags/http/</link>
+    <description>Recent content in HTTP on Draw Closer - A Blog by Sharon Wu</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <lastBuildDate>Mon, 05 Apr 2021 14:00:00 +0800</lastBuildDate><atom:link href="/tags/http/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Same-Site and Same-Origin</title>
+      <link>/docs/2021/same-site-and-same-origin/</link>
+      <pubDate>Mon, 05 Apr 2021 14:00:00 +0800</pubDate>
+      
+      <guid>/docs/2021/same-site-and-same-origin/</guid>
+      <description>&lt;p&gt;之前總以為 same-site 的網站一定也是 same-origin，後來才發現並非如此，是兩個不同的定義。此篇將介紹 same-site 和 same-origin 的定義，讓往後與後端 RD 討論 cookie &lt;code&gt;SameSite&lt;/code&gt; 和 &lt;code&gt;Access-Control-Allow-Origin&lt;/code&gt; header 設定時能更順利。&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>Introduction to Cookie</title>
+      <link>/docs/2020/cookie/</link>
+      <pubDate>Mon, 17 Feb 2020 09:00:00 +0800</pubDate>
+      
+      <guid>/docs/2020/cookie/</guid>
+      <description>&lt;p&gt;認識 cookie 的筆記。&lt;/p&gt;</description>
+    </item>
+    
+  </channel>
+</rss>

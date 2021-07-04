@@ -1,4 +1,5 @@
-#posts__list {
+#posts__list,
+#tags__list {
   width: 90%;
   margin: 0 auto;
 }

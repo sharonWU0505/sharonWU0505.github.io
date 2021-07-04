@@ -67,6 +67,9 @@
       <a class="nav-link" href="/docs/"><span>Posts</span></a>
     </li>
     <li class="nav-item">
+      <a class="nav-link" href="/tags/"><span>Tags</span></a>
+    </li>
+    <li class="nav-item">
       <a class="nav-link" href="/about/"><span>About Me</span></a>
     </li>
     
@@ -338,7 +341,9 @@
     <h1>Same-Site and Same-Origin</h1>
     <div class="post__tags">
       
-       <span class="post__tag">HTTP</span>
+        <a href="/tags/http">
+          <span class="post__tag">HTTP</span>
+        </a>
       
     </div><p>之前總以為 same-site 的網站一定也是 same-origin，後來才發現並非如此，是兩個不同的定義。此篇將介紹 same-site 和 same-origin 的定義，讓往後與後端 RD 討論 cookie <code>SameSite</code> 和 <code>Access-Control-Allow-Origin</code> header 設定時能更順利。</p>
 <h2 id="origin">Origin</h2>

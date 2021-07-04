@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>npm on Draw Closer - A Blog by Sharon Wu</title>
+    <link>/tags/npm/</link>
+    <description>Recent content in npm on Draw Closer - A Blog by Sharon Wu</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <lastBuildDate>Fri, 07 Feb 2020 11:00:00 +0800</lastBuildDate><atom:link href="/tags/npm/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Introduction to NVM and NPM</title>
+      <link>/docs/2020/nvm-and-npm/</link>
+      <pubDate>Fri, 07 Feb 2020 11:00:00 +0800</pubDate>
+      
+      <guid>/docs/2020/nvm-and-npm/</guid>
+      <description>&lt;h3 id=&#34;what-is-npm-and-nvm&#34;&gt;What is npm and nvm?&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;npm (Node Package Manager)&lt;/strong&gt;
+&lt;ul&gt;
+&lt;li&gt;JavaScript 套件庫管理工具，可以藉由它下載各式各樣的套件&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;nvm (Node Version Manager)&lt;/strong&gt;
+&lt;ul&gt;
+&lt;li&gt;各套件和專案用的 Node.js 版本不同，而版本間有不相容的問題，導致套件和專案無法順利運行，因此需要版本管理工具&lt;/li&gt;
+&lt;li&gt;從 nvm 下載/更換 Node.js 和 npm 版本&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;</description>
+    </item>
+    
+  </channel>
+</rss>

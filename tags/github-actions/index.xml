@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>GitHub Actions on Draw Closer - A Blog by Sharon Wu</title>
+    <link>/tags/github-actions/</link>
+    <description>Recent content in GitHub Actions on Draw Closer - A Blog by Sharon Wu</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <lastBuildDate>Sat, 27 Mar 2021 14:00:00 +0800</lastBuildDate><atom:link href="/tags/github-actions/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>自動化部署 Hugo 部落格到 GitHub Pages</title>
+      <link>/docs/2021/deploy-hugo-blog-to-github/</link>
+      <pubDate>Sat, 27 Mar 2021 14:00:00 +0800</pubDate>
+      
+      <guid>/docs/2021/deploy-hugo-blog-to-github/</guid>
+      <description>&lt;p&gt;接續&lt;a href=&#34;../build-a-blog-with-hugo&#34;&gt;以 Hugo 建立部落格&lt;/a&gt;，Hugo 在其文件中提到了多種 &lt;a href=&#34;https://gohugo.io/hosting-and-deployment/&#34;&gt;Hosting and Deployment&lt;/a&gt; 方式。若你選擇將 source code 放在 GitHub 上，那麼你可以直接考慮將部落格放在 GitHub Pages 上，並使用 GitHub Actions 自動化所有部署和更新的流程。&lt;/p&gt;</description>
+    </item>
+    
+  </channel>
+</rss>

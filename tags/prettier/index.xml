@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Prettier on Draw Closer - A Blog by Sharon Wu</title>
+    <link>/tags/prettier/</link>
+    <description>Recent content in Prettier on Draw Closer - A Blog by Sharon Wu</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <lastBuildDate>Sun, 01 Nov 2020 11:00:00 +0800</lastBuildDate><atom:link href="/tags/prettier/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Setting Prettier to Format Codes</title>
+      <link>/docs/2020/setting-prettier/</link>
+      <pubDate>Sun, 01 Nov 2020 11:00:00 +0800</pubDate>
+      
+      <guid>/docs/2020/setting-prettier/</guid>
+      <description>&lt;p&gt;&lt;a href=&#34;https://prettier.io/&#34;&gt;Prettier&lt;/a&gt; is an opinionated &lt;strong&gt;code formatter&lt;/strong&gt; supporting several languages. The biggest reason for adopting Prettier is to stop all the on-going debates over styles. Therefore, applying Prettier to frontend development flow can save much time on formatting codes and align coding styles.&lt;/p&gt;
+&lt;p&gt;In my opinion, ESLint and Prettier are must tools for every frontend projects (not only personal, but also group ones).&lt;/p&gt;</description>
+    </item>
+    
+  </channel>
+</rss>

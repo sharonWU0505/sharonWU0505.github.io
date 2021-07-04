@@ -1,0 +1,136 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Tags on Draw Closer - A Blog by Sharon Wu</title>
+    <link>/tags/</link>
+    <description>Recent content in Tags on Draw Closer - A Blog by Sharon Wu</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <lastBuildDate>Sat, 17 Apr 2021 17:00:00 +0800</lastBuildDate><atom:link href="/tags/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>JavaScript</title>
+      <link>/tags/javascript/</link>
+      <pubDate>Sat, 17 Apr 2021 17:00:00 +0800</pubDate>
+      
+      <guid>/tags/javascript/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>HTTP</title>
+      <link>/tags/http/</link>
+      <pubDate>Mon, 05 Apr 2021 14:00:00 +0800</pubDate>
+      
+      <guid>/tags/http/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Tools</title>
+      <link>/tags/tools/</link>
+      <pubDate>Sat, 27 Mar 2021 15:00:00 +0800</pubDate>
+      
+      <guid>/tags/tools/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>GitHub Actions</title>
+      <link>/tags/github-actions/</link>
+      <pubDate>Sat, 27 Mar 2021 14:00:00 +0800</pubDate>
+      
+      <guid>/tags/github-actions/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Hugo</title>
+      <link>/tags/hugo/</link>
+      <pubDate>Sat, 27 Mar 2021 14:00:00 +0800</pubDate>
+      
+      <guid>/tags/hugo/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>WebView</title>
+      <link>/tags/webview/</link>
+      <pubDate>Sun, 28 Feb 2021 15:00:00 +0800</pubDate>
+      
+      <guid>/tags/webview/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Prettier</title>
+      <link>/tags/prettier/</link>
+      <pubDate>Sun, 01 Nov 2020 11:00:00 +0800</pubDate>
+      
+      <guid>/tags/prettier/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Workflow</title>
+      <link>/tags/workflow/</link>
+      <pubDate>Sun, 01 Nov 2020 11:00:00 +0800</pubDate>
+      
+      <guid>/tags/workflow/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>ESLint</title>
+      <link>/tags/eslint/</link>
+      <pubDate>Thu, 29 Oct 2020 11:00:00 +0800</pubDate>
+      
+      <guid>/tags/eslint/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>React</title>
+      <link>/tags/react/</link>
+      <pubDate>Mon, 22 Jun 2020 19:00:00 +0800</pubDate>
+      
+      <guid>/tags/react/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Golang</title>
+      <link>/tags/golang/</link>
+      <pubDate>Thu, 16 Apr 2020 15:00:00 +0800</pubDate>
+      
+      <guid>/tags/golang/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Open Graph</title>
+      <link>/tags/open-graph/</link>
+      <pubDate>Wed, 08 Apr 2020 19:00:00 +0800</pubDate>
+      
+      <guid>/tags/open-graph/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>SEO</title>
+      <link>/tags/seo/</link>
+      <pubDate>Wed, 08 Apr 2020 19:00:00 +0800</pubDate>
+      
+      <guid>/tags/seo/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>npm</title>
+      <link>/tags/npm/</link>
+      <pubDate>Fri, 07 Feb 2020 11:00:00 +0800</pubDate>
+      
+      <guid>/tags/npm/</guid>
+      <description></description>
+    </item>
+    
+  </channel>
+</rss>

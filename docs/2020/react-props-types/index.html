@@ -70,6 +70,9 @@
       <a class="nav-link" href="/docs/"><span>Posts</span></a>
     </li>
     <li class="nav-item">
+      <a class="nav-link" href="/tags/"><span>Tags</span></a>
+    </li>
+    <li class="nav-item">
       <a class="nav-link" href="/about/"><span>About Me</span></a>
     </li>
     
@@ -341,7 +344,9 @@
     <h1>Validating React Component Props with props-types</h1>
     <div class="post__tags">
       
-       <span class="post__tag">React</span>
+        <a href="/tags/react">
+          <span class="post__tag">React</span>
+        </a>
       
     </div><p>在寫 React component 時會須要確認 <code>props</code> 是否符合型別和資料結構，以確保 component 能如預期運作。除了用 <a href="https://flow.org/">Flow</a> 或 <a href="https://www.typescriptlang.org/">TypeScript</a> 去檢查型別之外，React 本身也提供 <code>propTypes</code> 屬性用以檢查拿到的 <code>props</code>。在 function 和 class component 上都可以使用。</p>
 <p>不只上述好處，個人認為定義 <code>propTypes</code> 也能讓 component 的 interface 更為清楚，使其他開發者一眼就知道該傳入的 <code>props</code>，有類似文件的作用。</p>

@@ -70,6 +70,9 @@
       <a class="nav-link" href="/docs/"><span>Posts</span></a>
     </li>
     <li class="nav-item">
+      <a class="nav-link" href="/tags/"><span>Tags</span></a>
+    </li>
+    <li class="nav-item">
       <a class="nav-link" href="/about/"><span>About Me</span></a>
     </li>
     
@@ -341,7 +344,9 @@
     <h1>以 Hugo 建立部落格</h1>
     <div class="post__tags">
       
-       <span class="post__tag">Hugo</span>
+        <a href="/tags/hugo">
+          <span class="post__tag">Hugo</span>
+        </a>
       
     </div><p><a href="https://gohugo.io/">Hugo</a> 是一個用 Go 寫成的靜態網站生成器（Static Site Generator）。其架構允許以 Markdown 格式撰寫內容，再搭配 layout template 渲染出畫面，對於喜歡用 Markdown 簡潔撰寫文章的人來說很合適！</p>
 <p>就讓我們來看看如何以 Hugo 建立部落格，並在每次更新後自動化部署到 GitHub Pages。</p>

@@ -67,6 +67,9 @@
       <a class="nav-link" href="/docs/"><span>Posts</span></a>
     </li>
     <li class="nav-item">
+      <a class="nav-link" href="/tags/"><span>Tags</span></a>
+    </li>
+    <li class="nav-item">
       <a class="nav-link" href="/about/"><span>About Me</span></a>
     </li>
     
@@ -338,9 +341,13 @@
     <h1>自動化部署 Hugo 部落格到 GitHub Pages</h1>
     <div class="post__tags">
       
-       <span class="post__tag">Hugo</span>
+        <a href="/tags/hugo">
+          <span class="post__tag">Hugo</span>
+        </a>
       
-       <span class="post__tag">GitHub Actions</span>
+        <a href="/tags/github-actions">
+          <span class="post__tag">GitHub Actions</span>
+        </a>
       
     </div><p>接續<a href="../build-a-blog-with-hugo">以 Hugo 建立部落格</a>，Hugo 在其文件中提到了多種 <a href="https://gohugo.io/hosting-and-deployment/">Hosting and Deployment</a> 方式。若你選擇將 source code 放在 GitHub 上，那麼你可以直接考慮將部落格放在 GitHub Pages 上，並使用 GitHub Actions 自動化所有部署和更新的流程。</p>
 <h2 id="step-1-create-a-project-on-github-for-the-blog">Step 1: Create a Project on GitHub for the Blog</h2>
