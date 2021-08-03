@@ -6,6 +6,23 @@
     <description>Recent content in Posts on Draw Closer - A Blog by Sharon Wu</description>
     <generator>Hugo -- gohugo.io</generator><atom:link href="https://sharonwu0505.github.io/docs/index.xml" rel="self" type="application/rss+xml" />
     <item>
+      <title>Introduction to TypeScript and Primitive Types</title>
+      <link>https://sharonwu0505.github.io/docs/2021/intro-to-typescript/</link>
+      <pubDate>Fri, 30 Jul 2021 17:00:00 +0800</pubDate>
+      
+      <guid>https://sharonwu0505.github.io/docs/2021/intro-to-typescript/</guid>
+      <description>眾所皆知，JavaScript 是一個「弱型別」的語言，意思是：
+ 開發者在宣告變數時，不需要事先指定變數的型別 e.g. string, number, boolean, etc. JavaScript 會根據變數被賦予的值去判斷它的型別 某些情況下，JavaScript 會在背地裡執行「強制轉型」(coercion)，將變數轉換成可以處理的型別  弱型別的設計讓 JavaScript 撰寫起來更方便，但也因此經常衍生出許多開發者預料之外的行為。在較大型、多人協作的專案裡，開發者們逐漸轉向 TypeScript，以期能借用「強型別」的概念，預先有靜態的型別檢查，避免預期外的錯誤。
+TypeScript 是 JavaScript 型別的超集，它會被編譯成 JavaScript，並可被瀏覽器執行。目前是一個由微軟維護的開源專案。
+除了強型別在編譯階段發現錯誤的特性，撰寫 TypeScript 還有一些優點，包括：
+ 型別系統作為變數和函式的定義，具有文件的功用，能增加程式碼的可讀性 增強了編譯器和 IDE 的功能，例如除錯、提示、自動完成等  而 TypeScript 當然也有缺點，例如：
+ 有一定的學習成本，整合專案也需要一些時間，短期內會拉長開發時程 非所有第三方函式庫都已支援  不過整體而言，TypeScript 的使用比例都逐漸增加當中，實務上也已顯現出價值，所以還是值得一學。接下來將整理 TypeScript 的基礎。
+安裝 TypeScript 如果你使用 npm 作為 package 管理工具，那麼可以以下指令在全域安裝 tsc 指令：
+npm install -g typescript 執行後，可透過 tsc --version 確認是否安裝成功。
+編譯 TypeScript 檔案 大部分以 TypeScript 編寫的檔案以 .ts 為檔名結尾（用 TypeScript 編寫 React 時，以 .</description>
+    </item>
+    
+    <item>
       <title>JavaScript Questions</title>
       <link>https://sharonwu0505.github.io/docs/2021/js-questions/</link>
       <pubDate>Sat, 17 Apr 2021 17:00:00 +0800</pubDate>

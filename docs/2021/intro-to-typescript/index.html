@@ -9,21 +9,35 @@
 <link rel="mask-icon" href='https://sharonwu0505.github.io/favicons/safari-pinned-tab.svg'  color="#004750">
 <link rel="shortcut icon" href='https://sharonwu0505.github.io/favicons/favicon.ico'>
 <meta name="msapplication-config" content='https://sharonwu0505.github.io/favicons/browserconfig.xml'>
-<title>Setting Prettier to Format Codes | Draw Closer - A Blog by Sharon Wu</title>
+<title>Introduction to TypeScript and Primitive Types | Draw Closer - A Blog by Sharon Wu</title>
 <link rel="canonical" href="https://sharonwu0505.github.io/"/>
-<meta name="keywords" content="eslint,prettier" />
-<meta name="description" content="Prettier is an opinionated code formatter supporting several languages. The biggest reason for adopting Prettier is to stop all the on-going debates over styles. Therefore, applying Prettier to frontend development flow can save much time on formatting codes and align coding styles.
-In my opinion, ESLint and Prettier are must tools for every frontend projects (not only personal, but also group ones)." />
+<meta name="keywords" content="JavaScript,TypeScript" />
+<meta name="description" content="眾所皆知，JavaScript 是一個「弱型別」的語言，意思是：
+ 開發者在宣告變數時，不需要事先指定變數的型別 e.g. string, number, boolean, etc. JavaScript 會根據變數被賦予的值去判斷它的型別 某些情況下，JavaScript 會在背地裡執行「強制轉型」(coercion)，將變數轉換成可以處理的型別  弱型別的設計讓 JavaScript 撰寫起來更方便，但也因此經常衍生出許多開發者預料之外的行為。在較大型、多人協作的專案裡，開發者們逐漸轉向 TypeScript，以期能借用「強型別」的概念，預先有靜態的型別檢查，避免預期外的錯誤。
+TypeScript 是 JavaScript 型別的超集，它會被編譯成 JavaScript，並可被瀏覽器執行。目前是一個由微軟維護的開源專案。
+除了強型別在編譯階段發現錯誤的特性，撰寫 TypeScript 還有一些優點，包括：
+ 型別系統作為變數和函式的定義，具有文件的功用，能增加程式碼的可讀性 增強了編譯器和 IDE 的功能，例如除錯、提示、自動完成等  而 TypeScript 當然也有缺點，例如：
+ 有一定的學習成本，整合專案也需要一些時間，短期內會拉長開發時程 非所有第三方函式庫都已支援  不過整體而言，TypeScript 的使用比例都逐漸增加當中，實務上也已顯現出價值，所以還是值得一學。接下來將整理 TypeScript 的基礎。
+安裝 TypeScript 如果你使用 npm 作為 package 管理工具，那麼可以以下指令在全域安裝 tsc 指令：
+npm install -g typescript 執行後，可透過 tsc --version 確認是否安裝成功。
+編譯 TypeScript 檔案 大部分以 TypeScript 編寫的檔案以 .ts 為檔名結尾（用 TypeScript 編寫 React 時，以 ." />
 
 
 <meta property="og:url" content="https://sharonwu0505.github.io/" />
 <meta property="og:type" content="website" />
 <meta property="og:site_name" content="Draw Closer" />
-<meta property="og:title" content="Setting Prettier to Format Codes | Draw Closer" />
+<meta property="og:title" content="Introduction to TypeScript and Primitive Types | Draw Closer" />
 <meta
   property="og:description"
-  content="Prettier is an opinionated code formatter supporting several languages. The biggest reason for adopting Prettier is to stop all the on-going debates over styles. Therefore, applying Prettier to frontend development flow can save much time on formatting codes and align coding styles.
-In my opinion, ESLint and Prettier are must tools for every frontend projects (not only personal, but also group ones)."
+  content="眾所皆知，JavaScript 是一個「弱型別」的語言，意思是：
+ 開發者在宣告變數時，不需要事先指定變數的型別 e.g. string, number, boolean, etc. JavaScript 會根據變數被賦予的值去判斷它的型別 某些情況下，JavaScript 會在背地裡執行「強制轉型」(coercion)，將變數轉換成可以處理的型別  弱型別的設計讓 JavaScript 撰寫起來更方便，但也因此經常衍生出許多開發者預料之外的行為。在較大型、多人協作的專案裡，開發者們逐漸轉向 TypeScript，以期能借用「強型別」的概念，預先有靜態的型別檢查，避免預期外的錯誤。
+TypeScript 是 JavaScript 型別的超集，它會被編譯成 JavaScript，並可被瀏覽器執行。目前是一個由微軟維護的開源專案。
+除了強型別在編譯階段發現錯誤的特性，撰寫 TypeScript 還有一些優點，包括：
+ 型別系統作為變數和函式的定義，具有文件的功用，能增加程式碼的可讀性 增強了編譯器和 IDE 的功能，例如除錯、提示、自動完成等  而 TypeScript 當然也有缺點，例如：
+ 有一定的學習成本，整合專案也需要一些時間，短期內會拉長開發時程 非所有第三方函式庫都已支援  不過整體而言，TypeScript 的使用比例都逐漸增加當中，實務上也已顯現出價值，所以還是值得一學。接下來將整理 TypeScript 的基礎。
+安裝 TypeScript 如果你使用 npm 作為 package 管理工具，那麼可以以下指令在全域安裝 tsc 指令：
+npm install -g typescript 執行後，可透過 tsc --version 確認是否安裝成功。
+編譯 TypeScript 檔案 大部分以 TypeScript 編寫的檔案以 .ts 為檔名結尾（用 TypeScript 編寫 React 時，以 ."
 />
 <meta name="twitter:card" content="summary_large_image" />
 <meta property="og:image:height" content="630" />
@@ -35,9 +49,15 @@ In my opinion, ESLint and Prettier are must tools for every frontend projects (n
 
 
 
-  <meta name="description" content="Prettier is an opinionated code formatter supporting several languages. The biggest reason for adopting Prettier is to stop all the on-going debates over styles. Therefore, applying Prettier to frontend development flow can save much time on formatting codes and align coding styles.
-In my opinion, ESLint and Prettier are must tools for every frontend projects (not only personal, but also group ones).
-">
+  <meta name="description" content="眾所皆知，JavaScript 是一個「弱型別」的語言，意思是：
+ 開發者在宣告變數時，不需要事先指定變數的型別 e.g. string, number, boolean, etc. JavaScript 會根據變數被賦予的值去判斷它的型別 某些情況下，JavaScript 會在背地裡執行「強制轉型」(coercion)，將變數轉換成可以處理的型別  弱型別的設計讓 JavaScript 撰寫起來更方便，但也因此經常衍生出許多開發者預料之外的行為。在較大型、多人協作的專案裡，開發者們逐漸轉向 TypeScript，以期能借用「強型別」的概念，預先有靜態的型別檢查，避免預期外的錯誤。
+TypeScript 是 JavaScript 型別的超集，它會被編譯成 JavaScript，並可被瀏覽器執行。目前是一個由微軟維護的開源專案。
+除了強型別在編譯階段發現錯誤的特性，撰寫 TypeScript 還有一些優點，包括：
+ 型別系統作為變數和函式的定義，具有文件的功用，能增加程式碼的可讀性 增強了編譯器和 IDE 的功能，例如除錯、提示、自動完成等  而 TypeScript 當然也有缺點，例如：
+ 有一定的學習成本，整合專案也需要一些時間，短期內會拉長開發時程 非所有第三方函式庫都已支援  不過整體而言，TypeScript 的使用比例都逐漸增加當中，實務上也已顯現出價值，所以還是值得一學。接下來將整理 TypeScript 的基礎。
+安裝 TypeScript 如果你使用 npm 作為 package 管理工具，那麼可以以下指令在全域安裝 tsc 指令：
+npm install -g typescript 執行後，可透過 tsc --version 確認是否安裝成功。
+編譯 TypeScript 檔案 大部分以 TypeScript 編寫的檔案以 .ts 為檔名結尾（用 TypeScript 編寫 React 時，以 .">
 
 
 
@@ -119,7 +139,7 @@ In my opinion, ESLint and Prettier are must tools for every frontend projects (n
   <section class="section aside_inner">
     <h2 class="section_title"><a  href="https://sharonwu0505.github.io/docs/" class="group">Posts</a></h2>
       <section class="" id="docs-posts">
-        <h3 class="section_link"><a id="docs-introduction-to-typescript-and-primitive-types" href="https://sharonwu0505.github.io/docs/2021/intro-to-typescript/">Introduction to TypeScript and Primitive Types</a></h3><nav id="TableOfContents">
+        <h3 class="section_link active"><a id="docs-introduction-to-typescript-and-primitive-types" href="https://sharonwu0505.github.io/docs/2021/intro-to-typescript/">Introduction to TypeScript and Primitive Types</a></h3><nav id="TableOfContents">
   <ul>
     <li><a href="#安裝-typescript">安裝 TypeScript</a></li>
     <li><a href="#編譯-typescript-檔案">編譯 TypeScript 檔案</a></li>
@@ -217,7 +237,7 @@ In my opinion, ESLint and Prettier are must tools for every frontend projects (n
     <li><a href="#references">References</a></li>
   </ul>
 </nav>
-        <h3 class="section_link active"><a id="docs-setting-prettier-to-format-codes" href="https://sharonwu0505.github.io/docs/2020/setting-prettier/">Setting Prettier to Format Codes</a></h3><nav id="TableOfContents">
+        <h3 class="section_link"><a id="docs-setting-prettier-to-format-codes" href="https://sharonwu0505.github.io/docs/2020/setting-prettier/">Setting Prettier to Format Codes</a></h3><nav id="TableOfContents">
   <ul>
     <li><a href="#prettier-vs-linters">Prettier vs. Linters</a></li>
     <li><a href="#usage">Usage</a>
@@ -358,104 +378,66 @@ In my opinion, ESLint and Prettier are must tools for every frontend projects (n
 </aside>
 
   <main class="content">
-    <h1>Setting Prettier to Format Codes</h1>
+    <h1>Introduction to TypeScript and Primitive Types</h1>
     <div class="post__tags">
       
-        <a href="https://sharonwu0505.github.io/tags/prettier">
-          <span class="post__tag">Prettier</span>
+        <a href="https://sharonwu0505.github.io/tags/javascript-typescript">
+          <span class="post__tag">JavaScript, TypeScript</span>
         </a>
       
-        <a href="https://sharonwu0505.github.io/tags/workflow">
-          <span class="post__tag">Workflow</span>
-        </a>
-      
-    </div><p><a href="https://prettier.io/">Prettier</a> is an opinionated <strong>code formatter</strong> supporting several languages. The biggest reason for adopting Prettier is to stop all the on-going debates over styles. Therefore, applying Prettier to frontend development flow can save much time on formatting codes and align coding styles.</p>
-<p>In my opinion, ESLint and Prettier are must tools for every frontend projects (not only personal, but also group ones).</p>
-<h2 id="prettier-vs-linters">Prettier vs. Linters</h2>
-<p>Linters have two categories of rules:</p>
+    </div><p>眾所皆知，JavaScript 是一個「弱型別」的語言，意思是：</p>
 <ul>
-<li>Formatting rules: eg: <code>max-len</code>, <code>no-mixed-spaces-and-tabs</code>, <code>keyword-spacing</code>, <code>comma-style</code>, …</li>
-<li>Code-quality rules: eg: <code>no-unused-vars</code>, <code>no-extra-bind</code>, <code>no-implicit-globals</code>, <code>prefer-promise-reject-errors</code>, …</li>
+<li>開發者在宣告變數時，不需要事先指定變數的型別 e.g. string, number, boolean, etc.</li>
+<li>JavaScript 會根據變數被賦予的值去判斷它的型別</li>
+<li>某些情況下，JavaScript 會在背地裡執行「強制轉型」(coercion)，將變數轉換成可以處理的型別</li>
 </ul>
-<p>Prettier covers all needs of formatting codes, but it does nothing with checking code qualities.
-In other words, <strong>use Prettier for formatting and linters for catching bugs!</strong></p>
-<h2 id="usage">Usage</h2>
-<h3 id="global-settings">Global Settings</h3>
+<p>弱型別的設計讓 JavaScript 撰寫起來更方便，但也因此經常衍生出許多開發者預料之外的行為。在較大型、多人協作的專案裡，開發者們逐漸轉向 TypeScript，以期能借用「強型別」的概念，預先有靜態的型別檢查，避免預期外的錯誤。</p>
+<p>TypeScript 是 JavaScript 型別的超集，它會被編譯成 JavaScript，並可被瀏覽器執行。目前是一個由微軟維護的<a href="https://github.com/Microsoft/TypeScript">開源專案</a>。</p>
+<p>除了強型別在編譯階段發現錯誤的特性，撰寫 TypeScript 還有一些優點，包括：</p>
 <ul>
-<li>Install: <code>npm install -g prettier@2.2.1</code>
+<li>型別系統作為變數和函式的定義，具有文件的功用，能增加程式碼的可讀性</li>
+<li>增強了編譯器和 IDE 的功能，例如除錯、提示、自動完成等</li>
+</ul>
+<p>而 TypeScript 當然也有缺點，例如：</p>
 <ul>
-<li>should lock the version, because default rules differ by releases</li>
-<li>check the version: <code>npm list -g prettier</code></li>
+<li>有一定的學習成本，整合專案也需要一些時間，短期內會拉長開發時程</li>
+<li>非所有第三方函式庫都已支援</li>
 </ul>
-</li>
-<li>Create a <code>.prettierrc</code> file
-<ul>
-<li><code>cd</code> (to root path)</li>
-<li><code>touch .prettierrc</code></li>
-</ul>
-</li>
-<li>Add rules to <code>~/.prettierrc</code>
-<ul>
-<li>open the file: <code>open ~/.prettierrc</code></li>
-<li>add following lines and save it</li>
-</ul>
-</li>
-</ul>
-<pre><code>{
-  &quot;printWidth&quot;: 100,
-  &quot;tabWidth&quot;: 2,
-  &quot;semi&quot;: true,
-  &quot;trailingComma&quot;: &quot;es5&quot;,
-  &quot;jsxBracketSameLine&quot;: true
-}
-</code></pre><ul>
-<li>(optional) Create a <code>.prettierignore</code> file</li>
-<li>Format certain files: <code>prettier --write ${file-path-or-pattern}</code></li>
-</ul>
-<h3 id="integrate-with-vscode">Integrate with VSCode</h3>
-<ul>
-<li>Install <a href="https://marketplace.visualstudio.com/items?itemName=esbenp.prettier-vscode">Prettier - Code formatter</a> plugin (is using <code>prettier@2.2.1</code>)</li>
-<li>Open <code>settings.json</code>, add following lines and save it</li>
-<li>Format current file: <code>cmd+shift+p</code> &gt; <code>Format Document</code></li>
-</ul>
-<h4 id="for-prettier">For Prettier</h4>
-<pre><code>&quot;editor.defaultFormatter&quot;: &quot;esbenp.prettier-vscode&quot;,
-&quot;editor.formatOnSave&quot;: true,  // default
-</code></pre><h4 id="other-settings">Other Settings</h4>
-<pre><code>&quot;editor.rulers&quot;: [
-  100
-],
-&quot;editor.tabSize&quot;: 2,                                     // optional
-&quot;editor.renderWhitespace&quot;: &quot;boundary&quot;,                   // recommended
-&quot;javascript.updateImportsOnFileMove.enabled&quot;: &quot;always&quot;,  // recommended
-</code></pre><h3 id="local-settings-by-projects">Local Settings by Projects</h3>
-<p>If a project has its own Prettier config file, the configuration will be applied.
-Prettier searches recursively up the file path, it will fallback to global settings if local configuration is not found.</p>
-<h2 id="configuration">Configuration</h2>
-<ul>
-<li>See <a href="https://prettier.io/docs/en/options.html">options</a></li>
-</ul>
-<h2 id="references">References</h2>
-<ul>
-<li><a href="https://prettier.io/">https://prettier.io/</a></li>
-<li><a href="https://marketplace.visualstudio.com/items?itemName=esbenp.prettier-vscode">https://marketplace.visualstudio.com/items?itemName=esbenp.prettier-vscode</a></li>
-<li><a href="https://hackmd.io/@chupai/HkNT0IMhr">https://hackmd.io/@chupai/HkNT0IMhr</a></li>
-</ul>
-    <div class="pager">
-  
-  <div class="pager_item prev">
-    
-    <a href="https://sharonwu0505.github.io/docs/2021/what-is-webview/" class="pager_link button" title="What is WebView?">
-      <span class="pager_label">What is WebView?</span>
-    </a>
-  </div>
+<p>不過整體而言，TypeScript 的使用比例都逐漸增加當中，實務上也已顯現出價值，所以還是值得一學。接下來將整理 TypeScript 的基礎。</p>
+<h2 id="安裝-typescript">安裝 TypeScript</h2>
+<p>如果你使用 npm 作為 package 管理工具，那麼可以以下指令在全域安裝 <code>tsc</code> 指令：</p>
+<pre><code>npm install -g typescript
+</code></pre><p>執行後，可透過 <code>tsc --version</code> 確認是否安裝成功。</p>
+<h2 id="編譯-typescript-檔案">編譯 TypeScript 檔案</h2>
+<p>大部分以 TypeScript 編寫的檔案以 <code>.ts</code> 為檔名結尾（用 TypeScript 編寫 React 時，以 <code>.tsx</code> 為檔名結尾）。</p>
+<p>透過執行 TypeScript 檔案，例如：</p>
+<pre><code>tsc myFile.ts
+</code></pre><p>將會得到一編譯完成的 JavaScript (<code>.js</code>) 檔案，例如：<code>myFile.js</code>。</p>
+<p>如果想啟用 watch mode，可以透過 <code>tsc myFile.ts -w</code> 進行。</p>
+<h2 id="primitive-types">Primitive Types</h2>
+<p>由於 JavaScript 的資料型別分成原始型別 (primitive types) 和物件型別 (object types)，所以我們也以此分別介紹它們在 TypeScript 中的應用。</p>
+<p>最基本的 TypeScript 定義為：</p>
+<pre><code>let firstVar: type;
+</code></pre><p>若在賦值時型別錯誤，預期會在 terminal 中看到錯誤。</p>
+<h4 id="string-number-and-boolean">String, Number, and Boolean</h4>
+<p>Primitive types 包括 <code>string</code>, <code>number</code>, <code>boolean</code>, <code>null</code>, <code>undefined</code>。</p>
+<p>我們可以透過以下定義一個型別為 <code>string</code> 的變數。定義其他型別的作法基本上相同。</p>
+<pre><code>let myString: string = &quot;hello world&quot;
+</code></pre><h4 id="null-and-undefined">Null and Undefined</h4>
+<p><code>null</code> 和 <code>undefined</code> 就比較特別了，它們是所有型別的子型別。意思是型別為 <code>null</code> 或 <code>undefined</code> 的變數，可以被賦值給其他變數，例如：</p>
+<pre><code>let myUndefined: undefined = undefined;
+let myBoolean: boolean = myUndefined;
+</code></pre><h4 id="void">Void</h4>
+<p>不過 JavaScript 中就沒有空值 (<code>void</code>) 的概念了。在 TypeScript 中，可以用 <code>void</code> 表示沒有任何返回值的函式，也可以用來宣告變數，但型別為 <code>void</code> 的變數只能被賦值為 <code>null</code> 或 <code>undefined</code>，所以沒什麼意義。</p>
+
+    <div class="pager pager_lean">
   
 
   
   <div class="pager_item next">
     
-    <a href="https://sharonwu0505.github.io/docs/2020/setting-eslint/" class="pager_link button" title="Setting ESLint to Enhance Frontend Development">
-      <span class="pager_label">Setting ESLint to Enhance Frontend Development</span>
+    <a href="https://sharonwu0505.github.io/docs/2021/js-questions/" class="pager_link button" title="JavaScript Questions">
+      <span class="pager_label">JavaScript Questions</span>
     </a>
   </div>
   
