@@ -5,7 +5,21 @@
     <link>https://sharonwu0505.github.io/tags/javascript/</link>
     <description>Recent content in JavaScript on Draw Closer - A Blog by Sharon Wu</description>
     <generator>Hugo -- gohugo.io</generator>
-    <lastBuildDate>Sat, 17 Apr 2021 17:00:00 +0800</lastBuildDate><atom:link href="https://sharonwu0505.github.io/tags/javascript/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Fri, 30 Jul 2021 17:00:00 +0800</lastBuildDate><atom:link href="https://sharonwu0505.github.io/tags/javascript/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Introduction to TypeScript and Primitive Types</title>
+      <link>https://sharonwu0505.github.io/docs/2021/intro-to-typescript/</link>
+      <pubDate>Fri, 30 Jul 2021 17:00:00 +0800</pubDate>
+      
+      <guid>https://sharonwu0505.github.io/docs/2021/intro-to-typescript/</guid>
+      <description>&lt;p&gt;眾所皆知，JavaScript 是一個「弱型別」的語言，意思是：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;開發者在宣告變數時，不需要事先指定變數的型別 e.g. string, number, boolean, etc.&lt;/li&gt;
+&lt;li&gt;JavaScript 會根據變數被賦予的值去判斷它的型別&lt;/li&gt;
+&lt;li&gt;某些情況下，JavaScript 會在背地裡執行「強制轉型」(coercion)，將變數轉換成可以處理的型別&lt;/li&gt;
+&lt;/ul&gt;</description>
+    </item>
+    
     <item>
       <title>JavaScript Questions</title>
       <link>https://sharonwu0505.github.io/docs/2021/js-questions/</link>
