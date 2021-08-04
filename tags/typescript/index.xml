@@ -5,13 +5,22 @@
     <link>https://sharonwu0505.github.io/tags/typescript/</link>
     <description>Recent content in TypeScript on Draw Closer - A Blog by Sharon Wu</description>
     <generator>Hugo -- gohugo.io</generator>
-    <lastBuildDate>Fri, 30 Jul 2021 17:00:00 +0800</lastBuildDate><atom:link href="https://sharonwu0505.github.io/tags/typescript/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Tue, 03 Aug 2021 10:00:00 +0800</lastBuildDate><atom:link href="https://sharonwu0505.github.io/tags/typescript/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>TypeScript: Any, Array, Union Types, Enum, Function, and Interface</title>
+      <link>https://sharonwu0505.github.io/docs/2021/typescript-more/</link>
+      <pubDate>Tue, 03 Aug 2021 10:00:00 +0800</pubDate>
+      
+      <guid>https://sharonwu0505.github.io/docs/2021/typescript-more/</guid>
+      <description>&lt;p&gt;此篇繼續來看 TypeScript 的基本語法。&lt;/p&gt;</description>
+    </item>
+    
     <item>
       <title>Introduction to TypeScript and Primitive Types</title>
-      <link>https://sharonwu0505.github.io/docs/2021/intro-to-typescript/</link>
+      <link>https://sharonwu0505.github.io/docs/2021/typescript-intro/</link>
       <pubDate>Fri, 30 Jul 2021 17:00:00 +0800</pubDate>
       
-      <guid>https://sharonwu0505.github.io/docs/2021/intro-to-typescript/</guid>
+      <guid>https://sharonwu0505.github.io/docs/2021/typescript-intro/</guid>
       <description>&lt;p&gt;眾所皆知，JavaScript 是一個「弱型別」的語言，意思是：&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;開發者在宣告變數時，不需要事先指定變數的型別 e.g. string, number, boolean, etc.&lt;/li&gt;

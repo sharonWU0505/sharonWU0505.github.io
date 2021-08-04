@@ -9,29 +9,19 @@
 <link rel="mask-icon" href='https://sharonwu0505.github.io/favicons/safari-pinned-tab.svg'  color="#004750">
 <link rel="shortcut icon" href='https://sharonwu0505.github.io/favicons/favicon.ico'>
 <meta name="msapplication-config" content='https://sharonwu0505.github.io/favicons/browserconfig.xml'>
-<title>Introduction to TypeScript and Primitive Types | Draw Closer - A Blog by Sharon Wu</title>
+<title>TypeScript: Any, Array, Union Types, Enum, Function, and Interface | Draw Closer - A Blog by Sharon Wu</title>
 <link rel="canonical" href="https://sharonwu0505.github.io/"/>
 <meta name="keywords" content="JavaScript,TypeScript" />
-<meta name="description" content="眾所皆知，JavaScript 是一個「弱型別」的語言，意思是：
-
-開發者在宣告變數時，不需要事先指定變數的型別 e.g. string, number, boolean, etc.
-JavaScript 會根據變數被賦予的值去判斷它的型別
-某些情況下，JavaScript 會在背地裡執行「強制轉型」(coercion)，將變數轉換成可以處理的型別
-" />
+<meta name="description" content="此篇繼續來看 TypeScript 的基本語法。" />
 
 
 <meta property="og:url" content="https://sharonwu0505.github.io/" />
 <meta property="og:type" content="website" />
 <meta property="og:site_name" content="Draw Closer" />
-<meta property="og:title" content="Introduction to TypeScript and Primitive Types | Draw Closer" />
+<meta property="og:title" content="TypeScript: Any, Array, Union Types, Enum, Function, and Interface | Draw Closer" />
 <meta
   property="og:description"
-  content="眾所皆知，JavaScript 是一個「弱型別」的語言，意思是：
-
-開發者在宣告變數時，不需要事先指定變數的型別 e.g. string, number, boolean, etc.
-JavaScript 會根據變數被賦予的值去判斷它的型別
-某些情況下，JavaScript 會在背地裡執行「強制轉型」(coercion)，將變數轉換成可以處理的型別
-"
+  content="此篇繼續來看 TypeScript 的基本語法。"
 />
 <meta name="twitter:card" content="summary_large_image" />
 <meta property="og:image:height" content="630" />
@@ -43,8 +33,8 @@ JavaScript 會根據變數被賦予的值去判斷它的型別
 
 
 
-  <meta name="description" content="眾所皆知，JavaScript 是一個「弱型別」的語言，意思是：
- 開發者在宣告變數時，不需要事先指定變數的型別 e.g. string, number, boolean, etc. JavaScript 會根據變數被賦予的值去判斷它的型別 某些情況下，JavaScript 會在背地裡執行「強制轉型」(coercion)，將變數轉換成可以處理的型別 ">
+  <meta name="description" content="此篇繼續來看 TypeScript 的基本語法。
+">
 
 
 
@@ -126,7 +116,29 @@ JavaScript 會根據變數被賦予的值去判斷它的型別
   <section class="section aside_inner">
     <h2 class="section_title"><a  href="https://sharonwu0505.github.io/docs/" class="group">Posts</a></h2>
       <section class="" id="docs-posts">
-        <h3 class="section_link active"><a id="docs-introduction-to-typescript-and-primitive-types" href="https://sharonwu0505.github.io/docs/2021/intro-to-typescript/">Introduction to TypeScript and Primitive Types</a></h3><nav id="TableOfContents">
+        <h3 class="section_link active"><a id="docs-typescript-any-array-union-types-enum-function-and-interface" href="https://sharonwu0505.github.io/docs/2021/typescript-more/">TypeScript: Any, Array, Union Types, Enum, Function, and Interface</a></h3><nav id="TableOfContents">
+  <ul>
+    <li><a href="#any">Any</a></li>
+    <li><a href="#型別推論">型別推論</a></li>
+    <li><a href="#array">Array</a></li>
+    <li><a href="#union-types">Union Types</a></li>
+    <li><a href="#enum-列舉">Enum (列舉)</a></li>
+    <li><a href="#function">Function</a>
+      <ul>
+        <li>
+          <ul>
+            <li><a href="#normal-function">Normal Function</a></li>
+            <li><a href="#arrow-function">Arrow Function</a></li>
+            <li><a href="#optional-parameters">Optional Parameters</a></li>
+          </ul>
+        </li>
+      </ul>
+    </li>
+    <li><a href="#interface">Interface</a></li>
+    <li><a href="#references">References</a></li>
+  </ul>
+</nav>
+        <h3 class="section_link"><a id="docs-introduction-to-typescript-and-primitive-types" href="https://sharonwu0505.github.io/docs/2021/typescript-intro/">Introduction to TypeScript and Primitive Types</a></h3><nav id="TableOfContents">
   <ul>
     <li><a href="#安裝-typescript">安裝 TypeScript</a></li>
     <li><a href="#編譯-typescript-檔案">編譯 TypeScript 檔案</a></li>
@@ -141,6 +153,7 @@ JavaScript 會根據變數被賦予的值去判斷它的型別
         </li>
       </ul>
     </li>
+    <li><a href="#references">References</a></li>
   </ul>
 </nav>
         <h3 class="section_link"><a id="docs-javascript-questions" href="https://sharonwu0505.github.io/docs/2021/js-questions/">JavaScript Questions</a></h3><nav id="TableOfContents">
@@ -365,7 +378,7 @@ JavaScript 會根據變數被賦予的值去判斷它的型別
 </aside>
 
   <main class="content">
-    <h1>Introduction to TypeScript and Primitive Types</h1>
+    <h1>TypeScript: Any, Array, Union Types, Enum, Function, and Interface</h1>
     <div class="post__tags">
       
         <a href="https://sharonwu0505.github.io/tags/javascript">
@@ -376,58 +389,110 @@ JavaScript 會根據變數被賦予的值去判斷它的型別
           <span class="post__tag">TypeScript</span>
         </a>
       
-    </div><p>眾所皆知，JavaScript 是一個「弱型別」的語言，意思是：</p>
+    </div><p>此篇繼續來看 TypeScript 的基本語法。</p>
+<h2 id="any">Any</h2>
+<p>在 TypeScript 中，可用 <code>any</code> 來表示允許賦值是任意型別。</p>
+<p>如果使用普通型別，在賦值過程中改變型別是不被允許的，但如果是 <code>any</code> 型別，則允許。以下程式將能順利被編譯。</p>
+<pre><code>let myNumber: any = 'nine';
+myNumber = 9;
+</code></pre><h2 id="型別推論">型別推論</h2>
+<p>如果沒有明確地指定型別，那麼 TypeScript 會依照型別推論（Type Inference）的規則推斷出型別。例如：</p>
+<pre><code>let myNumber = 'nine';
+myNumber = 9;
+</code></pre><p>編譯以上程式碼會收到錯誤。原因是 TypeScript 遇到賦值時會推斷出變數的型別是 <code>string</code>，爾後重新賦值時不允許改變型別。</p>
+<p>但如果宣吿變數時沒有指定型別也沒有賦值，則它會被推斷成任意型別 (<code>any</code>)，所以以下程式碼會通過編譯。</p>
+<pre><code>let myNumber;
+myNumber = 'nine';
+myNumber = 9;
+</code></pre><h2 id="array">Array</h2>
+<p>宣告 Array 型別其實很單純：</p>
 <ul>
-<li>開發者在宣告變數時，不需要事先指定變數的型別 e.g. string, number, boolean, etc.</li>
-<li>JavaScript 會根據變數被賦予的值去判斷它的型別</li>
-<li>某些情況下，JavaScript 會在背地裡執行「強制轉型」(coercion)，將變數轉換成可以處理的型別</li>
+<li>an array of number: <code>number[]</code></li>
+<li>an array of string: <code>string[]</code></li>
 </ul>
-<p>弱型別的設計讓 JavaScript 撰寫起來更方便，但也因此經常衍生出許多開發者預料之外的行為。在較大型、多人協作的專案裡，開發者們逐漸轉向 TypeScript，以期能借用「強型別」的概念，預先有靜態的型別檢查，避免預期外的錯誤。</p>
-<p>TypeScript 是 JavaScript 型別的超集，它會被編譯成 JavaScript，並可被瀏覽器執行。目前是一個由微軟維護的<a href="https://github.com/Microsoft/TypeScript">開源專案</a>。</p>
-<p>除了強型別在編譯階段發現錯誤的特性，撰寫 TypeScript 還有一些優點，包括：</p>
+<pre><code>const numArray: number[] = [1, 2, 3];
+</code></pre><h2 id="union-types">Union Types</h2>
+<p>聯合型別（Union Types）表示取值可以為多種型別中的一種。</p>
+<pre><code>let myNumber: string | number;
+myNumber = 'nine';
+myNumber = 9;
+</code></pre><p>當 TypeScript 不確定一個聯合型別的變數到底是哪一個型別時，我們只能存取所有型別裡共有的屬性或方法。</p>
+<pre><code>function getLength(something: string | number): number {
+  return something.length; // error: 因為 number 沒有 `length` 屬性
+}
+</code></pre><pre><code>function getLength(something: string | number): number {
+  return something.toString(); // works
+}
+</code></pre><h2 id="enum-列舉">Enum (列舉)</h2>
+<p>Enum 型別經常被用在變數值有一定範圍的場景，例如一週 7 天、篩選選項等等。</p>
+<p>我們用 <code>enum</code> 關鍵字來定義變數：</p>
+<pre><code>enum Filters {
+  ALL,
+  ACTIVE,
+  PAST_DUE,
+}
+</code></pre><p>列舉的項目會被賦值從 0 開始遞增的數字，同時也會有數字到列舉值的反向對映，所以如果我們印出 <code>Filters</code>，會看到：</p>
+<pre><code>{
+  '0': 'ALL',
+  '1': 'ACTIVE',
+  '2': 'PAST_DUE',
+  ALL: 0,
+  ACTIVE: 1,
+  PAST_DUE: 2,
+}
+</code></pre><p>我們可用 <code>Filters.PAST_DUE</code> 來取得列舉項目的值。</p>
+<p>Enum 還有更多應用，包括手動賦值、常數列舉等等，有興趣的話可再去閱讀<a href="https://www.typescriptlang.org/docs/handbook/enums.html#numeric-enums">官方文件</a>。</p>
+<h2 id="function">Function</h2>
+<p>定義函式時，要使用 TypeScript 約束函式的輸入和輸出，例如：</p>
+<h4 id="normal-function">Normal Function</h4>
+<pre><code>function sum(num1: number, num2: number): number {
+  return num1 + num2;
+}
+</code></pre><h4 id="arrow-function">Arrow Function</h4>
+<pre><code>const sum = (num1: number, num2: number): number =&gt; {
+  return num1 + num2;
+}
+
+sum(1, 2);     // works
+sum(1, 2, 3);  // works: more arguments are ignored
+</code></pre><h4 id="optional-parameters">Optional Parameters</h4>
+<p>如果某參數為 optional，可用 <code>?</code> 來處理：</p>
+<pre><code>function f(x?: number) {
+  // ...
+}
+
+f(); // OK
+f(10); // OK
+</code></pre><h2 id="interface">Interface</h2>
+<p>在 TypeScript 中，我們使用 interface 來定義物件 (object) 的型別或形狀。以下是一個簡單的例子：</p>
+<pre><code>interface Person { // interface naming 通常首字母是大寫
+  name: string;
+  gender: string;
+}
+
+let Amy: Person = {
+  name: 'Amy',
+  age: 25
+};
+</code></pre><p>可以使用 <code>readonly</code> property 來定義唯讀的物件屬性：</p>
+<pre><code>interface Person {
+  readonly name: string;
+  gender: string;
+}
+</code></pre><p>interface 的更多應用請見<a href="https://www.typescriptlang.org/docs/handbook/2/objects.html">官方文件</a>。</p>
+<h2 id="references">References</h2>
 <ul>
-<li>型別系統作為變數和函式的定義，具有文件的功用，能增加程式碼的可讀性</li>
-<li>增強了編譯器和 IDE 的功能，例如除錯、提示、自動完成等</li>
+<li><a href="https://www.typescriptlang.org/">https://www.typescriptlang.org/</a></li>
+<li><a href="https://willh.gitbook.io/typescript-tutorial/">https://willh.gitbook.io/typescript-tutorial/</a></li>
 </ul>
-<p>而 TypeScript 當然也有缺點，例如：</p>
-<ul>
-<li>有一定的學習成本，整合專案也需要一些時間，短期內會拉長開發時程</li>
-<li>非所有第三方函式庫都已支援</li>
-</ul>
-<p>不過整體而言，TypeScript 的使用比例都逐漸增加當中，實務上也已顯現出價值，所以還是值得一學。接下來將整理 TypeScript 的基礎。</p>
-<h2 id="安裝-typescript">安裝 TypeScript</h2>
-<p>如果你使用 npm 作為 package 管理工具，那麼可以以下指令在全域安裝 <code>tsc</code> 指令：</p>
-<pre><code>npm install -g typescript
-</code></pre><p>執行後，可透過 <code>tsc --version</code> 確認是否安裝成功。</p>
-<h2 id="編譯-typescript-檔案">編譯 TypeScript 檔案</h2>
-<p>大部分以 TypeScript 編寫的檔案以 <code>.ts</code> 為檔名結尾（用 TypeScript 編寫 React 時，以 <code>.tsx</code> 為檔名結尾）。</p>
-<p>透過執行 TypeScript 檔案，例如：</p>
-<pre><code>tsc myFile.ts
-</code></pre><p>將會得到一編譯完成的 JavaScript (<code>.js</code>) 檔案，例如：<code>myFile.js</code>。</p>
-<p>如果想啟用 watch mode，可以透過 <code>tsc myFile.ts -w</code> 進行。</p>
-<h2 id="primitive-types">Primitive Types</h2>
-<p>由於 JavaScript 的資料型別分成原始型別 (primitive types) 和物件型別 (object types)，所以我們也以此分別介紹它們在 TypeScript 中的應用。</p>
-<p>最基本的 TypeScript 定義為：</p>
-<pre><code>let firstVar: type;
-</code></pre><p>若在賦值時型別錯誤，預期會在 terminal 中看到錯誤。</p>
-<h4 id="string-number-and-boolean">String, Number, and Boolean</h4>
-<p>Primitive types 包括 <code>string</code>, <code>number</code>, <code>boolean</code>, <code>null</code>, <code>undefined</code>。</p>
-<p>我們可以透過以下定義一個型別為 <code>string</code> 的變數。定義其他型別的作法基本上相同。</p>
-<pre><code>let myString: string = &quot;hello world&quot;
-</code></pre><h4 id="null-and-undefined">Null and Undefined</h4>
-<p><code>null</code> 和 <code>undefined</code> 就比較特別了，它們是所有型別的子型別。意思是型別為 <code>null</code> 或 <code>undefined</code> 的變數，可以被賦值給其他變數，例如：</p>
-<pre><code>let myUndefined: undefined = undefined;
-let myBoolean: boolean = myUndefined;
-</code></pre><h4 id="void">Void</h4>
-<p>不過 JavaScript 中就沒有空值 (<code>void</code>) 的概念了。在 TypeScript 中，可以用 <code>void</code> 表示沒有任何返回值的函式，也可以用來宣告變數，但型別為 <code>void</code> 的變數只能被賦值為 <code>null</code> 或 <code>undefined</code>，所以沒什麼意義。</p>
     <div class="pager pager_lean">
   
 
   
   <div class="pager_item next">
     
-    <a href="https://sharonwu0505.github.io/docs/2021/js-questions/" class="pager_link button" title="JavaScript Questions">
-      <span class="pager_label">JavaScript Questions</span>
+    <a href="https://sharonwu0505.github.io/docs/2021/typescript-intro/" class="pager_link button" title="Introduction to TypeScript and Primitive Types">
+      <span class="pager_label">Introduction to TypeScript and Primitive Types</span>
     </a>
   </div>
   

@@ -9,21 +9,29 @@
 <link rel="mask-icon" href='https://sharonwu0505.github.io/favicons/safari-pinned-tab.svg'  color="#004750">
 <link rel="shortcut icon" href='https://sharonwu0505.github.io/favicons/favicon.ico'>
 <meta name="msapplication-config" content='https://sharonwu0505.github.io/favicons/browserconfig.xml'>
-<title>以 Hugo 建立部落格 | Draw Closer - A Blog by Sharon Wu</title>
+<title>Introduction to TypeScript and Primitive Types | Draw Closer - A Blog by Sharon Wu</title>
 <link rel="canonical" href="https://sharonwu0505.github.io/"/>
-<meta name="keywords" content="Hugo,Blog,Github,Github Pages,Github Actions" />
-<meta name="description" content="Hugo 是一個用 Go 寫成的靜態網站生成器（Static Site Generator）。其架構允許以 Markdown 格式撰寫內容，再搭配 layout template 渲染出畫面，對於喜歡用 Markdown 簡潔撰寫文章的人來說很合適！
-就讓我們來看看如何以 Hugo 建立部落格，並在每次更新後自動化部署到 GitHub Pages。" />
+<meta name="keywords" content="JavaScript,TypeScript" />
+<meta name="description" content="眾所皆知，JavaScript 是一個「弱型別」的語言，意思是：
+
+開發者在宣告變數時，不需要事先指定變數的型別 e.g. string, number, boolean, etc.
+JavaScript 會根據變數被賦予的值去判斷它的型別
+某些情況下，JavaScript 會在背地裡執行「強制轉型」(coercion)，將變數轉換成可以處理的型別
+" />
 
 
 <meta property="og:url" content="https://sharonwu0505.github.io/" />
 <meta property="og:type" content="website" />
 <meta property="og:site_name" content="Draw Closer" />
-<meta property="og:title" content="以 Hugo 建立部落格 | Draw Closer" />
+<meta property="og:title" content="Introduction to TypeScript and Primitive Types | Draw Closer" />
 <meta
   property="og:description"
-  content="Hugo 是一個用 Go 寫成的靜態網站生成器（Static Site Generator）。其架構允許以 Markdown 格式撰寫內容，再搭配 layout template 渲染出畫面，對於喜歡用 Markdown 簡潔撰寫文章的人來說很合適！
-就讓我們來看看如何以 Hugo 建立部落格，並在每次更新後自動化部署到 GitHub Pages。"
+  content="眾所皆知，JavaScript 是一個「弱型別」的語言，意思是：
+
+開發者在宣告變數時，不需要事先指定變數的型別 e.g. string, number, boolean, etc.
+JavaScript 會根據變數被賦予的值去判斷它的型別
+某些情況下，JavaScript 會在背地裡執行「強制轉型」(coercion)，將變數轉換成可以處理的型別
+"
 />
 <meta name="twitter:card" content="summary_large_image" />
 <meta property="og:image:height" content="630" />
@@ -35,9 +43,8 @@
 
 
 
-  <meta name="description" content="Hugo 是一個用 Go 寫成的靜態網站生成器（Static Site Generator）。其架構允許以 Markdown 格式撰寫內容，再搭配 layout template 渲染出畫面，對於喜歡用 Markdown 簡潔撰寫文章的人來說很合適！
-就讓我們來看看如何以 Hugo 建立部落格，並在每次更新後自動化部署到 GitHub Pages。
-">
+  <meta name="description" content="眾所皆知，JavaScript 是一個「弱型別」的語言，意思是：
+ 開發者在宣告變數時，不需要事先指定變數的型別 e.g. string, number, boolean, etc. JavaScript 會根據變數被賦予的值去判斷它的型別 某些情況下，JavaScript 會在背地裡執行「強制轉型」(coercion)，將變數轉換成可以處理的型別 ">
 
 
 
@@ -141,7 +148,7 @@
     <li><a href="#references">References</a></li>
   </ul>
 </nav>
-        <h3 class="section_link"><a id="docs-introduction-to-typescript-and-primitive-types" href="https://sharonwu0505.github.io/docs/2021/typescript-intro/">Introduction to TypeScript and Primitive Types</a></h3><nav id="TableOfContents">
+        <h3 class="section_link active"><a id="docs-introduction-to-typescript-and-primitive-types" href="https://sharonwu0505.github.io/docs/2021/typescript-intro/">Introduction to TypeScript and Primitive Types</a></h3><nav id="TableOfContents">
   <ul>
     <li><a href="#安裝-typescript">安裝 TypeScript</a></li>
     <li><a href="#編譯-typescript-檔案">編譯 TypeScript 檔案</a></li>
@@ -220,7 +227,7 @@
     <li><a href="#reference">Reference</a></li>
   </ul>
 </nav>
-        <h3 class="section_link active"><a id="docs-以-hugo-建立部落格" href="https://sharonwu0505.github.io/docs/2021/build-a-blog-with-hugo/">以 Hugo 建立部落格</a></h3><nav id="TableOfContents">
+        <h3 class="section_link"><a id="docs-以-hugo-建立部落格" href="https://sharonwu0505.github.io/docs/2021/build-a-blog-with-hugo/">以 Hugo 建立部落格</a></h3><nav id="TableOfContents">
   <ul>
     <li>
       <ul>
@@ -381,73 +388,75 @@
 </aside>
 
   <main class="content">
-    <h1>以 Hugo 建立部落格</h1>
+    <h1>Introduction to TypeScript and Primitive Types</h1>
     <div class="post__tags">
       
-        <a href="https://sharonwu0505.github.io/tags/hugo">
-          <span class="post__tag">Hugo</span>
+        <a href="https://sharonwu0505.github.io/tags/javascript">
+          <span class="post__tag">JavaScript</span>
         </a>
       
-    </div><p><a href="https://gohugo.io/">Hugo</a> 是一個用 Go 寫成的靜態網站生成器（Static Site Generator）。其架構允許以 Markdown 格式撰寫內容，再搭配 layout template 渲染出畫面，對於喜歡用 Markdown 簡潔撰寫文章的人來說很合適！</p>
-<p>就讓我們來看看如何以 Hugo 建立部落格，並在每次更新後自動化部署到 GitHub Pages。</p>
-<p>Hugo 不管是「網站打包」還是「從零建立網站」的速度都很快，號稱</p>
-<blockquote>
-<p>The world’s fastest framework for building websites.</p>
-</blockquote>
-<p>與類似的框架 <a href="https://wordpress.com/zh-tw/">Wordpress</a> 和 <a href="https://www.gatsbyjs.com/">Gatsby</a> 一樣，Hugo 也有豐富多元且開源的<a href="https://themes.gohugo.io/">主題 (theme)</a>，讓人方便快速地就建立起自己的網站。</p>
-<p>此網站就是以 Hugo 建立的，並使用 <a href="https://themes.gohugo.io/compose/">Compose Theme</a> 讓我們來看看是怎麼做的吧～</p>
-<h3 id="getting-started">Getting Started</h3>
-<blockquote>
-<p>Reference: <a href="https://gohugo.io/getting-started/quick-start/">Hugo - Quick Start</a>, <a href="https://themes.gohugo.io//theme/compose/docs/compose/install-theme/">Compose - Install Theme</a></p>
-</blockquote>
+        <a href="https://sharonwu0505.github.io/tags/typescript">
+          <span class="post__tag">TypeScript</span>
+        </a>
+      
+    </div><p>眾所皆知，JavaScript 是一個「弱型別」的語言，意思是：</p>
 <ul>
-<li>Step 1 - Install Hugo (for MacOS)</li>
+<li>開發者在宣告變數時，不需要事先指定變數的型別 e.g. string, number, boolean, etc.</li>
+<li>JavaScript 會根據變數被賦予的值去判斷它的型別</li>
+<li>某些情況下，JavaScript 會在背地裡執行「強制轉型」(coercion)，將變數轉換成可以處理的型別</li>
 </ul>
-<pre><code>brew install hugo
-</code></pre><ul>
-<li>Step 2 - New a Site</li>
+<p>弱型別的設計讓 JavaScript 撰寫起來更方便，但也因此經常衍生出許多開發者預料之外的行為。在較大型、多人協作的專案裡，開發者們逐漸轉向 <a href="https://www.typescriptlang.org/">TypeScript</a>，以期能借用「強型別」的概念，預先有靜態的型別檢查，避免預期外的錯誤。</p>
+<p>TypeScript 是 JavaScript 型別的超集，它會被編譯成 JavaScript，並可被瀏覽器執行。目前是一個由微軟維護的<a href="https://github.com/Microsoft/TypeScript">開源專案</a>。</p>
+<p>除了強型別在編譯階段發現錯誤的特性，撰寫 TypeScript 還有一些優點，包括：</p>
+<ul>
+<li>型別系統作為變數和函式的定義，具有文件的功用，能增加程式碼的可讀性</li>
+<li>增強了編譯器和 IDE 的功能，例如除錯、提示、自動完成等</li>
 </ul>
-<pre><code>hugo new site my-blog
-</code></pre><ul>
-<li>Step 3 - Install a theme</li>
+<p>而 TypeScript 當然也有缺點，例如：</p>
+<ul>
+<li>有一定的學習成本，整合專案也需要一些時間，短期內會拉長開發時程</li>
+<li>非所有第三方函式庫都已支援</li>
 </ul>
-<pre><code>cd my-blog
-git init
-git submodule add https://github.com/onweru/compose/ themes/compose
-cp -a themes/compose/exampleSite/* .
-</code></pre><ul>
-<li>Step 4 - Run Hugo Server</li>
+<p>不過整體而言，TypeScript 的使用比例都逐漸增加當中，實務上也已顯現出價值，所以還是值得一學。接下來將整理 TypeScript 的基礎。</p>
+<h2 id="安裝-typescript">安裝 TypeScript</h2>
+<p>如果你使用 npm 作為 package 管理工具，那麼可以以下指令在全域安裝 <code>tsc</code> 指令：</p>
+<pre><code>npm install -g typescript
+</code></pre><p>執行後，可透過 <code>tsc --version</code> 確認是否安裝成功。</p>
+<h2 id="編譯-typescript-檔案">編譯 TypeScript 檔案</h2>
+<p>大部分以 TypeScript 編寫的檔案以 <code>.ts</code> 為檔名結尾（用 TypeScript 編寫 React 時，以 <code>.tsx</code> 為檔名結尾）。</p>
+<p>透過執行 TypeScript 檔案，例如：</p>
+<pre><code>tsc myFile.ts
+</code></pre><p>將會得到一編譯完成的 JavaScript (<code>.js</code>) 檔案，例如：<code>myFile.js</code>。</p>
+<p>如果想啟用 watch mode，可以透過 <code>tsc myFile.ts -w</code> 進行。</p>
+<h2 id="primitive-types">Primitive Types</h2>
+<p>由於 JavaScript 的資料型別分成原始型別 (primitive types) 和物件型別 (object types)，所以我們也以此分別介紹它們在 TypeScript 中的應用。</p>
+<p>最基本的 TypeScript 定義為：</p>
+<pre><code>let firstVar: type;
+</code></pre><p>若在賦值時型別錯誤，預期會在 terminal 中看到錯誤。</p>
+<h4 id="string-number-and-boolean">String, Number, and Boolean</h4>
+<p>Primitive types 包括 <code>string</code>, <code>number</code>, <code>boolean</code>, <code>null</code>, <code>undefined</code>。</p>
+<p>我們可以透過以下定義一個型別為 <code>string</code> 的變數。定義其他型別的作法基本上相同。</p>
+<pre><code>let myString: string = &quot;hello world&quot;
+</code></pre><h4 id="null-and-undefined">Null and Undefined</h4>
+<p><code>null</code> 和 <code>undefined</code> 就比較特別了，它們是所有型別的子型別。意思是型別為 <code>null</code> 或 <code>undefined</code> 的變數，可以被賦值給其他變數，例如：</p>
+<pre><code>let myUndefined: undefined = undefined;
+let myBoolean: boolean = myUndefined;
+</code></pre><h4 id="void">Void</h4>
+<p>而 JavaScript 中沒有空值 (<code>void</code>) 的概念，不過在 TypeScript 中，可以用 <code>void</code> 表示沒有任何返回值的函式返回值，也可以用來宣告變數，但型別為 <code>void</code> 的變數只能被賦值為 <code>null</code> 或 <code>undefined</code>，所以沒什麼意義。</p>
+<pre><code>function sayHello(): void {
+  console.log(&quot;hello&quot;)
+}
+</code></pre><h2 id="references">References</h2>
+<ul>
+<li><a href="https://www.typescriptlang.org/">https://www.typescriptlang.org/</a></li>
+<li><a href="https://willh.gitbook.io/typescript-tutorial/">https://willh.gitbook.io/typescript-tutorial/</a></li>
 </ul>
-<pre><code>hugo server
-</code></pre><ul>
-<li>
-<p>Step 5 - Open <code>http://localhost:1313/</code> in browser and then you'll see a site with the Compose theme</p>
-</li>
-<li>
-<p>Step 6 - Add your content and customize the styles!</p>
-</li>
-</ul>
-<h3 id="directory-structure">Directory Structure</h3>
-<p>Hugo 有制式的檔案架構，若依照該架構放置內容，便能享有 Hugo 預設的功能，諸如：列表 (list page) 和單篇 (single page) 結構、多國語言、template 組合等等。以下介紹常見 Hugo 架構中各檔案夾的意義。</p>
-<pre><code>my-blog
-├── archetypes
-├── assets         // scss and js to be processed by Hugo Pipes
-├── content        // 網站主要內容都維護在此
-├── layouts        // 網站頁面樣式，因為我們有使用主題，如果需要客製化覆蓋主題的樣式，可在此新增檔案
-├── static         // 放置網站圖片、CSS、JS 檔案
-├── theme          // 主題
-└── config.toml    // 設定檔
-</code></pre><blockquote>
-<p>Layout 覆蓋順序請見 <a href="https://gohugo.io/templates/lookup-order/">Hugo's Lookup Order</a></p>
-</blockquote>
-<h3 id="deploy">Deploy</h3>
-<p>請見下篇<a href="../deploy-hugo-blog-to-github">自動化部署 Hugo 部落格到 GitHub Pages</a></p>
     <div class="pager">
   
   <div class="pager_item prev">
     
-    <a href="https://sharonwu0505.github.io/docs/2021/deploy-hugo-blog-to-github/" class="pager_link button" title="自動化部署 Hugo 部落格到 GitHub Pages">
-      <span class="pager_label">自動化部署 Hugo 部落格到 GitHub Pages</span>
+    <a href="https://sharonwu0505.github.io/docs/2021/typescript-more/" class="pager_link button" title="TypeScript: Any, Array, Union Types, Enum, Function, and Interface">
+      <span class="pager_label">TypeScript: Any, Array, Union Types, Enum, Function, and Interface</span>
     </a>
   </div>
   
@@ -455,8 +464,8 @@ cp -a themes/compose/exampleSite/* .
   
   <div class="pager_item next">
     
-    <a href="https://sharonwu0505.github.io/docs/2021/what-is-webview/" class="pager_link button" title="What is WebView?">
-      <span class="pager_label">What is WebView?</span>
+    <a href="https://sharonwu0505.github.io/docs/2021/js-questions/" class="pager_link button" title="JavaScript Questions">
+      <span class="pager_label">JavaScript Questions</span>
     </a>
   </div>
   
