@@ -9,21 +9,19 @@
 <link rel="mask-icon" href='https://sharonwu0505.github.io/favicons/safari-pinned-tab.svg'  color="#004750">
 <link rel="shortcut icon" href='https://sharonwu0505.github.io/favicons/favicon.ico'>
 <meta name="msapplication-config" content='https://sharonwu0505.github.io/favicons/browserconfig.xml'>
-<title>Setting Prettier to Format Codes | Draw Closer - A Blog by Sharon Wu</title>
+<title>TypeScript: Generic Types and Type Alias | Draw Closer - A Blog by Sharon Wu</title>
 <link rel="canonical" href="https://sharonwu0505.github.io/"/>
-<meta name="keywords" content="eslint,prettier" />
-<meta name="description" content="Prettier is an opinionated code formatter supporting several languages. The biggest reason for adopting Prettier is to stop all the on-going debates over styles. Therefore, applying Prettier to frontend development flow can save much time on formatting codes and align coding styles.
-In my opinion, ESLint and Prettier are must tools for every frontend projects (not only personal, but also group ones)." />
+<meta name="keywords" content="JavaScript,TypeScript" />
+<meta name="description" content="此篇要來談談更多 TypeScript 的用法，包括通用型別 (Generic Types) 的用途，以及 interface 和型別別名 (Type Alias) 的使用差異。" />
 
 
 <meta property="og:url" content="https://sharonwu0505.github.io/" />
 <meta property="og:type" content="website" />
 <meta property="og:site_name" content="Draw Closer" />
-<meta property="og:title" content="Setting Prettier to Format Codes | Draw Closer" />
+<meta property="og:title" content="TypeScript: Generic Types and Type Alias | Draw Closer" />
 <meta
   property="og:description"
-  content="Prettier is an opinionated code formatter supporting several languages. The biggest reason for adopting Prettier is to stop all the on-going debates over styles. Therefore, applying Prettier to frontend development flow can save much time on formatting codes and align coding styles.
-In my opinion, ESLint and Prettier are must tools for every frontend projects (not only personal, but also group ones)."
+  content="此篇要來談談更多 TypeScript 的用法，包括通用型別 (Generic Types) 的用途，以及 interface 和型別別名 (Type Alias) 的使用差異。"
 />
 <meta name="twitter:card" content="summary_large_image" />
 <meta property="og:image:height" content="630" />
@@ -35,8 +33,7 @@ In my opinion, ESLint and Prettier are must tools for every frontend projects (n
 
 
 
-  <meta name="description" content="Prettier is an opinionated code formatter supporting several languages. The biggest reason for adopting Prettier is to stop all the on-going debates over styles. Therefore, applying Prettier to frontend development flow can save much time on formatting codes and align coding styles.
-In my opinion, ESLint and Prettier are must tools for every frontend projects (not only personal, but also group ones).
+  <meta name="description" content="此篇要來談談更多 TypeScript 的用法，包括通用型別 (Generic Types) 的用途，以及 interface 和型別別名 (Type Alias) 的使用差異。
 ">
 
 
@@ -119,7 +116,7 @@ In my opinion, ESLint and Prettier are must tools for every frontend projects (n
   <section class="section aside_inner">
     <h2 class="section_title"><a  href="https://sharonwu0505.github.io/docs/" class="group">Posts</a></h2>
       <section class="" id="docs-posts">
-        <h3 class="section_link"><a id="docs-typescript-generic-types-and-type-alias" href="https://sharonwu0505.github.io/docs/2021/typescript-generic-and-type/">TypeScript: Generic Types and Type Alias</a></h3><nav id="TableOfContents">
+        <h3 class="section_link active"><a id="docs-typescript-generic-types-and-type-alias" href="https://sharonwu0505.github.io/docs/2021/typescript-generic-and-type/">TypeScript: Generic Types and Type Alias</a></h3><nav id="TableOfContents">
   <ul>
     <li><a href="#通用型別-generic-types">通用型別 (Generic Types)</a></li>
     <li><a href="#介面-interface-與型別別名-type-alias-的異同">介面 (Interface) 與型別別名 (Type Alias) 的異同</a>
@@ -256,7 +253,7 @@ In my opinion, ESLint and Prettier are must tools for every frontend projects (n
     <li><a href="#references">References</a></li>
   </ul>
 </nav>
-        <h3 class="section_link active"><a id="docs-setting-prettier-to-format-codes" href="https://sharonwu0505.github.io/docs/2020/setting-prettier/">Setting Prettier to Format Codes</a></h3><nav id="TableOfContents">
+        <h3 class="section_link"><a id="docs-setting-prettier-to-format-codes" href="https://sharonwu0505.github.io/docs/2020/setting-prettier/">Setting Prettier to Format Codes</a></h3><nav id="TableOfContents">
   <ul>
     <li><a href="#prettier-vs-linters">Prettier vs. Linters</a></li>
     <li><a href="#usage">Usage</a>
@@ -397,104 +394,98 @@ In my opinion, ESLint and Prettier are must tools for every frontend projects (n
 </aside>
 
   <main class="content">
-    <h1>Setting Prettier to Format Codes</h1>
+    <h1>TypeScript: Generic Types and Type Alias</h1>
     <div class="post__tags">
       
-        <a href="https://sharonwu0505.github.io/tags/prettier">
-          <span class="post__tag">Prettier</span>
+        <a href="https://sharonwu0505.github.io/tags/javascript">
+          <span class="post__tag">JavaScript</span>
         </a>
       
-        <a href="https://sharonwu0505.github.io/tags/workflow">
-          <span class="post__tag">Workflow</span>
+        <a href="https://sharonwu0505.github.io/tags/typescript">
+          <span class="post__tag">TypeScript</span>
         </a>
       
-    </div><p><a href="https://prettier.io/">Prettier</a> is an opinionated <strong>code formatter</strong> supporting several languages. The biggest reason for adopting Prettier is to stop all the on-going debates over styles. Therefore, applying Prettier to frontend development flow can save much time on formatting codes and align coding styles.</p>
-<p>In my opinion, ESLint and Prettier are must tools for every frontend projects (not only personal, but also group ones).</p>
-<h2 id="prettier-vs-linters">Prettier vs. Linters</h2>
-<p>Linters have two categories of rules:</p>
-<ul>
-<li>Formatting rules: eg: <code>max-len</code>, <code>no-mixed-spaces-and-tabs</code>, <code>keyword-spacing</code>, <code>comma-style</code>, …</li>
-<li>Code-quality rules: eg: <code>no-unused-vars</code>, <code>no-extra-bind</code>, <code>no-implicit-globals</code>, <code>prefer-promise-reject-errors</code>, …</li>
-</ul>
-<p>Prettier covers all needs of formatting codes, but it does nothing with checking code qualities.
-In other words, <strong>use Prettier for formatting and linters for catching bugs!</strong></p>
-<h2 id="usage">Usage</h2>
-<h3 id="global-settings">Global Settings</h3>
-<ul>
-<li>Install: <code>npm install -g prettier@2.2.1</code>
-<ul>
-<li>should lock the version, because default rules differ by releases</li>
-<li>check the version: <code>npm list -g prettier</code></li>
-</ul>
-</li>
-<li>Create a <code>.prettierrc</code> file
-<ul>
-<li><code>cd</code> (to root path)</li>
-<li><code>touch .prettierrc</code></li>
-</ul>
-</li>
-<li>Add rules to <code>~/.prettierrc</code>
-<ul>
-<li>open the file: <code>open ~/.prettierrc</code></li>
-<li>add following lines and save it</li>
-</ul>
-</li>
-</ul>
-<pre><code>{
-  &quot;printWidth&quot;: 100,
-  &quot;tabWidth&quot;: 2,
-  &quot;semi&quot;: true,
-  &quot;trailingComma&quot;: &quot;es5&quot;,
-  &quot;jsxBracketSameLine&quot;: true
+    </div><p>此篇要來談談更多 TypeScript 的用法，包括通用型別 (Generic Types) 的用途，以及 interface 和型別別名 (Type Alias) 的使用差異。</p>
+<h2 id="通用型別-generic-types">通用型別 (Generic Types)</h2>
+<p>有時我們想在具有多種型別可能的情況下重用 (reuse) 程式碼，例如以下這個例子：</p>
+<pre><code>function identity(arg: number): number {
+  return arg;
 }
-</code></pre><ul>
-<li>(optional) Create a <code>.prettierignore</code> file</li>
-<li>Format certain files: <code>prettier --write ${file-path-or-pattern}</code></li>
-</ul>
-<h3 id="integrate-with-vscode">Integrate with VSCode</h3>
+</code></pre><p><code>identify</code> 函式收到參數 <code>arg</code>，並回傳該參數。如果想重用函式，且不限定參數型別，我們可以使用 <code>any</code>：</p>
+<pre><code>function identity(arg: any): any {
+  return arg;
+}
+</code></pre><p>但如此一來我們便無法限制回傳值的型別要等同輸入值的型別，這時正是使用通用型別的時機。</p>
+<p>我們使用 type variable <code>T</code> 來代表型別，限制了函式輸入和輸出值的型別必須相同：</p>
+<pre><code>function identify&lt;T&gt;(arg: T): T {
+  return arg;
+}
+</code></pre><p>使用 <strong>type variable</strong> 時，因為無從事先得知變數的型別，所以無法操作屬性或方法，例如以下範例將會收到錯誤：</p>
+<pre><code>function identify&lt;T&gt;(arg: T): T {
+  console.log(arg.length); // error: Property 'length' does not exist on type 
+  return arg;
+}
+</code></pre><p>不過如果是：</p>
+<pre><code>function loggingIdentity&lt;T&gt;(args: T[]): T[] {
+  console.log(args.length);
+  return args;
+}
+</code></pre><p>將不會有問題，因為 arrays of type <code>T</code> 確定有 <code>length</code> 屬性。</p>
+<p>通用型別當然也可以跟 interface, class, tuple 等搭配運用，詳細使用方式請見官方<a href="https://www.typescriptlang.org/docs/handbook/2/generics.html">文件</a>。</p>
+<h2 id="介面-interface-與型別別名-type-alias-的異同">介面 (Interface) 與型別別名 (Type Alias) 的異同</h2>
+<p>型別別名在使用上和 interface 非常相似。</p>
+<h4 id="相似之處">相似之處</h4>
+<p><code>type</code> 和 <code>interface</code> 一樣可以用來定義物件格式：</p>
+<pre><code>type Animal = {
+  name: string
+}
+</code></pre><p><code>type</code> 可使用 intersections 延伸屬性（<code>interface</code> 則通常會使用 <code>extends</code>)</p>
+<pre><code>type Animal = {
+  name: string
+}
+
+type Bear = Animal &amp; { 
+  honey: boolean 
+}
+
+const bear = getBear();
+bear.name;
+bear.honey;
+</code></pre><h4 id="不同之處">不同之處</h4>
+<blockquote>
+<p>Aliasing doesn’t actually create a new type - it creates a new name to refer to that type. Aliasing a primitive is not terribly useful, though it can be used as a form of documentation.</p>
+</blockquote>
+<p>根據<a href="https://www.typescriptlang.org/docs/handbook/declaration-files/by-example.html#reusable-types-type-aliases">官方文件</a>，<code>type</code> 看起來更推薦用在單純要表示偏靜態的資料格式之時：</p>
+<pre><code>// declaration
+type GreetingLike = string | (() =&gt; string) | MyGreeter;
+
+declare function greet(g: GreetingLike): void;
+
+// usage
+function getGreeting() {
+  return &quot;howdy&quot;;
+}
+
+class MyGreeter extends Greeter {
+  ...
+}
+
+greet(&quot;hello&quot;);
+greet(getGreeting);
+greet(new MyGreeter());
+</code></pre><h2 id="references">References</h2>
 <ul>
-<li>Install <a href="https://marketplace.visualstudio.com/items?itemName=esbenp.prettier-vscode">Prettier - Code formatter</a> plugin (is using <code>prettier@2.2.1</code>)</li>
-<li>Open <code>settings.json</code>, add following lines and save it</li>
-<li>Format current file: <code>cmd+shift+p</code> &gt; <code>Format Document</code></li>
+<li><a href="https://www.typescriptlang.org/">https://www.typescriptlang.org/</a></li>
+<li><a href="https://willh.gitbook.io/typescript-tutorial/">https://willh.gitbook.io/typescript-tutorial/</a></li>
 </ul>
-<h4 id="for-prettier">For Prettier</h4>
-<pre><code>&quot;editor.defaultFormatter&quot;: &quot;esbenp.prettier-vscode&quot;,
-&quot;editor.formatOnSave&quot;: true,  // default
-</code></pre><h4 id="other-settings">Other Settings</h4>
-<pre><code>&quot;editor.rulers&quot;: [
-  100
-],
-&quot;editor.tabSize&quot;: 2,                                     // optional
-&quot;editor.renderWhitespace&quot;: &quot;boundary&quot;,                   // recommended
-&quot;javascript.updateImportsOnFileMove.enabled&quot;: &quot;always&quot;,  // recommended
-</code></pre><h3 id="local-settings-by-projects">Local Settings by Projects</h3>
-<p>If a project has its own Prettier config file, the configuration will be applied.
-Prettier searches recursively up the file path, it will fallback to global settings if local configuration is not found.</p>
-<h2 id="configuration">Configuration</h2>
-<ul>
-<li>See <a href="https://prettier.io/docs/en/options.html">options</a></li>
-</ul>
-<h2 id="references">References</h2>
-<ul>
-<li><a href="https://prettier.io/">https://prettier.io/</a></li>
-<li><a href="https://marketplace.visualstudio.com/items?itemName=esbenp.prettier-vscode">https://marketplace.visualstudio.com/items?itemName=esbenp.prettier-vscode</a></li>
-<li><a href="https://hackmd.io/@chupai/HkNT0IMhr">https://hackmd.io/@chupai/HkNT0IMhr</a></li>
-</ul>
-    <div class="pager">
-  
-  <div class="pager_item prev">
-    
-    <a href="https://sharonwu0505.github.io/docs/2021/what-is-webview/" class="pager_link button" title="What is WebView?">
-      <span class="pager_label">What is WebView?</span>
-    </a>
-  </div>
+    <div class="pager pager_lean">
   
 
   
   <div class="pager_item next">
     
-    <a href="https://sharonwu0505.github.io/docs/2020/setting-eslint/" class="pager_link button" title="Setting ESLint to Enhance Frontend Development">
-      <span class="pager_label">Setting ESLint to Enhance Frontend Development</span>
+    <a href="https://sharonwu0505.github.io/docs/2021/typescript-more/" class="pager_link button" title="TypeScript: Any, Array, Union Types, Enum, Function, and Interface">
+      <span class="pager_label">TypeScript: Any, Array, Union Types, Enum, Function, and Interface</span>
     </a>
   </div>
   

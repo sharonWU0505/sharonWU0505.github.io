@@ -6,6 +6,15 @@
     <description>Recent content in Posts on Draw Closer - A Blog by Sharon Wu</description>
     <generator>Hugo -- gohugo.io</generator><atom:link href="https://sharonwu0505.github.io/docs/index.xml" rel="self" type="application/rss+xml" />
     <item>
+      <title>TypeScript: Generic Types and Type Alias</title>
+      <link>https://sharonwu0505.github.io/docs/2021/typescript-generic-and-type/</link>
+      <pubDate>Thu, 05 Aug 2021 14:00:00 +0800</pubDate>
+      
+      <guid>https://sharonwu0505.github.io/docs/2021/typescript-generic-and-type/</guid>
+      <description>&lt;p&gt;此篇要來談談更多 TypeScript 的用法，包括通用型別 (Generic Types) 的用途，以及 interface 和型別別名 (Type Alias) 的使用差異。&lt;/p&gt;</description>
+    </item>
+    
+    <item>
       <title>TypeScript: Any, Array, Union Types, Enum, Function, and Interface</title>
       <link>https://sharonwu0505.github.io/docs/2021/typescript-more/</link>
       <pubDate>Tue, 03 Aug 2021 10:00:00 +0800</pubDate>
