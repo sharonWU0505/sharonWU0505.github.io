@@ -12,7 +12,7 @@
 <title>TypeScript: Generic Types and Type Alias | Draw Closer - A Blog by Sharon Wu</title>
 <link rel="canonical" href="https://sharonwu0505.github.io/"/>
 <meta name="keywords" content="JavaScript,TypeScript" />
-<meta name="description" content="此篇要來談談更多 TypeScript 的用法，包括通用型別 (Generic Types) 的用途，以及 interface 和型別別名 (Type Alias) 的使用差異。" />
+<meta name="description" content="此篇要來談談 TypeScript 通用型別 (Generic Types) 的用途，以及 interface 和型別別名 (Type Alias) 的使用差異。" />
 
 
 <meta property="og:url" content="https://sharonwu0505.github.io/" />
@@ -21,7 +21,7 @@
 <meta property="og:title" content="TypeScript: Generic Types and Type Alias | Draw Closer" />
 <meta
   property="og:description"
-  content="此篇要來談談更多 TypeScript 的用法，包括通用型別 (Generic Types) 的用途，以及 interface 和型別別名 (Type Alias) 的使用差異。"
+  content="此篇要來談談 TypeScript 通用型別 (Generic Types) 的用途，以及 interface 和型別別名 (Type Alias) 的使用差異。"
 />
 <meta name="twitter:card" content="summary_large_image" />
 <meta property="og:image:height" content="630" />
@@ -33,7 +33,7 @@
 
 
 
-  <meta name="description" content="此篇要來談談更多 TypeScript 的用法，包括通用型別 (Generic Types) 的用途，以及 interface 和型別別名 (Type Alias) 的使用差異。
+  <meta name="description" content="此篇要來談談 TypeScript 通用型別 (Generic Types) 的用途，以及 interface 和型別別名 (Type Alias) 的使用差異。
 ">
 
 
@@ -405,13 +405,13 @@
           <span class="post__tag">TypeScript</span>
         </a>
       
-    </div><p>此篇要來談談更多 TypeScript 的用法，包括通用型別 (Generic Types) 的用途，以及 interface 和型別別名 (Type Alias) 的使用差異。</p>
+    </div><p>此篇要來談談 TypeScript 通用型別 (Generic Types) 的用途，以及 interface 和型別別名 (Type Alias) 的使用差異。</p>
 <h2 id="通用型別-generic-types">通用型別 (Generic Types)</h2>
 <p>有時我們想在具有多種型別可能的情況下重用 (reuse) 程式碼，例如以下這個例子：</p>
 <pre><code>function identity(arg: number): number {
   return arg;
 }
-</code></pre><p><code>identify</code> 函式收到參數 <code>arg</code>，並回傳該參數。如果想重用函式，且不限定參數型別，我們可以使用 <code>any</code>：</p>
+</code></pre><p><code>identify</code> 函式收到參數 <code>arg</code>，並回傳該參數。如果想更有彈性地使用函式，比方說不限定參數型別，則我們可以使用 <code>any</code>：</p>
 <pre><code>function identity(arg: any): any {
   return arg;
 }
