@@ -96,6 +96,15 @@
     </item>
     
     <item>
+      <title>Optimize Images for Web Performance</title>
+      <link>https://sharonwu0505.github.io/docs/2021/optimize-images/</link>
+      <pubDate>Sun, 10 Jan 2021 09:00:00 +0800</pubDate>
+      
+      <guid>https://sharonwu0505.github.io/docs/2021/optimize-images/</guid>
+      <description>&lt;p&gt;本篇將介紹兩種常見的圖片優化方式，分別是使用 WebP 格式和 lazy loading，適時地採用這些方法可以提升網站效能。&lt;/p&gt;</description>
+    </item>
+    
+    <item>
       <title>Setting Prettier to Format Codes</title>
       <link>https://sharonwu0505.github.io/docs/2020/setting-prettier/</link>
       <pubDate>Sun, 01 Nov 2020 11:00:00 +0800</pubDate>
@@ -173,6 +182,16 @@
 &lt;/ul&gt;
 &lt;/li&gt;
 &lt;/ul&gt;</description>
+    </item>
+    
+    <item>
+      <title>Notes for React Hooks</title>
+      <link>https://sharonwu0505.github.io/docs/2020/react-hooks/</link>
+      <pubDate>Thu, 23 Jan 2020 09:00:00 +0800</pubDate>
+      
+      <guid>https://sharonwu0505.github.io/docs/2020/react-hooks/</guid>
+      <description>&lt;p&gt;React proposes Hook in version 16.8. It allows developers to use state and methods in component life cycle without writing class components. Additionally, there is no breaking changes for Hook. It is completely opt-in and 100% backwards-compatible.&lt;/p&gt;
+&lt;p&gt;The following are my notes when learning React Hook.&lt;/p&gt;</description>
     </item>
     
     <item>

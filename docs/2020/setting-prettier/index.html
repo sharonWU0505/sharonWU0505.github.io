@@ -256,6 +256,33 @@ In my opinion, ESLint and Prettier are must tools for every frontend projects (n
     <li><a href="#references">References</a></li>
   </ul>
 </nav>
+        <h3 class="section_link"><a id="docs-optimize-images-for-web-performance" href="https://sharonwu0505.github.io/docs/2021/optimize-images/">Optimize Images for Web Performance</a></h3><nav id="TableOfContents">
+  <ul>
+    <li><a href="#方法一使用-webp-格式減少圖片載入時間">方法一：使用 WebP 格式減少圖片載入時間</a>
+      <ul>
+        <li>
+          <ul>
+            <li><a href="#瀏覽器支援度">瀏覽器支援度</a></li>
+            <li><a href="#轉換圖片為-webp-格式">轉換圖片為 WebP 格式</a></li>
+            <li><a href="#在-html-使用-webp-圖片">在 HTML 使用 WebP 圖片</a></li>
+            <li><a href="#在-css-使用-webp-圖片">在 CSS 使用 WebP 圖片</a></li>
+          </ul>
+        </li>
+      </ul>
+    </li>
+    <li><a href="#方法二透過-lazy-loading-延遲載入圖片">方法二：透過 Lazy Loading 延遲載入圖片</a>
+      <ul>
+        <li>
+          <ul>
+            <li><a href="#native-lazy-loading">Native Lazy Loading</a></li>
+            <li><a href="#現行常見作法">現行常見作法</a></li>
+            <li><a href="#實作-lazy-loading-之步驟以使用-intersection-observer-api-為例">實作 Lazy Loading 之步驟（以使用 Intersection Observer API 為例）</a></li>
+          </ul>
+        </li>
+      </ul>
+    </li>
+  </ul>
+</nav>
         <h3 class="section_link active"><a id="docs-setting-prettier-to-format-codes" href="https://sharonwu0505.github.io/docs/2020/setting-prettier/">Setting Prettier to Format Codes</a></h3><nav id="TableOfContents">
   <ul>
     <li><a href="#prettier-vs-linters">Prettier vs. Linters</a></li>
@@ -392,6 +419,56 @@ In my opinion, ESLint and Prettier are must tools for every frontend projects (n
     </li>
   </ul>
 </nav>
+        <h3 class="section_link"><a id="docs-notes-for-react-hooks" href="https://sharonwu0505.github.io/docs/2020/react-hooks/">Notes for React Hooks</a></h3><nav id="TableOfContents">
+  <ul>
+    <li><a href="#motivation">Motivation</a>
+      <ul>
+        <li>
+          <ul>
+            <li><a href="#its-hard-to-reuse-stateful-logic-between-components">It’s hard to reuse <strong>stateful logic</strong> between components.</a></li>
+            <li><a href="#complex-components-become-hard-to-understand">Complex components become hard to understand.</a></li>
+            <li><a href="#classes-confuse-both-people-and-machines">Classes confuse both people and machines.</a></li>
+          </ul>
+        </li>
+      </ul>
+    </li>
+    <li><a href="#introduction">Introduction</a></li>
+    <li><a href="#using-the-state-hook">Using the State Hook</a>
+      <ul>
+        <li>
+          <ul>
+            <li><a href="#syntax">Syntax</a></li>
+            <li><a href="#tips">Tips</a></li>
+          </ul>
+        </li>
+      </ul>
+    </li>
+    <li><a href="#using-the-effect-hook">Using the Effect Hook</a>
+      <ul>
+        <li>
+          <ul>
+            <li><a href="#effects-without-cleanup">Effects Without Cleanup</a></li>
+            <li><a href="#effects-with-cleanup">Effects With Cleanup</a></li>
+            <li><a href="#tips-1">Tips</a></li>
+          </ul>
+        </li>
+      </ul>
+    </li>
+    <li><a href="#rules-of-hooks">Rules of Hooks</a></li>
+    <li><a href="#extended-topics">Extended Topics</a></li>
+    <li><a href="#discussion">Discussion</a>
+      <ul>
+        <li>
+          <ul>
+            <li><a href="#與-redux-的搭配方式">與 Redux 的搭配方式</a></li>
+            <li><a href="#開始使用-hook">開始使用 Hook</a></li>
+          </ul>
+        </li>
+      </ul>
+    </li>
+    <li><a href="#延伸閱讀">延伸閱讀</a></li>
+  </ul>
+</nav>
       </section>
   </section>
 </aside>
@@ -484,8 +561,8 @@ Prettier searches recursively up the file path, it will fallback to global setti
   
   <div class="pager_item prev">
     
-    <a href="https://sharonwu0505.github.io/docs/2021/what-is-webview/" class="pager_link button" title="What is WebView?">
-      <span class="pager_label">What is WebView?</span>
+    <a href="https://sharonwu0505.github.io/docs/2021/optimize-images/" class="pager_link button" title="Optimize Images for Web Performance">
+      <span class="pager_label">Optimize Images for Web Performance</span>
     </a>
   </div>
   

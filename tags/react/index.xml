@@ -16,5 +16,15 @@
 &lt;p&gt;不只上述好處，個人認為定義 &lt;code&gt;propTypes&lt;/code&gt; 也能讓 component 的 interface 更為清楚，使其他開發者一眼就知道該傳入的 &lt;code&gt;props&lt;/code&gt;，有類似文件的作用。&lt;/p&gt;</description>
     </item>
     
+    <item>
+      <title>Notes for React Hooks</title>
+      <link>https://sharonwu0505.github.io/docs/2020/react-hooks/</link>
+      <pubDate>Thu, 23 Jan 2020 09:00:00 +0800</pubDate>
+      
+      <guid>https://sharonwu0505.github.io/docs/2020/react-hooks/</guid>
+      <description>&lt;p&gt;React proposes Hook in version 16.8. It allows developers to use state and methods in component life cycle without writing class components. Additionally, there is no breaking changes for Hook. It is completely opt-in and 100% backwards-compatible.&lt;/p&gt;
+&lt;p&gt;The following are my notes when learning React Hook.&lt;/p&gt;</description>
+    </item>
+    
   </channel>
 </rss>

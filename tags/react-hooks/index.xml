@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>React Hooks on Draw Closer - A Blog by Sharon Wu</title>
+    <link>https://sharonwu0505.github.io/tags/react-hooks/</link>
+    <description>Recent content in React Hooks on Draw Closer - A Blog by Sharon Wu</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <lastBuildDate>Thu, 23 Jan 2020 09:00:00 +0800</lastBuildDate><atom:link href="https://sharonwu0505.github.io/tags/react-hooks/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Notes for React Hooks</title>
+      <link>https://sharonwu0505.github.io/docs/2020/react-hooks/</link>
+      <pubDate>Thu, 23 Jan 2020 09:00:00 +0800</pubDate>
+      
+      <guid>https://sharonwu0505.github.io/docs/2020/react-hooks/</guid>
+      <description>&lt;p&gt;React proposes Hook in version 16.8. It allows developers to use state and methods in component life cycle without writing class components. Additionally, there is no breaking changes for Hook. It is completely opt-in and 100% backwards-compatible.&lt;/p&gt;
+&lt;p&gt;The following are my notes when learning React Hook.&lt;/p&gt;</description>
+    </item>
+    
+  </channel>
+</rss>

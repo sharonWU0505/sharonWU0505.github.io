@@ -9,21 +9,21 @@
 <link rel="mask-icon" href='https://sharonwu0505.github.io/favicons/safari-pinned-tab.svg'  color="#004750">
 <link rel="shortcut icon" href='https://sharonwu0505.github.io/favicons/favicon.ico'>
 <meta name="msapplication-config" content='https://sharonwu0505.github.io/favicons/browserconfig.xml'>
-<title>Install Golang and Set Go Workplace | Draw Closer - A Blog by Sharon Wu</title>
+<title>Notes for React Hooks | Draw Closer - A Blog by Sharon Wu</title>
 <link rel="canonical" href="https://sharonwu0505.github.io/"/>
-<meta name="keywords" content="Go,Golang,Go Workplace" />
-<meta name="description" content="Go or called GoLang is an open source programming language that makes it easy to build simple, reliable, and efficient software.
-In this post, we&#39;ll talk about how to install Golang and set its workplace. Also, sub directories under the workplace are introduced." />
+<meta name="keywords" content="react,react hook,react hooks" />
+<meta name="description" content="React proposes Hook in version 16.8. It allows developers to use state and methods in component life cycle without writing class components. Additionally, there is no breaking changes for Hook. It is completely opt-in and 100% backwards-compatible.
+The following are my notes when learning React Hook." />
 
 
 <meta property="og:url" content="https://sharonwu0505.github.io/" />
 <meta property="og:type" content="website" />
 <meta property="og:site_name" content="Draw Closer" />
-<meta property="og:title" content="Install Golang and Set Go Workplace | Draw Closer" />
+<meta property="og:title" content="Notes for React Hooks | Draw Closer" />
 <meta
   property="og:description"
-  content="Go or called GoLang is an open source programming language that makes it easy to build simple, reliable, and efficient software.
-In this post, we&#39;ll talk about how to install Golang and set its workplace. Also, sub directories under the workplace are introduced."
+  content="React proposes Hook in version 16.8. It allows developers to use state and methods in component life cycle without writing class components. Additionally, there is no breaking changes for Hook. It is completely opt-in and 100% backwards-compatible.
+The following are my notes when learning React Hook."
 />
 <meta name="twitter:card" content="summary_large_image" />
 <meta property="og:image:height" content="630" />
@@ -35,8 +35,8 @@ In this post, we&#39;ll talk about how to install Golang and set its workplace. 
 
 
 
-  <meta name="description" content="Go or called GoLang is an open source programming language that makes it easy to build simple, reliable, and efficient software.
-In this post, we&#39;ll talk about how to install Golang and set its workplace. Also, sub directories under the workplace are introduced.
+  <meta name="description" content="React proposes Hook in version 16.8. It allows developers to use state and methods in component life cycle without writing class components. Additionally, there is no breaking changes for Hook. It is completely opt-in and 100% backwards-compatible.
+The following are my notes when learning React Hook.
 ">
 
 
@@ -342,7 +342,7 @@ In this post, we&#39;ll talk about how to install Golang and set its workplace. 
     </li>
   </ul>
 </nav>
-        <h3 class="section_link active"><a id="docs-install-golang-and-set-go-workplace" href="https://sharonwu0505.github.io/docs/2020/install-and-set-go/">Install Golang and Set Go Workplace</a></h3><nav id="TableOfContents">
+        <h3 class="section_link"><a id="docs-install-golang-and-set-go-workplace" href="https://sharonwu0505.github.io/docs/2020/install-and-set-go/">Install Golang and Set Go Workplace</a></h3><nav id="TableOfContents">
   <ul>
     <li><a href="#install-go">Install Go</a></li>
     <li><a href="#set-go-workplace">Set Go Workplace</a>
@@ -419,7 +419,7 @@ In this post, we&#39;ll talk about how to install Golang and set its workplace. 
     </li>
   </ul>
 </nav>
-        <h3 class="section_link"><a id="docs-notes-for-react-hooks" href="https://sharonwu0505.github.io/docs/2020/react-hooks/">Notes for React Hooks</a></h3><nav id="TableOfContents">
+        <h3 class="section_link active"><a id="docs-notes-for-react-hooks" href="https://sharonwu0505.github.io/docs/2020/react-hooks/">Notes for React Hooks</a></h3><nav id="TableOfContents">
   <ul>
     <li><a href="#motivation">Motivation</a>
       <ul>
@@ -474,93 +474,130 @@ In this post, we&#39;ll talk about how to install Golang and set its workplace. 
 </aside>
 
   <main class="content">
-    <h1>Install Golang and Set Go Workplace</h1>
+    <h1>Notes for React Hooks</h1>
     <div class="post__tags">
       
-        <a href="https://sharonwu0505.github.io/tags/golang">
-          <span class="post__tag">Golang</span>
+        <a href="https://sharonwu0505.github.io/tags/react">
+          <span class="post__tag">React</span>
         </a>
       
-    </div><p><strong><a href="https://golang.org/">Go</a></strong> or called <strong>GoLang</strong> is an open source programming language that makes it easy to build simple, reliable, and efficient software.</p>
-<p>In this post, we'll talk about how to install Golang and set its workplace. Also, sub directories under the workplace are introduced.</p>
-<h2 id="install-go">Install Go</h2>
+        <a href="https://sharonwu0505.github.io/tags/react-hooks">
+          <span class="post__tag">React Hooks</span>
+        </a>
+      
+    </div><p>React proposes Hook in version 16.8. It allows developers to use state and methods in component life cycle without writing class components. Additionally, there is no breaking changes for Hook. It is completely opt-in and 100% backwards-compatible.</p>
+<p>The following are my notes when learning React Hook.</p>
+<h2 id="motivation">Motivation</h2>
+<h4 id="its-hard-to-reuse-stateful-logic-between-components">It’s hard to reuse <strong>stateful logic</strong> between components.</h4>
+<p>Traditional approaches are: <a href="https://zh-hant.reactjs.org/docs/render-props.html">render props</a>, <a href="https://zh-hant.reactjs.org/docs/higher-order-components.html">higher-order component (HOC)</a>, and <a href="https://zh-hant.reactjs.org/docs/context.html">context</a></p>
+<p>We have to restructure components when applying each approach.</p>
+<h4 id="complex-components-become-hard-to-understand">Complex components become hard to understand.</h4>
+<p>Unrelated actions such as fetching data and setting event listeners are written in the same life cycle. Thus, it's hard to split code and logic.</p>
+<h4 id="classes-confuse-both-people-and-machines">Classes confuse both people and machines.</h4>
+<p>Writing functions are easier than writing classes.</p>
+<h2 id="introduction">Introduction</h2>
+<p>Hooks are functions that let you “hook into” React state and lifecycle features from <strong>function components</strong>.</p>
+<h2 id="using-the-state-hook">Using the State Hook</h2>
+<h4 id="syntax">Syntax</h4>
+<div class="highlight"><pre class="chroma"><code class="language-javascript" data-lang="javascript"><span class="ln"> 1</span><span class="kr">import</span> <span class="nx">React</span><span class="p">,</span> <span class="p">{</span> <span class="nx">useState</span> <span class="p">}</span> <span class="nx">from</span> <span class="s1">&#39;react&#39;</span><span class="p">;</span>  <span class="c1">// import the useState Hook from React
+</span><span class="ln"> 2</span><span class="c1"></span>
+<span class="ln"> 3</span><span class="kd">function</span> <span class="nx">Example</span><span class="p">()</span> <span class="p">{</span>
+<span class="ln"> 4</span>  <span class="kr">const</span> <span class="p">[</span><span class="nx">count</span><span class="p">,</span> <span class="nx">setCount</span><span class="p">]</span> <span class="o">=</span> <span class="nx">useState</span><span class="p">(</span><span class="mi">0</span><span class="p">);</span>  <span class="c1">// declare a state variable and a function for updating state
+</span><span class="ln"> 5</span><span class="c1"></span>
+<span class="ln"> 6</span>  <span class="k">return</span> <span class="p">(</span>
+<span class="ln"> 7</span>    <span class="o">&lt;</span><span class="nx">div</span><span class="o">&gt;</span>
+<span class="ln"> 8</span>      <span class="o">&lt;</span><span class="nx">p</span><span class="o">&gt;</span><span class="nx">You</span> <span class="nx">clicked</span> <span class="p">{</span><span class="nx">count</span><span class="p">}</span> <span class="nx">times</span><span class="o">&lt;</span><span class="err">/p&gt;</span>
+<span class="ln"> 9</span>      <span class="o">&lt;</span><span class="nx">button</span> <span class="nx">onClick</span><span class="o">=</span><span class="p">{()</span> <span class="p">=&gt;</span> <span class="nx">setCount</span><span class="p">(</span><span class="nx">count</span> <span class="o">+</span> <span class="mi">1</span><span class="p">)}</span><span class="o">&gt;</span>
+<span class="ln">10</span>        <span class="nx">Click</span> <span class="nx">me</span>
+<span class="ln">11</span>      <span class="o">&lt;</span><span class="err">/button&gt;</span>
+<span class="ln">12</span>    <span class="o">&lt;</span><span class="err">/div&gt;</span>
+<span class="ln">13</span>  <span class="p">);</span>
+<span class="ln">14</span><span class="p">}</span>
+</code></pre></div><h4 id="tips">Tips</h4>
 <ul>
-<li>For MacOS, using <em>Homebrew</em></li>
+<li>Use square brackets: <code>const [count, setCount] = useState(0)</code></li>
+<li>Use multiple state variables: State variables can hold objects and arrays just fine, so you can still group related data together. However, unlike this.setState in a class, <strong>updating a state variable always replaces it instead of merging it</strong>.</li>
 </ul>
-<pre><code>brew install go
-</code></pre><h2 id="set-go-workplace">Set Go Workplace</h2>
+<h2 id="using-the-effect-hook">Using the Effect Hook</h2>
 <blockquote>
-<p>A workspace is Go’s way to facilitate project management.</p>
+<p><a href="https://overreacted.io/a-complete-guide-to-useeffect/#speaking-of-race-conditions">A Complete Guide to useEffect</a></p>
 </blockquote>
-<blockquote>
-<p>A workspace in nutshell, <strong>is a directory on your system where Go looks for source code files, manages dependency packages and build distribution binary files.</strong>
-You can have as many workspaces as you want, as long as you keep GOPATH environment variable pointed to current working workspace directory.</p>
-</blockquote>
-<blockquote>
-<p>Reference: <a href="https://medium.com/rungo/working-in-go-workspace-3b0576e0534a">Getting started with Go</a></p>
-</blockquote>
-<h3 id="default-workplace">Default Workplace</h3>
-<pre><code>$HOME/go
-</code></pre><h3 id="customize-your-go-workplace">Customize Your Go Workplace</h3>
-<h4 id="_permanently_"><em>Permanently</em></h4>
+<p>The Effect Hook lets you <strong>perform side effects</strong> in function components. <code>useEffect</code> can be thought of as <code>componentDidMount</code>, <code>componentDidUpdate</code>, and <code>componentWillUnmount</code> combined of React class lifecycle.</p>
+<h4 id="effects-without-cleanup">Effects Without Cleanup</h4>
 <ul>
-<li>bash
+<li><code>useEffect</code> by default runs both after the first render and after every update.</li>
+</ul>
+<div class="highlight"><pre class="chroma"><code class="language-javascript" data-lang="javascript"><span class="ln">1</span><span class="kd">function</span> <span class="nx">Example</span><span class="p">()</span> <span class="p">{</span>
+<span class="ln">2</span>  <span class="kr">const</span> <span class="p">[</span><span class="nx">count</span><span class="p">,</span> <span class="nx">setCount</span><span class="p">]</span> <span class="o">=</span> <span class="nx">useState</span><span class="p">(</span><span class="mi">0</span><span class="p">);</span>
+<span class="ln">3</span>
+<span class="ln">4</span>  <span class="nx">useEffect</span><span class="p">(()</span> <span class="p">=&gt;</span> <span class="p">{</span>
+<span class="ln">5</span>    <span class="nb">document</span><span class="p">.</span><span class="nx">title</span> <span class="o">=</span> <span class="sb">`You clicked </span><span class="si">${</span><span class="nx">count</span><span class="si">}</span><span class="sb"> times`</span><span class="p">;</span>
+<span class="ln">6</span>  <span class="p">});</span>
+<span class="ln">7</span><span class="p">}</span>
+</code></pre></div><h4 id="effects-with-cleanup">Effects With Cleanup</h4>
 <ul>
-<li>open file: <code>open ~/.bash_profile</code></li>
-<li>edit file: add <code>export GOPATH=$HOME/&lt;customized-path&gt;/go</code> to the file</li>
-<li>reload: <code>source ~/.bash_profile</code></li>
+<li>class component: We typically set up a subscription in <code>componentDidMount</code>, and clean it up in <code>componentWillUnmount</code>. Lifecycle methods force us to split this logic.</li>
 </ul>
-</li>
-<li>zsh
+<div class="highlight"><pre class="chroma"><code class="language-javascript" data-lang="javascript"><span class="ln"> 1</span><span class="nx">useEffect</span><span class="p">(()</span> <span class="p">=&gt;</span> <span class="p">{</span>
+<span class="ln"> 2</span>  <span class="kd">function</span> <span class="nx">handleStatusChange</span><span class="p">(</span><span class="nx">status</span><span class="p">)</span> <span class="p">{</span>
+<span class="ln"> 3</span>    <span class="nx">setIsOnline</span><span class="p">(</span><span class="nx">status</span><span class="p">.</span><span class="nx">isOnline</span><span class="p">);</span>
+<span class="ln"> 4</span>  <span class="p">}</span>
+<span class="ln"> 5</span>
+<span class="ln"> 6</span>  <span class="nx">ChatAPI</span><span class="p">.</span><span class="nx">subscribeToFriendStatus</span><span class="p">(</span><span class="nx">props</span><span class="p">.</span><span class="nx">friend</span><span class="p">.</span><span class="nx">id</span><span class="p">,</span> <span class="nx">handleStatusChange</span><span class="p">);</span>
+<span class="ln"> 7</span>
+<span class="ln"> 8</span>  <span class="c1">// Every effect may return a function that cleans up after it. This lets us keep the logic for adding and removing subscriptions close to each other.
+</span><span class="ln"> 9</span><span class="c1"></span>  <span class="k">return</span> <span class="p">()</span> <span class="p">=&gt;</span> <span class="p">{</span>
+<span class="ln">10</span>    <span class="nx">ChatAPI</span><span class="p">.</span><span class="nx">unsubscribeFromFriendStatus</span><span class="p">(</span><span class="nx">props</span><span class="p">.</span><span class="nx">friend</span><span class="p">.</span><span class="nx">id</span><span class="p">,</span> <span class="nx">handleStatusChange</span><span class="p">);</span>
+<span class="ln">11</span>  <span class="p">};</span>
+<span class="ln">12</span><span class="p">});</span>
+</code></pre></div><h4 id="tips-1">Tips</h4>
 <ul>
-<li>open file: <code>open ~/.zshrc</code></li>
-<li>edit file: add <code>export GOPATH=$HOME/&lt;customized-path&gt;/go</code> to the file</li>
-<li>reload: <code>source ~/.zshrc</code></li>
+<li>Use multiple effects to separate concerns</li>
+<li>Effects by default will run on each re-render. We should think of the use case.</li>
+<li>Optimize performance by skipping effects.
+<div class="highlight"><pre class="chroma"><code class="language-javascript" data-lang="javascript"><span class="ln">1</span><span class="nx">useEffect</span><span class="p">(()</span> <span class="p">=&gt;</span> <span class="p">{</span>
+<span class="ln">2</span>  <span class="nb">document</span><span class="p">.</span><span class="nx">title</span> <span class="o">=</span> <span class="sb">`You clicked </span><span class="si">${</span><span class="nx">count</span><span class="si">}</span><span class="sb"> times`</span><span class="p">;</span>
+<span class="ln">3</span><span class="p">},</span> <span class="p">[</span><span class="nx">count</span><span class="p">]);</span> <span class="c1">// Only re-run the effect if count changes
+</span></code></pre></div></li>
+<li>If you want to run an effect and clean it up only once (on mount and unmount), you can pass an empty array (<code>[]</code>) as a second argument. This tells React that your effect doesn’t depend on any values from props or state, so it never needs to re-run.</li>
 </ul>
-</li>
-<li>others
+<h2 id="rules-of-hooks">Rules of Hooks</h2>
 <ul>
-<li>see <a href="https://github.com/golang/go/wiki/SettingGOPATH">SettingGOPATH</a></li>
+<li>Only call Hooks at the top level (React relies on the order in which Hooks are called.)</li>
+<li>Only call Hooks from React functions</li>
+<li><a href="https://reactjs.org/docs/hooks-rules.html">More rules</a></li>
 </ul>
-</li>
-</ul>
-<h4 id="_temporarily_"><em>Temporarily</em></h4>
+<h2 id="extended-topics">Extended Topics</h2>
 <ul>
-<li>For MacOS
+<li><a href="https://reactjs.org/docs/hooks-custom.html">Building Your Own Hooks</a> (should start with <code>use</code>)</li>
+<li><a href="https://reactjs.org/docs/hooks-reference.html">Hooks API Reference</a></li>
+<li><a href="https://reactjs.org/docs/hooks-faq.html">Hooks FAQ</a></li>
+</ul>
+<h2 id="discussion">Discussion</h2>
+<h4 id="與-redux-的搭配方式">與 Redux 的搭配方式</h4>
 <ul>
-<li>see <a href="https://medium.com/@himanshuagarwal1395/setting-up-environment-variables-in-macos-sierra-f5978369b255">Setting up Environment Variables in MacOS Sierra</a></li>
+<li>跨多個 container/component 的 state 仍可用 Redux 管理</li>
+<li>涉及 state 且需要重用的邏輯可以包成 Hook，例如權限判斷，不再需要使用 HOC, Context（較難寫，也會讓程式碼變複雜）</li>
+<li>component 可進一步拆分，寫成 function component 搭配 Hook 處理 state，再組裝，以避免過肥的 component</li>
 </ul>
-</li>
-</ul>
-<hr>
-<h2 id="sub-directories-under-a-go-workplace">Sub Directories under a Go Workplace</h2>
-<h3 id="src">src</h3>
+<h4 id="開始使用-hook">開始使用 Hook</h4>
 <ul>
-<li>Containing packages (also packages installed by <code>go get</code> command)</li>
-<li>Whenever working with a new Go project, a new directory for the project should be created under <code>$GOPATH/src</code>.</li>
+<li>不需要將現存的 class component 轉變為 function component + Hook（by React 官方）</li>
+<li>從新功能開始，試用 Hook，並了解原生 Hook, ex: <code>useState</code>, <code>useEffect</code>, <code>useCallback</code>, etc. 的使用方式。</li>
 </ul>
-<h3 id="pkg">pkg</h3>
+<h2 id="延伸閱讀">延伸閱讀</h2>
+<p><strong>Ephemeral State and App State</strong></p>
 <ul>
-<li>Containing Go package objects, which are compiled version of original package source code</li>
-<li>When a Go program hits <code>import</code> statement, Go looks for the followings in order.
-<ul>
-<li>pre-compiled package object</li>
-<li>corresponded packages in <code>$GOPATH/src</code></li>
-<li>corresponded packages in <code>$GOROOT/src</code></li>
+<li>Ephemeral state (sometimes called UI state or local state) is the state you can neatly contain in a single widget.</li>
+<li>State that is not ephemeral, that you want to <strong>share across many parts of your app</strong>, and that you want to keep between user sessions, is what we call application state (sometimes also called shared state).</li>
 </ul>
-</li>
-</ul>
-<h3 id="bin">bin</h3>
-<ul>
-<li>Containing binary executable files for executing Go programs, which are created by <code>go install</code> commands</li>
-<li><code>$GOBIN</code> is an environment variable that Go uses to put binary files. By default, <code>$GOBIN</code> is <code>$GOPATH/bin</code> but you can change it, too.</li>
-</ul>
+<p><a href="https://flutter.dev/docs/development/data-and-backend/state-mgmt/ephemeral-vs-app">source</a></p>
     <div class="pager">
   
   <div class="pager_item prev">
     
-    <a href="https://sharonwu0505.github.io/docs/2020/react-props-types/" class="pager_link button" title="Validating React Component Props with props-types">
-      <span class="pager_label">Validating React Component Props with props-types</span>
+    <a href="https://sharonwu0505.github.io/docs/2020/nvm-and-npm/" class="pager_link button" title="Introduction to NVM and NPM">
+      <span class="pager_label">Introduction to NVM and NPM</span>
     </a>
   </div>
   
@@ -568,8 +605,8 @@ You can have as many workspaces as you want, as long as you keep GOPATH environm
   
   <div class="pager_item next">
     
-    <a href="https://sharonwu0505.github.io/docs/2020/multi-lang-og-tags/" class="pager_link button" title="Building Multi-Languages OG Tags">
-      <span class="pager_label">Building Multi-Languages OG Tags</span>
+    <a href="https://sharonwu0505.github.io/search/" class="pager_link button" title="Search">
+      <span class="pager_label">Search</span>
     </a>
   </div>
   
