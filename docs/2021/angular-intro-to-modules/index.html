@@ -521,7 +521,7 @@
 <p>那麼 module 和 component 之間的關係是什麼呢？</p>
 <p>NgModule 為它的 components 提供一個 <em>compilation context（<em>編譯上下文環境</em>）</em>。Root module 總會有一個 root component，也能再包含任意數量的其他 components，他們會共享一個 compilation context*。*</p>
 <p>而 component 和 component template 組成 view，view 能具有階層結構（hierarchy），此結構可以混合使用由不同 NgModule 中的 component 定義的 view。</p>
-<p><img src="https://s3-us-west-2.amazonaws.com/secure.notion-static.com/5fc123a9-d87c-48a4-8e83-3fe746d84a39/Untitled.png" alt="Untitled"></p>
+<p><img src="https://angular.io/generated/images/guide/architecture/view-hierarchy.png" alt=""></p>
 <p>如上圖所示，此 view 階層由來自兩個 NgModule（由藍色和橘色區分）的 views 組合而成。</p>
 <h2 id="references">References</h2>
 <ul>
