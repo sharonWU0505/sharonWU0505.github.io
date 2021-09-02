@@ -9,21 +9,19 @@
 <link rel="mask-icon" href='https://sharonwu0505.github.io/favicons/safari-pinned-tab.svg'  color="#004750">
 <link rel="shortcut icon" href='https://sharonwu0505.github.io/favicons/favicon.ico'>
 <meta name="msapplication-config" content='https://sharonwu0505.github.io/favicons/browserconfig.xml'>
-<title>Validating React Component Props with props-types | Draw Closer - A Blog by Sharon Wu</title>
+<title>Angular - Introduction to Modules | Draw Closer - A Blog by Sharon Wu</title>
 <link rel="canonical" href="https://sharonwu0505.github.io/"/>
-<meta name="keywords" content="React,PropTypes" />
-<meta name="description" content="在寫 React component 時會須要確認 props 是否符合型別和資料結構，以確保 component 能如預期運作。除了用 Flow 或 TypeScript 去檢查型別之外，React 本身也提供 propTypes 屬性用以檢查拿到的 props。在 function 和 class component 上都可以使用。
-不只上述好處，個人認為定義 propTypes 也能讓 component 的 interface 更為清楚，使其他開發者一眼就知道該傳入的 props，有類似文件的作用。" />
+<meta name="keywords" content="Angular,Angular Modules" />
+<meta name="description" content="最近由於工作需要開始學習 Angular，過程中發現雖然 Angular 也是 component-based 的 SPA (Single Page Application) 框架，卻多了一層 Module (模組) 的概念。若是從 React 過來的開發者，可能會對這個概念有點陌生，所以我們就來看看 Angular Modules 是什麼吧～" />
 
 
 <meta property="og:url" content="https://sharonwu0505.github.io/" />
 <meta property="og:type" content="website" />
 <meta property="og:site_name" content="Draw Closer" />
-<meta property="og:title" content="Validating React Component Props with props-types | Draw Closer" />
+<meta property="og:title" content="Angular - Introduction to Modules | Draw Closer" />
 <meta
   property="og:description"
-  content="在寫 React component 時會須要確認 props 是否符合型別和資料結構，以確保 component 能如預期運作。除了用 Flow 或 TypeScript 去檢查型別之外，React 本身也提供 propTypes 屬性用以檢查拿到的 props。在 function 和 class component 上都可以使用。
-不只上述好處，個人認為定義 propTypes 也能讓 component 的 interface 更為清楚，使其他開發者一眼就知道該傳入的 props，有類似文件的作用。"
+  content="最近由於工作需要開始學習 Angular，過程中發現雖然 Angular 也是 component-based 的 SPA (Single Page Application) 框架，卻多了一層 Module (模組) 的概念。若是從 React 過來的開發者，可能會對這個概念有點陌生，所以我們就來看看 Angular Modules 是什麼吧～"
 />
 <meta name="twitter:card" content="summary_large_image" />
 <meta property="og:image:height" content="630" />
@@ -35,8 +33,7 @@
 
 
 
-  <meta name="description" content="在寫 React component 時會須要確認 props 是否符合型別和資料結構，以確保 component 能如預期運作。除了用 Flow 或 TypeScript 去檢查型別之外，React 本身也提供 propTypes 屬性用以檢查拿到的 props。在 function 和 class component 上都可以使用。
-不只上述好處，個人認為定義 propTypes 也能讓 component 的 interface 更為清楚，使其他開發者一眼就知道該傳入的 props，有類似文件的作用。
+  <meta name="description" content="最近由於工作需要開始學習 Angular，過程中發現雖然 Angular 也是 component-based 的 SPA (Single Page Application) 框架，卻多了一層 Module (模組) 的概念。若是從 React 過來的開發者，可能會對這個概念有點陌生，所以我們就來看看 Angular Modules 是什麼吧～
 ">
 
 
@@ -119,7 +116,7 @@
   <section class="section aside_inner">
     <h2 class="section_title"><a  href="https://sharonwu0505.github.io/docs/" class="group">Posts</a></h2>
       <section class="" id="docs-posts">
-        <h3 class="section_link"><a id="docs-angular---introduction-to-modules" href="https://sharonwu0505.github.io/docs/2021/angular-intro-to-modules/">Angular - Introduction to Modules</a></h3><nav id="TableOfContents">
+        <h3 class="section_link active"><a id="docs-angular---introduction-to-modules" href="https://sharonwu0505.github.io/docs/2021/angular-intro-to-modules/">Angular - Introduction to Modules</a></h3><nav id="TableOfContents">
   <ul>
     <li><a href="#basics">Basics</a></li>
     <li><a href="#ngmodule-metadata">NgModule Metadata</a></li>
@@ -337,7 +334,7 @@
     <li><a href="#references">References</a></li>
   </ul>
 </nav>
-        <h3 class="section_link active"><a id="docs-validating-react-component-props-with-props-types" href="https://sharonwu0505.github.io/docs/2020/react-props-types/">Validating React Component Props with props-types</a></h3><nav id="TableOfContents">
+        <h3 class="section_link"><a id="docs-validating-react-component-props-with-props-types" href="https://sharonwu0505.github.io/docs/2020/react-props-types/">Validating React Component Props with props-types</a></h3><nav id="TableOfContents">
   <ul>
     <li>
       <ul>
@@ -482,100 +479,64 @@
 </aside>
 
   <main class="content">
-    <h1>Validating React Component Props with props-types</h1>
+    <h1>Angular - Introduction to Modules</h1>
     <div class="post__tags">
       
-        <a href="https://sharonwu0505.github.io/tags/react">
-          <span class="post__tag">React</span>
+        <a href="https://sharonwu0505.github.io/tags/angular">
+          <span class="post__tag">Angular</span>
         </a>
       
-    </div><p>在寫 React component 時會須要確認 <code>props</code> 是否符合型別和資料結構，以確保 component 能如預期運作。除了用 <a href="https://flow.org/">Flow</a> 或 <a href="https://www.typescriptlang.org/">TypeScript</a> 去檢查型別之外，React 本身也提供 <code>propTypes</code> 屬性用以檢查拿到的 <code>props</code>。在 function 和 class component 上都可以使用。</p>
-<p>不只上述好處，個人認為定義 <code>propTypes</code> 也能讓 component 的 interface 更為清楚，使其他開發者一眼就知道該傳入的 <code>props</code>，有類似文件的作用。</p>
-<p>以下內容大多翻譯自 React 文件：<a href="https://zh-hant.reactjs.org/docs/typechecking-with-proptypes.html">Typechecking With PropTypes</a></p>
-<blockquote>
-<p>須注意為了避免效能問題，propTypes 檢查只發生在開發模式。
-如果發生錯誤，會在 console 中看到警告</p>
-</blockquote>
-<h3 id="install-props-types">Install props-types</h3>
-<p>自 React v15.5 後，React.PropTypes 被移出到獨立的 library，因此若要使用須額外安裝。</p>
-<pre><code>npm install prop-types --save
-</code></pre><h3 id="supported-proptypes">Supported PropTypes</h3>
+        <a href="https://sharonwu0505.github.io/tags/angular-basic-concepts">
+          <span class="post__tag">Angular Basic Concepts</span>
+        </a>
+      
+    </div><p>最近由於工作需要開始學習 Angular，過程中發現雖然 Angular 也是 component-based 的 SPA (Single Page Application) 框架，卻多了一層 Module (模組) 的概念。若是從 React 過來的開發者，可能會對這個概念有點陌生，所以我們就來看看 Angular Modules 是什麼吧～</p>
+<h2 id="basics">Basics</h2>
+<p>Angular 應用是模組化的，它的模組系統叫做 <em><strong>NgModules</strong></em>。其實 NgModules 的定義和作用與大家經常在程式設計中聽到的模組/模組化相去不遠，它是由數個具備基礎功能的元件所組成的特定功能組件，經過組合 (composition) 形成具有完整功能的系統或程式。</p>
+<p>NgModules 系統與 JavaScript（ES2015/ES6）用來處理 JavaScript 物件的模組系統（import &amp; export）不同，也沒有直接的關聯。但這兩種系統互補，撰寫 Angular 的過程中一定會共同使用兩者。</p>
+<p>以 Angular 的設計來說，一個應用至少會有一個 <code>NgModule</code> class，也就是 <em><strong>Root Module（根模組）</strong></em>。基於開發習慣，root module 通常會被命名為 <code>AppModule</code>，並被定義在 <code>app.module.ts</code> 中。如果要啟用 Angular 應用，那麼就要 bootstrap root module。</p>
+<p>一個 Angular module 包含 <em>components</em>, <em>service providers</em> 等其他要在該 module 下作用的程式檔案。Module 可以引用其他 module 匯出的功能，也可以匯出指定功能讓其他 module 使用。</p>
+<h2 id="ngmodule-metadata">NgModule Metadata</h2>
+<p>我們使用被 <code>@NgModule()</code> <em>decorator</em> 裝飾的 class 來定義 NgModule。 <code>@NgModule()</code> 是一個<strong>接收單一 metadata JavaScript object 的函式</strong>，object 描述了 module 的屬性，以下介紹各屬性的用途：</p>
 <ul>
-<li>Basic data types
+<li><code>declarations</code>: scope 屬於此 module 的 components、directives 和 pipes</li>
+<li><code>exports</code>: 能在其他模組之 component templates 中被使用的 <code>declarations</code> 的子集</li>
+<li><code>imports</code>: 那些匯出此 module 的 component templates 所需 classes 的 module</li>
+<li><code>providers</code>: 此 module 向 global services 貢獻的 service creators，能被應用中的任何部分使用。也可以在 component-level 再指名 <code>providers</code>。</li>
+<li><code>bootstrap</code>: 應用中的 main application view，又稱為 <em>Root Component</em>，是應用中其他 views 的 <em>host (宿主)</em>。<strong>只有 root NgModule 需要有此 <code>bootstrap</code> 屬性。</strong></li>
+</ul>
+<p>這是一個簡單的 root NgModule 範例：</p>
+<div class="highlight"><pre class="chroma"><code class="language-jsx" data-lang="jsx"><span class="ln"> 1</span><span class="kr">import</span> <span class="p">{</span> <span class="nx">NgModule</span> <span class="p">}</span> <span class="nx">from</span> <span class="s1">&#39;@angular/core&#39;</span><span class="p">;</span>
+<span class="ln"> 2</span><span class="kr">import</span> <span class="p">{</span> <span class="nx">BrowserModule</span> <span class="p">}</span> <span class="nx">from</span> <span class="s1">&#39;@angular/platform-browser&#39;</span><span class="p">;</span>
+<span class="ln"> 3</span>
+<span class="ln"> 4</span><span class="err">@</span><span class="nx">NgModule</span><span class="p">({</span>
+<span class="ln"> 5</span>  <span class="nx">imports</span><span class="o">:</span>      <span class="p">[</span> <span class="nx">BrowserModule</span> <span class="p">],</span> <span class="c1">// BrowserModule is for connecting to DOM.
+</span><span class="ln"> 6</span><span class="c1"></span>  <span class="nx">providers</span><span class="o">:</span>    <span class="p">[</span> <span class="nx">Logger</span> <span class="p">],</span>
+<span class="ln"> 7</span>  <span class="nx">declarations</span><span class="o">:</span> <span class="p">[</span> <span class="nx">AppComponent</span> <span class="p">],</span>
+<span class="ln"> 8</span>  <span class="nx">exports</span><span class="o">:</span>      <span class="p">[</span> <span class="nx">AppComponent</span> <span class="p">],</span>  <span class="c1">// In reality, we don&#39;t need to export here, because no any other modules will need to import root module.
+</span><span class="ln"> 9</span><span class="c1"></span>  <span class="nx">bootstrap</span><span class="o">:</span>    <span class="p">[</span> <span class="nx">AppComponent</span> <span class="p">]</span>
+<span class="ln">10</span><span class="p">})</span>
+<span class="ln">11</span><span class="kr">export</span> <span class="kr">class</span> <span class="nx">AppModule</span> <span class="p">{</span> <span class="p">}</span>
+</code></pre></div><h2 id="ngmodules-and-components">NgModules and Components</h2>
+<p>那麼 module 和 component 之間的關係是什麼呢？</p>
+<p>NgModule 為它的 components 提供一個 <em>compilation context（<em>編譯上下文環境</em>）</em>。Root module 總會有一個 root component，也能再包含任意數量的其他 components，他們會共享一個 compilation context*。*</p>
+<p>而 component 和 component template 組成 view，view 能具有階層結構（hierarchy），此結構可以混合使用由不同 NgModule 中的 component 定義的 view。</p>
+<p><img src="https://s3-us-west-2.amazonaws.com/secure.notion-static.com/5fc123a9-d87c-48a4-8e83-3fe746d84a39/Untitled.png" alt="Untitled"></p>
+<p>如上圖所示，此 view 階層由來自兩個 NgModule（由藍色和橘色區分）的 views 組合而成。</p>
+<h2 id="references">References</h2>
 <ul>
-<li><code>PropTypes.any</code></li>
-<li><code>PropTypes.bool </code></li>
-<li><code>PropTypes.number</code></li>
-<li><code>PropTypes.string </code></li>
-<li><code>PropTypes.func</code></li>
-<li><code>PropTypes.array</code></li>
-<li><code>PropTypes.object</code></li>
-<li><code>PropTypes.symbol</code></li>
+<li><a href="https://angular.io/guide/architecture">Introduction to Angular concepts</a></li>
+<li><a href="https://angular.io/guide/architecture-modules">Introduction to modules</a></li>
+<li><a href="%5Bhttps://angular.tw/guide/architecture-modules%5D(https://angular.tw/guide/architecture-modules)">NgModule 簡介</a></li>
 </ul>
-</li>
-<li>Renderable types
-<ul>
-<li><code>PropTypes.node</code> :  the prop should be anything that can be rendered by React </li>
-<li><code>PropTypes.element</code>: the prop should be a React element</li>
-</ul>
-</li>
-<li>也有其他更精確的 operator 可以用，亦能傳入 expression
-<ul>
-<li><code>instanceOf</code></li>
-<li><code>oneOf</code></li>
-<li><code>oneOfType</code></li>
-<li><code>arrayOf</code></li>
-<li><code>shape</code></li>
-</ul>
-</li>
-<li>有能定義是否為 required
-<ul>
-<li><code>isRequired</code></li>
-</ul>
-</li>
-</ul>
-<h3 id="example-同理-function-component">Example (同理 function component)</h3>
-<pre><code>import PropTypes from &quot;prop-types&quot;;
-
-class ReactComponent extends React.Component {
-  // ...component class body here
-}
-
-ReactComponent.propTypes = {
-  // ...props-type definitions here
-}
-</code></pre><h3 id="default-prop-values">Default Prop Values</h3>
-<p>也可以給予 <code>props</code> <code>defaultProps</code>。型別檢查會在 <code>defaultProps</code> 賦予 <code>props</code> 值之後，所以型別檢查也會作用在 <code>defaultProps</code> 上。</p>
-<pre><code>class ReactComponent extends React.Component {
-  render() {
-    return (
-      &lt;div&gt;Hello, {this.props.name}&lt;/div&gt;
-    )
-  }
-}
-
-ReactComponent.defaultProps = {
-  name: &quot;stranger&quot;,
-}
-</code></pre><h3 id="reference">Reference</h3>
-<ul>
-<li><a href="https://blog.logrocket.com/validating-react-component-props-with-prop-types-ef14b29963fc/">PropTypes in React: A complete guide</a></li>
-</ul>
-    <div class="pager">
-  
-  <div class="pager_item prev">
-    
-    <a href="https://sharonwu0505.github.io/docs/2020/setting-eslint/" class="pager_link button" title="Setting ESLint to Enhance Frontend Development">
-      <span class="pager_label">Setting ESLint to Enhance Frontend Development</span>
-    </a>
-  </div>
+    <div class="pager pager_lean">
   
 
   
   <div class="pager_item next">
     
-    <a href="https://sharonwu0505.github.io/docs/2020/install-and-set-go/" class="pager_link button" title="Install Golang and Set Go Workplace">
-      <span class="pager_label">Install Golang and Set Go Workplace</span>
+    <a href="https://sharonwu0505.github.io/docs/2021/typescript-generic-and-type/" class="pager_link button" title="TypeScript: Generic Types and Type Alias">
+      <span class="pager_label">TypeScript: Generic Types and Type Alias</span>
     </a>
   </div>
   

@@ -6,6 +6,15 @@
     <description>Recent content in Draw Closer on Draw Closer - A Blog by Sharon Wu</description>
     <generator>Hugo -- gohugo.io</generator><atom:link href="https://sharonwu0505.github.io/index.xml" rel="self" type="application/rss+xml" />
     <item>
+      <title>Angular - Introduction to Modules</title>
+      <link>https://sharonwu0505.github.io/docs/2021/angular-intro-to-modules/</link>
+      <pubDate>Wed, 01 Sep 2021 13:00:00 +0800</pubDate>
+      
+      <guid>https://sharonwu0505.github.io/docs/2021/angular-intro-to-modules/</guid>
+      <description>&lt;p&gt;最近由於工作需要開始學習 Angular，過程中發現雖然 Angular 也是 component-based 的 SPA (Single Page Application) 框架，卻多了一層 Module (模組) 的概念。若是從 React 過來的開發者，可能會對這個概念有點陌生，所以我們就來看看 Angular Modules 是什麼吧～&lt;/p&gt;</description>
+    </item>
+    
+    <item>
       <title>TypeScript: Generic Types and Type Alias</title>
       <link>https://sharonwu0505.github.io/docs/2021/typescript-generic-and-type/</link>
       <pubDate>Thu, 05 Aug 2021 14:00:00 +0800</pubDate>
