@@ -5,37 +5,15 @@
     <link>https://sharonwu0505.github.io/tags/javascript/</link>
     <description>Recent content in JavaScript on Draw Closer - A Blog by Sharon Wu</description>
     <generator>Hugo -- gohugo.io</generator>
-    <lastBuildDate>Thu, 05 Aug 2021 14:00:00 +0800</lastBuildDate><atom:link href="https://sharonwu0505.github.io/tags/javascript/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Tue, 14 Sep 2021 10:00:00 +0800</lastBuildDate><atom:link href="https://sharonwu0505.github.io/tags/javascript/index.xml" rel="self" type="application/rss+xml" />
     <item>
-      <title>TypeScript: Generic Types and Type Alias</title>
-      <link>https://sharonwu0505.github.io/docs/2021/typescript-generic-and-type/</link>
-      <pubDate>Thu, 05 Aug 2021 14:00:00 +0800</pubDate>
+      <title>WIP: JavaScript Questions (1)</title>
+      <link>https://sharonwu0505.github.io/docs/2021/js-questions-1/</link>
+      <pubDate>Tue, 14 Sep 2021 10:00:00 +0800</pubDate>
       
-      <guid>https://sharonwu0505.github.io/docs/2021/typescript-generic-and-type/</guid>
-      <description>&lt;p&gt;此篇要來談談 TypeScript 通用型別 (Generic Types) 的用途，以及 interface 和型別別名 (Type Alias) 的使用差異。&lt;/p&gt;</description>
-    </item>
-    
-    <item>
-      <title>TypeScript: Any, Array, Union Types, Enum, Function, and Interface</title>
-      <link>https://sharonwu0505.github.io/docs/2021/typescript-more/</link>
-      <pubDate>Tue, 03 Aug 2021 10:00:00 +0800</pubDate>
-      
-      <guid>https://sharonwu0505.github.io/docs/2021/typescript-more/</guid>
-      <description>&lt;p&gt;此篇繼續來看 TypeScript 的基本語法。&lt;/p&gt;</description>
-    </item>
-    
-    <item>
-      <title>Introduction to TypeScript and Primitive Types</title>
-      <link>https://sharonwu0505.github.io/docs/2021/typescript-intro/</link>
-      <pubDate>Fri, 30 Jul 2021 17:00:00 +0800</pubDate>
-      
-      <guid>https://sharonwu0505.github.io/docs/2021/typescript-intro/</guid>
-      <description>&lt;p&gt;眾所皆知，JavaScript 是一個「弱型別」的語言，意思是：&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;開發者在宣告變數時，不需要事先指定變數的型別 e.g. string, number, boolean, etc.&lt;/li&gt;
-&lt;li&gt;JavaScript 會根據變數被賦予的值去判斷它的型別&lt;/li&gt;
-&lt;li&gt;某些情況下，JavaScript 會在背地裡執行「強制轉型」(coercion)，將變數轉換成可以處理的型別&lt;/li&gt;
-&lt;/ul&gt;</description>
+      <guid>https://sharonwu0505.github.io/docs/2021/js-questions-1/</guid>
+      <description>&lt;p&gt;受到 &lt;a href=&#34;https://medium.com/starbugs/%E9%9D%A2%E8%A9%A6-%E5%89%8D%E7%AB%AF%E5%B7%A5%E7%A8%8B%E5%B8%AB%E4%B8%80%E5%AE%9A%E8%A6%81%E6%9C%83%E7%9A%84-js-%E8%A7%80%E5%BF%B5%E9%A1%8C-%E4%B8%AD%E8%8B%B1%E5%B0%8D%E7%85%A7%E4%B9%8B%E4%B8%8A%E7%AF%87-3b0a3feda14f&#34;&gt;前端工程師一定要會的 JS 觀念題&lt;/a&gt; 的啟發，也想來整理 JavaScript 的常見問題，期望自己未來能用更口語但又不失精確，且搭配範例的方式解釋出這些概念。&lt;/p&gt;
+&lt;p&gt;第一部分一樣以 &lt;strong&gt;What is ...?&lt;/strong&gt; 為主，會先列出幾個常見問題，之後再慢慢補上自己的理解。&lt;/p&gt;</description>
     </item>
     
   </channel>

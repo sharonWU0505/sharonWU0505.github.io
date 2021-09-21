@@ -9,19 +9,21 @@
 <link rel="mask-icon" href='https://sharonwu0505.github.io/favicons/safari-pinned-tab.svg'  color="#004750">
 <link rel="shortcut icon" href='https://sharonwu0505.github.io/favicons/favicon.ico'>
 <meta name="msapplication-config" content='https://sharonwu0505.github.io/favicons/browserconfig.xml'>
-<title>Same-Site and Same-Origin | Draw Closer - A Blog by Sharon Wu</title>
+<title>WIP: JavaScript Questions (1) | Draw Closer - A Blog by Sharon Wu</title>
 <link rel="canonical" href="https://sharonwu0505.github.io/"/>
-<meta name="keywords" content="http,https,same-site,same-origin,cross-site,cross-origin,cors" />
-<meta name="description" content="之前總以為 same-site 的網站一定也是 same-origin，後來才發現並非如此，是兩個不同的定義。此篇將介紹 same-site 和 same-origin 的定義，讓往後與後端 RD 討論 cookie SameSite 和 Access-Control-Allow-Origin header 設定時能更順利。" />
+<meta name="keywords" content="JavaScript,Note" />
+<meta name="description" content="受到 前端工程師一定要會的 JS 觀念題 的啟發，也想來整理 JavaScript 的常見問題，期望自己未來能用更口語但又不失精確，且搭配範例的方式解釋出這些概念。
+第一部分一樣以 What is ...? 為主，會先列出幾個常見問題，之後再慢慢補上自己的理解。" />
 
 
 <meta property="og:url" content="https://sharonwu0505.github.io/" />
 <meta property="og:type" content="website" />
 <meta property="og:site_name" content="Draw Closer" />
-<meta property="og:title" content="Same-Site and Same-Origin | Draw Closer" />
+<meta property="og:title" content="WIP: JavaScript Questions (1) | Draw Closer" />
 <meta
   property="og:description"
-  content="之前總以為 same-site 的網站一定也是 same-origin，後來才發現並非如此，是兩個不同的定義。此篇將介紹 same-site 和 same-origin 的定義，讓往後與後端 RD 討論 cookie SameSite 和 Access-Control-Allow-Origin header 設定時能更順利。"
+  content="受到 前端工程師一定要會的 JS 觀念題 的啟發，也想來整理 JavaScript 的常見問題，期望自己未來能用更口語但又不失精確，且搭配範例的方式解釋出這些概念。
+第一部分一樣以 What is ...? 為主，會先列出幾個常見問題，之後再慢慢補上自己的理解。"
 />
 <meta name="twitter:card" content="summary_large_image" />
 <meta property="og:image:height" content="630" />
@@ -33,7 +35,8 @@
 
 
 
-  <meta name="description" content="之前總以為 same-site 的網站一定也是 same-origin，後來才發現並非如此，是兩個不同的定義。此篇將介紹 same-site 和 same-origin 的定義，讓往後與後端 RD 討論 cookie SameSite 和 Access-Control-Allow-Origin header 設定時能更順利。
+  <meta name="description" content="受到 前端工程師一定要會的 JS 觀念題 的啟發，也想來整理 JavaScript 的常見問題，期望自己未來能用更口語但又不失精確，且搭配範例的方式解釋出這些概念。
+第一部分一樣以 What is ...? 為主，會先列出幾個常見問題，之後再慢慢補上自己的理解。
 ">
 
 
@@ -116,7 +119,7 @@
   <section class="section aside_inner">
     <h2 class="section_title"><a  href="https://sharonwu0505.github.io/docs/" class="group">Posts</a></h2>
       <section class="" id="docs-posts">
-        <h3 class="section_link"><a id="docs-wip-javascript-questions-1" href="https://sharonwu0505.github.io/docs/2021/js-questions-1/">WIP: JavaScript Questions (1)</a></h3><nav id="TableOfContents">
+        <h3 class="section_link active"><a id="docs-wip-javascript-questions-1" href="https://sharonwu0505.github.io/docs/2021/js-questions-1/">WIP: JavaScript Questions (1)</a></h3><nav id="TableOfContents">
   <ul>
     <li>
       <ul>
@@ -189,7 +192,7 @@
     <li><a href="#references">References</a></li>
   </ul>
 </nav>
-        <h3 class="section_link active"><a id="docs-same-site-and-same-origin" href="https://sharonwu0505.github.io/docs/2021/same-site-and-same-origin/">Same-Site and Same-Origin</a></h3><nav id="TableOfContents">
+        <h3 class="section_link"><a id="docs-same-site-and-same-origin" href="https://sharonwu0505.github.io/docs/2021/same-site-and-same-origin/">Same-Site and Same-Origin</a></h3><nav id="TableOfContents">
   <ul>
     <li><a href="#origin">Origin</a>
       <ul>
@@ -479,164 +482,55 @@
 </aside>
 
   <main class="content">
-    <h1>Same-Site and Same-Origin</h1>
+    <h1>WIP: JavaScript Questions (1)</h1>
     <div class="post__tags">
       
-        <a href="https://sharonwu0505.github.io/tags/http">
-          <span class="post__tag">HTTP</span>
+        <a href="https://sharonwu0505.github.io/tags/javascript">
+          <span class="post__tag">JavaScript</span>
         </a>
       
-    </div><p>之前總以為 same-site 的網站一定也是 same-origin，後來才發現並非如此，是兩個不同的定義。此篇將介紹 same-site 和 same-origin 的定義，讓往後與後端 RD 討論 cookie <code>SameSite</code> 和 <code>Access-Control-Allow-Origin</code> header 設定時能更順利。</p>
-<h2 id="origin">Origin</h2>
-<p>Origin (網域) 是 <strong>scheme</strong> (或稱 protocol)、<strong>hostname</strong> (或稱 domain)，和 <strong>port</strong> 的組合。</p>
-<pre><code>https://www.example.com:443
-</code></pre><p>以上方網址為例</p>
-<ul>
-<li><strong>scheme</strong> 是 <code>https</code></li>
-<li><strong>hostname</strong> 是 <code>www.example.com</code></li>
-<li><strong>port</strong> 是 <code>443</code></li>
-</ul>
-<p>因此，網址 <code>https:www.example.com:443/foo</code> 的 origin 為 <code>https:www.example.com:443</code>。</p>
-<h4 id="same-origin-and-cross-origin">&quot;same-origin&quot; and &quot;cross-origin&quot;</h4>
-<p>有著同樣 origin 的網站會是 &quot;same-origin&quot;（同源）；其餘則為 &quot;cross-origin&quot; (跨域/跨來源)。</p>
-<p>origin A: <code>https://www.example.com:443</code></p>
-<table>
-<thead>
-<tr>
-<th>origin B</th>
-<th>&quot;same-origin&quot; or &quot;cross-origin&quot; to origin A</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td><code>https://www.evil.com:443</code></td>
-<td>cross-origin: different domains</td>
-</tr>
-<tr>
-<td><code>https://example.com:443</code></td>
-<td>cross-origin: different subdomains</td>
-</tr>
-<tr>
-<td><code>https://login.example.com:443</code></td>
-<td>cross-origin: different subdomains</td>
-</tr>
-<tr>
-<td><code>http://www.example.com:443</code></td>
-<td>cross-origin: different schemes</td>
-</tr>
-<tr>
-<td><code>https://www.example.com:80</code></td>
-<td>cross-origin: different ports</td>
-</tr>
-<tr>
-<td><code>https://www.example.com:443</code></td>
-<td>same-origin: exact match</td>
-</tr>
-<tr>
-<td><code>https://www.example.com</code></td>
-<td>same-origin: implicit port number (443) matches</td>
-</tr>
-</tbody>
-</table>
-<h4 id="跨來源資源共用cross-origin-resource-sharing-corshttpsdevelopermozillaorgzh-twdocswebhttpcors">跨來源資源共用（<a href="https://developer.mozilla.org/zh-TW/docs/Web/HTTP/CORS">Cross-Origin Resource Sharing (CORS)</a>）</h4>
+    </div><p>受到 <a href="https://medium.com/starbugs/%E9%9D%A2%E8%A9%A6-%E5%89%8D%E7%AB%AF%E5%B7%A5%E7%A8%8B%E5%B8%AB%E4%B8%80%E5%AE%9A%E8%A6%81%E6%9C%83%E7%9A%84-js-%E8%A7%80%E5%BF%B5%E9%A1%8C-%E4%B8%AD%E8%8B%B1%E5%B0%8D%E7%85%A7%E4%B9%8B%E4%B8%8A%E7%AF%87-3b0a3feda14f">前端工程師一定要會的 JS 觀念題</a> 的啟發，也想來整理 JavaScript 的常見問題，期望自己未來能用更口語但又不失精確，且搭配範例的方式解釋出這些概念。</p>
+<p>第一部分一樣以 <strong>What is ...?</strong> 為主，會先列出幾個常見問題，之後再慢慢補上自己的理解。</p>
+<h3 id="questions">Questions</h3>
 <blockquote>
-<p>當 user agent 請求一個不同源的資源時，會建立一個跨來源 HTTP 請求（cross-origin HTTP request）。基於安全性考量，跨來源 HTTP 請求會受到限制，例如 <code>XMLHttpRequest</code> 和 <code>Fetch API</code> 都遵守同源政策（same-origin policy）。這代表 API 除非使用 CORS 標頭，否則只能請求與應用程式相同網域的 HTTP 資源。</p>
+<p>What is scope? What is the difference between <code>var</code>, <code>const</code>, and <code>let</code> on scopes?</p>
 </blockquote>
-<p>由於此篇著重比較 same-site 和 same-origin 的差別，所以若想知道更多跨來源資源共用的規範，請見 <a href="https://developer.mozilla.org/zh-TW/docs/Web/HTTP/CORS">MDN Web Docs</a>。</p>
-<h2 id="site-etld--1">Site (eTLD + 1)</h2>
-<p>&quot;Site&quot; 是指 <strong>TLD (Top-level domain)</strong> 和它之前的 <strong>domain</strong>。TLDs 包含條列在 Root Zone Database 中的 domain，例如 <code>.com</code> 和 <code>.org</code>。</p>
-<p>以 <code>https://www.example.com:443/foo</code> 為例</p>
-<ul>
-<li><strong>eTLD</strong> 是 <code>.com</code></li>
-<li><strong>site (eTLD + 1)</strong> 是 <code>example.com</code></li>
-<li>eTLD 和 TLD 的差別下方會說明</li>
-</ul>
-<p>不過也有另一類的 domain，像是 <code>.co.jp</code> 和 <code>.github.io</code>。這類 domain 如果只用 <code>.jp</code> 和 <code>.io</code> 作為 TLD 去定義 site 是不足夠的，而且也缺乏廣泛適用的邏輯去判斷。所以出現了表列的 <strong>eTLDs</strong> (effective TLDs)，被條列在 <a href="https://wiki.mozilla.org/Public_Suffix_List">Mozilla Public Suffix List</a> 中。site 也被稱為 <code>eTLD + 1</code>。</p>
-<p>以 <code>https://my-project.github.io</code> 為例</p>
-<ul>
-<li><strong>eTLD</strong> 是 <code>.github.io</code></li>
-<li><strong>site (eTLD + 1)</strong> 是 <code>my-project.github.io</code></li>
-</ul>
-<h4 id="same-site-and-cross-site">&quot;same-site&quot; and &quot;cross-site&quot;</h4>
-<p>有相同 eTLD + 1 的網站為 &quot;same-site&quot;；其餘則為 &quot;cross-site&quot;。</p>
-<p>site A: <code>https://www.example.com:443</code></p>
-<table>
-<thead>
-<tr>
-<th>site B</th>
-<th>&quot;same-site&quot; or &quot;cross-site&quot; to site A</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td><a href="https://www.evil.com">https://www.evil.com</a>:443</td>
-<td>cross-site: different domains</td>
-</tr>
-<tr>
-<td><a href="https://login.example.com">https://login.example.com</a>:443</td>
-<td>same-site: different subdomains don't matter</td>
-</tr>
-<tr>
-<td><a href="http://www.example.com">http://www.example.com</a>:443</td>
-<td>same-site: different schemes don't matter</td>
-</tr>
-<tr>
-<td><a href="https://www.example.com">https://www.example.com</a>:80</td>
-<td>same-site: different ports don't matter</td>
-</tr>
-<tr>
-<td><a href="https://www.example.com">https://www.example.com</a>:443</td>
-<td>same-site: exact match</td>
-</tr>
-<tr>
-<td><a href="https://www.example.com">https://www.example.com</a></td>
-<td>same-site: ports don't matter</td>
-</tr>
-</tbody>
-</table>
-<p>而 <code>cats.github.io</code> 和 <code>dogs.github.io</code> 為 cross-site，因為它們的 eTLD + 1 不同。</p>
-<h4 id="schemeful-same-site">&quot;schemeful same-site&quot;</h4>
-<p>從上述的定義中可以知道，<strong>scheme</strong> 是否相同不影響 &quot;same-site&quot; 的判斷，但為了避免 HTTP 被以 weak channel 使用，<a href="https://tools.ietf.org/html/draft-west-cookie-incrementalism-01#page-8">協定</a>開始商議將 scheme 納入判斷中，稱為 &quot;schemeful same-site&quot;。</p>
-<p>如此一來，<code>https://www.example.com:443</code> 和 <code>http://www.example.com:443</code> 便為 &quot;cross-site&quot;，因為它們的 scheme 不同。</p>
-<h4 id="chrome-80-後針對第三方-cookie-的調整">Chrome 80 後針對第三方 cookie 的調整</h4>
 <blockquote>
-<p>Chrome 80+ 後將對所有未設定 <code>SameSite</code> 屬性的 Set-Cookie 預設為 <code>SameSite=Lax</code>，意味著除了 top level navigate + GET 的請求行為外，其餘 cross-site request 送發 cookie 的行為將預設被關閉。</p>
+<p>What is hoisting? Do <code>const</code> and <code>let</code> have hoisting?</p>
 </blockquote>
-<p><code>SiteSite</code> values</p>
+<blockquote>
+<p>What are primitive types and object types for variables?</p>
+</blockquote>
+<blockquote>
+<p>What is IIFE (Immediately Invoked Function Expression)?</p>
+</blockquote>
+<p>IIFE is a JavaScript function which is executed right after it is defined.</p>
+<p>An IIFE is composed by two parts:</p>
 <ul>
-<li><code>SameSite=None</code> (with <code>Secure</code>)</li>
-<li><code>SameSite=Lax</code></li>
-<li><code>SameSite=Strict</code></li>
+<li>(1) an anonymous function wrapped by the grouping operator <code>()</code>, by which variables in the function will not pollute the global environment</li>
+<li>(2) an expression <code>()</code> for executing the function</li>
 </ul>
-<p>更詳細的說明請見 <a href="https://ianhung0529.medium.com/chrome-80-%E5%BE%8C%E9%87%9D%E5%B0%8D%E7%AC%AC%E4%B8%89%E6%96%B9-cookie-%E7%9A%84%E8%A6%8F%E5%89%87%E8%AA%BF%E6%95%B4-default-samesite-lax-aaba0bc785a3">Chrome 80 後針對第三方 Cookie 的規則調整</a></p>
-<h2 id="how-to-check-if-a-request-is-same-site-same-origin-or-cross-site">How to check if a request is &quot;same-site&quot;, &quot;same-origin&quot;, or &quot;cross-site&quot;</h2>
-<p>部分瀏覽器會在請求的 HTTP header 中附上 <a href="https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Sec-Fetch-Site"><code>Sec-Fetch-Site</code></a> 值，不過目前普及率不算高。</p>
-<p><code>Sec-Fetch-Site</code> 會是以下幾個值：</p>
-<ul>
-<li><code>cross-site</code></li>
-<li><code>same-site</code> (沒區分 &quot;schemeful same-site&quot;)</li>
-<li><code>same-origin</code></li>
-<li><code>none</code></li>
-</ul>
-<h2 id="reference">Reference</h2>
-<ul>
-<li><a href="https://web.dev/same-site-same-origin/">Understanding &quot;same-site&quot; and &quot;same-origin&quot;</a></li>
-</ul>
-    <div class="pager">
-  
-  <div class="pager_item prev">
-    
-    <a href="https://sharonwu0505.github.io/docs/2021/typescript-intro/" class="pager_link button" title="Introduction to TypeScript and Primitive Types">
-      <span class="pager_label">Introduction to TypeScript and Primitive Types</span>
-    </a>
-  </div>
+<pre><code>(function () {
+  var aName = &quot;Barry&quot;;
+})();
+
+// Variable name is not accessible from the outside scope
+aName; // throws &quot;Uncaught ReferenceError: aName is not defined&quot;
+</code></pre><p>IIFE is also a common design pattern. If you check codes bundled by Webpack, we'll see a lot of IIFE. IIFE prevents creating unnecessary global variables and having naming conflicts, thus it makes benefits on maintaining codes.</p>
+<blockquote>
+<p>What is closure?</p>
+</blockquote>
+<blockquote>
+<p>What is prototype?</p>
+</blockquote>
+    <div class="pager pager_lean">
   
 
   
   <div class="pager_item next">
     
-    <a href="https://sharonwu0505.github.io/docs/2021/ngrok-intro/" class="pager_link button" title="Introduction to Ngrok">
-      <span class="pager_label">Introduction to Ngrok</span>
+    <a href="https://sharonwu0505.github.io/docs/2021/angular-intro-to-modules/" class="pager_link button" title="Angular - Introduction to Modules">
+      <span class="pager_label">Angular - Introduction to Modules</span>
     </a>
   </div>
   
