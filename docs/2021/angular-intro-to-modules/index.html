@@ -497,10 +497,10 @@
 <li><code>bootstrap</code>: 應用中的 main application view，又稱為 <em>Root Component</em>，是應用中其他 views 的 <em>host (宿主)</em>。<strong>只有 root NgModule 需要有此 <code>bootstrap</code> 屬性。</strong></li>
 </ul>
 <p>這是一個簡單的 root NgModule 範例：</p>
-<div class="highlight"><pre class="chroma"><code class="language-jsx" data-lang="jsx"><span class="ln"> 1</span><span class="kr">import</span> <span class="p">{</span> <span class="nx">NgModule</span> <span class="p">}</span> <span class="nx">from</span> <span class="s1">&#39;@angular/core&#39;</span><span class="p">;</span>
-<span class="ln"> 2</span><span class="kr">import</span> <span class="p">{</span> <span class="nx">BrowserModule</span> <span class="p">}</span> <span class="nx">from</span> <span class="s1">&#39;@angular/platform-browser&#39;</span><span class="p">;</span>
+<div class="highlight"><pre class="chroma"><code class="language-typescript" data-lang="typescript"><span class="ln"> 1</span><span class="kr">import</span> <span class="p">{</span> <span class="nx">NgModule</span> <span class="p">}</span> <span class="kr">from</span> <span class="s1">&#39;@angular/core&#39;</span><span class="p">;</span>
+<span class="ln"> 2</span><span class="kr">import</span> <span class="p">{</span> <span class="nx">BrowserModule</span> <span class="p">}</span> <span class="kr">from</span> <span class="s1">&#39;@angular/platform-browser&#39;</span><span class="p">;</span>
 <span class="ln"> 3</span>
-<span class="ln"> 4</span><span class="err">@</span><span class="nx">NgModule</span><span class="p">({</span>
+<span class="ln"> 4</span><span class="kd">@NgModule</span><span class="p">({</span>
 <span class="ln"> 5</span>  <span class="nx">imports</span><span class="o">:</span>      <span class="p">[</span> <span class="nx">BrowserModule</span> <span class="p">],</span> <span class="c1">// BrowserModule is for connecting to DOM.
 </span><span class="ln"> 6</span><span class="c1"></span>  <span class="nx">providers</span><span class="o">:</span>    <span class="p">[</span> <span class="nx">Logger</span> <span class="p">],</span>
 <span class="ln"> 7</span>  <span class="nx">declarations</span><span class="o">:</span> <span class="p">[</span> <span class="nx">AppComponent</span> <span class="p">],</span>

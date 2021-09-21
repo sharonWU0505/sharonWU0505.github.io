@@ -493,10 +493,10 @@
 <span class="ln">3</span><span class="p">}</span>
 </code></pre></div><p>但如此一來我們便無法限制回傳值的型別要等同輸入值的型別，這時正是使用通用型別的時機。</p>
 <p>我們使用 type variable <code>T</code> 來代表型別，限制了函式輸入和輸出值的型別必須相同：</p>
-<pre><code>function identify&lt;T&gt;(arg: T): T {
-  return arg;
-}
-</code></pre><p>使用 <strong>type variable</strong> 時，因為無從事先得知變數的型別，所以無法操作屬性或方法，例如以下範例將會收到錯誤：</p>
+<div class="highlight"><pre class="chroma"><code class="language-typescript" data-lang="typescript"><span class="ln">1</span><span class="kd">function</span> <span class="nx">identify</span><span class="p">&lt;</span><span class="nt">T</span><span class="p">&gt;(</span><span class="nx">arg</span>: <span class="kt">T</span><span class="p">)</span><span class="o">:</span> <span class="nx">T</span> <span class="p">{</span>
+<span class="ln">2</span>  <span class="k">return</span> <span class="nx">arg</span><span class="p">;</span>
+<span class="ln">3</span><span class="p">}</span>
+</code></pre></div><p>使用 <strong>type variable</strong> 時，因為無從事先得知變數的型別，所以無法操作屬性或方法，例如以下範例將會收到錯誤：</p>
 <div class="highlight"><pre class="chroma"><code class="language-typescript" data-lang="typescript"><span class="ln">1</span><span class="kd">function</span> <span class="nx">identify</span><span class="p">&lt;</span><span class="nt">T</span><span class="p">&gt;(</span><span class="nx">arg</span>: <span class="kt">T</span><span class="p">)</span><span class="o">:</span> <span class="nx">T</span> <span class="p">{</span>
 <span class="ln">2</span>  <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">arg</span><span class="p">.</span><span class="nx">length</span><span class="p">);</span> <span class="c1">// error: Property &#39;length&#39; does not exist on type 
 </span><span class="ln">3</span><span class="c1"></span>  <span class="k">return</span> <span class="nx">arg</span><span class="p">;</span>

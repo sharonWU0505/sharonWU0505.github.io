@@ -82,6 +82,10 @@ code {
   vertical-align: middle;
 }
 
+code.noClass {
+  line-break: auto;
+}
+
 /* Adjust content grid */
 .main > .grid-auto {
   grid-template-columns: 2fr 8fr;
