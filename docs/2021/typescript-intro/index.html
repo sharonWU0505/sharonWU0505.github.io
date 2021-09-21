@@ -60,7 +60,7 @@ JavaScript 會根據變數被賦予的值去判斷它的型別
   
     
   
-<body class="page-page"data-code="7" data-lines="false" >
+<body class="page-page"data-code="20" data-lines="false" >
   <header class="nav_header">
 <nav class="wrap nav menu">
   <a href="https://sharonwu0505.github.io/" class="nav_brand">
@@ -188,15 +188,6 @@ JavaScript 會根據變數被賦予的值去判斷它的型別
       </ul>
     </li>
     <li><a href="#references">References</a></li>
-  </ul>
-</nav>
-        <h3 class="section_link"><a id="docs-javascript-questions" href="https://sharonwu0505.github.io/docs/2021/js-questions/">JavaScript Questions</a></h3><nav id="TableOfContents">
-  <ul>
-    <li>
-      <ul>
-        <li><a href="#questions">Questions</a></li>
-      </ul>
-    </li>
   </ul>
 </nav>
         <h3 class="section_link"><a id="docs-same-site-and-same-origin" href="https://sharonwu0505.github.io/docs/2021/same-site-and-same-origin/">Same-Site and Same-Origin</a></h3><nav id="TableOfContents">
@@ -532,22 +523,22 @@ JavaScript 會根據變數被賦予的值去判斷它的型別
 <h2 id="primitive-types">Primitive Types</h2>
 <p>由於 JavaScript 的資料型別分成原始型別 (primitive types) 和物件型別 (object types)，所以我們也以此分別介紹它們在 TypeScript 中的應用。</p>
 <p>最基本的 TypeScript 定義為：</p>
-<pre><code>let firstVar: type;
-</code></pre><p>若在賦值時型別錯誤，預期會在 terminal 中看到錯誤。</p>
+<div class="highlight"><pre class="chroma"><code class="language-typescript" data-lang="typescript"><span class="ln">1</span><span class="kd">let</span> <span class="nx">firstVar</span>: <span class="kt">type</span><span class="p">;</span>
+</code></pre></div><p>若在賦值時型別錯誤，預期會在 terminal 中看到錯誤。</p>
 <h4 id="string-number-and-boolean">String, Number, and Boolean</h4>
 <p>Primitive types 包括 <code>string</code>, <code>number</code>, <code>boolean</code>, <code>null</code>, <code>undefined</code>。</p>
 <p>我們可以透過以下定義一個型別為 <code>string</code> 的變數。定義其他型別的作法基本上相同。</p>
-<pre><code>let myString: string = &quot;hello world&quot;
-</code></pre><h4 id="null-and-undefined">Null and Undefined</h4>
+<div class="highlight"><pre class="chroma"><code class="language-typescript" data-lang="typescript"><span class="ln">1</span><span class="kd">let</span> <span class="nx">myString</span>: <span class="kt">string</span> <span class="o">=</span> <span class="s2">&#34;hello world&#34;</span>
+</code></pre></div><h4 id="null-and-undefined">Null and Undefined</h4>
 <p><code>null</code> 和 <code>undefined</code> 就比較特別了，它們是所有型別的子型別。意思是型別為 <code>null</code> 或 <code>undefined</code> 的變數，可以被賦值給其他變數，例如：</p>
-<pre><code>let myUndefined: undefined = undefined;
-let myBoolean: boolean = myUndefined;
-</code></pre><h4 id="void">Void</h4>
+<div class="highlight"><pre class="chroma"><code class="language-typescript" data-lang="typescript"><span class="ln">1</span><span class="kd">let</span> <span class="nx">myUndefined</span>: <span class="kt">undefined</span> <span class="o">=</span> <span class="kc">undefined</span><span class="p">;</span>
+<span class="ln">2</span><span class="kd">let</span> <span class="nx">myBoolean</span>: <span class="kt">boolean</span> <span class="o">=</span> <span class="nx">myUndefined</span><span class="p">;</span>
+</code></pre></div><h4 id="void">Void</h4>
 <p>而 JavaScript 中沒有空值 (<code>void</code>) 的概念，不過在 TypeScript 中，可以用 <code>void</code> 表示沒有任何返回值的函式返回值，也可以用來宣告變數，但型別為 <code>void</code> 的變數只能被賦值為 <code>null</code> 或 <code>undefined</code>，所以沒什麼意義。</p>
-<pre><code>function sayHello(): void {
-  console.log(&quot;hello&quot;)
-}
-</code></pre><h2 id="references">References</h2>
+<div class="highlight"><pre class="chroma"><code class="language-typescript" data-lang="typescript"><span class="ln">1</span><span class="kd">function</span> <span class="nx">sayHello</span><span class="p">()</span><span class="o">:</span> <span class="k">void</span> <span class="p">{</span>
+<span class="ln">2</span>  <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">&#34;hello&#34;</span><span class="p">)</span>
+<span class="ln">3</span><span class="p">}</span>
+</code></pre></div><h2 id="references">References</h2>
 <ul>
 <li><a href="https://www.typescriptlang.org/">https://www.typescriptlang.org/</a></li>
 <li><a href="https://willh.gitbook.io/typescript-tutorial/">https://willh.gitbook.io/typescript-tutorial/</a></li>
@@ -565,8 +556,8 @@ let myBoolean: boolean = myUndefined;
   
   <div class="pager_item next">
     
-    <a href="https://sharonwu0505.github.io/docs/2021/js-questions/" class="pager_link button" title="JavaScript Questions">
-      <span class="pager_label">JavaScript Questions</span>
+    <a href="https://sharonwu0505.github.io/docs/2021/same-site-and-same-origin/" class="pager_link button" title="Same-Site and Same-Origin">
+      <span class="pager_label">Same-Site and Same-Origin</span>
     </a>
   </div>
   

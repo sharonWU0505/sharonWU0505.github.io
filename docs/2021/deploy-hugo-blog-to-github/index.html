@@ -50,7 +50,7 @@
   
     
   
-<body class="page-page"data-code="7" data-lines="false" >
+<body class="page-page"data-code="20" data-lines="false" >
   <header class="nav_header">
 <nav class="wrap nav menu">
   <a href="https://sharonwu0505.github.io/" class="nav_brand">
@@ -178,15 +178,6 @@
       </ul>
     </li>
     <li><a href="#references">References</a></li>
-  </ul>
-</nav>
-        <h3 class="section_link"><a id="docs-javascript-questions" href="https://sharonwu0505.github.io/docs/2021/js-questions/">JavaScript Questions</a></h3><nav id="TableOfContents">
-  <ul>
-    <li>
-      <ul>
-        <li><a href="#questions">Questions</a></li>
-      </ul>
-    </li>
   </ul>
 </nav>
         <h3 class="section_link"><a id="docs-same-site-and-same-origin" href="https://sharonwu0505.github.io/docs/2021/same-site-and-same-origin/">Same-Site and Same-Origin</a></h3><nav id="TableOfContents">
@@ -514,43 +505,43 @@
 <li>在部落格 repo 建立 <code>.github/workflows</code> 資料夾</li>
 <li>資料夾下新增 <code>main.yml</code>，貼上以下 action 設置</li>
 </ul>
-<pre><code>name: CI
-on: push
-jobs:
-  deploy:
-    runs-on: ubuntu-18.04
-    steps:
-      - name: Git checkout
-        uses: actions/checkout@v2
-
-      - name: Update theme
-        # (Optional) If you have the theme added as submodule, you can pull it and use the most updated version
-        run: git submodule update --init --recursive
-
-      - name: Setup hugo
-        uses: peaceiris/actions-hugo@v2
-        # or change to a version you prefer
-        with:
-          hugo-version: &quot;0.80.0&quot;
-
-      - name: Build
-        # remove --minify tag if you do not need it
-        # docs: https://gohugo.io/hugo-pipes/minification/
-        run: hugo --minify
-
-      # replace TOKEN and username to your own settings
-      - name: Deploy
-        uses: peaceiris/actions-gh-pages@v3
-        with:
-          personal_token: ${{ secrets.TOKEN }}
-          external_repository: &lt;username&gt;/&lt;username&gt;.github.io
-          publish_dir: ./public
-          # keep_files: true
-          user_name: &lt;username&gt;
-          user_email: &lt;username@email.com&gt;
-          publish_branch: main
-          # cname: example.com
-</code></pre><h2 id="step-5-push-to-github-remote">Step 5: Push to GitHub Remote</h2>
+<div class="highlight"><pre class="chroma"><code class="language-yaml" data-lang="yaml"><span class="ln"> 1</span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l">CI</span><span class="w">
+</span><span class="ln"> 2</span><span class="w"></span><span class="nt">on</span><span class="p">:</span><span class="w"> </span><span class="l">push</span><span class="w">
+</span><span class="ln"> 3</span><span class="w"></span><span class="nt">jobs</span><span class="p">:</span><span class="w">
+</span><span class="ln"> 4</span><span class="w">  </span><span class="nt">deploy</span><span class="p">:</span><span class="w">
+</span><span class="ln"> 5</span><span class="w">    </span><span class="nt">runs-on</span><span class="p">:</span><span class="w"> </span><span class="l">ubuntu-18.04</span><span class="w">
+</span><span class="ln"> 6</span><span class="w">    </span><span class="nt">steps</span><span class="p">:</span><span class="w">
+</span><span class="ln"> 7</span><span class="w">      </span>- <span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l">Git checkout</span><span class="w">
+</span><span class="ln"> 8</span><span class="w">        </span><span class="nt">uses</span><span class="p">:</span><span class="w"> </span><span class="l">actions/checkout@v2</span><span class="w">
+</span><span class="ln"> 9</span><span class="w">
+</span><span class="ln">10</span><span class="w">      </span>- <span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l">Update theme</span><span class="w">
+</span><span class="ln">11</span><span class="w">        </span><span class="c"># (Optional) If you have the theme added as submodule, you can pull it and use the most updated version</span><span class="w">
+</span><span class="ln">12</span><span class="w">        </span><span class="nt">run</span><span class="p">:</span><span class="w"> </span><span class="l">git submodule update --init --recursive</span><span class="w">
+</span><span class="ln">13</span><span class="w">
+</span><span class="ln">14</span><span class="w">      </span>- <span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l">Setup hugo</span><span class="w">
+</span><span class="ln">15</span><span class="w">        </span><span class="nt">uses</span><span class="p">:</span><span class="w"> </span><span class="l">peaceiris/actions-hugo@v2</span><span class="w">
+</span><span class="ln">16</span><span class="w">        </span><span class="c"># or change to a version you prefer</span><span class="w">
+</span><span class="ln">17</span><span class="w">        </span><span class="nt">with</span><span class="p">:</span><span class="w">
+</span><span class="ln">18</span><span class="w">          </span><span class="nt">hugo-version</span><span class="p">:</span><span class="w"> </span><span class="s2">&#34;0.80.0&#34;</span><span class="w">
+</span><span class="ln">19</span><span class="w">
+</span><span class="ln">20</span><span class="w">      </span>- <span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l">Build</span><span class="w">
+</span><span class="ln">21</span><span class="w">        </span><span class="c"># remove --minify tag if you do not need it</span><span class="w">
+</span><span class="ln">22</span><span class="w">        </span><span class="c"># docs: https://gohugo.io/hugo-pipes/minification/</span><span class="w">
+</span><span class="ln">23</span><span class="w">        </span><span class="nt">run</span><span class="p">:</span><span class="w"> </span><span class="l">hugo --minify</span><span class="w">
+</span><span class="ln">24</span><span class="w">
+</span><span class="ln">25</span><span class="w">      </span><span class="c"># replace TOKEN and username to your own settings</span><span class="w">
+</span><span class="ln">26</span><span class="w">      </span>- <span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l">Deploy</span><span class="w">
+</span><span class="ln">27</span><span class="w">        </span><span class="nt">uses</span><span class="p">:</span><span class="w"> </span><span class="l">peaceiris/actions-gh-pages@v3</span><span class="w">
+</span><span class="ln">28</span><span class="w">        </span><span class="nt">with</span><span class="p">:</span><span class="w">
+</span><span class="ln">29</span><span class="w">          </span><span class="nt">personal_token</span><span class="p">:</span><span class="w"> </span><span class="l">${{ secrets.TOKEN }}</span><span class="w">
+</span><span class="ln">30</span><span class="w">          </span><span class="nt">external_repository</span><span class="p">:</span><span class="w"> </span><span class="l">&lt;username&gt;/&lt;username&gt;.github.io</span><span class="w">
+</span><span class="ln">31</span><span class="w">          </span><span class="nt">publish_dir</span><span class="p">:</span><span class="w"> </span><span class="l">./public</span><span class="w">
+</span><span class="ln">32</span><span class="w">          </span><span class="c"># keep_files: true</span><span class="w">
+</span><span class="ln">33</span><span class="w">          </span><span class="nt">user_name</span><span class="p">:</span><span class="w"> </span><span class="l">&lt;username&gt;</span><span class="w">
+</span><span class="ln">34</span><span class="w">          </span><span class="nt">user_email</span><span class="p">:</span><span class="w"> </span><span class="l">&lt;username@email.com&gt;</span><span class="w">
+</span><span class="ln">35</span><span class="w">          </span><span class="nt">publish_branch</span><span class="p">:</span><span class="w"> </span><span class="l">main</span><span class="w">
+</span><span class="ln">36</span><span class="w">          </span><span class="c"># cname: example.com</span><span class="w">
+</span></code></pre></div><h2 id="step-5-push-to-github-remote">Step 5: Push to GitHub Remote</h2>
 <p>push 到 remote 後，你將會在 repo 的 <code>Actions</code> 頁面看到 action 的進度。等待 action 成功後，就可以在 <code>https://&lt;username&gt;.github.io/</code> 看到部落格囉！</p>
 <hr>
 <h2 id="reference">Reference</h2>

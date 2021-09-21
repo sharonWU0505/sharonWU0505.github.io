@@ -50,7 +50,7 @@
   
     
   
-<body class="page-page"data-code="7" data-lines="false" >
+<body class="page-page"data-code="20" data-lines="false" >
   <header class="nav_header">
 <nav class="wrap nav menu">
   <a href="https://sharonwu0505.github.io/" class="nav_brand">
@@ -178,15 +178,6 @@
       </ul>
     </li>
     <li><a href="#references">References</a></li>
-  </ul>
-</nav>
-        <h3 class="section_link"><a id="docs-javascript-questions" href="https://sharonwu0505.github.io/docs/2021/js-questions/">JavaScript Questions</a></h3><nav id="TableOfContents">
-  <ul>
-    <li>
-      <ul>
-        <li><a href="#questions">Questions</a></li>
-      </ul>
-    </li>
   </ul>
 </nav>
         <h3 class="section_link"><a id="docs-same-site-and-same-origin" href="https://sharonwu0505.github.io/docs/2021/same-site-and-same-origin/">Same-Site and Same-Origin</a></h3><nav id="TableOfContents">
@@ -532,8 +523,8 @@
 <li>啟用功能：打開 Chrome 後到網址輸入 <code>chrome://flags</code>，接著搜尋 <code>lazy</code>，再啟用這功能：<code>Enable lazy image loading (#enable-lazy-image-loading)</code></li>
 <li>使用方法：在 HTML 的 img tag 加上 <code>loading=&quot;lazy&quot;</code></li>
 </ul>
-<pre><code>&lt;img src=&quot;my-image.jpg&quot; loading=&quot;lazy&quot;&gt;
-</code></pre><ul>
+<div class="highlight"><pre class="chroma"><code class="language-html" data-lang="html"><span class="ln">1</span><span class="p">&lt;</span><span class="nt">img</span> <span class="na">src</span><span class="o">=</span><span class="s">&#34;my-image.jpg&#34;</span> <span class="na">loading</span><span class="o">=</span><span class="s">&#34;lazy&#34;</span><span class="p">&gt;</span>
+</code></pre></div><ul>
 <li>支援程度：0% (from <a href="https://caniuse.com/loading-lazy-attr">Can I Use</a>)</li>
 </ul>
 <h4 id="現行常見作法">現行常見作法</h4>
@@ -550,6 +541,10 @@
 <h4 id="實作-lazy-loading-之步驟以使用-intersection-observer-api-為例">實作 Lazy Loading 之步驟（以使用 Intersection Observer API 為例）</h4>
 <ul>
 <li>不讓圖片正常載入：先將圖片 URL 放在 <code>data-src</code></li>
+</ul>
+<div class="highlight"><pre class="chroma"><code class="language-html" data-lang="html"><span class="ln">1</span><span class="c">&lt;!-- 無法正常載入的圖片 --&gt;</span>
+<span class="ln">2</span><span class="p">&lt;</span><span class="nt">img</span> <span class="na">class</span><span class="o">=</span><span class="s">&#34;img lazy&#34;</span> <span class="na">data-src</span><span class="o">=</span><span class="s">&#34;cat.jpg&#34;</span><span class="p">&gt;</span>
+</code></pre></div><ul>
 <li>監視圖片元素，判斷它們是否進入到畫面中（倚賴 Intersection Observer API）
 <ul>
 <li>首先創造一個 Intersection Observer instance</li>
@@ -563,11 +558,9 @@
 <li>確認目標進入畫面後，把 <code>data-src</code> 的值取出，放到 <code>src</code> -&gt; 顯示圖片</li>
 </ul>
 </li>
-<li>用 <code>observer.unobserve</code> 取消監視元素</li>
+<li>使用 <code>observer.unobserve</code> 取消監視元素</li>
 </ul>
-<div class="highlight"><pre class="chroma"><code class="language-html" data-lang="html"><span class="ln">1</span><span class="c">&lt;!-- 無法正常載入的圖片 --&gt;</span>
-<span class="ln">2</span><span class="p">&lt;</span><span class="nt">img</span> <span class="na">class</span><span class="o">=</span><span class="s">&#34;img lazy&#34;</span> <span class="na">data-src</span><span class="o">=</span><span class="s">&#34;cat.jpg&#34;</span><span class="p">&gt;</span>
-</code></pre></div><div class="highlight"><pre class="chroma"><code class="language-javascript" data-lang="javascript"><span class="ln"> 1</span><span class="c1">// callback function parameter for observer
+<div class="highlight"><pre class="chroma"><code class="language-javascript" data-lang="javascript"><span class="ln"> 1</span><span class="c1">// callback function parameter for observer
 </span><span class="ln"> 2</span><span class="c1"></span><span class="kd">function</span> <span class="nx">onEnterView</span><span class="p">(</span><span class="nx">entries</span><span class="p">,</span> <span class="nx">observer</span><span class="p">)</span> <span class="p">{</span>
 <span class="ln"> 3</span>  <span class="k">for</span> <span class="p">(</span><span class="kd">let</span> <span class="nx">entry</span> <span class="k">of</span> <span class="nx">entries</span><span class="p">)</span> <span class="p">{</span>
 <span class="ln"> 4</span>    <span class="k">if</span> <span class="p">(</span><span class="nx">entry</span><span class="p">.</span><span class="nx">isIntersecting</span><span class="p">)</span> <span class="p">{</span>

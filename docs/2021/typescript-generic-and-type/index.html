@@ -50,7 +50,7 @@
   
     
   
-<body class="page-page"data-code="7" data-lines="false" >
+<body class="page-page"data-code="20" data-lines="false" >
   <header class="nav_header">
 <nav class="wrap nav menu">
   <a href="https://sharonwu0505.github.io/" class="nav_brand">
@@ -178,15 +178,6 @@
       </ul>
     </li>
     <li><a href="#references">References</a></li>
-  </ul>
-</nav>
-        <h3 class="section_link"><a id="docs-javascript-questions" href="https://sharonwu0505.github.io/docs/2021/js-questions/">JavaScript Questions</a></h3><nav id="TableOfContents">
-  <ul>
-    <li>
-      <ul>
-        <li><a href="#questions">Questions</a></li>
-      </ul>
-    </li>
   </ul>
 </nav>
         <h3 class="section_link"><a id="docs-same-site-and-same-origin" href="https://sharonwu0505.github.io/docs/2021/same-site-and-same-origin/">Same-Site and Same-Origin</a></h3><nav id="TableOfContents">
@@ -493,72 +484,72 @@
     </div><p>此篇要來談談 TypeScript 通用型別 (Generic Types) 的用途，以及 interface 和型別別名 (Type Alias) 的使用差異。</p>
 <h2 id="通用型別-generic-types">通用型別 (Generic Types)</h2>
 <p>有時我們想在具有多種型別可能的情況下重用 (reuse) 程式碼，例如以下這個例子：</p>
-<pre><code>function identity(arg: number): number {
-  return arg;
-}
-</code></pre><p><code>identify</code> 函式收到參數 <code>arg</code>，並回傳該參數。如果想更有彈性地使用函式，比方說不限定參數型別，則我們可以使用 <code>any</code>：</p>
-<pre><code>function identity(arg: any): any {
-  return arg;
-}
-</code></pre><p>但如此一來我們便無法限制回傳值的型別要等同輸入值的型別，這時正是使用通用型別的時機。</p>
+<div class="highlight"><pre class="chroma"><code class="language-typescript" data-lang="typescript"><span class="ln">1</span><span class="kd">function</span> <span class="nx">identity</span><span class="p">(</span><span class="nx">arg</span>: <span class="kt">number</span><span class="p">)</span><span class="o">:</span> <span class="kt">number</span> <span class="p">{</span>
+<span class="ln">2</span>  <span class="k">return</span> <span class="nx">arg</span><span class="p">;</span>
+<span class="ln">3</span><span class="p">}</span>
+</code></pre></div><p><code>identify</code> 函式收到參數 <code>arg</code>，並回傳該參數。如果想更有彈性地使用函式，比方說不限定參數型別，則我們可以使用 <code>any</code>：</p>
+<div class="highlight"><pre class="chroma"><code class="language-typescript" data-lang="typescript"><span class="ln">1</span><span class="kd">function</span> <span class="nx">identity</span><span class="p">(</span><span class="nx">arg</span>: <span class="kt">any</span><span class="p">)</span><span class="o">:</span> <span class="kt">any</span> <span class="p">{</span>
+<span class="ln">2</span>  <span class="k">return</span> <span class="nx">arg</span><span class="p">;</span>
+<span class="ln">3</span><span class="p">}</span>
+</code></pre></div><p>但如此一來我們便無法限制回傳值的型別要等同輸入值的型別，這時正是使用通用型別的時機。</p>
 <p>我們使用 type variable <code>T</code> 來代表型別，限制了函式輸入和輸出值的型別必須相同：</p>
 <pre><code>function identify&lt;T&gt;(arg: T): T {
   return arg;
 }
 </code></pre><p>使用 <strong>type variable</strong> 時，因為無從事先得知變數的型別，所以無法操作屬性或方法，例如以下範例將會收到錯誤：</p>
-<pre><code>function identify&lt;T&gt;(arg: T): T {
-  console.log(arg.length); // error: Property 'length' does not exist on type 
-  return arg;
-}
-</code></pre><p>不過如果是：</p>
-<pre><code>function loggingIdentity&lt;T&gt;(args: T[]): T[] {
-  console.log(args.length);
-  return args;
-}
-</code></pre><p>將不會有問題，因為 arrays of type <code>T</code> 確定有 <code>length</code> 屬性。</p>
+<div class="highlight"><pre class="chroma"><code class="language-typescript" data-lang="typescript"><span class="ln">1</span><span class="kd">function</span> <span class="nx">identify</span><span class="p">&lt;</span><span class="nt">T</span><span class="p">&gt;(</span><span class="nx">arg</span>: <span class="kt">T</span><span class="p">)</span><span class="o">:</span> <span class="nx">T</span> <span class="p">{</span>
+<span class="ln">2</span>  <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">arg</span><span class="p">.</span><span class="nx">length</span><span class="p">);</span> <span class="c1">// error: Property &#39;length&#39; does not exist on type 
+</span><span class="ln">3</span><span class="c1"></span>  <span class="k">return</span> <span class="nx">arg</span><span class="p">;</span>
+<span class="ln">4</span><span class="p">}</span>
+</code></pre></div><p>不過如果是：</p>
+<div class="highlight"><pre class="chroma"><code class="language-typescript" data-lang="typescript"><span class="ln">1</span><span class="kd">function</span> <span class="nx">loggingIdentity</span><span class="p">&lt;</span><span class="nt">T</span><span class="p">&gt;(</span><span class="nx">args</span>: <span class="kt">T</span><span class="p">[])</span><span class="o">:</span> <span class="nx">T</span><span class="p">[]</span> <span class="p">{</span>
+<span class="ln">2</span>  <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">args</span><span class="p">.</span><span class="nx">length</span><span class="p">);</span>
+<span class="ln">3</span>  <span class="k">return</span> <span class="nx">args</span><span class="p">;</span>
+<span class="ln">4</span><span class="p">}</span>
+</code></pre></div><p>將不會有問題，因為 arrays of type <code>T</code> 確定有 <code>length</code> 屬性。</p>
 <p>通用型別當然也可以跟 interface, class, tuple 等搭配運用，詳細使用方式請見官方<a href="https://www.typescriptlang.org/docs/handbook/2/generics.html">文件</a>。</p>
 <h2 id="介面-interface-與型別別名-type-alias-的異同">介面 (Interface) 與型別別名 (Type Alias) 的異同</h2>
 <p>型別別名在使用上和 interface 非常相似。</p>
 <h4 id="相似之處">相似之處</h4>
 <p><code>type</code> 和 <code>interface</code> 一樣可以用來定義物件格式：</p>
-<pre><code>type Animal = {
-  name: string
-}
-</code></pre><p><code>type</code> 可使用 intersections 延伸屬性（<code>interface</code> 則通常會使用 <code>extends</code>)</p>
-<pre><code>type Animal = {
-  name: string
-}
-
-type Bear = Animal &amp; { 
-  honey: boolean 
-}
-
-const bear = getBear();
-bear.name;
-bear.honey;
-</code></pre><h4 id="不同之處">不同之處</h4>
+<div class="highlight"><pre class="chroma"><code class="language-typescript" data-lang="typescript"><span class="ln">1</span><span class="kr">type</span> <span class="nx">Animal</span> <span class="o">=</span> <span class="p">{</span>
+<span class="ln">2</span>  <span class="nx">name</span>: <span class="kt">string</span>
+<span class="ln">3</span><span class="p">}</span>
+</code></pre></div><p><code>type</code> 可使用 intersections 延伸屬性（<code>interface</code> 則通常會使用 <code>extends</code>)</p>
+<div class="highlight"><pre class="chroma"><code class="language-typescript" data-lang="typescript"><span class="ln"> 1</span><span class="kr">type</span> <span class="nx">Animal</span> <span class="o">=</span> <span class="p">{</span>
+<span class="ln"> 2</span>  <span class="nx">name</span>: <span class="kt">string</span>
+<span class="ln"> 3</span><span class="p">}</span>
+<span class="ln"> 4</span>
+<span class="ln"> 5</span><span class="kr">type</span> <span class="nx">Bear</span> <span class="o">=</span> <span class="nx">Animal</span> <span class="o">&amp;</span> <span class="p">{</span> 
+<span class="ln"> 6</span>  <span class="nx">honey</span>: <span class="kt">boolean</span> 
+<span class="ln"> 7</span><span class="p">}</span>
+<span class="ln"> 8</span>
+<span class="ln"> 9</span><span class="kr">const</span> <span class="nx">bear</span> <span class="o">=</span> <span class="nx">getBear</span><span class="p">();</span>
+<span class="ln">10</span><span class="nx">bear</span><span class="p">.</span><span class="nx">name</span><span class="p">;</span>
+<span class="ln">11</span><span class="nx">bear</span><span class="p">.</span><span class="nx">honey</span><span class="p">;</span>
+</code></pre></div><h4 id="不同之處">不同之處</h4>
 <blockquote>
 <p>Aliasing doesn’t actually create a new type - it creates a new name to refer to that type. Aliasing a primitive is not terribly useful, though it can be used as a form of documentation.</p>
 </blockquote>
 <p>根據<a href="https://www.typescriptlang.org/docs/handbook/declaration-files/by-example.html#reusable-types-type-aliases">官方文件</a>，<code>type</code> 看起來更推薦用在單純要表示偏靜態的資料格式之時：</p>
-<pre><code>// declaration
-type GreetingLike = string | (() =&gt; string) | MyGreeter;
-
-declare function greet(g: GreetingLike): void;
-
-// usage
-function getGreeting() {
-  return &quot;howdy&quot;;
-}
-
-class MyGreeter extends Greeter {
-  ...
-}
-
-greet(&quot;hello&quot;);
-greet(getGreeting);
-greet(new MyGreeter());
-</code></pre><h2 id="references">References</h2>
+<div class="highlight"><pre class="chroma"><code class="language-typescript" data-lang="typescript"><span class="ln"> 1</span><span class="c1">// declaration
+</span><span class="ln"> 2</span><span class="c1"></span><span class="kr">type</span> <span class="nx">GreetingLike</span> <span class="o">=</span> <span class="kt">string</span> <span class="o">|</span> <span class="p">(()</span> <span class="o">=&gt;</span> <span class="kt">string</span><span class="p">)</span> <span class="o">|</span> <span class="nx">MyGreeter</span><span class="p">;</span>
+<span class="ln"> 3</span>
+<span class="ln"> 4</span><span class="kr">declare</span> <span class="kd">function</span> <span class="nx">greet</span><span class="p">(</span><span class="nx">g</span>: <span class="kt">GreetingLike</span><span class="p">)</span><span class="o">:</span> <span class="k">void</span><span class="p">;</span>
+<span class="ln"> 5</span>
+<span class="ln"> 6</span><span class="c1">// usage
+</span><span class="ln"> 7</span><span class="c1"></span><span class="kd">function</span> <span class="nx">getGreeting() {</span>
+<span class="ln"> 8</span>  <span class="k">return</span> <span class="s2">&#34;howdy&#34;</span><span class="p">;</span>
+<span class="ln"> 9</span><span class="p">}</span>
+<span class="ln">10</span>
+<span class="ln">11</span><span class="kr">class</span> <span class="nx">MyGreeter</span> <span class="kr">extends</span> <span class="nx">Greeter</span> <span class="p">{</span>
+<span class="ln">12</span>  <span class="p">...</span>
+<span class="ln">13</span><span class="p">}</span>
+<span class="ln">14</span>
+<span class="ln">15</span><span class="nx">greet</span><span class="p">(</span><span class="s2">&#34;hello&#34;</span><span class="p">);</span>
+<span class="ln">16</span><span class="nx">greet</span><span class="p">(</span><span class="nx">getGreeting</span><span class="p">);</span>
+<span class="ln">17</span><span class="nx">greet</span><span class="p">(</span><span class="k">new</span> <span class="nx">MyGreeter</span><span class="p">());</span>
+</code></pre></div><h2 id="references">References</h2>
 <ul>
 <li><a href="https://www.typescriptlang.org/">https://www.typescriptlang.org/</a></li>
 <li><a href="https://willh.gitbook.io/typescript-tutorial/">https://willh.gitbook.io/typescript-tutorial/</a></li>

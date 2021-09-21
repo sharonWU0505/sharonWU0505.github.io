@@ -18,7 +18,13 @@ html {
 }
 
 .wrap {
-  max-width: 1100px;
+  max-width: 85%;
+}
+
+@media screen and (max-width: 1199px) {
+  .wrap {
+    max-width: 90%;
+  }
 }
 
 .button {
@@ -64,6 +70,16 @@ blockquote p {
 
 .highlight pre {
   padding: 1rem 0;
+}
+
+.color_choice::after,
+.color_mode .color_icon {
+  cursor: pointer;
+}
+
+code {
+  display: inline-block;
+  vertical-align: middle;
 }
 
 /* Adjust content grid */

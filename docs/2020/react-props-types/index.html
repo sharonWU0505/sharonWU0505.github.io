@@ -53,7 +53,7 @@
   
     
   
-<body class="page-page"data-code="7" data-lines="false" >
+<body class="page-page"data-code="20" data-lines="false" >
   <header class="nav_header">
 <nav class="wrap nav menu">
   <a href="https://sharonwu0505.github.io/" class="nav_brand">
@@ -181,15 +181,6 @@
       </ul>
     </li>
     <li><a href="#references">References</a></li>
-  </ul>
-</nav>
-        <h3 class="section_link"><a id="docs-javascript-questions" href="https://sharonwu0505.github.io/docs/2021/js-questions/">JavaScript Questions</a></h3><nav id="TableOfContents">
-  <ul>
-    <li>
-      <ul>
-        <li><a href="#questions">Questions</a></li>
-      </ul>
-    </li>
   </ul>
 </nav>
         <h3 class="section_link"><a id="docs-same-site-and-same-origin" href="https://sharonwu0505.github.io/docs/2021/same-site-and-same-origin/">Same-Site and Same-Origin</a></h3><nav id="TableOfContents">
@@ -535,29 +526,29 @@
 </li>
 </ul>
 <h3 id="example-同理-function-component">Example (同理 function component)</h3>
-<pre><code>import PropTypes from &quot;prop-types&quot;;
-
-class ReactComponent extends React.Component {
-  // ...component class body here
-}
-
-ReactComponent.propTypes = {
-  // ...props-type definitions here
-}
-</code></pre><h3 id="default-prop-values">Default Prop Values</h3>
+<div class="highlight"><pre class="chroma"><code class="language-javascript" data-lang="javascript"><span class="ln">1</span><span class="kr">import</span> <span class="nx">PropTypes</span> <span class="nx">from</span> <span class="s2">&#34;prop-types&#34;</span><span class="p">;</span>
+<span class="ln">2</span>
+<span class="ln">3</span><span class="kr">class</span> <span class="nx">ReactComponent</span> <span class="kr">extends</span> <span class="nx">React</span><span class="p">.</span><span class="nx">Component</span> <span class="p">{</span>
+<span class="ln">4</span>  <span class="c1">// ...component class body here
+</span><span class="ln">5</span><span class="c1"></span><span class="p">}</span>
+<span class="ln">6</span>
+<span class="ln">7</span><span class="nx">ReactComponent</span><span class="p">.</span><span class="nx">propTypes</span> <span class="o">=</span> <span class="p">{</span>
+<span class="ln">8</span>  <span class="c1">// ...props-type definitions here
+</span><span class="ln">9</span><span class="c1"></span><span class="p">}</span>
+</code></pre></div><h3 id="default-prop-values">Default Prop Values</h3>
 <p>也可以給予 <code>props</code> <code>defaultProps</code>。型別檢查會在 <code>defaultProps</code> 賦予 <code>props</code> 值之後，所以型別檢查也會作用在 <code>defaultProps</code> 上。</p>
-<pre><code>class ReactComponent extends React.Component {
-  render() {
-    return (
-      &lt;div&gt;Hello, {this.props.name}&lt;/div&gt;
-    )
-  }
-}
-
-ReactComponent.defaultProps = {
-  name: &quot;stranger&quot;,
-}
-</code></pre><h3 id="reference">Reference</h3>
+<div class="highlight"><pre class="chroma"><code class="language-javascript" data-lang="javascript"><span class="ln"> 1</span><span class="kr">class</span> <span class="nx">ReactComponent</span> <span class="kr">extends</span> <span class="nx">React</span><span class="p">.</span><span class="nx">Component</span> <span class="p">{</span>
+<span class="ln"> 2</span>  <span class="nx">render</span><span class="p">()</span> <span class="p">{</span>
+<span class="ln"> 3</span>    <span class="k">return</span> <span class="p">(</span>
+<span class="ln"> 4</span>      <span class="o">&lt;</span><span class="nx">div</span><span class="o">&gt;</span><span class="nx">Hello</span><span class="p">,</span> <span class="p">{</span><span class="k">this</span><span class="p">.</span><span class="nx">props</span><span class="p">.</span><span class="nx">name</span><span class="p">}</span><span class="o">&lt;</span><span class="err">/div&gt;</span>
+<span class="ln"> 5</span>    <span class="p">)</span>
+<span class="ln"> 6</span>  <span class="p">}</span>
+<span class="ln"> 7</span><span class="p">}</span>
+<span class="ln"> 8</span>
+<span class="ln"> 9</span><span class="nx">ReactComponent</span><span class="p">.</span><span class="nx">defaultProps</span> <span class="o">=</span> <span class="p">{</span>
+<span class="ln">10</span>  <span class="nx">name</span><span class="o">:</span> <span class="s2">&#34;stranger&#34;</span><span class="p">,</span>
+<span class="ln">11</span><span class="p">}</span>
+</code></pre></div><h3 id="reference">Reference</h3>
 <ul>
 <li><a href="https://blog.logrocket.com/validating-react-component-props-with-prop-types-ef14b29963fc/">PropTypes in React: A complete guide</a></li>
 </ul>
