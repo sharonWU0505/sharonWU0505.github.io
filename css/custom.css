@@ -17,6 +17,10 @@ html {
   padding: 0;
 }
 
+body {
+  max-width: 1500px;
+}
+
 .wrap {
   max-width: 85%;
 }
