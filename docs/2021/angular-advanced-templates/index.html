@@ -121,16 +121,16 @@
       <section class="" id="docs-posts">
         <h3 class="section_link active"><a id="docs-angular-advanced-templates---ng-template-ng-container-and-ngtemplateoutlet" href="https://sharonwu0505.github.io/docs/2021/angular-advanced-templates/">Angular Advanced Templates - ng-template, ng-container and ngTemplateOutlet</a></h3><nav id="TableOfContents">
   <ul>
-    <li><a href="#ng-template-directive"><code>ng-template</code> Directive</a>
+    <li><a href="#ng-template-directive">ng-template Directive</a>
       <ul>
         <li>
           <ul>
-            <li><a href="#the-ng-template-directive-and-ngif">The <code>ng-template</code> Directive and <code>ngIf</code></a></li>
+            <li><a href="#the-ng-template-directive-and-ngif">The ng-template Directive and ngIf</a></li>
           </ul>
         </li>
       </ul>
     </li>
-    <li><a href="#ng-container-directive"><code>ng-container</code> Directive</a></li>
+    <li><a href="#ng-container-directive">ng-container Directive</a></li>
     <li><a href="#template-context">Template Context</a></li>
     <li><a href="#template-references">Template References</a>
       <ul>
@@ -520,7 +520,7 @@
       
     </div><p>撰寫 Angular templates 時一定會用到 <code>ng-template</code> 和 <code>ngTemplateOutlet</code> 來實現進階的功能，而它們經常與 <code>ng-container</code> 搭配使用。</p>
 <p>我們將基於 <a href="https://blog.angular-university.io/angular-ng-template-ng-container-ngtemplateoutlet/">Angular ng-template, ng-container and ngTemplateOutlet - The Complete Guide To Angular Templates</a> 這篇寫得非常好的文章來介紹它們的用途和使用方式。</p>
-<h2 id="ng-template-directive"><code>ng-template</code> Directive</h2>
+<h2 id="ng-template-directive">ng-template Directive</h2>
 <p>顧名思義，<code>ng-template</code> directive 代表一段 Angular template，它們可以和其他 templates 組合成最終的 component template。<code>ng-template</code> 其實被廣泛應用在 Angular 自身的 structural directives, e.g. <code>ngIf</code>, <code>ngFor</code>, <code>ngSwitch</code> 當中。</p>
 <p>如果我們今天撰寫一段 <code>ng-template</code>：</p>
 <div class="highlight"><pre class="chroma"><code class="language-typescript" data-lang="typescript"><span class="ln"> 1</span><span class="kd">@Component</span><span class="p">({</span>
@@ -545,7 +545,7 @@
 <span class="ln">20</span>  <span class="p">}</span>
 <span class="ln">21</span><span class="p">}</span>
 </code></pre></div><p>大家注意到的第一件事應該會是<strong>以上程式碼並沒有 render 任何東西到畫面中</strong>。因為 <code>ng-template</code> 只是單純用來定義 <code>template</code>，而我們尚未使用它。</p>
-<h4 id="the-ng-template-directive-and-ngif">The <code>ng-template</code> Directive and <code>ngIf</code></h4>
+<h4 id="the-ng-template-directive-and-ngif">The ng-template Directive and ngIf</h4>
 <div class="highlight"><pre class="chroma"><code class="language-html" data-lang="html"><span class="ln">1</span><span class="p">&lt;</span><span class="nt">div</span> <span class="na">class</span><span class="o">=</span><span class="s">&#34;lessons-list&#34;</span> <span class="err">*</span><span class="na">ngIf</span><span class="o">=</span><span class="s">&#34;lessons else loading&#34;</span><span class="p">&gt;</span>
 <span class="ln">2</span>  ... 
 <span class="ln">3</span><span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
@@ -573,7 +573,7 @@
 <span class="ln">6</span>  <span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
 <span class="ln">7</span><span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
 </code></pre></div><p>不過你應該會想問：可以不要有多餘的 <code>div</code> 嗎？答案是可以的，而正是 <code>ng-container</code> 讓我們可以這麼做！</p>
-<h2 id="ng-container-directive"><code>ng-container</code> Directive</h2>
+<h2 id="ng-container-directive">ng-container Directive</h2>
 <div class="highlight"><pre class="chroma"><code class="language-html" data-lang="html"><span class="ln">1</span><span class="p">&lt;</span><span class="nt">ng-container</span> <span class="err">*</span><span class="na">ngIf</span><span class="o">=</span><span class="s">&#34;lessons&#34;</span><span class="p">&gt;</span>
 <span class="ln">2</span>  <span class="p">&lt;</span><span class="nt">div</span> <span class="na">class</span><span class="o">=</span><span class="s">&#34;lesson&#34;</span> <span class="err">*</span><span class="na">ngFor</span><span class="o">=</span><span class="s">&#34;let lesson of lessons&#34;</span><span class="p">&gt;</span>
 <span class="ln">3</span>    <span class="p">&lt;</span><span class="nt">div</span> <span class="na">class</span><span class="o">=</span><span class="s">&#34;lesson-detail&#34;</span><span class="p">&gt;</span>
