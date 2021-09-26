@@ -6,6 +6,16 @@
     <description>Recent content in Draw Closer on Draw Closer - A Blog by Sharon Wu</description>
     <generator>Hugo -- gohugo.io</generator><atom:link href="https://sharonwu0505.github.io/index.xml" rel="self" type="application/rss+xml" />
     <item>
+      <title>Angular Advanced Templates - ng-template, ng-container and ngTemplateOutlet</title>
+      <link>https://sharonwu0505.github.io/docs/2021/angular-advanced-templates/</link>
+      <pubDate>Sat, 25 Sep 2021 11:00:00 +0800</pubDate>
+      
+      <guid>https://sharonwu0505.github.io/docs/2021/angular-advanced-templates/</guid>
+      <description>&lt;p&gt;撰寫 Angular templates 時一定會用到 &lt;code&gt;ng-template&lt;/code&gt; 和 &lt;code&gt;ngTemplateOutlet&lt;/code&gt; 來實現進階的功能，而它們經常與 &lt;code&gt;ng-container&lt;/code&gt; 搭配使用。&lt;/p&gt;
+&lt;p&gt;我們將基於 &lt;a href=&#34;https://blog.angular-university.io/angular-ng-template-ng-container-ngtemplateoutlet/&#34;&gt;Angular ng-template, ng-container and ngTemplateOutlet - The Complete Guide To Angular Templates&lt;/a&gt; 這篇寫得非常好的文章來介紹它們的用途和使用方式。&lt;/p&gt;</description>
+    </item>
+    
+    <item>
       <title>WIP: JavaScript Questions (1)</title>
       <link>https://sharonwu0505.github.io/docs/2021/js-questions-1/</link>
       <pubDate>Tue, 14 Sep 2021 10:00:00 +0800</pubDate>

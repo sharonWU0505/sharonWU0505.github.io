@@ -9,21 +9,21 @@
 <link rel="mask-icon" href='https://sharonwu0505.github.io/favicons/safari-pinned-tab.svg'  color="#004750">
 <link rel="shortcut icon" href='https://sharonwu0505.github.io/favicons/favicon.ico'>
 <meta name="msapplication-config" content='https://sharonwu0505.github.io/favicons/browserconfig.xml'>
-<title>What is WebView? | Draw Closer - A Blog by Sharon Wu</title>
+<title>Angular Advanced Templates - ng-template, ng-container and ngTemplateOutlet | Draw Closer - A Blog by Sharon Wu</title>
 <link rel="canonical" href="https://sharonwu0505.github.io/"/>
-<meta name="keywords" content="webview" />
-<meta name="description" content="本篇文章預計介紹什麼是 WebView，以及 Frontend 使用 WebView 時可能會遇到的問題。
-A WebView is an embeddable browser that a native application can use to display web content." />
+<meta name="keywords" content="Angular,Angular Templates,ng-template,ng-container,ngTemplateOutlet" />
+<meta name="description" content="撰寫 Angular templates 時一定會用到 ng-template 和 ngTemplateOutlet 來實現進階的功能，而它們經常與 ng-container 搭配使用。
+我們將基於 Angular ng-template, ng-container and ngTemplateOutlet - The Complete Guide To Angular Templates 這篇寫得非常好的文章來介紹它們的用途和使用方式。" />
 
 
 <meta property="og:url" content="https://sharonwu0505.github.io/" />
 <meta property="og:type" content="website" />
 <meta property="og:site_name" content="Draw Closer" />
-<meta property="og:title" content="What is WebView? | Draw Closer" />
+<meta property="og:title" content="Angular Advanced Templates - ng-template, ng-container and ngTemplateOutlet | Draw Closer" />
 <meta
   property="og:description"
-  content="本篇文章預計介紹什麼是 WebView，以及 Frontend 使用 WebView 時可能會遇到的問題。
-A WebView is an embeddable browser that a native application can use to display web content."
+  content="撰寫 Angular templates 時一定會用到 ng-template 和 ngTemplateOutlet 來實現進階的功能，而它們經常與 ng-container 搭配使用。
+我們將基於 Angular ng-template, ng-container and ngTemplateOutlet - The Complete Guide To Angular Templates 這篇寫得非常好的文章來介紹它們的用途和使用方式。"
 />
 <meta name="twitter:card" content="summary_large_image" />
 <meta property="og:image:height" content="630" />
@@ -35,8 +35,8 @@ A WebView is an embeddable browser that a native application can use to display 
 
 
 
-  <meta name="description" content="本篇文章預計介紹什麼是 WebView，以及 Frontend 使用 WebView 時可能會遇到的問題。
-A WebView is an embeddable browser that a native application can use to display web content.
+  <meta name="description" content="撰寫 Angular templates 時一定會用到 ng-template 和 ngTemplateOutlet 來實現進階的功能，而它們經常與 ng-container 搭配使用。
+我們將基於 Angular ng-template, ng-container and ngTemplateOutlet - The Complete Guide To Angular Templates 這篇寫得非常好的文章來介紹它們的用途和使用方式。
 ">
 
 
@@ -119,7 +119,7 @@ A WebView is an embeddable browser that a native application can use to display 
   <section class="section aside_inner">
     <h2 class="section_title"><a  href="https://sharonwu0505.github.io/docs/" class="group">Posts</a></h2>
       <section class="" id="docs-posts">
-        <h3 class="section_link"><a id="docs-angular-advanced-templates---ng-template-ng-container-and-ngtemplateoutlet" href="https://sharonwu0505.github.io/docs/2021/angular-advanced-templates/">Angular Advanced Templates - ng-template, ng-container and ngTemplateOutlet</a></h3><nav id="TableOfContents">
+        <h3 class="section_link active"><a id="docs-angular-advanced-templates---ng-template-ng-container-and-ngtemplateoutlet" href="https://sharonwu0505.github.io/docs/2021/angular-advanced-templates/">Angular Advanced Templates - ng-template, ng-container and ngTemplateOutlet</a></h3><nav id="TableOfContents">
   <ul>
     <li><a href="#ng-template-directive"><code>ng-template</code> Directive</a>
       <ul>
@@ -280,7 +280,7 @@ A WebView is an embeddable browser that a native application can use to display 
     </li>
   </ul>
 </nav>
-        <h3 class="section_link active"><a id="docs-what-is-webview" href="https://sharonwu0505.github.io/docs/2021/what-is-webview/">What is WebView?</a></h3><nav id="TableOfContents">
+        <h3 class="section_link"><a id="docs-what-is-webview" href="https://sharonwu0505.github.io/docs/2021/what-is-webview/">What is WebView?</a></h3><nav id="TableOfContents">
   <ul>
     <li><a href="#concepts">Concepts</a></li>
     <li><a href="#常見的-webview-應用">常見的 WebView 應用</a></li>
@@ -507,89 +507,158 @@ A WebView is an embeddable browser that a native application can use to display 
 </aside>
 
   <main class="content">
-    <h1>What is WebView?</h1>
+    <h1>Angular Advanced Templates - ng-template, ng-container and ngTemplateOutlet</h1>
     <div class="post__tags">
       
-        <a href="https://sharonwu0505.github.io/tags/webview">
-          <span class="post__tag">WebView</span>
+        <a href="https://sharonwu0505.github.io/tags/angular">
+          <span class="post__tag">Angular</span>
         </a>
       
-    </div><p>本篇文章預計介紹什麼是 WebView，以及 Frontend 使用 WebView 時可能會遇到的問題。</p>
-<p>A WebView is an <strong>embeddable browser</strong> that a <strong>native application</strong> can use to <strong>display web content</strong>.</p>
-<h2 id="concepts">Concepts</h2>
-<ul>
-<li><code>embeddable browser</code>: WebView is developed based on engines used by common browsers such as Safari, Chrome, Firefox, Edge. It can just be viewed as a browser.</li>
-<li><code>native application</code>: apps/games in our case</li>
-<li><code>display web content</code>
-<ul>
-<li>commonly load web content from a <code>http://</code> or <code>https://</code> location</li>
-<li>JavaScript running inside the WebView also has the ability to call native system APIs.</li>
-</ul>
-</li>
-</ul>
-<h2 id="常見的-webview-應用">常見的 WebView 應用</h2>
-<ul>
-<li>Facebook/Twitter/Line 的內建瀏覽器</li>
-<li>App 內嵌入廣告（類似 Web 嵌入 iframe）</li>
-</ul>
-<h2 id="why-use-webview">Why use WebView?</h2>
-<ul>
-<li>有助於 app 留存和 UX（不必跳出 app）</li>
-<li>更新彈性較高：修改頁面 layout 或邏輯，只需修改網頁後重新部署。不須以推新版本，並要求使用者更新 app 的方式進行</li>
-</ul>
-<h2 id="possible-problems">Possible problems</h2>
-<ul>
-<li>瀏覽器支援程度
-<ul>
-<li>無法使用 <code>alert()</code>, <code>confirm()</code> 等，要以 <code>WebChromeClient</code> override methods (<a href="https://stackoverflow.com/questions/34463498/javascript-alert-message-not-working-in-android-application">ref</a>)</li>
-</ul>
-</li>
-<li>開發環境
-<ul>
-<li>比照一般網頁的開發方式</li>
-<li>如果想看實際在 app 中開啟狀況，還是得將 app 以模擬器跑起來</li>
-</ul>
-</li>
-<li>UX 問題
-<ul>
-<li>WebView 的關閉按鈕可能會跟網頁設計的排版衝突</li>
-<li>scroll、touch move 等事件，不一定和瀏覽器的效果相同，ex: scroll bouncing</li>
-</ul>
-</li>
-<li>能否判斷網頁是否是以 WebView 開啟？
-<ul>
-<li>判斷 user agent (<a href="https://medium.com/@chienrongkhor/%E5%A6%82%E4%BD%95%E5%88%A9%E7%94%A8javascript%E5%88%A4%E6%96%B7%E7%B6%B2%E9%A0%81%E6%98%AF%E5%90%A6%E5%9C%A8in-app%E7%80%8F%E8%A6%BD%E5%99%A8-webview-%E9%96%8B%E8%B5%B7-ae8aeb209270">ref</a>)</li>
-<li>保險一點 <a href="https://stackoverflow.com/questions/27692828/detect-whether-a-website-runs-in-android-browser-or-webview-of-an-app">app 開 WebView 時設定 user agent</a></li>
-</ul>
-</li>
-<li>身份驗證流程，ex: token 存取，也涉及 UX
-<ul>
-<li>連接和 App 相同的伺服器？</li>
-<li>視為 App 的延伸並從 App 獲取部分資料？</li>
-</ul>
-</li>
-</ul>
-<h2 id="references">References</h2>
-<ul>
-<li><a href="https://www.kirupa.com/apps/webview.htm">https://www.kirupa.com/apps/webview.htm</a></li>
-<li><a href="https://docs.uniwebview.com/">https://docs.uniwebview.com/</a></li>
-<li>查 WebView 大多都是 app 相關的開發文章，事實上使用 WebView 的話，frontend 也不太需要做什麼處理</li>
-</ul>
-    <div class="pager">
-  
-  <div class="pager_item prev">
-    
-    <a href="https://sharonwu0505.github.io/docs/2021/build-a-blog-with-hugo/" class="pager_link button" title="以 Hugo 建立部落格">
-      <span class="pager_label">以 Hugo 建立部落格</span>
-    </a>
-  </div>
+        <a href="https://sharonwu0505.github.io/tags/angular-templates">
+          <span class="post__tag">Angular Templates</span>
+        </a>
+      
+    </div><p>撰寫 Angular templates 時一定會用到 <code>ng-template</code> 和 <code>ngTemplateOutlet</code> 來實現進階的功能，而它們經常與 <code>ng-container</code> 搭配使用。</p>
+<p>我們將基於 <a href="https://blog.angular-university.io/angular-ng-template-ng-container-ngtemplateoutlet/">Angular ng-template, ng-container and ngTemplateOutlet - The Complete Guide To Angular Templates</a> 這篇寫得非常好的文章來介紹它們的用途和使用方式。</p>
+<h2 id="ng-template-directive"><code>ng-template</code> Directive</h2>
+<p>顧名思義，<code>ng-template</code> directive 代表一段 Angular template，它們可以和其他 templates 組合成最終的 component template。<code>ng-template</code> 其實被廣泛應用在 Angular 自身的 structural directives, e.g. <code>ngIf</code>, <code>ngFor</code>, <code>ngSwitch</code> 當中。</p>
+<p>如果我們今天撰寫一段 <code>ng-template</code>：</p>
+<div class="highlight"><pre class="chroma"><code class="language-typescript" data-lang="typescript"><span class="ln"> 1</span><span class="kd">@Component</span><span class="p">({</span>
+<span class="ln"> 2</span>  <span class="nx">selector</span><span class="o">:</span> <span class="s1">&#39;app-root&#39;</span><span class="p">,</span>
+<span class="ln"> 3</span>  <span class="nx">template</span><span class="o">:</span> <span class="sb">`      
+</span><span class="ln"> 4</span><span class="sb">      &lt;ng-template&gt;
+</span><span class="ln"> 5</span><span class="sb">          &lt;button class=&#34;tab-button&#34; (click)=&#34;login()&#34;&gt;{{loginText}}&lt;/button&gt;
+</span><span class="ln"> 6</span><span class="sb">          &lt;button class=&#34;tab-button&#34; (click)=&#34;signUp()&#34;&gt;{{signUpText}}&lt;/button&gt;
+</span><span class="ln"> 7</span><span class="sb">      &lt;/ng-template&gt;
+</span><span class="ln"> 8</span><span class="sb">  `</span><span class="p">})</span>
+<span class="ln"> 9</span><span class="kr">export</span> <span class="kr">class</span> <span class="nx">AppComponent</span> <span class="p">{</span>
+<span class="ln">10</span>    <span class="nx">loginText</span> <span class="o">=</span> <span class="s1">&#39;Login&#39;</span><span class="p">;</span>
+<span class="ln">11</span>    <span class="nx">signUpText</span> <span class="o">=</span> <span class="s1">&#39;Sign Up&#39;</span><span class="p">;</span> 
+<span class="ln">12</span>    <span class="nx">lessons</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;Lesson 1&#39;</span><span class="p">,</span> <span class="s1">&#39;Lessons 2&#39;</span><span class="p">];</span>
+<span class="ln">13</span>
+<span class="ln">14</span>    <span class="nx">login() {</span>
+<span class="ln">15</span>        <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s1">&#39;Login&#39;</span><span class="p">);</span>
+<span class="ln">16</span>    <span class="p">}</span>
+<span class="ln">17</span>
+<span class="ln">18</span>    <span class="nx">signUp() {</span>
+<span class="ln">19</span>        <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s1">&#39;Sign Up&#39;</span><span class="p">);</span>
+<span class="ln">20</span>    <span class="p">}</span>
+<span class="ln">21</span><span class="p">}</span>
+</code></pre></div><p>大家注意到的第一件事應該會是<strong>以上程式碼並沒有 render 任何東西到畫面中</strong>。因為 <code>ng-template</code> 只是單純用來定義 <code>template</code>，而我們尚未使用它。</p>
+<h4 id="the-ng-template-directive-and-ngif">The <code>ng-template</code> Directive and <code>ngIf</code></h4>
+<pre><code class="language-angular" data-lang="angular">&lt;div class=&quot;lessons-list&quot; *ngIf=&quot;lessons else loading&quot;&gt;
+  ... 
+&lt;/div&gt;
+
+&lt;ng-template #loading&gt;
+    &lt;div&gt;Loading...&lt;/div&gt;
+&lt;/ng-template&gt;
+</code></pre><p>這是一個最常見的例子。我們透過定義 <code>loading</code> (<code>#loading</code>) 為 template reference，在沒有 <code>lessons</code> 資料時顯示 <code>loading</code> template。這段程式碼實際上會被 Angular 解讀為以下形式：</p>
+<pre><code class="language-angular" data-lang="angular">&lt;ng-template [ngIf]=&quot;lessons&quot; [ngIfElse]=&quot;loading&quot;&gt;
+   &lt;div class=&quot;lessons-list&quot;&gt;
+     ... 
+   &lt;/div&gt;
+&lt;/ng-template&gt;
+
+&lt;ng-template #loading&gt;
+    &lt;div&gt;Loading...&lt;/div&gt;
+&lt;/ng-template&gt;
+</code></pre><p>此轉換也見於 <code>ngFor</code> 和 <code>ngSwitch</code>，這也是為什麼我們無法使用多個 structural directives 在同一元素上的原因，Angular 無法順利將它們解讀成 implicit <code>ng-template</code> 的格式。</p>
+<p>如果要使用多個 structural directives 我們可以這樣寫：</p>
+<pre><code class="language-angular" data-lang="angular">&lt;div *ngIf=&quot;lessons&quot;&gt;
+    &lt;div class=&quot;lesson&quot; *ngFor=&quot;let lesson of lessons&quot;&gt;
+        &lt;div class=&quot;lesson-detail&quot;&gt;
+            {{lesson | json}}
+        &lt;/div&gt;
+    &lt;/div&gt;
+&lt;/div&gt;
+</code></pre><p>不過你應該會想問：可以不要有多餘的 <code>div</code> 嗎？答案是可以的，而正是 <code>ng-container</code> 讓我們可以這麼做！</p>
+<h2 id="ng-container-directive"><code>ng-container</code> Directive</h2>
+<pre><code class="language-angular" data-lang="angular">&lt;ng-container *ngIf=&quot;lessons&quot;&gt;
+    &lt;div class=&quot;lesson&quot; *ngFor=&quot;let lesson of lessons&quot;&gt;
+        &lt;div class=&quot;lesson-detail&quot;&gt;
+            {{lesson | json}}
+        &lt;/div&gt;
+    &lt;/div&gt;
+&lt;/ng-container&gt;
+</code></pre><p><strong><code>ng-container</code> 使我們得以在不必生成多餘元素的情況下，將由 structural directive 控制的元素附帶到畫面上</strong>。而它也能用來動態地注入 (inject) template 到畫面，一樣是透過 template reference <code>#loading</code>，並藉由 <code>ngTemplateOutlet</code> directive，我們能在頁面任何地方實例化 template。</p>
+<pre><code class="language-angular" data-lang="angular">&lt;ng-container *ngTemplateOutlet=&quot;loading&quot;&gt;&lt;/ng-container&gt;
+</code></pre><h2 id="template-context">Template Context</h2>
+<p>這時衍生出一個關鍵的問題：template 有自己的 variable scope 嗎？template 能取用哪些變數呢？</p>
+<p><strong><code>ng-template</code> instances 能取得它們被內嵌 (embedded) 之處的 context</strong>，像是之前的例子中，我們能在 <code>ng-template</code> 裡面使用 <code>lessons</code>。然而<strong>各個 template 亦可定義它們自己的 context object</strong>。</p>
+<div class="highlight"><pre class="chroma"><code class="language-typescript" data-lang="typescript"><span class="ln"> 1</span><span class="kd">@Component</span><span class="p">({</span>
+<span class="ln"> 2</span>  <span class="nx">selector</span><span class="o">:</span> <span class="s1">&#39;app-root&#39;</span><span class="p">,</span>
+<span class="ln"> 3</span>  <span class="nx">template</span><span class="o">:</span> <span class="sb">`      
+</span><span class="ln"> 4</span><span class="sb">    &lt;ng-template #estimateTemplate let-lessonsCounter=&#34;estimate&#34;&gt;
+</span><span class="ln"> 5</span><span class="sb">      &lt;div&gt; Approximately {{lessonsCounter}} lessons ...&lt;/div&gt;
+</span><span class="ln"> 6</span><span class="sb">    &lt;/ng-template&gt;
+</span><span class="ln"> 7</span><span class="sb">    &lt;ng-container *ngTemplateOutlet=&#34;estimateTemplate;context:ctx&#34;&gt;&lt;/ng-container&gt;
+</span><span class="ln"> 8</span><span class="sb">  `</span><span class="p">})</span>
+<span class="ln"> 9</span><span class="kr">export</span> <span class="kr">class</span> <span class="nx">AppComponent</span> <span class="p">{</span>
+<span class="ln">10</span>    <span class="nx">totalEstimate</span> <span class="o">=</span> <span class="mi">10</span><span class="p">;</span>
+<span class="ln">11</span>    <span class="nx">ctx</span> <span class="o">=</span> <span class="p">{</span><span class="nx">estimate</span>: <span class="kt">this.totalEstimate</span><span class="p">};</span>
+<span class="ln">12</span><span class="p">}</span>
+</code></pre></div><p>Template 中我們以 prefix <code>let-</code> 定義它的 property <code>lessonsCounter</code>，此變數可在 template 中使用。而變數的 context 來自於一個在實例化時跟著 template 一起傳給 <code>ngTemplateOutlet</code> 的 <strong>context object</strong>。</p>
+<p>除了在 template 中使用 <code>ng-template</code>，我們也能在 component level 經由 template references 跟 template 互動。</p>
+<h2 id="template-references">Template References</h2>
+<p>我們用 <code>ViewChild</code> decorator 把 template 直接地注入到 component。</p>
+<div class="highlight"><pre class="chroma"><code class="language-typescript" data-lang="typescript"><span class="ln"> 1</span><span class="kd">@Component</span><span class="p">({</span>
+<span class="ln"> 2</span>  <span class="nx">selector</span><span class="o">:</span> <span class="s1">&#39;app-root&#39;</span><span class="p">,</span>
+<span class="ln"> 3</span>  <span class="nx">template</span><span class="o">:</span> <span class="sb">`      
+</span><span class="ln"> 4</span><span class="sb">      &lt;ng-template #defaultTabButtons&gt;
+</span><span class="ln"> 5</span><span class="sb">          &lt;button class=&#34;tab-button&#34; (click)=&#34;login()&#34;&gt;{{loginText}}&lt;/button&gt;
+</span><span class="ln"> 6</span><span class="sb">          &lt;button class=&#34;tab-button&#34; (click)=&#34;signUp()&#34;&gt;{{signUpText}}&lt;/button&gt;
+</span><span class="ln"> 7</span><span class="sb">      &lt;/ng-template&gt;
+</span><span class="ln"> 8</span><span class="sb">  `</span><span class="p">})</span>
+<span class="ln"> 9</span><span class="kr">export</span> <span class="kr">class</span> <span class="nx">AppComponent</span> <span class="kr">implements</span> <span class="nx">OnInit</span> <span class="p">{</span>
+<span class="ln">10</span>    <span class="kd">@ViewChild</span><span class="p">(</span><span class="s1">&#39;defaultTabButtons&#39;</span><span class="p">)</span>
+<span class="ln">11</span>    <span class="kr">private</span> <span class="nx">defaultTabButtonsTpl</span>: <span class="kt">TemplateRef</span><span class="p">&lt;</span><span class="nt">any</span><span class="p">&gt;;</span>
+<span class="ln">12</span>
+<span class="ln">13</span>    <span class="nx">ngOnInit() {</span>
+<span class="ln">14</span>        <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="k">this</span><span class="p">.</span><span class="nx">defaultTabButtonsTpl</span><span class="p">);</span>
+<span class="ln">15</span>    <span class="p">}</span>
+<span class="ln">16</span><span class="p">}</span>
+</code></pre></div><p>由於能在 component 中取得 template，我們就能將該 template 傳遞給 child components。</p>
+<p>這常見於當我們想建立更客製化的 component，我們不只傳遞 configuration parameter 或 configuration object，我們亦能將 template 作為 input parameter。</p>
+<h4 id="parent-component">Parent Component</h4>
+<div class="highlight"><pre class="chroma"><code class="language-typescript" data-lang="typescript"><span class="ln"> 1</span><span class="kd">@Component</span><span class="p">({</span>
+<span class="ln"> 2</span>  <span class="nx">selector</span><span class="o">:</span> <span class="s1">&#39;app-root&#39;</span><span class="p">,</span>
+<span class="ln"> 3</span>  <span class="nx">template</span><span class="o">:</span> <span class="sb">`      
+</span><span class="ln"> 4</span><span class="sb">  &lt;ng-template #customTabButtons&gt;
+</span><span class="ln"> 5</span><span class="sb">    &lt;div class=&#34;custom-class&#34;&gt;
+</span><span class="ln"> 6</span><span class="sb">        &lt;button class=&#34;tab-button&#34; (click)=&#34;login()&#34;&gt;{{loginText}}&lt;/button&gt;
+</span><span class="ln"> 7</span><span class="sb">        &lt;button class=&#34;tab-button&#34; (click)=&#34;signUp()&#34;&gt;{{signUpText}}&lt;/button&gt;
+</span><span class="ln"> 8</span><span class="sb">    &lt;/div&gt;
+</span><span class="ln"> 9</span><span class="sb">  &lt;/ng-template&gt;
+</span><span class="ln">10</span><span class="sb">  &lt;tab-container [headerTemplate]=&#34;customTabButtons&#34;&gt;&lt;/tab-container&gt;      
+</span><span class="ln">11</span><span class="sb">`</span><span class="p">})</span>
+<span class="ln">12</span><span class="kr">export</span> <span class="kr">class</span> <span class="nx">AppComponent</span> <span class="kr">implements</span> <span class="nx">OnInit</span> <span class="p">{}</span>
+</code></pre></div><h4 id="child-component-tabcontainercomponent">Child Component <code>TabContainerComponent</code></h4>
+<p>在沒有 input <code>headerTemplate</code> 時，render <code>defaultTabButtons</code>：</p>
+<div class="highlight"><pre class="chroma"><code class="language-typescript" data-lang="typescript"><span class="ln"> 1</span><span class="kd">@Component</span><span class="p">({</span>
+<span class="ln"> 2</span>  <span class="nx">selector</span><span class="o">:</span> <span class="s1">&#39;tab-container&#39;</span><span class="p">,</span>
+<span class="ln"> 3</span>  <span class="nx">template</span><span class="o">:</span> <span class="sb">`   
+</span><span class="ln"> 4</span><span class="sb">    &lt;ng-template #defaultTabButtons&gt;
+</span><span class="ln"> 5</span><span class="sb">      &lt;div class=&#34;default-tab-buttons&#34;&gt;
+</span><span class="ln"> 6</span><span class="sb">        ...
+</span><span class="ln"> 7</span><span class="sb">      &lt;/div&gt;
+</span><span class="ln"> 8</span><span class="sb">    &lt;/ng-template&gt;
+</span><span class="ln"> 9</span><span class="sb">    &lt;ng-container *ngTemplateOutlet=&#34;headerTemplate ? headerTemplate: defaultTabButtons&#34;&gt;&lt;/ng-container&gt;
+</span><span class="ln">10</span><span class="sb">    ... rest of tab container component ...
+</span><span class="ln">11</span><span class="sb">  `</span><span class="p">})</span>
+<span class="ln">12</span><span class="kr">export</span> <span class="kr">class</span> <span class="nx">TabContainerComponent</span> <span class="p">{</span>
+<span class="ln">13</span>    <span class="kd">@Input</span><span class="p">()</span>
+<span class="ln">14</span>    <span class="nx">headerTemplate</span>: <span class="kt">TemplateRef</span><span class="p">&lt;</span><span class="nt">any</span><span class="p">&gt;;</span>
+<span class="ln">15</span><span class="p">}</span>
+</code></pre></div><p>以上就是關於 <code>ng-template</code>、<code>ng-container</code> 和 <code>ngTemplateOutlet</code> 的介紹，希望有讓大家更理解它們能做到什麼事。</p>
+    <div class="pager pager_lean">
   
 
   
   <div class="pager_item next">
     
-    <a href="https://sharonwu0505.github.io/docs/2021/optimize-images/" class="pager_link button" title="Optimize Images for Web Performance">
-      <span class="pager_label">Optimize Images for Web Performance</span>
+    <a href="https://sharonwu0505.github.io/docs/2021/js-questions-1/" class="pager_link button" title="WIP: JavaScript Questions (1)">
+      <span class="pager_label">WIP: JavaScript Questions (1)</span>
     </a>
   </div>
   

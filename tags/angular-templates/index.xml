@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Angular on Draw Closer - A Blog by Sharon Wu</title>
-    <link>https://sharonwu0505.github.io/tags/angular/</link>
-    <description>Recent content in Angular on Draw Closer - A Blog by Sharon Wu</description>
+    <title>Angular Templates on Draw Closer - A Blog by Sharon Wu</title>
+    <link>https://sharonwu0505.github.io/tags/angular-templates/</link>
+    <description>Recent content in Angular Templates on Draw Closer - A Blog by Sharon Wu</description>
     <generator>Hugo -- gohugo.io</generator>
-    <lastBuildDate>Sat, 25 Sep 2021 11:00:00 +0800</lastBuildDate><atom:link href="https://sharonwu0505.github.io/tags/angular/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sat, 25 Sep 2021 11:00:00 +0800</lastBuildDate><atom:link href="https://sharonwu0505.github.io/tags/angular-templates/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Angular Advanced Templates - ng-template, ng-container and ngTemplateOutlet</title>
       <link>https://sharonwu0505.github.io/docs/2021/angular-advanced-templates/</link>
@@ -14,15 +14,6 @@
       <guid>https://sharonwu0505.github.io/docs/2021/angular-advanced-templates/</guid>
       <description>&lt;p&gt;撰寫 Angular templates 時一定會用到 &lt;code&gt;ng-template&lt;/code&gt; 和 &lt;code&gt;ngTemplateOutlet&lt;/code&gt; 來實現進階的功能，而它們經常與 &lt;code&gt;ng-container&lt;/code&gt; 搭配使用。&lt;/p&gt;
 &lt;p&gt;我們將基於 &lt;a href=&#34;https://blog.angular-university.io/angular-ng-template-ng-container-ngtemplateoutlet/&#34;&gt;Angular ng-template, ng-container and ngTemplateOutlet - The Complete Guide To Angular Templates&lt;/a&gt; 這篇寫得非常好的文章來介紹它們的用途和使用方式。&lt;/p&gt;</description>
-    </item>
-    
-    <item>
-      <title>Angular - Introduction to Modules</title>
-      <link>https://sharonwu0505.github.io/docs/2021/angular-intro-to-modules/</link>
-      <pubDate>Wed, 01 Sep 2021 13:00:00 +0800</pubDate>
-      
-      <guid>https://sharonwu0505.github.io/docs/2021/angular-intro-to-modules/</guid>
-      <description>&lt;p&gt;最近由於工作需要開始學習 Angular，過程中發現雖然 Angular 也是 component-based 的 SPA (Single Page Application) 框架，卻多了一層 Module (模組) 的概念。若是從 React 過來的開發者，可能會對這個概念有點陌生，所以我們就來看看 Angular Modules 是什麼吧～&lt;/p&gt;</description>
     </item>
     
   </channel>
