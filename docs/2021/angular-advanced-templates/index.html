@@ -136,7 +136,7 @@
       <ul>
         <li>
           <ul>
-            <li><a href="#parent-component">Parent Component</a></li>
+            <li><a href="#parent-component-appcomponent">Parent Component: <code>AppComponent</code></a></li>
             <li><a href="#child-component-tabcontainercomponent">Child Component <code>TabContainerComponent</code></a></li>
           </ul>
         </li>
@@ -526,64 +526,64 @@
 <div class="highlight"><pre class="chroma"><code class="language-typescript" data-lang="typescript"><span class="ln"> 1</span><span class="kd">@Component</span><span class="p">({</span>
 <span class="ln"> 2</span>  <span class="nx">selector</span><span class="o">:</span> <span class="s1">&#39;app-root&#39;</span><span class="p">,</span>
 <span class="ln"> 3</span>  <span class="nx">template</span><span class="o">:</span> <span class="sb">`      
-</span><span class="ln"> 4</span><span class="sb">      &lt;ng-template&gt;
-</span><span class="ln"> 5</span><span class="sb">          &lt;button class=&#34;tab-button&#34; (click)=&#34;login()&#34;&gt;{{loginText}}&lt;/button&gt;
-</span><span class="ln"> 6</span><span class="sb">          &lt;button class=&#34;tab-button&#34; (click)=&#34;signUp()&#34;&gt;{{signUpText}}&lt;/button&gt;
-</span><span class="ln"> 7</span><span class="sb">      &lt;/ng-template&gt;
+</span><span class="ln"> 4</span><span class="sb">    &lt;ng-template&gt;
+</span><span class="ln"> 5</span><span class="sb">      &lt;button class=&#34;tab-button&#34; (click)=&#34;login()&#34;&gt;{{loginText}}&lt;/button&gt;
+</span><span class="ln"> 6</span><span class="sb">      &lt;button class=&#34;tab-button&#34; (click)=&#34;signUp()&#34;&gt;{{signUpText}}&lt;/button&gt;
+</span><span class="ln"> 7</span><span class="sb">    &lt;/ng-template&gt;
 </span><span class="ln"> 8</span><span class="sb">  `</span><span class="p">})</span>
 <span class="ln"> 9</span><span class="kr">export</span> <span class="kr">class</span> <span class="nx">AppComponent</span> <span class="p">{</span>
-<span class="ln">10</span>    <span class="nx">loginText</span> <span class="o">=</span> <span class="s1">&#39;Login&#39;</span><span class="p">;</span>
-<span class="ln">11</span>    <span class="nx">signUpText</span> <span class="o">=</span> <span class="s1">&#39;Sign Up&#39;</span><span class="p">;</span> 
-<span class="ln">12</span>    <span class="nx">lessons</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;Lesson 1&#39;</span><span class="p">,</span> <span class="s1">&#39;Lessons 2&#39;</span><span class="p">];</span>
+<span class="ln">10</span>  <span class="nx">loginText</span> <span class="o">=</span> <span class="s1">&#39;Login&#39;</span><span class="p">;</span>
+<span class="ln">11</span>  <span class="nx">signUpText</span> <span class="o">=</span> <span class="s1">&#39;Sign Up&#39;</span><span class="p">;</span>
+<span class="ln">12</span>  <span class="nx">lessons</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;Lesson 1&#39;</span><span class="p">,</span> <span class="s1">&#39;Lessons 2&#39;</span><span class="p">];</span>
 <span class="ln">13</span>
-<span class="ln">14</span>    <span class="nx">login() {</span>
-<span class="ln">15</span>        <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s1">&#39;Login&#39;</span><span class="p">);</span>
-<span class="ln">16</span>    <span class="p">}</span>
+<span class="ln">14</span>  <span class="nx">login() {</span>
+<span class="ln">15</span>    <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s1">&#39;Login&#39;</span><span class="p">);</span>
+<span class="ln">16</span>  <span class="p">}</span>
 <span class="ln">17</span>
-<span class="ln">18</span>    <span class="nx">signUp() {</span>
-<span class="ln">19</span>        <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s1">&#39;Sign Up&#39;</span><span class="p">);</span>
-<span class="ln">20</span>    <span class="p">}</span>
+<span class="ln">18</span>  <span class="nx">signUp() {</span>
+<span class="ln">19</span>    <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s1">&#39;Sign Up&#39;</span><span class="p">);</span>
+<span class="ln">20</span>  <span class="p">}</span>
 <span class="ln">21</span><span class="p">}</span>
 </code></pre></div><p>大家注意到的第一件事應該會是<strong>以上程式碼並沒有 render 任何東西到畫面中</strong>。因為 <code>ng-template</code> 只是單純用來定義 <code>template</code>，而我們尚未使用它。</p>
 <h4 id="the-ng-template-directive-and-ngif">The <code>ng-template</code> Directive and <code>ngIf</code></h4>
-<pre><code class="language-angular" data-lang="angular">&lt;div class=&quot;lessons-list&quot; *ngIf=&quot;lessons else loading&quot;&gt;
-  ... 
-&lt;/div&gt;
-
-&lt;ng-template #loading&gt;
-    &lt;div&gt;Loading...&lt;/div&gt;
-&lt;/ng-template&gt;
-</code></pre><p>這是一個最常見的例子。我們透過定義 <code>loading</code> (<code>#loading</code>) 為 template reference，在沒有 <code>lessons</code> 資料時顯示 <code>loading</code> template。這段程式碼實際上會被 Angular 解讀為以下形式：</p>
-<pre><code class="language-angular" data-lang="angular">&lt;ng-template [ngIf]=&quot;lessons&quot; [ngIfElse]=&quot;loading&quot;&gt;
-   &lt;div class=&quot;lessons-list&quot;&gt;
-     ... 
-   &lt;/div&gt;
-&lt;/ng-template&gt;
-
-&lt;ng-template #loading&gt;
-    &lt;div&gt;Loading...&lt;/div&gt;
-&lt;/ng-template&gt;
-</code></pre><p>此轉換也見於 <code>ngFor</code> 和 <code>ngSwitch</code>，這也是為什麼我們無法使用多個 structural directives 在同一元素上的原因，Angular 無法順利將它們解讀成 implicit <code>ng-template</code> 的格式。</p>
+<div class="highlight"><pre class="chroma"><code class="language-html" data-lang="html"><span class="ln">1</span><span class="p">&lt;</span><span class="nt">div</span> <span class="na">class</span><span class="o">=</span><span class="s">&#34;lessons-list&#34;</span> <span class="err">*</span><span class="na">ngIf</span><span class="o">=</span><span class="s">&#34;lessons else loading&#34;</span><span class="p">&gt;</span>
+<span class="ln">2</span>  ... 
+<span class="ln">3</span><span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+<span class="ln">4</span>
+<span class="ln">5</span><span class="p">&lt;</span><span class="nt">ng-template</span> <span class="err">#</span><span class="na">loading</span><span class="p">&gt;</span>
+<span class="ln">6</span>  <span class="p">&lt;</span><span class="nt">div</span><span class="p">&gt;</span>Loading...<span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+<span class="ln">7</span><span class="p">&lt;/</span><span class="nt">ng-template</span><span class="p">&gt;</span>
+</code></pre></div><p>這是一個最常見的例子。我們透過定義 <code>loading</code> (<code>#loading</code>) 為 template reference，在沒有 <code>lessons</code> 資料時顯示 <code>loading</code> template。這段程式碼實際上會被 Angular 解讀為以下形式：</p>
+<div class="highlight"><pre class="chroma"><code class="language-html" data-lang="html"><span class="ln">1</span><span class="p">&lt;</span><span class="nt">ng-template</span> <span class="err">[</span><span class="na">ngIf</span><span class="err">]=&#34;</span><span class="na">lessons</span><span class="err">&#34;</span> <span class="err">[</span><span class="na">ngIfElse</span><span class="err">]=&#34;</span><span class="na">loading</span><span class="err">&#34;</span><span class="p">&gt;</span>
+<span class="ln">2</span>  <span class="p">&lt;</span><span class="nt">div</span> <span class="na">class</span><span class="o">=</span><span class="s">&#34;lessons-list&#34;</span><span class="p">&gt;</span>
+<span class="ln">3</span>    ... 
+<span class="ln">4</span>  <span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+<span class="ln">5</span><span class="p">&lt;/</span><span class="nt">ng-template</span><span class="p">&gt;</span>
+<span class="ln">6</span>
+<span class="ln">7</span><span class="p">&lt;</span><span class="nt">ng-template</span> <span class="err">#</span><span class="na">loading</span><span class="p">&gt;</span>
+<span class="ln">8</span>  <span class="p">&lt;</span><span class="nt">div</span><span class="p">&gt;</span>Loading...<span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+<span class="ln">9</span><span class="p">&lt;/</span><span class="nt">ng-template</span><span class="p">&gt;</span>
+</code></pre></div><p>此轉換也見於 <code>ngFor</code> 和 <code>ngSwitch</code>，這也是為什麼我們無法使用多個 structural directives 在同一元素上的原因，Angular 無法順利將它們解讀成 implicit <code>ng-template</code> 的格式。</p>
 <p>如果要使用多個 structural directives 我們可以這樣寫：</p>
-<pre><code class="language-angular" data-lang="angular">&lt;div *ngIf=&quot;lessons&quot;&gt;
-    &lt;div class=&quot;lesson&quot; *ngFor=&quot;let lesson of lessons&quot;&gt;
-        &lt;div class=&quot;lesson-detail&quot;&gt;
-            {{lesson | json}}
-        &lt;/div&gt;
-    &lt;/div&gt;
-&lt;/div&gt;
-</code></pre><p>不過你應該會想問：可以不要有多餘的 <code>div</code> 嗎？答案是可以的，而正是 <code>ng-container</code> 讓我們可以這麼做！</p>
+<div class="highlight"><pre class="chroma"><code class="language-html" data-lang="html"><span class="ln">1</span><span class="p">&lt;</span><span class="nt">div</span> <span class="err">*</span><span class="na">ngIf</span><span class="o">=</span><span class="s">&#34;lessons&#34;</span><span class="p">&gt;</span>
+<span class="ln">2</span>  <span class="p">&lt;</span><span class="nt">div</span> <span class="na">class</span><span class="o">=</span><span class="s">&#34;lesson&#34;</span> <span class="err">*</span><span class="na">ngFor</span><span class="o">=</span><span class="s">&#34;let lesson of lessons&#34;</span><span class="p">&gt;</span>
+<span class="ln">3</span>    <span class="p">&lt;</span><span class="nt">div</span> <span class="na">class</span><span class="o">=</span><span class="s">&#34;lesson-detail&#34;</span><span class="p">&gt;</span>
+<span class="ln">4</span>      {{lesson | json}}
+<span class="ln">5</span>    <span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+<span class="ln">6</span>  <span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+<span class="ln">7</span><span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+</code></pre></div><p>不過你應該會想問：可以不要有多餘的 <code>div</code> 嗎？答案是可以的，而正是 <code>ng-container</code> 讓我們可以這麼做！</p>
 <h2 id="ng-container-directive"><code>ng-container</code> Directive</h2>
-<pre><code class="language-angular" data-lang="angular">&lt;ng-container *ngIf=&quot;lessons&quot;&gt;
-    &lt;div class=&quot;lesson&quot; *ngFor=&quot;let lesson of lessons&quot;&gt;
-        &lt;div class=&quot;lesson-detail&quot;&gt;
-            {{lesson | json}}
-        &lt;/div&gt;
-    &lt;/div&gt;
-&lt;/ng-container&gt;
-</code></pre><p><strong><code>ng-container</code> 使我們得以在不必生成多餘元素的情況下，將由 structural directive 控制的元素附帶到畫面上</strong>。而它也能用來動態地注入 (inject) template 到畫面，一樣是透過 template reference <code>#loading</code>，並藉由 <code>ngTemplateOutlet</code> directive，我們能在頁面任何地方實例化 template。</p>
-<pre><code class="language-angular" data-lang="angular">&lt;ng-container *ngTemplateOutlet=&quot;loading&quot;&gt;&lt;/ng-container&gt;
-</code></pre><h2 id="template-context">Template Context</h2>
+<div class="highlight"><pre class="chroma"><code class="language-html" data-lang="html"><span class="ln">1</span><span class="p">&lt;</span><span class="nt">ng-container</span> <span class="err">*</span><span class="na">ngIf</span><span class="o">=</span><span class="s">&#34;lessons&#34;</span><span class="p">&gt;</span>
+<span class="ln">2</span>  <span class="p">&lt;</span><span class="nt">div</span> <span class="na">class</span><span class="o">=</span><span class="s">&#34;lesson&#34;</span> <span class="err">*</span><span class="na">ngFor</span><span class="o">=</span><span class="s">&#34;let lesson of lessons&#34;</span><span class="p">&gt;</span>
+<span class="ln">3</span>    <span class="p">&lt;</span><span class="nt">div</span> <span class="na">class</span><span class="o">=</span><span class="s">&#34;lesson-detail&#34;</span><span class="p">&gt;</span>
+<span class="ln">4</span>      {{lesson | json}}
+<span class="ln">5</span>    <span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+<span class="ln">6</span>  <span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+<span class="ln">7</span><span class="p">&lt;/</span><span class="nt">ng-container</span><span class="p">&gt;</span>
+</code></pre></div><p><strong><code>ng-container</code> 使我們得以在不必生成多餘元素的情況下，將由 structural directive 控制的元素附帶到畫面上</strong>。而它也能用來動態地注入 (inject) template 到畫面，一樣是透過 template reference <code>#loading</code>，並藉由 <code>ngTemplateOutlet</code> directive，我們能在頁面任何地方實例化 template。</p>
+<div class="highlight"><pre class="chroma"><code class="language-html" data-lang="html"><span class="ln">1</span><span class="p">&lt;</span><span class="nt">ng-container</span> <span class="err">*</span><span class="na">ngTemplateOutlet</span><span class="o">=</span><span class="s">&#34;loading&#34;</span><span class="p">&gt;&lt;/</span><span class="nt">ng-container</span><span class="p">&gt;</span>
+</code></pre></div><h2 id="template-context">Template Context</h2>
 <p>這時衍生出一個關鍵的問題：template 有自己的 variable scope 嗎？template 能取用哪些變數呢？</p>
 <p><strong><code>ng-template</code> instances 能取得它們被內嵌 (embedded) 之處的 context</strong>，像是之前的例子中，我們能在 <code>ng-template</code> 裡面使用 <code>lessons</code>。然而<strong>各個 template 亦可定義它們自己的 context object</strong>。</p>
 <div class="highlight"><pre class="chroma"><code class="language-typescript" data-lang="typescript"><span class="ln"> 1</span><span class="kd">@Component</span><span class="p">({</span>
@@ -595,8 +595,8 @@
 </span><span class="ln"> 7</span><span class="sb">    &lt;ng-container *ngTemplateOutlet=&#34;estimateTemplate;context:ctx&#34;&gt;&lt;/ng-container&gt;
 </span><span class="ln"> 8</span><span class="sb">  `</span><span class="p">})</span>
 <span class="ln"> 9</span><span class="kr">export</span> <span class="kr">class</span> <span class="nx">AppComponent</span> <span class="p">{</span>
-<span class="ln">10</span>    <span class="nx">totalEstimate</span> <span class="o">=</span> <span class="mi">10</span><span class="p">;</span>
-<span class="ln">11</span>    <span class="nx">ctx</span> <span class="o">=</span> <span class="p">{</span><span class="nx">estimate</span>: <span class="kt">this.totalEstimate</span><span class="p">};</span>
+<span class="ln">10</span>  <span class="nx">totalEstimate</span> <span class="o">=</span> <span class="mi">10</span><span class="p">;</span>
+<span class="ln">11</span>  <span class="nx">ctx</span> <span class="o">=</span> <span class="p">{</span><span class="nx">estimate</span>: <span class="kt">this.totalEstimate</span><span class="p">};</span>
 <span class="ln">12</span><span class="p">}</span>
 </code></pre></div><p>Template 中我們以 prefix <code>let-</code> 定義它的 property <code>lessonsCounter</code>，此變數可在 template 中使用。而變數的 context 來自於一個在實例化時跟著 template 一起傳給 <code>ngTemplateOutlet</code> 的 <strong>context object</strong>。</p>
 <p>除了在 template 中使用 <code>ng-template</code>，我們也能在 component level 經由 template references 跟 template 互動。</p>
@@ -605,29 +605,29 @@
 <div class="highlight"><pre class="chroma"><code class="language-typescript" data-lang="typescript"><span class="ln"> 1</span><span class="kd">@Component</span><span class="p">({</span>
 <span class="ln"> 2</span>  <span class="nx">selector</span><span class="o">:</span> <span class="s1">&#39;app-root&#39;</span><span class="p">,</span>
 <span class="ln"> 3</span>  <span class="nx">template</span><span class="o">:</span> <span class="sb">`      
-</span><span class="ln"> 4</span><span class="sb">      &lt;ng-template #defaultTabButtons&gt;
-</span><span class="ln"> 5</span><span class="sb">          &lt;button class=&#34;tab-button&#34; (click)=&#34;login()&#34;&gt;{{loginText}}&lt;/button&gt;
-</span><span class="ln"> 6</span><span class="sb">          &lt;button class=&#34;tab-button&#34; (click)=&#34;signUp()&#34;&gt;{{signUpText}}&lt;/button&gt;
-</span><span class="ln"> 7</span><span class="sb">      &lt;/ng-template&gt;
+</span><span class="ln"> 4</span><span class="sb">    &lt;ng-template #defaultTabButtons&gt;
+</span><span class="ln"> 5</span><span class="sb">      &lt;button class=&#34;tab-button&#34; (click)=&#34;login()&#34;&gt;{{loginText}}&lt;/button&gt;
+</span><span class="ln"> 6</span><span class="sb">      &lt;button class=&#34;tab-button&#34; (click)=&#34;signUp()&#34;&gt;{{signUpText}}&lt;/button&gt;
+</span><span class="ln"> 7</span><span class="sb">    &lt;/ng-template&gt;
 </span><span class="ln"> 8</span><span class="sb">  `</span><span class="p">})</span>
 <span class="ln"> 9</span><span class="kr">export</span> <span class="kr">class</span> <span class="nx">AppComponent</span> <span class="kr">implements</span> <span class="nx">OnInit</span> <span class="p">{</span>
-<span class="ln">10</span>    <span class="kd">@ViewChild</span><span class="p">(</span><span class="s1">&#39;defaultTabButtons&#39;</span><span class="p">)</span>
-<span class="ln">11</span>    <span class="kr">private</span> <span class="nx">defaultTabButtonsTpl</span>: <span class="kt">TemplateRef</span><span class="p">&lt;</span><span class="nt">any</span><span class="p">&gt;;</span>
+<span class="ln">10</span>  <span class="kd">@ViewChild</span><span class="p">(</span><span class="s1">&#39;defaultTabButtons&#39;</span><span class="p">)</span>
+<span class="ln">11</span>  <span class="kr">private</span> <span class="nx">defaultTabButtonsTpl</span>: <span class="kt">TemplateRef</span><span class="p">&lt;</span><span class="nt">any</span><span class="p">&gt;;</span>
 <span class="ln">12</span>
-<span class="ln">13</span>    <span class="nx">ngOnInit() {</span>
-<span class="ln">14</span>        <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="k">this</span><span class="p">.</span><span class="nx">defaultTabButtonsTpl</span><span class="p">);</span>
-<span class="ln">15</span>    <span class="p">}</span>
+<span class="ln">13</span>  <span class="nx">ngOnInit() {</span>
+<span class="ln">14</span>    <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="k">this</span><span class="p">.</span><span class="nx">defaultTabButtonsTpl</span><span class="p">);</span>
+<span class="ln">15</span>  <span class="p">}</span>
 <span class="ln">16</span><span class="p">}</span>
 </code></pre></div><p>由於能在 component 中取得 template，我們就能將該 template 傳遞給 child components。</p>
 <p>這常見於當我們想建立更客製化的 component，我們不只傳遞 configuration parameter 或 configuration object，我們亦能將 template 作為 input parameter。</p>
-<h4 id="parent-component">Parent Component</h4>
+<h4 id="parent-component-appcomponent">Parent Component: <code>AppComponent</code></h4>
 <div class="highlight"><pre class="chroma"><code class="language-typescript" data-lang="typescript"><span class="ln"> 1</span><span class="kd">@Component</span><span class="p">({</span>
 <span class="ln"> 2</span>  <span class="nx">selector</span><span class="o">:</span> <span class="s1">&#39;app-root&#39;</span><span class="p">,</span>
 <span class="ln"> 3</span>  <span class="nx">template</span><span class="o">:</span> <span class="sb">`      
 </span><span class="ln"> 4</span><span class="sb">  &lt;ng-template #customTabButtons&gt;
 </span><span class="ln"> 5</span><span class="sb">    &lt;div class=&#34;custom-class&#34;&gt;
-</span><span class="ln"> 6</span><span class="sb">        &lt;button class=&#34;tab-button&#34; (click)=&#34;login()&#34;&gt;{{loginText}}&lt;/button&gt;
-</span><span class="ln"> 7</span><span class="sb">        &lt;button class=&#34;tab-button&#34; (click)=&#34;signUp()&#34;&gt;{{signUpText}}&lt;/button&gt;
+</span><span class="ln"> 6</span><span class="sb">      &lt;button class=&#34;tab-button&#34; (click)=&#34;login()&#34;&gt;{{loginText}}&lt;/button&gt;
+</span><span class="ln"> 7</span><span class="sb">      &lt;button class=&#34;tab-button&#34; (click)=&#34;signUp()&#34;&gt;{{signUpText}}&lt;/button&gt;
 </span><span class="ln"> 8</span><span class="sb">    &lt;/div&gt;
 </span><span class="ln"> 9</span><span class="sb">  &lt;/ng-template&gt;
 </span><span class="ln">10</span><span class="sb">  &lt;tab-container [headerTemplate]=&#34;customTabButtons&#34;&gt;&lt;/tab-container&gt;      
@@ -647,8 +647,8 @@
 </span><span class="ln">10</span><span class="sb">    ... rest of tab container component ...
 </span><span class="ln">11</span><span class="sb">  `</span><span class="p">})</span>
 <span class="ln">12</span><span class="kr">export</span> <span class="kr">class</span> <span class="nx">TabContainerComponent</span> <span class="p">{</span>
-<span class="ln">13</span>    <span class="kd">@Input</span><span class="p">()</span>
-<span class="ln">14</span>    <span class="nx">headerTemplate</span>: <span class="kt">TemplateRef</span><span class="p">&lt;</span><span class="nt">any</span><span class="p">&gt;;</span>
+<span class="ln">13</span>  <span class="kd">@Input</span><span class="p">()</span>
+<span class="ln">14</span>  <span class="nx">headerTemplate</span>: <span class="kt">TemplateRef</span><span class="p">&lt;</span><span class="nt">any</span><span class="p">&gt;;</span>
 <span class="ln">15</span><span class="p">}</span>
 </code></pre></div><p>以上就是關於 <code>ng-template</code>、<code>ng-container</code> 和 <code>ngTemplateOutlet</code> 的介紹，希望有讓大家更理解它們能做到什麼事。</p>
     <div class="pager pager_lean">
