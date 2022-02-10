@@ -1,4 +1,4 @@
-#posts__list,
+.posts__list,
 #tags__list {
   width: 90%;
   margin: 0 auto;
@@ -28,7 +28,7 @@
 }
 
 @media screen and (max-width: 991px) {
-  #posts__list {
+  .posts__list {
     width: 100%;
   }
 
