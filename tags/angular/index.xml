@@ -5,7 +5,24 @@
     <link>https://sharonwu0505.github.io/tags/angular/</link>
     <description>Recent content in Angular on Draw Closer - A Blog by Sharon Wu</description>
     <generator>Hugo -- gohugo.io</generator>
-    <lastBuildDate>Sat, 25 Sep 2021 11:00:00 +0800</lastBuildDate><atom:link href="https://sharonwu0505.github.io/tags/angular/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Tue, 08 Feb 2022 16:00:00 +0800</lastBuildDate><atom:link href="https://sharonwu0505.github.io/tags/angular/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Angular Forms - Reactive Forms and Template-Driven Forms</title>
+      <link>https://sharonwu0505.github.io/docs/2022/angular-forms/</link>
+      <pubDate>Tue, 08 Feb 2022 16:00:00 +0800</pubDate>
+      
+      <guid>https://sharonwu0505.github.io/docs/2022/angular-forms/</guid>
+      <description>&lt;p&gt;寫網頁的過程中免不了一定會出現「表單」，Angular 提供兩種不同的表單建立方式來處理使用者輸入，分別是 reactive forms 和 template-driven forms。&lt;/p&gt;
+&lt;p&gt;兩種方式都能夠&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;抓取使用者在 view 上的 input events&lt;/li&gt;
+&lt;li&gt;驗證使用者輸數&lt;/li&gt;
+&lt;li&gt;建立 form model 和 data model 給後續表單資料更新&lt;/li&gt;
+&lt;li&gt;建議一套追蹤表單資料變化的機制&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;而本文將介紹兩種方式的異同和使用方式。&lt;/p&gt;</description>
+    </item>
+    
     <item>
       <title>Angular Advanced Templates - ng-template, ng-container and ngTemplateOutlet</title>
       <link>https://sharonwu0505.github.io/docs/2021/angular-advanced-templates/</link>

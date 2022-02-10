@@ -9,19 +9,35 @@
 <link rel="mask-icon" href='https://sharonwu0505.github.io/favicons/safari-pinned-tab.svg'  color="#004750">
 <link rel="shortcut icon" href='https://sharonwu0505.github.io/favicons/favicon.ico'>
 <meta name="msapplication-config" content='https://sharonwu0505.github.io/favicons/browserconfig.xml'>
-<title>Same-Site and Same-Origin | Draw Closer - A Blog by Sharon Wu</title>
+<title>Angular Forms - Reactive Forms and Template-Driven Forms | Draw Closer - A Blog by Sharon Wu</title>
 <link rel="canonical" href="https://sharonwu0505.github.io/"/>
-<meta name="keywords" content="http,https,same-site,same-origin,cross-site,cross-origin,cors" />
-<meta name="description" content="之前總以為 same-site 的網站一定也是 same-origin，後來才發現並非如此，是兩個不同的定義。此篇將介紹 same-site 和 same-origin 的定義，讓往後與後端 RD 討論 cookie SameSite 和 Access-Control-Allow-Origin header 設定時能更順利。" />
+<meta name="keywords" content="Angular,Angular Forms,React Forms,Template-Driven Forms" />
+<meta name="description" content="寫網頁的過程中免不了一定會出現「表單」，Angular 提供兩種不同的表單建立方式來處理使用者輸入，分別是 reactive forms 和 template-driven forms。
+兩種方式都能夠
+
+抓取使用者在 view 上的 input events
+驗證使用者輸數
+建立 form model 和 data model 給後續表單資料更新
+建議一套追蹤表單資料變化的機制
+
+而本文將介紹兩種方式的異同和使用方式。" />
 
 
 <meta property="og:url" content="https://sharonwu0505.github.io/" />
 <meta property="og:type" content="website" />
 <meta property="og:site_name" content="Draw Closer" />
-<meta property="og:title" content="Same-Site and Same-Origin | Draw Closer" />
+<meta property="og:title" content="Angular Forms - Reactive Forms and Template-Driven Forms | Draw Closer" />
 <meta
   property="og:description"
-  content="之前總以為 same-site 的網站一定也是 same-origin，後來才發現並非如此，是兩個不同的定義。此篇將介紹 same-site 和 same-origin 的定義，讓往後與後端 RD 討論 cookie SameSite 和 Access-Control-Allow-Origin header 設定時能更順利。"
+  content="寫網頁的過程中免不了一定會出現「表單」，Angular 提供兩種不同的表單建立方式來處理使用者輸入，分別是 reactive forms 和 template-driven forms。
+兩種方式都能夠
+
+抓取使用者在 view 上的 input events
+驗證使用者輸數
+建立 form model 和 data model 給後續表單資料更新
+建議一套追蹤表單資料變化的機制
+
+而本文將介紹兩種方式的異同和使用方式。"
 />
 <meta name="twitter:card" content="summary_large_image" />
 <meta property="og:image:height" content="630" />
@@ -33,7 +49,9 @@
 
 
 
-  <meta name="description" content="之前總以為 same-site 的網站一定也是 same-origin，後來才發現並非如此，是兩個不同的定義。此篇將介紹 same-site 和 same-origin 的定義，讓往後與後端 RD 討論 cookie SameSite 和 Access-Control-Allow-Origin header 設定時能更順利。
+  <meta name="description" content="寫網頁的過程中免不了一定會出現「表單」，Angular 提供兩種不同的表單建立方式來處理使用者輸入，分別是 reactive forms 和 template-driven forms。
+兩種方式都能夠
+ 抓取使用者在 view 上的 input events 驗證使用者輸數 建立 form model 和 data model 給後續表單資料更新 建議一套追蹤表單資料變化的機制  而本文將介紹兩種方式的異同和使用方式。
 ">
 
 
@@ -116,7 +134,7 @@
   <section class="section aside_inner">
     <h2 class="section_title"><a  href="https://sharonwu0505.github.io/docs/" class="group">Posts</a></h2>
       <section class="" id="docs-posts">
-        <h3 class="section_link"><a id="docs-angular-forms---reactive-forms-and-template-driven-forms" href="https://sharonwu0505.github.io/docs/2022/angular-forms/">Angular Forms - Reactive Forms and Template-Driven Forms</a></h3><nav id="TableOfContents">
+        <h3 class="section_link active"><a id="docs-angular-forms---reactive-forms-and-template-driven-forms" href="https://sharonwu0505.github.io/docs/2022/angular-forms/">Angular Forms - Reactive Forms and Template-Driven Forms</a></h3><nav id="TableOfContents">
   <ul>
     <li><a href="#choosing-an-approach">Choosing an approach</a></li>
     <li><a href="#setting-up-the-form-model">Setting up the form model</a>
@@ -241,7 +259,7 @@
     <li><a href="#references">References</a></li>
   </ul>
 </nav>
-        <h3 class="section_link active"><a id="docs-same-site-and-same-origin" href="https://sharonwu0505.github.io/docs/2021/same-site-and-same-origin/">Same-Site and Same-Origin</a></h3><nav id="TableOfContents">
+        <h3 class="section_link"><a id="docs-same-site-and-same-origin" href="https://sharonwu0505.github.io/docs/2021/same-site-and-same-origin/">Same-Site and Same-Origin</a></h3><nav id="TableOfContents">
   <ul>
     <li><a href="#origin">Origin</a>
       <ul>
@@ -531,164 +549,163 @@
 </aside>
 
   <main class="content">
-    <h1>Same-Site and Same-Origin</h1>
+    <h1>Angular Forms - Reactive Forms and Template-Driven Forms</h1>
     <div class="post__tags">
       
-        <a href="https://sharonwu0505.github.io/tags/http">
-          <span class="post__tag">HTTP</span>
+        <a href="https://sharonwu0505.github.io/tags/angular">
+          <span class="post__tag">Angular</span>
         </a>
       
-    </div><p>之前總以為 same-site 的網站一定也是 same-origin，後來才發現並非如此，是兩個不同的定義。此篇將介紹 same-site 和 same-origin 的定義，讓往後與後端 RD 討論 cookie <code>SameSite</code> 和 <code>Access-Control-Allow-Origin</code> header 設定時能更順利。</p>
-<h2 id="origin">Origin</h2>
-<p>Origin (網域) 是 <strong>scheme</strong> (或稱 protocol)、<strong>hostname</strong> (或稱 domain)，和 <strong>port</strong> 的組合。</p>
-<pre><code>https://www.example.com:443
-</code></pre><p>以上方網址為例</p>
+    </div><p>寫網頁的過程中免不了一定會出現「表單」，Angular 提供兩種不同的表單建立方式來處理使用者輸入，分別是 reactive forms 和 template-driven forms。</p>
+<p>兩種方式都能夠</p>
 <ul>
-<li><strong>scheme</strong> 是 <code>https</code></li>
-<li><strong>hostname</strong> 是 <code>www.example.com</code></li>
-<li><strong>port</strong> 是 <code>443</code></li>
+<li>抓取使用者在 view 上的 input events</li>
+<li>驗證使用者輸數</li>
+<li>建立 form model 和 data model 給後續表單資料更新</li>
+<li>建議一套追蹤表單資料變化的機制</li>
 </ul>
-<p>因此，網址 <code>https:www.example.com:443/foo</code> 的 origin 為 <code>https:www.example.com:443</code>。</p>
-<h4 id="same-origin-and-cross-origin">&quot;same-origin&quot; and &quot;cross-origin&quot;</h4>
-<p>有著同樣 origin 的網站會是 &quot;same-origin&quot;（同源）；其餘則為 &quot;cross-origin&quot; (跨域/跨來源)。</p>
-<p>origin A: <code>https://www.example.com:443</code></p>
+<p>而本文將介紹兩種方式的異同和使用方式。</p>
+<h2 id="choosing-an-approach">Choosing an approach</h2>
+<p>兩種方式的關鍵差異可由下張表來描述</p>
 <table>
 <thead>
 <tr>
-<th>origin B</th>
-<th>&quot;same-origin&quot; or &quot;cross-origin&quot; to origin A</th>
+<th></th>
+<th>REACTIVE</th>
+<th>TEMPLATE-DRIVEN</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td><code>https://www.evil.com:443</code></td>
-<td>cross-origin: different domains</td>
+<td>Setup of form model</td>
+<td>Explicit, created in component class</td>
+<td>Implicit, created by directives</td>
 </tr>
 <tr>
-<td><code>https://example.com:443</code></td>
-<td>cross-origin: different subdomains</td>
+<td>Data model</td>
+<td>Structured and immutable</td>
+<td>Unstructured and mutable</td>
 </tr>
 <tr>
-<td><code>https://login.example.com:443</code></td>
-<td>cross-origin: different subdomains</td>
+<td>Data flow</td>
+<td>Synchronous</td>
+<td>Asynchronous</td>
 </tr>
 <tr>
-<td><code>http://www.example.com:443</code></td>
-<td>cross-origin: different schemes</td>
-</tr>
-<tr>
-<td><code>https://www.example.com:80</code></td>
-<td>cross-origin: different ports</td>
-</tr>
-<tr>
-<td><code>https://www.example.com:443</code></td>
-<td>same-origin: exact match</td>
-</tr>
-<tr>
-<td><code>https://www.example.com</code></td>
-<td>same-origin: implicit port number (443) matches</td>
+<td>Form validation</td>
+<td>Functions</td>
+<td>Directives</td>
 </tr>
 </tbody>
 </table>
-<h4 id="跨來源資源共用cross-origin-resource-sharing-corshttpsdevelopermozillaorgzh-twdocswebhttpcors">跨來源資源共用（<a href="https://developer.mozilla.org/zh-TW/docs/Web/HTTP/CORS">Cross-Origin Resource Sharing (CORS)</a>）</h4>
-<blockquote>
-<p>當 user agent 請求一個不同源的資源時，會建立一個跨來源 HTTP 請求（cross-origin HTTP request）。基於安全性考量，跨來源 HTTP 請求會受到限制，例如 <code>XMLHttpRequest</code> 和 <code>Fetch API</code> 都遵守同源政策（same-origin policy）。這代表 API 除非使用 CORS 標頭，否則只能請求與應用程式相同網域的 HTTP 資源。</p>
-</blockquote>
-<p>由於此篇著重比較 same-site 和 same-origin 的差別，所以若想知道更多跨來源資源共用的規範，請見 <a href="https://developer.mozilla.org/zh-TW/docs/Web/HTTP/CORS">MDN Web Docs</a>。</p>
-<h2 id="site-etld--1">Site (eTLD + 1)</h2>
-<p>&quot;Site&quot; 是指 <strong>TLD (Top-level domain)</strong> 和它之前的 <strong>domain</strong>。TLDs 包含條列在 Root Zone Database 中的 domain，例如 <code>.com</code> 和 <code>.org</code>。</p>
-<p>以 <code>https://www.example.com:443/foo</code> 為例</p>
+<p>因為 reactive form 提供直接對接底層的 form API，且 view 和 data model 的更新為同步的，測試時較不須要處理 change detection 問題，因此當我們要建立 large-scale 或複雜的表單時，使用上會比 templare-driven form 來得方便。</p>
+<h2 id="setting-up-the-form-model">Setting up the form model</h2>
+<p>Reactive and template-driven forms 共用 building blocks 來追蹤使用者與 form input 元素的互動以及 component 裡的 form data 變化。兩種方式只差別在開發者如何建立和管理 form-control instances。</p>
+<h4 id="common-form-foundation-classes">Common form foundation classes</h4>
 <ul>
-<li><strong>eTLD</strong> 是 <code>.com</code></li>
-<li><strong>site (eTLD + 1)</strong> 是 <code>example.com</code></li>
-<li>eTLD 和 TLD 的差別下方會說明</li>
+<li><code>FormControl</code> tracks the value and validation status of an individual form control.</li>
+<li><code>FormGroup</code> tracks the same values and status for a collection of form controls.</li>
+<li><code>FormArray</code> tracks the same values and status for an array of form controls.</li>
+<li><code>ControlValueAccessor</code> creates a bridge between Angular FormControl instances and built-in DOM elements.</li>
 </ul>
-<p>不過也有另一類的 domain，像是 <code>.co.jp</code> 和 <code>.github.io</code>。這類 domain 如果只用 <code>.jp</code> 和 <code>.io</code> 作為 TLD 去定義 site 是不足夠的，而且也缺乏廣泛適用的邏輯去判斷。所以出現了表列的 <strong>eTLDs</strong> (effective TLDs)，被條列在 <a href="https://wiki.mozilla.org/Public_Suffix_List">Mozilla Public Suffix List</a> 中。site 也被稱為 <code>eTLD + 1</code>。</p>
-<p>以 <code>https://my-project.github.io</code> 為例</p>
+<h5 id="setup-in-reactive-forms">Setup in reactive forms</h5>
+<p>(1) Register the reactive forms module</p>
+<div class="highlight"><pre class="chroma"><code class="language-typescript" data-lang="typescript"><span class="ln"> 1</span><span class="kr">import</span> <span class="p">{</span> <span class="nx">Component</span> <span class="p">}</span> <span class="kr">from</span> <span class="s1">&#39;@angular/core&#39;</span><span class="p">;</span>
+<span class="ln"> 2</span><span class="kr">import</span> <span class="p">{</span> <span class="nx">FormControl</span> <span class="p">}</span> <span class="kr">from</span> <span class="s1">&#39;@angular/forms&#39;</span><span class="p">;</span>
+<span class="ln"> 3</span>
+<span class="ln"> 4</span><span class="kd">@Component</span><span class="p">({</span>
+<span class="ln"> 5</span>  <span class="nx">selector</span><span class="o">:</span> <span class="s1">&#39;app-reactive-favorite-color&#39;</span><span class="p">,</span>
+<span class="ln"> 6</span>  <span class="nx">template</span><span class="o">:</span> <span class="sb">`
+</span><span class="ln"> 7</span><span class="sb">    &lt;!-- (3) Register the control in the template --&gt;
+</span><span class="ln"> 8</span><span class="sb">    Favorite Color: &lt;input type=&#34;text&#34; [formControl]=&#34;favoriteColorControl&#34;&gt;
+</span><span class="ln"> 9</span><span class="sb">  `</span>
+<span class="ln">10</span><span class="p">})</span>
+<span class="ln">11</span><span class="kr">export</span> <span class="kr">class</span> <span class="nx">FavoriteColorComponent</span> <span class="p">{</span>
+<span class="ln">12</span>  <span class="nx">favoriteColorControl</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">FormControl</span><span class="p">(</span><span class="s1">&#39;&#39;</span><span class="p">);</span> <span class="c1">// (2) Generate a new FormControl
+</span><span class="ln">13</span><span class="c1"></span><span class="p">}</span>
+</code></pre></div><p>更多常見的使用：</p>
 <ul>
-<li><strong>eTLD</strong> 是 <code>.github.io</code></li>
-<li><strong>site (eTLD + 1)</strong> 是 <code>my-project.github.io</code></li>
+<li>使用 <code>FormGroup</code> 建立巢狀表單欄位</li>
+<li>使用 <code>setValue()</code> 方法更改單一 <code>FormControl</code> 的值</li>
+<li>使用 <code>patchValue()</code> 方法一次更新多個 <code>FormControl</code> 的值</li>
+<li>使用 <code>FormBuilder</code> service 使建立表單更容易，不必自行重複處理 form group 和 form control</li>
+<li>使用 <code>FormArray</code> 動態建立長度不固定的 unamed <code>FormControl</code></li>
 </ul>
-<h4 id="same-site-and-cross-site">&quot;same-site&quot; and &quot;cross-site&quot;</h4>
-<p>有相同 eTLD + 1 的網站為 &quot;same-site&quot;；其餘則為 &quot;cross-site&quot;。</p>
-<p>site A: <code>https://www.example.com:443</code></p>
-<table>
-<thead>
-<tr>
-<th>site B</th>
-<th>&quot;same-site&quot; or &quot;cross-site&quot; to site A</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td><a href="https://www.evil.com">https://www.evil.com</a>:443</td>
-<td>cross-site: different domains</td>
-</tr>
-<tr>
-<td><a href="https://login.example.com">https://login.example.com</a>:443</td>
-<td>same-site: different subdomains don't matter</td>
-</tr>
-<tr>
-<td><a href="http://www.example.com">http://www.example.com</a>:443</td>
-<td>same-site: different schemes don't matter</td>
-</tr>
-<tr>
-<td><a href="https://www.example.com">https://www.example.com</a>:80</td>
-<td>same-site: different ports don't matter</td>
-</tr>
-<tr>
-<td><a href="https://www.example.com">https://www.example.com</a>:443</td>
-<td>same-site: exact match</td>
-</tr>
-<tr>
-<td><a href="https://www.example.com">https://www.example.com</a></td>
-<td>same-site: ports don't matter</td>
-</tr>
-</tbody>
-</table>
-<p>而 <code>cats.github.io</code> 和 <code>dogs.github.io</code> 為 cross-site，因為它們的 eTLD + 1 不同。</p>
-<h4 id="schemeful-same-site">&quot;schemeful same-site&quot;</h4>
-<p>從上述的定義中可以知道，<strong>scheme</strong> 是否相同不影響 &quot;same-site&quot; 的判斷，但為了避免 HTTP 被以 weak channel 使用，<a href="https://tools.ietf.org/html/draft-west-cookie-incrementalism-01#page-8">協定</a>開始商議將 scheme 納入判斷中，稱為 &quot;schemeful same-site&quot;。</p>
-<p>如此一來，<code>https://www.example.com:443</code> 和 <code>http://www.example.com:443</code> 便為 &quot;cross-site&quot;，因為它們的 scheme 不同。</p>
-<h4 id="chrome-80-後針對第三方-cookie-的調整">Chrome 80 後針對第三方 cookie 的調整</h4>
-<blockquote>
-<p>Chrome 80+ 後將對所有未設定 <code>SameSite</code> 屬性的 Set-Cookie 預設為 <code>SameSite=Lax</code>，意味著除了 top level navigate + GET 的請求行為外，其餘 cross-site request 送發 cookie 的行為將預設被關閉。</p>
-</blockquote>
-<p><code>SiteSite</code> values</p>
+<p><strong>在 reactive form 中，form model（<code>FormControl</code> instance）是真相來源。它透過 <code>[formControl]</code> directive 與 template input element 綁定，提供表單元素的值和狀態。</strong></p>
+<h4 id="setup-in-template-driven-forms">Setup in template-driven forms</h4>
+<div class="highlight"><pre class="chroma"><code class="language-typescript" data-lang="typescript"><span class="ln"> 1</span><span class="kr">import</span> <span class="p">{</span> <span class="nx">Component</span> <span class="p">}</span> <span class="kr">from</span> <span class="s1">&#39;@angular/core&#39;</span><span class="p">;</span>
+<span class="ln"> 2</span>
+<span class="ln"> 3</span><span class="kd">@Component</span><span class="p">({</span>
+<span class="ln"> 4</span>  <span class="nx">selector</span><span class="o">:</span> <span class="s1">&#39;app-template-favorite-color&#39;</span><span class="p">,</span>
+<span class="ln"> 5</span>  <span class="nx">template</span><span class="o">:</span> <span class="sb">`
+</span><span class="ln"> 6</span><span class="sb">    Favorite Color: &lt;input type=&#34;text&#34; [(ngModel)]=&#34;favoriteColor&#34;&gt;
+</span><span class="ln"> 7</span><span class="sb">  `</span>
+<span class="ln"> 8</span><span class="p">})</span>
+<span class="ln"> 9</span><span class="kr">export</span> <span class="kr">class</span> <span class="nx">FavoriteColorComponent</span> <span class="p">{</span>
+<span class="ln">10</span>  <span class="nx">favoriteColor</span> <span class="o">=</span> <span class="s1">&#39;&#39;</span><span class="p">;</span>
+<span class="ln">11</span><span class="p">}</span>
+</code></pre></div><p><strong>在 template-driven form 中，form model 是隱含的，是 direcive <code>NgModel</code> 為 input element 建立並管理了 <code>FormControl</code> instance。</strong></p>
+<p>在此方式中，template 是真相來源，開發者沒有辦法直接修改 <code>FormControl</code> instance。</p>
+<h2 id="data-flow-in-forms">Data flow in forms</h2>
+<p>Reactive 和 template-driven forms 處理 view 和 component model 資料更新的流程不同。</p>
+<h4 id="data-flow-in-reactive-forms">Data flow in reactive forms</h4>
+<p>在 reactive forms 中，view 中的表單元素都直接與 form model 相連（a <code>FormControl</code> instance）。
+從 view 到 model 以及從 model 到 view 的更新是同步的，而且不依賴於 UI 是如何渲染的。</p>
+<h5 id="how-the-data-flows-when-an-input-fields-is-changed-from-the-view">How the data flows when an input field's is changed from the view:</h5>
+<ol>
+<li>The user types a value into the input element, in this case the favorite color Blue.</li>
+<li>The form input element emits an &quot;input&quot; event with the latest value.</li>
+<li>The control value accessor listening for events on the form input element immediately relays the new value to the <code>FormControl</code> instance.</li>
+<li>The <code>FormControl</code> instance emits the new value through the <code>valueChanges</code> observable.</li>
+<li>Any subscribers to the <code>valueChanges</code> observable receive the new value.</li>
+</ol>
+<h5 id="how-the-data-flows-when-a-programmatic-change-to-the-model-is-propagated-to-the-view">How the data flows when a programmatic change to the model is propagated to the view:</h5>
+<ol>
+<li>The user calls the <code>favoriteColorControl.setValue()</code> method, which updates the <code>FormControl</code> value.</li>
+<li>The <code>FormControl</code> instance emits the new value through the <code>valueChanges</code> observable.</li>
+<li>Any subscribers to the <code>valueChanges</code> observable receive the new value.</li>
+<li>The control value accessor on the form input element updates the element with the new value.</li>
+</ol>
+<h4 id="data-flow-in-template-driven-forms">Data flow in template-driven forms</h4>
+<h5 id="how-data-flows-when-an-input-fields-value-is-changed-from-the-view">How data flows when an input field's value is changed from the view:</h5>
+<ol>
+<li>The user types Blue into the input element.</li>
+<li>The input element emits an &quot;input&quot; event with the value Blue.</li>
+<li>The control value accessor attached to the input triggers the <code>setValue()</code> method on the <code>FormControl</code> instance.</li>
+<li>The <code>FormControl</code> instance emits the new value through the <code>valueChanges</code> observable.</li>
+<li>Any subscribers to the <code>valueChanges</code> observable receive the new value.</li>
+<li>The control value accessor also calls the <code>NgModel.viewToModelUpdate()</code> method which emits an <code>ngModelChange</code> event.</li>
+<li>Because the component template uses two-way data binding for the <code>favoriteColor</code> property, the <code>favoriteColor</code> property in the component is updated to the value emitted by the <code>ngModelChange</code> event (Blue).</li>
+</ol>
+<h5 id="how-data-flows-from-model-to-view-when-the-favoritecolor-changes-from-blue-to-red">How data flows from model to view when the <code>favoriteColor</code> changes from Blue to Red:</h5>
+<ol>
+<li>The favoriteColor value is updated in the component.</li>
+<li>Change detection begins.</li>
+<li>During change detection, the <code>ngOnChanges</code> lifecycle hook is called on the <code>NgModel</code> directive instance because the value of one of its inputs has changed.</li>
+<li>The <code>ngOnChanges()</code> method queues an async task to set the value for the internal <code>FormControl</code> instance.</li>
+<li>Change detection completes.</li>
+<li>On the next tick, the task to set the <code>FormControl</code> instance value is executed.</li>
+<li>The <code>FormControl</code> instance emits the latest value through the <code>valueChanges</code> observable.</li>
+<li>Any subscribers to the <code>valueChanges</code> observable receive the new value.</li>
+<li>The control value accessor updates the form input element in the view with the latest <code>favoriteColor</code> value.</li>
+</ol>
+<h4 id="mutability-of-the-data-model">Mutability of the data model</h4>
 <ul>
-<li><code>SameSite=None</code> (with <code>Secure</code>)</li>
-<li><code>SameSite=Lax</code></li>
-<li><code>SameSite=Strict</code></li>
+<li>Reactive forms 中的資料是 immutable 的，每次 data model 有所改變，<code>FormControl</code> instance 都會回傳一個新的 data model 而不是更新現有的。這也讓 change detection 較有效率。</li>
+<li>Template-driven forms 則基於 two-way data binding 在 template 有任何改變時去更新 component data model。</li>
 </ul>
-<p>更詳細的說明請見 <a href="https://ianhung0529.medium.com/chrome-80-%E5%BE%8C%E9%87%9D%E5%B0%8D%E7%AC%AC%E4%B8%89%E6%96%B9-cookie-%E7%9A%84%E8%A6%8F%E5%89%87%E8%AA%BF%E6%95%B4-default-samesite-lax-aaba0bc785a3">Chrome 80 後針對第三方 Cookie 的規則調整</a></p>
-<h2 id="how-to-check-if-a-request-is-same-site-same-origin-or-cross-site">How to check if a request is &quot;same-site&quot;, &quot;same-origin&quot;, or &quot;cross-site&quot;</h2>
-<p>部分瀏覽器會在請求的 HTTP header 中附上 <a href="https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Sec-Fetch-Site"><code>Sec-Fetch-Site</code></a> 值，不過目前普及率不算高。</p>
-<p><code>Sec-Fetch-Site</code> 會是以下幾個值：</p>
+<h2 id="references">References</h2>
 <ul>
-<li><code>cross-site</code></li>
-<li><code>same-site</code> (沒區分 &quot;schemeful same-site&quot;)</li>
-<li><code>same-origin</code></li>
-<li><code>none</code></li>
+<li><a href="https://angular.io/guide/forms-overview">Angular - Introduction to Forms</a></li>
 </ul>
-<h2 id="reference">Reference</h2>
-<ul>
-<li><a href="https://web.dev/same-site-same-origin/">Understanding &quot;same-site&quot; and &quot;same-origin&quot;</a></li>
-</ul>
-    <div class="pager">
-  
-  <div class="pager_item prev">
-    
-    <a href="https://sharonwu0505.github.io/docs/2021/typescript-intro/" class="pager_link button" title="Introduction to TypeScript and Primitive Types">
-      <span class="pager_label">Introduction to TypeScript and Primitive Types</span>
-    </a>
-  </div>
+    <div class="pager pager_lean">
   
 
   
   <div class="pager_item next">
     
-    <a href="https://sharonwu0505.github.io/docs/2021/ngrok-intro/" class="pager_link button" title="Introduction to Ngrok">
-      <span class="pager_label">Introduction to Ngrok</span>
+    <a href="https://sharonwu0505.github.io/docs/2021/angular-advanced-templates/" class="pager_link button" title="Angular Advanced Templates - ng-template, ng-container and ngTemplateOutlet">
+      <span class="pager_label">Angular Advanced Templates - ng-template, ng-container and ngTemplateOutlet</span>
     </a>
   </div>
   
