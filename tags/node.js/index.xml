@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Node.js on Draw Closer - A Blog by Sharon Wu</title>
+    <link>https://sharonwu0505.github.io/tags/node.js/</link>
+    <description>Recent content in Node.js on Draw Closer - A Blog by Sharon Wu</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <lastBuildDate>Fri, 06 May 2022 10:00:00 +0800</lastBuildDate><atom:link href="https://sharonwu0505.github.io/tags/node.js/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Learn Node.js - Part 1</title>
+      <link>https://sharonwu0505.github.io/docs/2022/nodejs-part1/</link>
+      <pubDate>Fri, 06 May 2022 10:00:00 +0800</pubDate>
+      
+      <guid>https://sharonwu0505.github.io/docs/2022/nodejs-part1/</guid>
+      <description>&lt;p&gt;This series is my notes when learning Node.js.&lt;/p&gt;
+&lt;p&gt;We will focus on fundenmental concepts of Node.js in this post.&lt;/p&gt;</description>
+    </item>
+    
+  </channel>
+</rss>

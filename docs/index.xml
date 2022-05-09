@@ -6,6 +6,16 @@
     <description>Recent content in Posts on Draw Closer - A Blog by Sharon Wu</description>
     <generator>Hugo -- gohugo.io</generator><atom:link href="https://sharonwu0505.github.io/docs/index.xml" rel="self" type="application/rss+xml" />
     <item>
+      <title>Learn Node.js - Part 1</title>
+      <link>https://sharonwu0505.github.io/docs/2022/nodejs-part1/</link>
+      <pubDate>Fri, 06 May 2022 10:00:00 +0800</pubDate>
+      
+      <guid>https://sharonwu0505.github.io/docs/2022/nodejs-part1/</guid>
+      <description>&lt;p&gt;This series is my notes when learning Node.js.&lt;/p&gt;
+&lt;p&gt;We will focus on fundenmental concepts of Node.js in this post.&lt;/p&gt;</description>
+    </item>
+    
+    <item>
       <title>Angular Forms - Reactive Forms and Template-Driven Forms</title>
       <link>https://sharonwu0505.github.io/docs/2022/angular-forms/</link>
       <pubDate>Tue, 08 Feb 2022 16:00:00 +0800</pubDate>

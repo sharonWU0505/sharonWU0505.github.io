@@ -9,19 +9,21 @@
 <link rel="mask-icon" href='https://sharonwu0505.github.io/favicons/safari-pinned-tab.svg'  color="#004750">
 <link rel="shortcut icon" href='https://sharonwu0505.github.io/favicons/favicon.ico'>
 <meta name="msapplication-config" content='https://sharonwu0505.github.io/favicons/browserconfig.xml'>
-<title>TypeScript: Any, Array, Union Types, Enum, Function, and Interface | Draw Closer - A Blog by Sharon Wu</title>
+<title>Learn Node.js - Part 1 | Draw Closer - A Blog by Sharon Wu</title>
 <link rel="canonical" href="https://sharonwu0505.github.io/"/>
-<meta name="keywords" content="JavaScript,TypeScript" />
-<meta name="description" content="此篇繼續來看 TypeScript 的基本語法。" />
+<meta name="keywords" content="Node.js,JavaScript" />
+<meta name="description" content="This series is my notes when learning Node.js.
+We will focus on fundenmental concepts of Node.js in this post." />
 
 
 <meta property="og:url" content="https://sharonwu0505.github.io/" />
 <meta property="og:type" content="website" />
 <meta property="og:site_name" content="Draw Closer" />
-<meta property="og:title" content="TypeScript: Any, Array, Union Types, Enum, Function, and Interface | Draw Closer" />
+<meta property="og:title" content="Learn Node.js - Part 1 | Draw Closer" />
 <meta
   property="og:description"
-  content="此篇繼續來看 TypeScript 的基本語法。"
+  content="This series is my notes when learning Node.js.
+We will focus on fundenmental concepts of Node.js in this post."
 />
 <meta name="twitter:card" content="summary_large_image" />
 <meta property="og:image:height" content="630" />
@@ -33,7 +35,8 @@
 
 
 
-  <meta name="description" content="此篇繼續來看 TypeScript 的基本語法。
+  <meta name="description" content="This series is my notes when learning Node.js.
+We will focus on fundenmental concepts of Node.js in this post.
 ">
 
 
@@ -110,7 +113,7 @@
   <section class="section aside_inner">
     <h2 class="section_title"><a  href="https://sharonwu0505.github.io/docs/" class="group">Posts</a></h2>
       <section class="" id="docs-posts">
-        <h3 class="section_link"><a id="docs-learn-nodejs---part-1" href="https://sharonwu0505.github.io/docs/2022/nodejs-part1/">Learn Node.js - Part 1</a></h3><nav id="TableOfContents">
+        <h3 class="section_link active"><a id="docs-learn-nodejs---part-1" href="https://sharonwu0505.github.io/docs/2022/nodejs-part1/">Learn Node.js - Part 1</a></h3><nav id="TableOfContents">
   <ul>
     <li><a href="#nodejs">Node.js</a></li>
     <li><a href="#characteristics">Characteristics</a></li>
@@ -194,7 +197,7 @@
     <li><a href="#references">References</a></li>
   </ul>
 </nav>
-        <h3 class="section_link active"><a id="docs-typescript-any-array-union-types-enum-function-and-interface" href="https://sharonwu0505.github.io/docs/2021/typescript-more/">TypeScript: Any, Array, Union Types, Enum, Function, and Interface</a></h3><nav id="TableOfContents">
+        <h3 class="section_link"><a id="docs-typescript-any-array-union-types-enum-function-and-interface" href="https://sharonwu0505.github.io/docs/2021/typescript-more/">TypeScript: Any, Array, Union Types, Enum, Function, and Interface</a></h3><nav id="TableOfContents">
   <ul>
     <li><a href="#any">Any</a></li>
     <li><a href="#型別推論">型別推論</a></li>
@@ -524,125 +527,48 @@
 </aside>
 
   <main class="content">
-    <h1>TypeScript: Any, Array, Union Types, Enum, Function, and Interface</h1>
+    <h1>Learn Node.js - Part 1</h1>
     <div class="post__tags">
       
-        <a href="https://sharonwu0505.github.io/tags/typescript">
-          <span class="post__tag">TypeScript</span>
+        <a href="https://sharonwu0505.github.io/tags/node.js">
+          <span class="post__tag">Node.js</span>
         </a>
       
-    </div><p>此篇繼續來看 TypeScript 的基本語法。</p>
-<h2 id="any">Any</h2>
-<p>在 TypeScript 中，可用 <code>any</code> 來表示允許賦值是任意型別。</p>
-<p>如果使用普通型別，在賦值過程中改變型別是不被允許的，但如果是 <code>any</code> 型別，則允許。以下程式將能順利被編譯。</p>
-<div class="highlight"><pre class="chroma"><code class="language-typescript" data-lang="typescript"><span class="ln">1</span><span class="kd">let</span> <span class="nx">myNumber</span>: <span class="kt">any</span> <span class="o">=</span> <span class="s1">&#39;nine&#39;</span><span class="p">;</span>
-<span class="ln">2</span><span class="nx">myNumber</span> <span class="o">=</span> <span class="mi">9</span><span class="p">;</span>
-</code></pre></div><h2 id="型別推論">型別推論</h2>
-<p>如果沒有明確地指定型別，那麼 TypeScript 會依照型別推論（Type Inference）的規則推斷出型別。例如：</p>
-<div class="highlight"><pre class="chroma"><code class="language-typescript" data-lang="typescript"><span class="ln">1</span><span class="kd">let</span> <span class="nx">myNumber</span> <span class="o">=</span> <span class="s1">&#39;nine&#39;</span><span class="p">;</span>
-<span class="ln">2</span><span class="nx">myNumber</span> <span class="o">=</span> <span class="mi">9</span><span class="p">;</span>
-</code></pre></div><p>編譯以上程式碼會收到錯誤。原因是 TypeScript 遇到賦值時會推斷出變數的型別是 <code>string</code>，爾後重新賦值時不允許改變型別。</p>
-<p>但如果宣吿變數時沒有指定型別也沒有賦值，則它會被推斷成任意型別 (<code>any</code>)，所以以下程式碼會通過編譯。</p>
-<div class="highlight"><pre class="chroma"><code class="language-typescript" data-lang="typescript"><span class="ln">1</span><span class="kd">let</span> <span class="nx">myNumber</span><span class="p">;</span>
-<span class="ln">2</span><span class="nx">myNumber</span> <span class="o">=</span> <span class="s1">&#39;nine&#39;</span><span class="p">;</span>
-<span class="ln">3</span><span class="nx">myNumber</span> <span class="o">=</span> <span class="mi">9</span><span class="p">;</span>
-</code></pre></div><h2 id="array">Array</h2>
-<p>宣告 Array 型別其實很單純：</p>
+    </div><p>This series is my notes when learning Node.js.</p>
+<p>We will focus on fundenmental concepts of Node.js in this post.</p>
+<h2 id="nodejs">Node.js</h2>
+<p>As what it says on the <a href="https://nodejs.org/en/">official website</a>, Node.js is a JavaScript runtime built on Chrome's V8 JavaScript engine.
+Let's first look at several keywords here.</p>
 <ul>
-<li>an array of number: <code>number[]</code></li>
-<li>an array of string: <code>string[]</code></li>
+<li><strong>JavaScript runtime</strong>: It refers to the environment where your JavaScript codes are executed. Runtime provides some objects/utilities, e.g. built-in APIs and filesystem access functionality, to JavaScript so that it can interact with the outside world.</li>
+<li>Chrome V8: It is a free and open-source <strong>JavaScript engine</strong> developed by Chromium Project. The engine translates JavaScript to runnable machine codes so that is can be executed by the CPU. The V8 engine is used in Node.js runtime.</li>
 </ul>
-<div class="highlight"><pre class="chroma"><code class="language-typescript" data-lang="typescript"><span class="ln">1</span><span class="kr">const</span> <span class="nx">numArray</span>: <span class="kt">number</span><span class="p">[]</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">];</span>
-</code></pre></div><h2 id="union-types">Union Types</h2>
-<p>聯合型別（Union Types）表示取值可以為多種型別中的一種。</p>
-<div class="highlight"><pre class="chroma"><code class="language-typescript" data-lang="typescript"><span class="ln">1</span><span class="kd">let</span> <span class="nx">myNumber</span>: <span class="kt">string</span> <span class="o">|</span> <span class="kt">number</span><span class="p">;</span>
-<span class="ln">2</span><span class="nx">myNumber</span> <span class="o">=</span> <span class="s1">&#39;nine&#39;</span><span class="p">;</span>
-<span class="ln">3</span><span class="nx">myNumber</span> <span class="o">=</span> <span class="mi">9</span><span class="p">;</span>
-</code></pre></div><p>當 TypeScript 不確定一個聯合型別的變數到底是哪一個型別時，我們只能存取所有型別裡共有的屬性或方法。</p>
-<div class="highlight"><pre class="chroma"><code class="language-typescript" data-lang="typescript"><span class="ln">1</span><span class="kd">function</span> <span class="nx">getLength</span><span class="p">(</span><span class="nx">something</span>: <span class="kt">string</span> <span class="o">|</span> <span class="kt">number</span><span class="p">)</span><span class="o">:</span> <span class="kt">number</span> <span class="p">{</span>
-<span class="ln">2</span>  <span class="k">return</span> <span class="nx">something</span><span class="p">.</span><span class="nx">length</span><span class="p">;</span> <span class="c1">// error: 因為 number 沒有 `length` 屬性
-</span><span class="ln">3</span><span class="c1"></span><span class="p">}</span>
-</code></pre></div><div class="highlight"><pre class="chroma"><code class="language-typescript" data-lang="typescript"><span class="ln">1</span><span class="kd">function</span> <span class="nx">getLength</span><span class="p">(</span><span class="nx">something</span>: <span class="kt">string</span> <span class="o">|</span> <span class="kt">number</span><span class="p">)</span><span class="o">:</span> <span class="kt">number</span> <span class="p">{</span>
-<span class="ln">2</span>  <span class="k">return</span> <span class="nx">something</span><span class="p">.</span><span class="nx">toString</span><span class="p">();</span> <span class="c1">// works
-</span><span class="ln">3</span><span class="c1"></span><span class="p">}</span>
-</code></pre></div><h2 id="enum-列舉">Enum (列舉)</h2>
-<p>Enum 型別經常被用在變數值有一定範圍的場景，例如一週 7 天、篩選選項等等。</p>
-<p>我們用 <code>enum</code> 關鍵字來定義變數：</p>
-<div class="highlight"><pre class="chroma"><code class="language-typescript" data-lang="typescript"><span class="ln">1</span><span class="kr">enum</span> <span class="nx">Filters</span> <span class="p">{</span>
-<span class="ln">2</span>  <span class="nx">ALL</span><span class="p">,</span>
-<span class="ln">3</span>  <span class="nx">ACTIVE</span><span class="p">,</span>
-<span class="ln">4</span>  <span class="nx">PAST_DUE</span><span class="p">,</span>
-<span class="ln">5</span><span class="p">}</span>
-</code></pre></div><p>列舉的項目會被賦值從 0 開始遞增的數字，同時也會有數字到列舉值的反向對映，所以如果我們印出 <code>Filters</code>，會看到：</p>
-<div class="highlight"><pre class="chroma"><code class="language-typescript" data-lang="typescript"><span class="ln">1</span><span class="p">{</span>
-<span class="ln">2</span>  <span class="s1">&#39;0&#39;</span><span class="o">:</span> <span class="s1">&#39;ALL&#39;</span><span class="p">,</span>
-<span class="ln">3</span>  <span class="s1">&#39;1&#39;</span><span class="o">:</span> <span class="s1">&#39;ACTIVE&#39;</span><span class="p">,</span>
-<span class="ln">4</span>  <span class="s1">&#39;2&#39;</span><span class="o">:</span> <span class="s1">&#39;PAST_DUE&#39;</span><span class="p">,</span>
-<span class="ln">5</span>  <span class="nx">ALL</span>: <span class="kt">0</span><span class="p">,</span>
-<span class="ln">6</span>  <span class="nx">ACTIVE</span>: <span class="kt">1</span><span class="p">,</span>
-<span class="ln">7</span>  <span class="nx">PAST_DUE</span>: <span class="kt">2</span><span class="p">,</span>
-<span class="ln">8</span><span class="p">}</span>
-</code></pre></div><p>我們可用 <code>Filters.PAST_DUE</code> 來取得列舉項目的值。</p>
-<p>Enum 還有更多應用，包括手動賦值、常數列舉等等，有興趣的話可再去閱讀<a href="https://www.typescriptlang.org/docs/handbook/enums.html#numeric-enums">官方文件</a>。</p>
-<h2 id="function">Function</h2>
-<p>定義函式時，要使用 TypeScript 約束函式的輸入和輸出，例如：</p>
-<h4 id="normal-function">Normal Function</h4>
-<div class="highlight"><pre class="chroma"><code class="language-typescript" data-lang="typescript"><span class="ln">1</span><span class="kd">function</span> <span class="nx">sum</span><span class="p">(</span><span class="nx">num1</span>: <span class="kt">number</span><span class="p">,</span> <span class="nx">num2</span>: <span class="kt">number</span><span class="p">)</span><span class="o">:</span> <span class="kt">number</span> <span class="p">{</span>
-<span class="ln">2</span>  <span class="k">return</span> <span class="nx">num1</span> <span class="o">+</span> <span class="nx">num2</span><span class="p">;</span>
-<span class="ln">3</span><span class="p">}</span>
-</code></pre></div><h4 id="arrow-function">Arrow Function</h4>
-<div class="highlight"><pre class="chroma"><code class="language-typescript" data-lang="typescript"><span class="ln">1</span><span class="kr">const</span> <span class="nx">sum</span> <span class="o">=</span> <span class="p">(</span><span class="nx">num1</span>: <span class="kt">number</span><span class="p">,</span> <span class="nx">num2</span>: <span class="kt">number</span><span class="p">)</span><span class="o">:</span> <span class="kt">number</span> <span class="o">=&gt;</span> <span class="p">{</span>
-<span class="ln">2</span>  <span class="k">return</span> <span class="nx">num1</span> <span class="o">+</span> <span class="nx">num2</span><span class="p">;</span>
-<span class="ln">3</span><span class="p">}</span>
-<span class="ln">4</span>
-<span class="ln">5</span><span class="nx">sum</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">);</span>     <span class="c1">// works
-</span><span class="ln">6</span><span class="c1"></span><span class="nx">sum</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">);</span>  <span class="c1">// works: more arguments are ignored
-</span></code></pre></div><h4 id="optional-parameters">Optional Parameters</h4>
-<p>如果某參數為 optional，可用 <code>?</code> 來處理：</p>
-<div class="highlight"><pre class="chroma"><code class="language-typescript" data-lang="typescript"><span class="ln">1</span><span class="kd">function</span> <span class="nx">f</span><span class="p">(</span><span class="nx">x?</span>: <span class="kt">number</span><span class="p">)</span> <span class="p">{</span>
-<span class="ln">2</span>  <span class="c1">// ...
-</span><span class="ln">3</span><span class="c1"></span><span class="p">}</span>
-<span class="ln">4</span>
-<span class="ln">5</span><span class="nx">f</span><span class="p">();</span> <span class="c1">// OK
-</span><span class="ln">6</span><span class="c1"></span><span class="nx">f</span><span class="p">(</span><span class="mi">10</span><span class="p">);</span> <span class="c1">// OK
-</span></code></pre></div><h2 id="interface">Interface</h2>
-<p>在 TypeScript 中，我們使用 interface 來定義物件 (object) 的型別或形狀。以下是一個簡單的例子：</p>
-<div class="highlight"><pre class="chroma"><code class="language-typescript" data-lang="typescript"><span class="ln">1</span><span class="kr">interface</span> <span class="nx">Person</span> <span class="p">{</span> <span class="c1">// interface naming 通常首字母是大寫
-</span><span class="ln">2</span><span class="c1"></span>  <span class="nx">name</span>: <span class="kt">string</span><span class="p">;</span>
-<span class="ln">3</span>  <span class="nx">gender</span>: <span class="kt">string</span><span class="p">;</span>
-<span class="ln">4</span><span class="p">}</span>
-<span class="ln">5</span>
-<span class="ln">6</span><span class="kd">let</span> <span class="nx">Amy</span>: <span class="kt">Person</span> <span class="o">=</span> <span class="p">{</span>
-<span class="ln">7</span>  <span class="nx">name</span><span class="o">:</span> <span class="s1">&#39;Amy&#39;</span><span class="p">,</span>
-<span class="ln">8</span>  <span class="nx">age</span>: <span class="kt">25</span>
-<span class="ln">9</span><span class="p">};</span>
-</code></pre></div><p>可以使用 <code>readonly</code> property 來定義唯讀的物件屬性：</p>
-<div class="highlight"><pre class="chroma"><code class="language-typescript" data-lang="typescript"><span class="ln">1</span><span class="kr">interface</span> <span class="nx">Person</span> <span class="p">{</span>
-<span class="ln">2</span>  <span class="kr">readonly</span> <span class="nx">name</span>: <span class="kt">string</span><span class="p">;</span>
-<span class="ln">3</span>  <span class="nx">gender</span>: <span class="kt">string</span><span class="p">;</span>
-<span class="ln">4</span><span class="p">}</span>
-</code></pre></div><p>interface 的更多應用請見<a href="https://www.typescriptlang.org/docs/handbook/2/objects.html">官方文件</a>。</p>
-<h2 id="references">References</h2>
+<h2 id="characteristics">Characteristics</h2>
 <ul>
-<li><a href="https://www.typescriptlang.org/">https://www.typescriptlang.org/</a></li>
-<li><a href="https://willh.gitbook.io/typescript-tutorial/">https://willh.gitbook.io/typescript-tutorial/</a></li>
+<li>Single-threaded, which means it won't create a new thread for every request. However, with this feature, Node.js is not suitable for handling CPU intensive operations.</li>
+<li>Non-blocking and asynchronous I/O. This allows Node.js to handle concurrent connections with a single server.</li>
+<li>Suits both client-side and server-side development</li>
+<li>A rich ecosytem having a large number of libraries</li>
 </ul>
-    <div class="pager">
-  
-    
-    <div class="pager_item prev">
-      <a href="https://sharonwu0505.github.io/docs/2021/typescript-generic-and-type/" class="pager_link button" title="TypeScript: Generic Types and Type Alias" rel="prev">
-        <span class="pager_label">TypeScript: Generic Types and Type Alias</span>
-      </a>
-    </div>
-    
+<h2 id="installation">Installation</h2>
+<p>We can directly install Node.js package, install Node.js through a package manager, or use <code>nvm</code> to install Node.js.
+No matte which way, after it is succesfully installed, we should have access to the <code>node</code> executable program in the command line.</p>
+<p>Ref: <a href="https://nodejs.dev/learn/how-to-install-nodejs">https://nodejs.dev/learn/how-to-install-nodejs</a></p>
+<h2 id="components">Components</h2>
+<ul>
+<li>Node CLI</li>
+<li>NPM</li>
+<li>package.json</li>
+<li>Node Modules</li>
+</ul>
+    <div class="pager pager_lean">
   
 
   
     
     <div class="pager_item next">
-      <a href="https://sharonwu0505.github.io/docs/2021/typescript-intro/" class="pager_link button" title="Introduction to TypeScript and Primitive Types" rel="next">
-        <span class="pager_label">Introduction to TypeScript and Primitive Types</span>
+      <a href="https://sharonwu0505.github.io/docs/2022/angular-forms/" class="pager_link button" title="Angular Forms - Reactive Forms and Template-Driven Forms" rel="next">
+        <span class="pager_label">Angular Forms - Reactive Forms and Template-Driven Forms</span>
       </a>
     </div>
     
