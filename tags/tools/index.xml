@@ -16,5 +16,25 @@
 &lt;p&gt;有的，你可用 &lt;a href=&#34;https://ngrok.com/&#34;&gt;Ngrok&lt;/a&gt;！&lt;/p&gt;</description>
     </item>
     
+    <item>
+      <title>Setting Prettier to Format Codes</title>
+      <link>https://sharonwu0505.github.io/docs/2020/setting-prettier/</link>
+      <pubDate>Sun, 01 Nov 2020 11:00:00 +0800</pubDate>
+      
+      <guid>https://sharonwu0505.github.io/docs/2020/setting-prettier/</guid>
+      <description>&lt;p&gt;&lt;a href=&#34;https://prettier.io/&#34;&gt;Prettier&lt;/a&gt; is an opinionated &lt;strong&gt;code formatter&lt;/strong&gt; supporting several languages. The biggest reason for adopting Prettier is to stop all the on-going debates over styles. Therefore, applying Prettier to frontend development flow can save much time on formatting codes and align coding styles.&lt;/p&gt;
+&lt;p&gt;In my opinion, ESLint and Prettier are must tools for every frontend projects (not only personal, but also group ones).&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>Setting ESLint to Enhance Frontend Development</title>
+      <link>https://sharonwu0505.github.io/docs/2020/setting-eslint/</link>
+      <pubDate>Thu, 29 Oct 2020 11:00:00 +0800</pubDate>
+      
+      <guid>https://sharonwu0505.github.io/docs/2020/setting-eslint/</guid>
+      <description>&lt;p&gt;Linting tools like &lt;a href=&#34;https://eslint.org/&#34;&gt;ESLint&lt;/a&gt; allow developers to discover problems with their JavaScript code without executing it.&lt;/p&gt;
+&lt;p&gt;讓我們來談談如何以 ESLint 改進前端開發流程，且如何挑選 ESLint。&lt;/p&gt;</description>
+    </item>
+    
   </channel>
 </rss>

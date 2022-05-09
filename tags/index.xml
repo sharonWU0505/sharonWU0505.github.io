@@ -16,15 +16,6 @@
     </item>
     
     <item>
-      <title>JavaScript</title>
-      <link>https://sharonwu0505.github.io/tags/javascript/</link>
-      <pubDate>Tue, 14 Sep 2021 10:00:00 +0800</pubDate>
-      
-      <guid>https://sharonwu0505.github.io/tags/javascript/</guid>
-      <description></description>
-    </item>
-    
-    <item>
       <title>TypeScript</title>
       <link>https://sharonwu0505.github.io/tags/typescript/</link>
       <pubDate>Thu, 05 Aug 2021 14:00:00 +0800</pubDate>
@@ -79,47 +70,20 @@
     </item>
     
     <item>
-      <title>Optimize Images</title>
-      <link>https://sharonwu0505.github.io/tags/optimize-images/</link>
+      <title>Performance Optimization</title>
+      <link>https://sharonwu0505.github.io/tags/performance-optimization/</link>
       <pubDate>Sun, 10 Jan 2021 09:00:00 +0800</pubDate>
       
-      <guid>https://sharonwu0505.github.io/tags/optimize-images/</guid>
+      <guid>https://sharonwu0505.github.io/tags/performance-optimization/</guid>
       <description></description>
     </item>
     
     <item>
-      <title>Performance</title>
-      <link>https://sharonwu0505.github.io/tags/performance/</link>
-      <pubDate>Sun, 10 Jan 2021 09:00:00 +0800</pubDate>
-      
-      <guid>https://sharonwu0505.github.io/tags/performance/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Prettier</title>
-      <link>https://sharonwu0505.github.io/tags/prettier/</link>
-      <pubDate>Sun, 01 Nov 2020 11:00:00 +0800</pubDate>
-      
-      <guid>https://sharonwu0505.github.io/tags/prettier/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Workflow</title>
-      <link>https://sharonwu0505.github.io/tags/workflow/</link>
-      <pubDate>Sun, 01 Nov 2020 11:00:00 +0800</pubDate>
-      
-      <guid>https://sharonwu0505.github.io/tags/workflow/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>ESLint</title>
-      <link>https://sharonwu0505.github.io/tags/eslint/</link>
+      <title>JavaScript</title>
+      <link>https://sharonwu0505.github.io/tags/javascript/</link>
       <pubDate>Thu, 29 Oct 2020 11:00:00 +0800</pubDate>
       
-      <guid>https://sharonwu0505.github.io/tags/eslint/</guid>
+      <guid>https://sharonwu0505.github.io/tags/javascript/</guid>
       <description></description>
     </item>
     
@@ -165,15 +129,6 @@
       <pubDate>Fri, 07 Feb 2020 11:00:00 +0800</pubDate>
       
       <guid>https://sharonwu0505.github.io/tags/npm/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>React Hooks</title>
-      <link>https://sharonwu0505.github.io/tags/react-hooks/</link>
-      <pubDate>Thu, 23 Jan 2020 09:00:00 +0800</pubDate>
-      
-      <guid>https://sharonwu0505.github.io/tags/react-hooks/</guid>
       <description></description>
     </item>
     

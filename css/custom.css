@@ -4,6 +4,12 @@ html {
   --info: #8d8d8d !important;
   --link: #2385a4 !important;
   --link-hover: #3094b3 !important;
+  --font: BlinkMacSystemFont,-apple-system,"Segoe UI",Roboto,Oxygen,Ubuntu,Cantarell,"Fira Sans","Droid Sans","Helvetica Neue",Helvetica,Arial,sans-serif;
+  --inline-color: #447fcf;
+}
+
+html[data-mode="dark"] {
+  --code-bg: #3f3f3f;
 }
 
 html,
@@ -81,13 +87,32 @@ blockquote p {
   cursor: pointer;
 }
 
+.color_mode {
+  padding: 0 0.5rem;
+  margin-left: 0;
+}
+
 code {
   display: inline-block;
-  vertical-align: middle;
+  vertical-align: text-top;
+  font-size: 15px;
+  font-family: monospace, 'Monaco';
+  background: var(--code-bg);
+  color: var(--text);
+  border-radius: 4px;
+  padding: 0 0.4rem;
+  margin: 0 4px;
 }
 
 code.noClass {
+  color: var(--text);
+  display: inline-block;
   line-break: auto;
+}
+
+.highlight code.noClass {
+  padding: 0;
+  margin: 0;
 }
 
 /* Adjust content grid */
@@ -164,7 +189,7 @@ code.noClass {
 
   /* Fix sidebar and content styles */
   .nav {
-    padding: 1.2rem 0.4rem 1.2rem 1.2rem !important;
+    padding: 1.2rem !important;
   }
 
   .nav_body {
@@ -177,8 +202,12 @@ code.noClass {
     margin: 0 1rem;
   }
 
+  .nav.show .nav_body .nav-item:first-child {
+    margin: 1.5rem 1rem 0;
+  }
+
   .nav-item:last-child {
-    margin: 1rem 0 0.5rem;
+    margin: 0.5rem 1.5rem 0.5rem calc(1.5rem + 5px);
   }
 
   html[data-mode="dark"] .nav.show .nav_body {

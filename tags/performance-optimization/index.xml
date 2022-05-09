@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Performance on Draw Closer - A Blog by Sharon Wu</title>
-    <link>https://sharonwu0505.github.io/tags/performance/</link>
-    <description>Recent content in Performance on Draw Closer - A Blog by Sharon Wu</description>
+    <title>Performance Optimization on Draw Closer - A Blog by Sharon Wu</title>
+    <link>https://sharonwu0505.github.io/tags/performance-optimization/</link>
+    <description>Recent content in Performance Optimization on Draw Closer - A Blog by Sharon Wu</description>
     <generator>Hugo -- gohugo.io</generator>
-    <lastBuildDate>Sun, 10 Jan 2021 09:00:00 +0800</lastBuildDate><atom:link href="https://sharonwu0505.github.io/tags/performance/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sun, 10 Jan 2021 09:00:00 +0800</lastBuildDate><atom:link href="https://sharonwu0505.github.io/tags/performance-optimization/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Optimize Images for Web Performance</title>
       <link>https://sharonwu0505.github.io/docs/2021/optimize-images/</link>
